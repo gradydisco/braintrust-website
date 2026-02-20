@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { blogPosts, authors } from '@/data/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://usebraintrust.com';
@@ -13,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: '/products/talent-marketplace', changeFrequency: 'weekly' as const, priority: 0.9 },
         { url: '/products/talent-marketplace/ai-training', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/products/air', changeFrequency: 'weekly' as const, priority: 0.9 },
+        { url: '/products/air/try', changeFrequency: 'monthly' as const, priority: 0.8 },
+        { url: '/products/air/demos', changeFrequency: 'monthly' as const, priority: 0.7 },
         { url: '/products/nexus', changeFrequency: 'weekly' as const, priority: 0.8 },
         { url: '/solutions', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/solutions/enterprise-hiring', changeFrequency: 'monthly' as const, priority: 0.8 },
@@ -20,10 +23,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: '/solutions/ai-training-data', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/pricing', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/resources', changeFrequency: 'weekly' as const, priority: 0.7 },
-        { url: '/blog', changeFrequency: 'daily' as const, priority: 0.7 },
+        { url: '/blog', changeFrequency: 'daily' as const, priority: 0.8 },
         { url: '/about', changeFrequency: 'monthly' as const, priority: 0.6 },
         { url: '/book-demo', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/contact', changeFrequency: 'monthly' as const, priority: 0.5 },
+
+        // Referral Programs
+        { url: '/refer/air', changeFrequency: 'monthly' as const, priority: 0.6 },
+        { url: '/refer/marketplace', changeFrequency: 'monthly' as const, priority: 0.6 },
 
         // Talent Experience
         { url: '/for-talent', changeFrequency: 'weekly' as const, priority: 0.9 },
@@ -48,7 +55,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: '/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
     ];
 
-    return routes.map((route) => ({
+    // Blog posts
+    const blogRoutes = blogPosts.map((post) => ({
+        url: `/blog/${post.slug}`,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+    }));
+
+    // Author pages
+    const authorRoutes = authors.map((author) => ({
+        url: `/author/${author.slug}`,
+        changeFrequency: 'monthly' as const,
+        priority: 0.5,
+    }));
+
+    const allRoutes = [...routes, ...blogRoutes, ...authorRoutes];
+
+    return allRoutes.map((route) => ({
         url: `${baseUrl}${route.url}`,
         lastModified: new Date(),
         changeFrequency: route.changeFrequency,

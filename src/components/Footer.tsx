@@ -22,6 +22,11 @@ const footerLinks = {
         { label: 'Talent FAQ', href: '/talent-faq' },
         { label: 'Trust & Safety', href: '/trust-safety' },
     ],
+    Programs: [
+        { label: 'Refer & Earn — AIR', href: '/refer/air' },
+        { label: 'Refer & Earn — Marketplace', href: '/refer/marketplace' },
+        { label: 'Try AIR', href: '/products/air/try' },
+    ],
     'BTRST Token': [
         { label: 'What is BTRST', href: '/token/what-is-btrst' },
         { label: 'Tokenomics', href: '/token/tokenomics' },
