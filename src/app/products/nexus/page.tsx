@@ -177,7 +177,7 @@ export default function Nexus() {
                 </div>
             </section>
 
-            {/* ====== FREE AUTOMATION ANALYSIS LEAD CAPTURE ====== */}
+            {/* ====== FREE AUTOMATION ANALYSIS — EXIT-INTENT MODAL ====== */}
             <AutomationAnalysisForm />
 
             <section className="section section--gray">
