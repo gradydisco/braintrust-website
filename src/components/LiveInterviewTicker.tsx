@@ -35,9 +35,9 @@ function pick<T>(arr: T[]): T {
 }
 
 /* ============================================
-   ANIMATED NUMBER COMPONENT
+   ANIMATED COUNTER - big smooth numbers
    ============================================ */
-function AnimatedNumber({ value, duration = 2000 }: { value: number; duration?: number }) {
+function AnimatedCounter({ value, duration = 1500 }: { value: number; duration?: number }) {
     const [display, setDisplay] = useState(value);
 
     useEffect(() => {
@@ -48,11 +48,10 @@ function AnimatedNumber({ value, duration = 2000 }: { value: number; duration?: 
         const timer = setInterval(() => {
             const elapsed = Date.now() - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // ease-out
             const eased = 1 - Math.pow(1 - progress, 3);
             setDisplay(Math.round(start + diff * eased));
             if (progress >= 1) clearInterval(timer);
-        }, 30);
+        }, 20);
         return () => clearInterval(timer);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [value, duration]);
@@ -61,178 +60,155 @@ function AnimatedNumber({ value, duration = 2000 }: { value: number; duration?: 
 }
 
 /* ============================================
-   MAIN TICKER COMPONENT
+   MAIN COMPONENT
    ============================================ */
 export default function LiveInterviewTicker() {
-    // Base numbers: ~365K total interviews, 1M+ minutes
     const BASE_INTERVIEWS = 367_842;
     const BASE_MINUTES = 1_043_291;
 
     const [concurrent, setConcurrent] = useState(57);
     const [totalInterviews, setTotalInterviews] = useState(BASE_INTERVIEWS);
     const [totalMinutes, setTotalMinutes] = useState(BASE_MINUTES);
-    const [activityFeed, setActivityFeed] = useState<Array<{
-        role: string; location: string; lang: string; time: string; id: number;
+    const [feed, setFeed] = useState<Array<{
+        role: string; location: string; lang: string; seconds: number; id: number;
     }>>([]);
     const [feedKey, setFeedKey] = useState(0);
 
-    // Generate a new activity item
-    const generateActivity = useCallback(() => {
-        const seconds = Math.floor(Math.random() * 25) + 2;
-        return {
-            role: pick(roles),
-            location: pick(locations),
-            lang: pick(languages),
-            time: `${seconds}s ago`,
-            id: Date.now() + Math.random(),
-        };
-    }, []);
+    const generateItem = useCallback(() => ({
+        role: pick(roles),
+        location: pick(locations),
+        lang: pick(languages),
+        seconds: Math.floor(Math.random() * 25) + 2,
+        id: Date.now() + Math.random(),
+    }), []);
 
     useEffect(() => {
-        // Initialize feed
-        setActivityFeed([generateActivity(), generateActivity(), generateActivity()]);
+        setFeed([generateItem(), generateItem(), generateItem(), generateItem()]);
 
-        // Concurrent interviews: fluctuate every 3-6s
-        const concurrentTimer = setInterval(() => {
+        const t1 = setInterval(() => {
             setConcurrent(prev => {
-                const delta = Math.floor(Math.random() * 7) - 3; // -3 to +3
-                return Math.max(38, Math.min(89, prev + delta));
+                const d = Math.floor(Math.random() * 7) - 3;
+                return Math.max(38, Math.min(89, prev + d));
             });
         }, 3500);
 
-        // Total interviews: tick up ~1 every 4-8s (realistic for ~1K/day)
-        const interviewTimer = setInterval(() => {
+        const t2 = setInterval(() => {
             setTotalInterviews(prev => prev + 1);
         }, 5000 + Math.random() * 3000);
 
-        // Total minutes: tick up ~2-4 every 2s (many concurrent interviews adding minutes)
-        const minuteTimer = setInterval(() => {
+        const t3 = setInterval(() => {
             setTotalMinutes(prev => prev + Math.floor(Math.random() * 3) + 2);
         }, 2000);
 
-        // Activity feed: new item every 4-7s
-        const feedTimer = setInterval(() => {
-            setActivityFeed(prev => {
-                const newFeed = [generateActivity(), ...prev.slice(0, 2)];
-                return newFeed;
-            });
+        const t4 = setInterval(() => {
+            setFeed(prev => [generateItem(), ...prev.slice(0, 3)]);
             setFeedKey(prev => prev + 1);
-        }, 5000);
+        }, 4500);
 
-        return () => {
-            clearInterval(concurrentTimer);
-            clearInterval(interviewTimer);
-            clearInterval(minuteTimer);
-            clearInterval(feedTimer);
-        };
-    }, [generateActivity]);
+        return () => { clearInterval(t1); clearInterval(t2); clearInterval(t3); clearInterval(t4); };
+    }, [generateItem]);
 
     return (
-        <div style={{
-            background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
-            borderRadius: 'var(--radius-2xl)',
-            padding: 'var(--space-6) var(--space-8)',
-            color: 'white',
-            position: 'relative',
-            overflow: 'hidden',
-        }}>
-            {/* Subtle animated background glow */}
+        <div style={{ position: 'relative', overflow: 'hidden' }}>
+            {/* Subtle animated background accent */}
             <div style={{
-                position: 'absolute', top: '-50%', right: '-20%',
+                position: 'absolute', top: '-100px', right: '-100px',
+                width: '500px', height: '500px', borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(232,119,34,0.06) 0%, transparent 70%)',
+                pointerEvents: 'none',
+            }} />
+            <div style={{
+                position: 'absolute', bottom: '-80px', left: '-60px',
                 width: '400px', height: '400px', borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(232,119,34,0.08) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(34,197,94,0.05) 0%, transparent 70%)',
                 pointerEvents: 'none',
             }} />
 
-            {/* Top Row: LIVE badge + stats */}
+            {/* LIVE indicator + headline */}
             <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: 'var(--space-4)',
-                marginBottom: 'var(--space-5)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                gap: 'var(--space-3)', marginBottom: 'var(--space-8)',
             }}>
-                {/* LIVE indicator */}
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-2)',
+                <span style={{
+                    width: '10px', height: '10px', borderRadius: '50%',
+                    background: '#22c55e',
+                    boxShadow: '0 0 8px #22c55e, 0 0 20px rgba(34, 197, 94, 0.35)',
+                    animation: 'pulse-live 2s ease-in-out infinite',
+                    display: 'inline-block',
+                }} />
+                <span style={{
+                    fontSize: '13px', fontWeight: 700, textTransform: 'uppercase' as const,
+                    letterSpacing: '0.12em', color: '#22c55e',
                 }}>
-                    <span style={{
-                        width: '8px', height: '8px', borderRadius: '50%',
-                        background: '#22c55e',
-                        boxShadow: '0 0 8px #22c55e, 0 0 16px rgba(34, 197, 94, 0.4)',
-                        animation: 'pulse-live 2s ease-in-out infinite',
-                        display: 'inline-block',
-                    }} />
-                    <span style={{
-                        fontSize: '11px', fontWeight: 700, textTransform: 'uppercase',
-                        letterSpacing: '0.1em', color: '#22c55e',
-                    }}>
-                        Live Now
-                    </span>
-                </div>
-
-                {/* Stat pills */}
-                <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
-                    <StatPill
-                        label="Interviews right now"
-                        value={<AnimatedNumber value={concurrent} duration={800} />}
-                        color="#22c55e"
-                    />
-                    <StatPill
-                        label="Total interviews"
-                        value={<AnimatedNumber value={totalInterviews} duration={1200} />}
-                        color="#f59e0b"
-                    />
-                    <StatPill
-                        label="Minutes of AI interviewing"
-                        value={<><AnimatedNumber value={totalMinutes} duration={1500} /></>}
-                        color="#8b5cf6"
-                    />
-                </div>
+                    Live — Interviews happening now
+                </span>
             </div>
 
-            {/* Activity Feed */}
+            {/* Big 3-stat row */}
             <div style={{
-                display: 'flex',
-                gap: 'var(--space-3)',
-                flexWrap: 'wrap',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: 'var(--space-6)',
+                marginBottom: 'var(--space-8)',
+                textAlign: 'center',
             }}>
-                {activityFeed.map((item, i) => (
+                <StatBlock
+                    value={<AnimatedCounter value={concurrent} duration={800} />}
+                    label="Interviews right now"
+                    accent="#22c55e"
+                />
+                <StatBlock
+                    value={<AnimatedCounter value={totalInterviews} duration={1200} />}
+                    suffix="+"
+                    label="Interviews completed"
+                    accent="var(--color-primary)"
+                />
+                <StatBlock
+                    value={<><AnimatedCounter value={totalMinutes} duration={1500} />+</>}
+                    label="Minutes interviewed (last 90 days)"
+                    accent="#8b5cf6"
+                />
+            </div>
+
+            {/* Activity feed row */}
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+                gap: 'var(--space-3)',
+            }}>
+                {feed.map((item, i) => (
                     <div
                         key={`${feedKey}-${i}`}
                         style={{
-                            flex: '1 1 280px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 'var(--space-3)',
+                            display: 'flex', alignItems: 'center', gap: 'var(--space-3)',
                             padding: 'var(--space-3) var(--space-4)',
                             borderRadius: 'var(--radius-lg)',
-                            background: 'rgba(255,255,255,0.06)',
-                            border: '1px solid rgba(255,255,255,0.08)',
-                            animation: i === 0 ? 'fade-in-up 400ms ease-out' : undefined,
-                            opacity: i === 0 ? 1 : 0.6 + (0.2 * (2 - i)),
+                            background: i === 0 ? 'rgba(34, 197, 94, 0.06)' : 'var(--color-gray-50)',
+                            border: `1px solid ${i === 0 ? 'rgba(34, 197, 94, 0.15)' : 'var(--color-gray-100)'}`,
+                            animation: i === 0 ? 'ticker-fade-in 500ms ease-out' : undefined,
+                            transition: 'opacity 300ms',
+                            opacity: 1 - (i * 0.15),
                         }}
                     >
                         <div style={{
-                            width: '6px', height: '6px', borderRadius: '50%',
-                            background: i === 0 ? '#22c55e' : 'rgba(255,255,255,0.3)',
+                            width: '7px', height: '7px', borderRadius: '50%',
+                            background: i === 0 ? '#22c55e' : 'var(--color-gray-300)',
                             flexShrink: 0,
+                            boxShadow: i === 0 ? '0 0 6px rgba(34,197,94,0.5)' : 'none',
                         }} />
-                        <div style={{ minWidth: 0 }}>
+                        <div style={{ minWidth: 0, flex: 1 }}>
                             <div style={{
-                                fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.9)',
+                                fontSize: '13px', fontWeight: 600,
+                                color: 'var(--text-primary)',
                                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                             }}>
-                                Interview completed · {item.role}
+                                {item.role}
                             </div>
                             <div style={{
-                                fontSize: '11px', color: 'rgba(255,255,255,0.4)',
+                                fontSize: '11px', color: 'var(--text-tertiary)',
                                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                             }}>
-                                {item.location} · {item.lang} · {item.time}
+                                {item.location} · {item.lang} · {item.seconds}s ago
                             </div>
                         </div>
                     </div>
@@ -243,10 +219,10 @@ export default function LiveInterviewTicker() {
             <style>{`
                 @keyframes pulse-live {
                     0%, 100% { opacity: 1; transform: scale(1); }
-                    50% { opacity: 0.5; transform: scale(1.3); }
+                    50% { opacity: 0.5; transform: scale(1.4); }
                 }
-                @keyframes fade-in-up {
-                    from { opacity: 0; transform: translateY(8px); }
+                @keyframes ticker-fade-in {
+                    from { opacity: 0; transform: translateY(-6px); }
                     to { opacity: 1; transform: translateY(0); }
                 }
             `}</style>
@@ -255,35 +231,33 @@ export default function LiveInterviewTicker() {
 }
 
 /* ============================================
-   STAT PILL SUB-COMPONENT
+   STAT BLOCK — big number + label
    ============================================ */
-function StatPill({ label, value, color }: { label: string; value: React.ReactNode; color: string }) {
+function StatBlock({ value, suffix, label, accent }: {
+    value: React.ReactNode; suffix?: string; label: string; accent: string;
+}) {
     return (
-        <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--space-2)',
-            padding: '6px 14px',
-            borderRadius: '100px',
-            background: 'rgba(255,255,255,0.06)',
-            border: '1px solid rgba(255,255,255,0.08)',
-        }}>
-            <span style={{
-                fontSize: 'var(--text-lg)',
+        <div>
+            <div style={{
+                fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                 fontWeight: 800,
-                color,
+                color: accent,
+                lineHeight: 1.1,
                 fontVariantNumeric: 'tabular-nums',
+                letterSpacing: '-0.02em',
             }}>
-                {value}
-            </span>
-            <span style={{
-                fontSize: '11px',
-                color: 'rgba(255,255,255,0.5)',
+                {value}{suffix}
+            </div>
+            <div style={{
+                fontSize: '13px',
                 fontWeight: 500,
-                whiteSpace: 'nowrap',
+                color: 'var(--text-tertiary)',
+                marginTop: 'var(--space-2)',
+                textTransform: 'uppercase' as const,
+                letterSpacing: '0.06em',
             }}>
                 {label}
-            </span>
+            </div>
         </div>
     );
 }
