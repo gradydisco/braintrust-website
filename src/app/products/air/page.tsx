@@ -62,7 +62,7 @@ export default function AIR() {
             </section>
 
             {/* ====== PROMO VIDEO ====== */}
-            <section className="section" style={{ paddingTop: 0 }}>
+            <section className="section" style={{ paddingTop: 'var(--space-12)' }}>
                 <div className="container" style={{ maxWidth: '900px' }}>
                     <RevealSection>
                         <YouTubeEmbed videoId="clsjRDLglCw" title="AIR | AI Recruiter Demo" />
