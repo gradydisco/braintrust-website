@@ -13,6 +13,7 @@ const interviewRoles = [
     { title: 'Product Designer', icon: '🎨', url: 'https://air.usebraintrust.com/i/44/81', duration: '5–8 min' },
     { title: 'Sales Rep (SaaS)', icon: '📈', url: 'https://air.usebraintrust.com/i/44/88', duration: '5–8 min' },
     { title: 'Call Center Rep', icon: '📞', url: 'https://air.usebraintrust.com/i/44/89', duration: '5–8 min' },
+    { title: 'Retail Associate', icon: '🛍️', url: 'https://air.usebraintrust.com/i/44/84', duration: '5–8 min' },
 ];
 
 /* ============================================
