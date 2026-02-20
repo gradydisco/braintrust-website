@@ -348,6 +348,82 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ====== GUIDES & RESOURCES ====== */}
+      <section className="section">
+        <div className="container">
+          <RevealSection>
+            <div className="section-header">
+              <div className="badge">Resources</div>
+              <h2>Guides, rankings<br />& comparisons.</h2>
+              <p>In-depth resources to help you evaluate AI interview software and build a best-in-class hiring operation.</p>
+            </div>
+          </RevealSection>
+
+          <RevealSection delay={200}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', maxWidth: '1000px', margin: '0 auto 24px' }}>
+              <Link href="/best-ai-interview-software-2025" style={{
+                display: 'block', padding: '20px', borderRadius: '14px',
+                background: 'linear-gradient(135deg, rgba(245,87,51,0.05), rgba(255,147,124,0.03))',
+                border: '1px solid rgba(245,87,51,0.12)', textDecoration: 'none',
+              }}>
+                <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--color-primary)', marginBottom: '6px', display: 'block' }}>2025 Rankings</span>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>Best AI Interview Software</div>
+                <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', lineHeight: 1.5 }}>15 platforms ranked & compared</div>
+              </Link>
+              <Link href="/compare" style={{
+                display: 'block', padding: '20px', borderRadius: '14px',
+                background: 'var(--color-white)', border: '1px solid var(--color-gray-100)', textDecoration: 'none',
+              }}>
+                <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--color-primary)', marginBottom: '6px', display: 'block' }}>Comparisons</span>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>AIR vs Competitors</div>
+                <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', lineHeight: 1.5 }}>14 side-by-side comparisons</div>
+              </Link>
+              <Link href="/ai-interview-software" style={{
+                display: 'block', padding: '20px', borderRadius: '14px',
+                background: 'var(--color-white)', border: '1px solid var(--color-gray-100)', textDecoration: 'none',
+              }}>
+                <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--color-primary)', marginBottom: '6px', display: 'block' }}>Guide</span>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>AI Interview Software</div>
+                <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', lineHeight: 1.5 }}>Complete category guide</div>
+              </Link>
+              <Link href="/ai-voice-interview-software" style={{
+                display: 'block', padding: '20px', borderRadius: '14px',
+                background: 'var(--color-white)', border: '1px solid var(--color-gray-100)', textDecoration: 'none',
+              }}>
+                <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--color-primary)', marginBottom: '6px', display: 'block' }}>Guide</span>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>Voice AI Interviews</div>
+                <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', lineHeight: 1.5 }}>Real-time voice vs video vs text</div>
+              </Link>
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center', maxWidth: '1000px', margin: '0 auto' }}>
+              {[
+                { label: 'Conversational AI Interviews', href: '/conversational-ai-interview-platform' },
+                { label: 'AI Assessment Software', href: '/ai-assessment-software' },
+                { label: 'AI Recruiting Software', href: '/ai-recruiting-software' },
+                { label: 'Automated Hiring Software', href: '/automated-hiring-software' },
+                { label: 'For Healthcare', href: '/ai-interview-software-for-healthcare' },
+                { label: 'For Enterprise', href: '/ai-interview-software-for-enterprise' },
+                { label: 'For Startups', href: '/ai-interview-software-for-startups' },
+                { label: 'For High-Volume', href: '/ai-interview-software-for-high-volume-hiring' },
+                { label: 'For Technical Roles', href: '/ai-voice-interviews-for-technical-roles' },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} style={{
+                  fontSize: '11px', fontWeight: 600, padding: '6px 14px',
+                  borderRadius: '8px', background: 'var(--color-white)',
+                  border: '1px solid var(--color-gray-100)',
+                  color: 'var(--text-secondary)', textDecoration: 'none',
+                }}>{link.label}</Link>
+              ))}
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '24px' }}>
+              <Link href="/resources" className={styles.cardLink}>
+                View All Resources →
+              </Link>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
       {/* ====== TRUSTED BY ====== */}
       <section className="section section--gray">
         <div className="container">

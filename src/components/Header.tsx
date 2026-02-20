@@ -33,7 +33,14 @@ const companyNav: NavItem[] = [
     ]
   },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Resources', href: '/resources' },
+  {
+    label: 'Resources', href: '/resources', children: [
+      { label: 'Best AI Interview Software 2025', href: '/best-ai-interview-software-2025', desc: 'Top 15 platforms ranked and compared' },
+      { label: 'AI Interview Software Guide', href: '/ai-interview-software', desc: 'Comprehensive guide to AI-powered interviewing' },
+      { label: 'Compare AIR vs Competitors', href: '/compare', desc: 'Side-by-side comparisons with HireVue, Paradox & more' },
+      { label: 'Blog', href: '/blog', desc: 'Insights, case studies, and product updates' },
+    ]
+  },
   { label: 'About', href: '/about' },
 ];
 

@@ -34,6 +34,13 @@ const footerLinks = {
         { label: 'Token FAQ', href: '/token/faq' },
         { label: 'Price', href: '/token/price' },
     ],
+    Guides: [
+        { label: 'Best AI Interview Software', href: '/best-ai-interview-software-2025' },
+        { label: 'AI Interview Software', href: '/ai-interview-software' },
+        { label: 'AI Voice Interviews', href: '/ai-voice-interview-software' },
+        { label: 'AI Recruiting Software', href: '/ai-recruiting-software' },
+        { label: 'Compare AIR', href: '/compare' },
+    ],
     Company: [
         { label: 'About', href: '/about' },
         { label: 'Blog', href: '/blog' },
