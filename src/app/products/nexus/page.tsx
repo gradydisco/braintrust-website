@@ -4,6 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
 import AutomationAnalysisForm from '@/components/AutomationAnalysisForm';
+import NexusBottomCapture from '@/components/NexusBottomCapture';
 
 export const metadata: Metadata = {
     title: 'Nexus — Workflow Automation Platform for Modern Enterprise',
@@ -186,6 +187,9 @@ export default function Nexus() {
                     <FAQ items={faqItems} schemaId="nexus" />
                 </div>
             </section>
+
+            {/* ====== BOTTOM-OF-PAGE AUTOMATION ANALYSIS CAPTURE ====== */}
+            <NexusBottomCapture />
 
             <CTASection
                 title="Automate your business workflows"
