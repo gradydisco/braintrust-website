@@ -150,7 +150,7 @@
 .jobRate {
     font-size: var(--text-xl);
     font-weight: 800;
-    color: #16A34A;
+    color: var(--text-primary);
     margin-bottom: var(--space-4);
     letter-spacing: -0.02em;
 }

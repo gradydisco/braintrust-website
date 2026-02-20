@@ -74,7 +74,7 @@ export default function Home() {
               <div className="stat__label">Talent Network Members</div>
             </div>
             <div className={styles.stat}>
-              <div className="stat__value text-gradient">Fortune 1000</div>
+              <div className="stat__value text-gradient" style={{ whiteSpace: 'nowrap' }}>Fortune 1000</div>
               <div className="stat__label">Enterprise Clients</div>
             </div>
             <div className={styles.stat}>
@@ -248,7 +248,7 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.logoGrid}>
-            {['NASA', 'Nike', 'Goldman Sachs', 'Porsche', 'Atlassian', 'Deloitte'].map((name) => (
+            {['NASA', 'Nike', 'Goldman Sachs', 'Porsche', 'Atlassian', 'Deloitte', 'Nestle', 'Pacific Life', 'Colgate', 'Pepsi', 'Honda', 'Wayfair'].map((name) => (
               <div key={name} className={styles.logoPlaceholder}>
                 <span>{name}</span>
               </div>

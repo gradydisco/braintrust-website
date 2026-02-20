@@ -359,20 +359,34 @@
 /* ---- Logo Grid ---- */
 .logoGrid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--space-8);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
     align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .logoPlaceholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 48px;
-    font-size: var(--text-sm);
+    height: 56px;
+    padding: 0 var(--space-4);
+    border-radius: var(--radius-lg);
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    font-size: var(--text-base);
     font-weight: 700;
-    color: var(--color-gray-300);
-    letter-spacing: 0.05em;
+    color: var(--color-gray-700);
+    letter-spacing: 0.02em;
+    transition: all var(--transition-base);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.logoPlaceholder:hover {
+    border-color: var(--color-primary-100);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
 }
 
 /* ---- Responsive ---- */

@@ -289,12 +289,14 @@ p {
   background-clip: text;
 }
 
-/* Token gradient — purple-focused */
+/* Token gradient — purple-focused with shimmer */
 .text-gradient-token {
-  background: linear-gradient(135deg, var(--color-token), var(--color-primary));
+  background: linear-gradient(90deg, var(--color-token), var(--color-primary), var(--color-token), var(--color-gold));
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: shimmer 4s ease-in-out infinite;
 }
 
 /* Warm gradient — coral to gold */

@@ -13,31 +13,51 @@ const tokenPages = [
         title: 'What is BTRST?',
         description: 'Understand the utility token that powers community governance, incentivizes network growth, and aligns stakeholder interests.',
         href: '/token/what-is-btrst',
-        icon: '🔵',
+        icon: (
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-token)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" /><path d="M12 6v12" /><path d="M6 12h12" />
+            </svg>
+        ),
     },
     {
         title: 'Tokenomics',
         description: 'Explore BTRST supply, distribution, vesting schedules, and the economic model that drives the network.',
         href: '/token/tokenomics',
-        icon: '📊',
+        icon: (
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-token)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="12" width="4" height="8" rx="1" /><rect x="10" y="8" width="4" height="12" rx="1" /><rect x="17" y="4" width="4" height="16" rx="1" />
+            </svg>
+        ),
     },
     {
         title: 'Governance',
         description: 'Learn how BTRST holders participate in network decisions through decentralized governance.',
         href: '/token/governance',
-        icon: '🏛️',
+        icon: (
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-token)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 21h18" /><path d="M5 21V7l7-4 7 4v14" /><path d="M9 21v-4h6v4" /><path d="M9 10h.01" /><path d="M15 10h.01" />
+            </svg>
+        ),
     },
     {
         title: 'Price',
         description: 'View current BTRST price, market data, and historical performance.',
         href: '/token/price',
-        icon: '📈',
+        icon: (
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-token)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" />
+            </svg>
+        ),
     },
     {
         title: 'FAQ',
         description: 'Common questions about the BTRST token, utilities, wallets, and participation.',
         href: '/token/faq',
-        icon: '❓',
+        icon: (
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-token)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" />
+            </svg>
+        ),
     },
 ];
 
@@ -75,7 +95,7 @@ export default function Token() {
                     <div className="grid grid--3">
                         {tokenPages.map((page) => (
                             <Link key={page.href} href={page.href} className="card card--feature">
-                                <div style={{ fontSize: '2rem', marginBottom: 'var(--space-4)' }}>{page.icon}</div>
+                                <div style={{ marginBottom: 'var(--space-4)' }}>{page.icon}</div>
                                 <h4>{page.title}</h4>
                                 <p style={{ fontSize: 'var(--text-sm)' }}>{page.description}</p>
                             </Link>
