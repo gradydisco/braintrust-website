@@ -7,7 +7,7 @@ const footerLinks = {
         { label: 'Talent Marketplace', href: '/products/talent-marketplace' },
         { label: 'AI Training Data', href: '/products/talent-marketplace/ai-training' },
         { label: 'Human Data', href: '/products/talent-marketplace/human-data' },
-        { label: 'AIR — AI Recruiter', href: '/products/air' },
+        { label: 'AIR | AI Recruiter', href: '/products/air' },
         { label: 'Nexus', href: '/products/nexus' },
     ],
     Solutions: [

@@ -185,7 +185,7 @@ export default function Home() {
 
               <div className={styles.productCard}>
                 <div className={styles.productNumber}>02</div>
-                <h3>AIR — AI Recruiter</h3>
+                <h3>AIR | AI Recruiter</h3>
                 <p>An AI-powered recruiting suite that screens, interviews, and assesses candidates with superhuman accuracy.</p>
                 <ul className={styles.productFeatures}>
                   <li>Resume scoring and matching</li>

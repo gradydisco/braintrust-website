@@ -22,7 +22,7 @@ const products = [
         ),
     },
     {
-        title: 'AIR — AI Recruiter',
+        title: 'AIR | AI Recruiter',
         description: 'Deploy AI-powered recruiting that screens, interviews, and assesses candidates with superhuman consistency. Reduce time-to-hire by 80%.',
         href: '/products/air',
         features: ['AI Screening', 'Automated Interviews', 'Skills Assessment', 'Bias-Reduced Hiring'],

@@ -24,7 +24,7 @@ const products = [
         ],
     },
     {
-        name: 'AIR — AI Recruiter',
+        name: 'AIR | AI Recruiter',
         tagline: 'Superhuman recruiting intelligence.',
         description: 'Deploy AI that screens resumes, conducts structured interviews, and provides skills-based assessments — reducing bias and accelerating time-to-hire by 80%.',
         href: '/products/air',

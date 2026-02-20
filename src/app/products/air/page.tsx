@@ -7,7 +7,7 @@ import YouTubeEmbed from '@/components/YouTubeEmbed';
 import RevealSection from '@/components/RevealSection';
 
 export const metadata: Metadata = {
-    title: 'AIR — AI Recruiter | Conversational Voice Interviews & AI Assessments',
+    title: 'AIR | AI Recruiter | Conversational Voice Interviews & AI Assessments',
     description: 'AIR is Braintrust AI-powered recruiting suite featuring conversational voice interviews, customizable scoring frameworks, and enterprise-scale assessments in 16+ languages.',
 };
 
@@ -39,10 +39,10 @@ export default function AIR() {
                     <Breadcrumbs items={[
                         { label: 'Home', href: '/' },
                         { label: 'Products', href: '/products' },
-                        { label: 'AIR — AI Recruiter' },
+                        { label: 'AIR | AI Recruiter' },
                     ]} />
                     <div className="hero__content">
-                        <div className="badge">AIR — AI Recruiter</div>
+                        <div className="badge">AIR | AI Recruiter</div>
                         <h1>Superhuman<br /><span className="text-gradient">recruiting intelligence.</span></h1>
                         <p>Conversational voice interviews, customizable scoring frameworks, and enterprise-scale assessments in 16+ languages — reducing time-to-hire by 80%.</p>
                         <div className="hero__actions">
@@ -57,7 +57,7 @@ export default function AIR() {
             <section className="section" style={{ paddingTop: 0 }}>
                 <div className="container" style={{ maxWidth: '900px' }}>
                     <RevealSection>
-                        <YouTubeEmbed videoId="clsjRDLglCw" title="AIR — AI Recruiter Demo" />
+                        <YouTubeEmbed videoId="clsjRDLglCw" title="AIR | AI Recruiter Demo" />
                     </RevealSection>
                 </div>
             </section>

@@ -21,7 +21,7 @@ const companyNav: NavItem[] = [
   {
     label: 'Products', href: '/products', children: [
       { label: 'Talent Marketplace', href: '/products/talent-marketplace', desc: 'Access 2M+ vetted professionals with AI-powered matching' },
-      { label: 'AIR — AI Recruiter', href: '/products/air', desc: 'AI-powered screening, interviews, and assessments' },
+      { label: 'AIR | AI Recruiter', href: '/products/air', desc: 'AI-powered screening, interviews, and assessments' },
       { label: 'Nexus', href: '/products/nexus', desc: 'Workflow automation across your entire business' },
     ]
   },

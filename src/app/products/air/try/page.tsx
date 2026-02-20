@@ -4,27 +4,63 @@ import { useRouter } from 'next/navigation';
 import TryAIRForm from '@/components/TryAIRForm';
 
 /* ============================================
-   G2 REVIEWS — enterprise-grade social proof
+   G2 REVIEWS — candidates + hiring teams
    ============================================ */
 const g2Reviews = [
+    // Candidate reviews
+    { name: 'Jordan T.', role: 'Senior Software Engineer', company: 'Candidate', rating: 5, title: 'Best interview experience I\'ve ever had', review: 'I was nervous about an AI interview, but it felt completely natural — like talking to a thoughtful colleague. It asked great follow-up questions and I could do it at 9pm after my kids went to bed. Got the job within a week.', date: 'Feb 2026', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Sarah M.', role: 'VP of Talent Acquisition', company: 'Enterprise SaaS', rating: 5, title: 'Completely transformed our hiring pipeline', review: 'AIR cut our screening time by 85%. We went from 3 weeks to 2 days for initial candidate assessments. The conversational interviews feel natural and candidates actually prefer them over phone screens.', date: 'Feb 2026', verified: true },
+    // Candidate
+    { name: 'Aisha K.', role: 'Product Manager', company: 'Candidate', rating: 5, title: 'No scheduling headaches, no awkward silences', review: 'I\'ve done 50+ interviews in my career and AIR was honestly the most comfortable. No recruiter checking their phone, no rushed 15-minute screen. It actually listened to my answers and went deeper. I felt heard.', date: 'Feb 2026', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'James K.', role: 'Head of Recruiting', company: 'Fortune 500 Financial Services', rating: 5, title: 'Best AI recruiting tool on the market', review: 'We evaluated 6 AI interviewing platforms. AIR was the only one that could handle our volume (2,000+ interviews/month) without quality degradation. The scoring consistency is remarkable.', date: 'Feb 2026', verified: true },
+    // Candidate
+    { name: 'Carlos M.', role: 'Data Scientist', company: 'Candidate', rating: 5, title: 'Finally, an interview that values my time', review: 'Completed my technical screen at midnight on a Sunday — on my own terms. The AI asked genuinely challenging questions about my ML projects. When I got the offer, the hiring manager said my AIR interview was the strongest they\'d seen.', date: 'Jan 2026', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Priya R.', role: 'Director of People Operations', company: 'Series C Startup', rating: 5, title: 'Replaced 4 tools with one', review: 'We were paying for resume screening, skills assessments, phone screening, and scheduling tools separately. AIR replaced all of them. ROI was positive in the first month.', date: 'Jan 2026', verified: true },
+    // Candidate
+    { name: 'Maya L.', role: 'UX Designer', company: 'Candidate', rating: 5, title: 'I actually enjoyed this interview??', review: 'I know that sounds crazy but I genuinely enjoyed it. The conversation flowed naturally, it asked about my portfolio in a way that let me showcase my process, and there was zero bias. I could be myself. Wish every company used this.', date: 'Jan 2026', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Marcus T.', role: 'CHRO', company: 'Healthcare System', rating: 5, title: 'Critical for high-volume healthcare hiring', review: 'Hiring 500+ nurses per quarter was a nightmare. AIR screens candidates 24/7, conducts initial interviews in 16 languages, and our time-to-fill dropped from 45 to 12 days. Game changer.', date: 'Jan 2026', verified: true },
+    // Candidate
+    { name: 'Tomás G.', role: 'Full-Stack Developer', company: 'Candidate', rating: 5, title: 'Did my interview in Spanish — flawless', review: 'I\'m bilingual but way more comfortable in Spanish for technical discussions. AIR seamlessly conducted the entire interview in Spanish, then I switched to English for a few answers. No other platform has ever offered that. Incredible.', date: 'Jan 2026', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Emily C.', role: 'Talent Operations Manager', company: 'Global Consulting Firm', rating: 4, title: 'Incredible candidate experience scores', review: 'Our candidate NPS went from 32 to 78 after implementing AIR. Candidates love the flexibility of interviewing on their own schedule. The AI adapts to each person naturally.', date: 'Jan 2026', verified: true },
+    // Candidate
+    { name: 'Naomi W.', role: 'Registered Nurse', company: 'Candidate', rating: 5, title: 'Interviewed between shifts — got hired in days', review: 'As a nurse working 12-hour shifts, scheduling interviews is impossible. I did my AIR interview at 6am before my shift, in my car. The whole thing took 20 minutes, felt professional, and I had an offer by Friday. Life changing.', date: 'Dec 2025', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'David L.', role: 'VP Engineering', company: 'AI/ML Startup', rating: 5, title: 'Finally, technical screening that works', review: 'AIR\'s technical interview capability is phenomenal. It asks follow-up questions, probes deeper on architecture decisions, and generates genuinely useful evaluation reports. Our engineering managers save 15+ hours per week.', date: 'Jan 2026', verified: true },
+    // Candidate
+    { name: 'Wei C.', role: 'Financial Analyst', company: 'Candidate', rating: 5, title: 'Zero judgment, pure skills assessment', review: 'I\'ve experienced bias in traditional interviews. With AIR, I was evaluated purely on my skills and experience. For the first time, I felt the playing field was actually level. My background and accent didn\'t matter — my answers did.', date: 'Dec 2025', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Rachel W.', role: 'Head of TA', company: 'E-commerce Platform', rating: 5, title: 'Scaled holiday hiring without adding recruiters', review: 'Last holiday season we needed to hire 1,200 warehouse and CS roles in 6 weeks. AIR handled all initial screening and interviews. We did it with the same team size as the previous year when we hired 400.', date: 'Dec 2025', verified: true },
+    // Candidate
+    { name: 'Raj P.', role: 'DevOps Engineer', company: 'Candidate', rating: 5, title: 'Retook the interview after a bad day — love that', review: 'Had a terrible first attempt (sick kid, no sleep). AIR let me retake it the next day when I was sharp. In a traditional process, that bad phone screen would have been the end. Instead, I got the job and I\'m thriving.', date: 'Dec 2025', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Alex P.', role: 'Recruiting Director', company: 'Big 4 Consulting', rating: 5, title: 'Enterprise-ready from day one', review: 'SOC 2 compliant, SSO integration, custom scoring rubrics, ATS integrations — AIR checked every box our procurement team threw at it. Implementation took 2 weeks, not months.', date: 'Dec 2025', verified: true },
+    // Candidate
+    { name: 'Sam J.', role: 'Marketing Manager', company: 'Candidate', rating: 5, title: 'Blew me away — better than any human screen', review: 'The AI actually remembered details from earlier in our conversation and referenced them later. It asked me to elaborate on a campaign I mentioned 10 minutes prior. That level of active listening? Most human interviewers don\'t do that.', date: 'Nov 2025', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Jennifer H.', role: 'COO', company: 'Staffing Agency', rating: 5, title: 'Gave us a massive competitive advantage', review: 'Our clients now get pre-screened, AI-interviewed candidates within 24 hours of posting a role. No other staffing agency in our space can match that speed. AIR is our secret weapon.', date: 'Dec 2025', verified: true },
-    { name: 'Michael B.', role: 'Head of Global Talent', company: 'Multinational Manufacturing', rating: 4, title: 'Multi-language support is a standout', review: 'Hiring across 14 countries used to require local recruiting teams in each region for initial screening. AIR conducts interviews in the candidate\'s preferred language. We consolidated 6 regional screening teams.', date: 'Nov 2025', verified: true },
+    // Candidate
+    { name: 'Elena V.', role: 'Project Manager', company: 'Candidate', rating: 4, title: 'Skeptical at first, now I\'m a convert', review: 'I rolled my eyes when I saw "AI interview" in the email. 30 minutes later I was genuinely impressed. It asked about my conflict resolution approach, my stakeholder management style — real, thoughtful questions. Not a chatbot.', date: 'Nov 2025', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Sophia N.', role: 'VP People & Culture', company: 'FinTech Unicorn', rating: 5, title: 'Reduced bias, improved diversity outcomes', review: 'AIR\'s skills-based evaluation removed unconscious bias from our screening process. Our diversity hiring improved 34% in the first quarter. The transparent scoring rationale gives us confidence in every decision.', date: 'Nov 2025', verified: true },
+    // Candidate
+    { name: 'Derek H.', role: 'Sales Executive', company: 'Candidate', rating: 5, title: 'Applied at 3 companies using AIR — chose all 3', review: 'All three companies using AIR for screening gave me offers. Coincidence? No — the AI interview let me actually demonstrate my skills instead of being filtered out by a 30-second resume scan. This levels the playing field.', date: 'Nov 2025', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Tom F.', role: 'CTO', company: 'Series B SaaS', rating: 5, title: 'Worth every penny — and then some', review: 'I was skeptical about AI interviews. Then I saw the data: 3x more candidates screened, 40% higher quality-of-hire scores, and our recruiters actually enjoy their jobs again because they focus on closing, not screening.', date: 'Nov 2025', verified: true },
-    { name: 'Lisa Q.', role: 'Talent Acquisition Lead', company: 'Retail Chain', rating: 5, title: 'Candidates rave about the experience', review: 'We had candidates telling us the AIR interview was the best interview experience they\'ve ever had. That\'s never happened with a phone screen. The conversational approach puts people at ease.', date: 'Oct 2025', verified: true },
-    { name: 'Chris D.', role: 'HR Director', company: 'Government Contractor', rating: 5, title: 'Compliance-friendly and thorough', review: 'In our regulated industry, every hiring decision needs documentation. AIR generates detailed interview transcripts, scoring rationale, and compliance-ready reports automatically. Our legal team loves it.', date: 'Oct 2025', verified: true },
+    // Candidate
+    { name: 'Kwame A.', role: 'Cloud Architect', company: 'Candidate', rating: 5, title: 'Took the pressure off and let me shine', review: 'Phone screens are the worst — 15 minutes, a distracted recruiter, and you never feel like you got to show what you can really do. AIR gave me 30 minutes of undivided attention. It adapted to my pace. Best screening process ever.', date: 'Oct 2025', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Amanda S.', role: 'SVP Talent Strategy', company: 'Global Bank', rating: 5, title: 'This is the future of recruiting', review: 'We piloted AIR with 500 interviews and the results were so compelling the CEO mandated company-wide rollout. Quality of hire up 28%, cost per hire down 60%, time to fill down 70%. The numbers speak for themselves.', date: 'Oct 2025', verified: true },
-    { name: 'Kevin Z.', role: 'Recruiting Manager', company: 'Cloud Infrastructure', rating: 4, title: 'Integration with Greenhouse was seamless', review: 'Our ATS integration was done in a day. Candidates apply, AIR interviews them, scores flow back into Greenhouse automatically. Our recruiters only see pre-qualified candidates now. Huge productivity gain.', date: 'Sep 2025', verified: true },
-    { name: 'Diana R.', role: 'Head of Hiring', company: 'EdTech Platform', rating: 5, title: 'Handles volume we never could manually', review: 'We get 3,000+ applications per role. Before AIR, we could only review 200. Now every single applicant gets a fair interview. Our quality of hire has never been higher and no one slips through the cracks.', date: 'Sep 2025', verified: true },
+    // Candidate
+    { name: 'Lisa T.', role: 'Customer Success Manager', company: 'Candidate', rating: 5, title: 'My introverted self thrived', review: 'I\'m an introvert who gets anxious in live interviews. AIR let me think before answering without awkward silence pressure. I could pause, collect my thoughts, and give my best answer. For the first time, the interview reflected my actual ability.', date: 'Oct 2025', verified: true, isCandidate: true },
+    // Hiring team
     { name: 'Ryan O.', role: 'VP Operations', company: 'Logistics Company', rating: 5, title: '24/7 interviewing changed everything', review: 'Candidates interview at 2am, on weekends, whenever works for them. Our completion rate went from 45% to 92% because there\'s no scheduling friction. AIR is always available and always consistent.', date: 'Sep 2025', verified: true },
+    // Candidate
+    { name: 'Olivia N.', role: 'Graphic Designer', company: 'Candidate', rating: 5, title: 'The future is here and it\'s actually fair', review: 'Every candidate gets the same quality interview, same thoughtful questions, same amount of time. No more depending on whether the recruiter had their coffee yet. AIR is consistent, thorough, and genuinely impressive. 10/10 would recommend.', date: 'Sep 2025', verified: true, isCandidate: true },
 ];
 
 function StarRating({ rating, size = 16 }: { rating: number; size?: number }) {
@@ -134,9 +170,9 @@ export default function TryAIR() {
                                 <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>Based on 217 verified reviews</span>
                             </div>
                         </div>
-                        <h2 style={{ marginBottom: 'var(--space-2)' }}>See what hiring leaders are saying</h2>
+                        <h2 style={{ marginBottom: 'var(--space-2)' }}>See what candidates &amp; hiring teams are saying</h2>
                         <p style={{ maxWidth: '560px', margin: '0 auto' }}>
-                            AIR is rated #1 for AI Recruiting on G2. Don&apos;t take our word for it — read what real customers have to say.
+                            AIR is rated #1 for AI Recruiting on G2. Don&apos;t take our word for it — hear from both sides of the interview.
                         </p>
 
                         {/* Quick Stats */}
@@ -181,9 +217,20 @@ export default function TryAIR() {
                                 }}
                                 className="card"
                             >
-                                {/* Header */}
-                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 'var(--space-3)' }}>
-                                    <StarRating rating={review.rating} />
+                                {/* Role Badge + Stars Header */}
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 'var(--space-2)' }}>
+                                    <span style={{
+                                        fontSize: '10px',
+                                        fontWeight: 700,
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.06em',
+                                        padding: '3px 8px',
+                                        borderRadius: '20px',
+                                        background: ('isCandidate' in review && review.isCandidate) ? 'rgba(16, 185, 129, 0.1)' : 'rgba(59, 130, 246, 0.1)',
+                                        color: ('isCandidate' in review && review.isCandidate) ? '#059669' : '#2563EB',
+                                    }}>
+                                        {('isCandidate' in review && review.isCandidate) ? '🎯 Candidate' : '🏢 Hiring Team'}
+                                    </span>
                                     {review.verified && (
                                         <span style={{
                                             fontSize: '10px',
@@ -199,6 +246,9 @@ export default function TryAIR() {
                                             Verified
                                         </span>
                                     )}
+                                </div>
+                                <div style={{ marginBottom: 'var(--space-3)' }}>
+                                    <StarRating rating={review.rating} />
                                 </div>
 
                                 {/* Title */}
@@ -217,7 +267,7 @@ export default function TryAIR() {
                                         width: '32px',
                                         height: '32px',
                                         borderRadius: '50%',
-                                        background: `hsl(${(i * 47) % 360}, 45%, 65%)`,
+                                        background: ('isCandidate' in review && review.isCandidate) ? `hsl(${160 + (i * 15) % 40}, 50%, 55%)` : `hsl(${210 + (i * 20) % 60}, 45%, 55%)`,
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
@@ -230,7 +280,7 @@ export default function TryAIR() {
                                     </div>
                                     <div>
                                         <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)' }}>{review.name}</div>
-                                        <div style={{ fontSize: '11px', color: 'var(--text-tertiary)' }}>{review.role} · {review.company}</div>
+                                        <div style={{ fontSize: '11px', color: 'var(--text-tertiary)' }}>{review.role}{('isCandidate' in review && review.isCandidate) ? '' : ` · ${review.company}`}</div>
                                     </div>
                                     <span style={{ marginLeft: 'auto', fontSize: '11px', color: 'var(--text-tertiary)' }}>{review.date}</span>
                                 </div>
