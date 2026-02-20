@@ -107,6 +107,33 @@
     background: var(--color-gray-50);
 }
 
+.loginDropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: auto;
+    transform: none;
+    background: var(--color-white);
+    border: 1px solid rgba(50, 50, 93, 0.06);
+    border-radius: var(--radius-lg);
+    padding: 6px 0;
+    min-width: 240px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.12),
+        0 5px 15px rgba(0, 0, 0, 0.06);
+    animation: dropdownIn 0.2s ease-out;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.loginDropdown .dropdownItem {
+    border-left: none;
+    padding: 10px 16px;
+}
+
+.loginDropdown .dropdownItem:hover {
+    border-left: none;
+}
+
 .tokenDot {
     width: 6px;
     height: 6px;

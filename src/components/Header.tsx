@@ -237,7 +237,7 @@ export default function Header() {
               </svg>
             </button>
             {dropdownOpen === 'login' && (
-              <div className={styles.dropdown} style={{ right: 0, left: 'auto', minWidth: '260px' }}>
+              <div className={styles.loginDropdown}>
                 <a href="https://app.usebraintrust.com/talent/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
                   <strong>Talent Login</strong>
                   <span className={styles.dropdownDesc}>Access the Talent Marketplace</span>
