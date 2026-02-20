@@ -6,6 +6,7 @@ import CTASection from '@/components/CTASection';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import RevealSection from '@/components/RevealSection';
 import LiveInterviewTicker from '@/components/LiveInterviewTicker';
+import SavingsCalculator from '@/components/SavingsCalculator';
 
 export const metadata: Metadata = {
     title: 'AIR | AI Recruiter | Conversational Voice Interviews & AI Assessments',
@@ -95,6 +96,9 @@ export default function AIR() {
                 </div>
             </section>
 
+            {/* ====== TIME & COST SAVINGS CALCULATOR ====== */}
+            <SavingsCalculator />
+
             {/* ====== CAPABILITIES ====== */}
             <section className="section">
                 <div className="container">
@@ -108,16 +112,89 @@ export default function AIR() {
                     <RevealSection delay={200}>
                         <div className="grid grid--3">
                             {[
-                                { title: 'Conversational Voice Interviews', desc: 'AIR conducts real-time, adaptive voice interviews — evaluating communication, technical depth, and cultural fit. Thousands of interviews per day with consistent quality.' },
-                                { title: 'Resume Scoring & Matching', desc: 'Process thousands of applications instantly. AI-powered resume scoring ranks candidates by skills, experience, and role fit with transparent scoring rationale.' },
-                                { title: 'Semantic Candidate Search', desc: 'Go beyond keyword matching. AIR understands context, skills adjacency, and career trajectories to surface candidates that traditional searches miss.' },
-                                { title: 'Customizable Scoring Frameworks', desc: 'Design evaluation criteria tailored to your roles. Weight technical skills, communication, domain expertise, and behavioral signals to match your hiring philosophy.' },
-                                { title: '16+ Languages Supported', desc: 'Conduct interviews and assessments in 16+ languages natively. Global-ready hiring for distributed teams and international talent pools.' },
-                                { title: 'Enterprise Scale', desc: 'Built for high-volume hiring. Conduct thousands of interviews per day without scaling your recruiting headcount. Native ATS integrations with Greenhouse, Lever, Workday, and more.' },
+                                {
+                                    title: 'Conversational Voice Interviews',
+                                    desc: 'Real-time, adaptive voice interviews — evaluating communication, technical depth, and cultural fit. Thousands of interviews per day with consistent quality.',
+                                    stat: '1000s/day',
+                                    statLabel: 'interview capacity',
+                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /><line x1="12" y1="19" x2="12" y2="23" /><line x1="8" y1="23" x2="16" y2="23" /></svg>,
+                                },
+                                {
+                                    title: 'Resume Scoring & Matching',
+                                    desc: 'Process thousands of applications instantly. AI-powered scoring ranks candidates by skills, experience, and role fit with transparent rationale.',
+                                    stat: '80%',
+                                    statLabel: 'faster screening',
+                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" /></svg>,
+                                },
+                                {
+                                    title: 'Semantic Candidate Search',
+                                    desc: 'Go beyond keyword matching. AIR understands context, skills adjacency, and career trajectories to surface candidates traditional searches miss.',
+                                    stat: '3×',
+                                    statLabel: 'more qualified matches',
+                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>,
+                                },
+                                {
+                                    title: 'Customizable Scoring Frameworks',
+                                    desc: 'Design evaluation criteria tailored to your roles. Weight technical skills, communication, domain expertise, and behavioral signals.',
+                                    stat: 'Custom',
+                                    statLabel: 'scoring rubrics',
+                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" /></svg>,
+                                },
+                                {
+                                    title: '16+ Languages Supported',
+                                    desc: 'Conduct interviews and assessments in 16+ languages natively. Global-ready hiring for distributed teams and international talent pools.',
+                                    stat: '16+',
+                                    statLabel: 'native languages',
+                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" /></svg>,
+                                },
+                                {
+                                    title: 'Enterprise Scale & Integrations',
+                                    desc: 'Built for high-volume hiring. Native ATS integrations with Greenhouse, Lever, Workday, and more. No scaling of recruiter headcount required.',
+                                    stat: '50+',
+                                    statLabel: 'ATS integrations',
+                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2" /><rect x="2" y="14" width="20" height="8" rx="2" ry="2" /><line x1="6" y1="6" x2="6.01" y2="6" /><line x1="6" y1="18" x2="6.01" y2="18" /></svg>,
+                                },
                             ].map((item) => (
-                                <div key={item.title} className="card card--feature">
-                                    <h4 style={{ marginBottom: 'var(--space-3)' }}>{item.title}</h4>
-                                    <p style={{ fontSize: 'var(--text-sm)' }}>{item.desc}</p>
+                                <div key={item.title} className="card--enterprise" style={{
+                                    background: 'var(--color-white)',
+                                    border: '1px solid rgba(50, 50, 93, 0.08)',
+                                    borderRadius: 'var(--radius-xl)',
+                                    overflow: 'hidden',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                }}>
+                                    {/* Accent bar */}
+                                    <div style={{ height: '3px', background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))', opacity: 0.5 }} />
+                                    <div style={{ padding: 'var(--space-7) var(--space-7) var(--space-5)', flex: 1 }}>
+                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
+                                            <div style={{
+                                                width: '42px', height: '42px', borderRadius: '10px',
+                                                background: 'linear-gradient(135deg, rgba(245, 87, 51, 0.08), rgba(245, 87, 51, 0.02))',
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                color: 'var(--color-primary)', flexShrink: 0,
+                                            }}>
+                                                {item.icon}
+                                            </div>
+                                            <div>
+                                                <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '6px', lineHeight: 1.35 }}>
+                                                    {item.title}
+                                                </h4>
+                                                <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-secondary)', margin: 0 }}>
+                                                    {item.desc}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style={{
+                                        borderTop: '1px solid rgba(50, 50, 93, 0.05)',
+                                        padding: '10px var(--space-7)',
+                                        display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
+                                        background: 'rgba(245, 87, 51, 0.012)',
+                                        marginTop: 'auto',
+                                    }}>
+                                        <span style={{ fontSize: '14px', fontWeight: 800, color: 'var(--color-primary)' }}>{item.stat}</span>
+                                        <span style={{ fontSize: '11.5px', color: 'var(--text-tertiary)', fontWeight: 500 }}>{item.statLabel}</span>
+                                    </div>
                                 </div>
                             ))}
                         </div>

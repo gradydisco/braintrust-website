@@ -13,7 +13,7 @@ const features = [
     {
         title: 'AI-Powered Matching',
         description: 'Our algorithms analyze skills, experience, and cultural fit to surface the best candidates — in hours, not weeks.',
-        stat: '48hrs',
+        stat: '8hrs',
         statLabel: 'avg. time to first match',
         icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /><path d="m8 11 2 2 4-4" /></svg>,
     },
@@ -185,6 +185,8 @@ export default function TalentMarketplace() {
                                 overflow: 'hidden',
                                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                 position: 'relative',
+                                display: 'flex',
+                                flexDirection: 'column',
                             }}
                                 className="card--enterprise"
                             >
@@ -194,9 +196,9 @@ export default function TalentMarketplace() {
                                     background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))',
                                     opacity: 0.6,
                                 }} />
-                                <div style={{ padding: 'var(--space-8) var(--space-8) var(--space-6)' }}>
+                                <div style={{ padding: 'var(--space-8) var(--space-8) var(--space-6)', flex: 1 }}>
                                     {/* Icon + Title Row */}
-                                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)', marginBottom: 'var(--space-4)' }}>
+                                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
                                         <div style={{
                                             width: '44px',
                                             height: '44px',
@@ -220,7 +222,7 @@ export default function TalentMarketplace() {
                                         </div>
                                     </div>
                                 </div>
-                                {/* Micro-stat footer */}
+                                {/* Micro-stat footer — pinned to bottom */}
                                 <div style={{
                                     borderTop: '1px solid rgba(50, 50, 93, 0.06)',
                                     padding: '12px var(--space-8)',
@@ -228,6 +230,7 @@ export default function TalentMarketplace() {
                                     alignItems: 'center',
                                     gap: 'var(--space-2)',
                                     background: 'rgba(245, 87, 51, 0.015)',
+                                    marginTop: 'auto',
                                 }}>
                                     <span style={{ fontSize: '15px', fontWeight: 800, color: 'var(--color-primary)' }}>{feature.stat}</span>
                                     <span style={{ fontSize: '12px', color: 'var(--text-tertiary)', fontWeight: 500 }}>{feature.statLabel}</span>

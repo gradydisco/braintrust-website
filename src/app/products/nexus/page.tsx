@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
+import AutomationAnalysisForm from '@/components/AutomationAnalysisForm';
 
 export const metadata: Metadata = {
     title: 'Nexus — Workflow Automation Platform for Modern Enterprise',
@@ -175,6 +176,9 @@ export default function Nexus() {
                     </div>
                 </div>
             </section>
+
+            {/* ====== FREE AUTOMATION ANALYSIS LEAD CAPTURE ====== */}
+            <AutomationAnalysisForm />
 
             <section className="section section--gray">
                 <div className="container container--narrow">
