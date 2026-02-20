@@ -67,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* ====== SOCIAL PROOF / STATS ====== */}
-      <section className="section section--dark" style={{ padding: 'var(--space-10) 0' }}>
+      <section className="section section--gray" style={{ padding: 'var(--space-10) 0' }}>
         <div className="container">
           <RevealSection>
             <div className="stats-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-4)' }}>
