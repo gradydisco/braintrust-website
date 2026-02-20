@@ -565,6 +565,17 @@ p {
   opacity: 1;
 }
 
+/* Enterprise-grade hover effect */
+.card--enterprise {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card--enterprise:hover {
+  border-color: rgba(50, 50, 93, 0.14) !important;
+  box-shadow: 0 4px 16px rgba(50, 50, 93, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
 /* Stripe-style bento card with warm tint */
 .card--bento {
   background: var(--color-gray-50);
@@ -1183,7 +1194,7 @@ p {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.revealed {
@@ -1191,10 +1202,21 @@ p {
   transform: translateY(0);
 }
 
-.reveal-delay-100 { transition-delay: 100ms; }
-.reveal-delay-200 { transition-delay: 200ms; }
-.reveal-delay-300 { transition-delay: 300ms; }
-.reveal-delay-400 { transition-delay: 400ms; }
+.reveal-delay-100 {
+  transition-delay: 100ms;
+}
+
+.reveal-delay-200 {
+  transition-delay: 200ms;
+}
+
+.reveal-delay-300 {
+  transition-delay: 300ms;
+}
+
+.reveal-delay-400 {
+  transition-delay: 400ms;
+}
 
 /* ============================================
    SKIP LINK (A11Y)

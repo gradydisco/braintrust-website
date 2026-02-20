@@ -6,7 +6,7 @@ import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
     title: 'Nexus — Workflow Automation Platform for Modern Enterprise',
-    description: 'Nexus automates mundane, repetitive tasks across your entire business — from HR and finance to operations and recruiting. 100+ pre-built integrations and broad system compatibility.',
+    description: 'Nexus automates mundane, repetitive tasks across your entire business — from HR and finance to operations and recruiting. Connects to every enterprise system via API with pre-built connectors for leading platforms.',
 };
 
 const capabilities = [
@@ -16,7 +16,7 @@ const capabilities = [
     },
     {
         title: 'Universal System Integration',
-        desc: '100+ pre-built integrations with broad compatibility for virtually any system. Nexus moves data between tools seamlessly, eliminating manual transfers and reducing errors.',
+        desc: 'Connects to every enterprise application with an API. Pre-built connectors for leading platforms, with broad compatibility for virtually any system. Nexus moves data seamlessly, eliminating manual transfers.',
     },
     {
         title: 'Custom Rules Engine',
@@ -46,15 +46,27 @@ const departments = [
 ];
 
 const integrations = [
-    'Salesforce', 'Slack', 'Workday', 'Greenhouse',
-    'NetSuite', 'HubSpot', 'Jira', 'Microsoft Teams',
-    'Google Workspace', 'BambooHR', 'Lever', 'ServiceNow',
-    'Zendesk', 'Stripe', 'QuickBooks', 'Custom APIs',
+    { name: 'Salesforce', category: 'CRM' },
+    { name: 'Slack', category: 'Communication' },
+    { name: 'Workday', category: 'HCM' },
+    { name: 'Greenhouse', category: 'ATS' },
+    { name: 'NetSuite', category: 'ERP' },
+    { name: 'HubSpot', category: 'Marketing' },
+    { name: 'Jira', category: 'Project Mgmt' },
+    { name: 'Microsoft Teams', category: 'Communication' },
+    { name: 'Google Workspace', category: 'Productivity' },
+    { name: 'BambooHR', category: 'HR' },
+    { name: 'Lever', category: 'ATS' },
+    { name: 'ServiceNow', category: 'ITSM' },
+    { name: 'Zendesk', category: 'Support' },
+    { name: 'Stripe', category: 'Payments' },
+    { name: 'QuickBooks', category: 'Accounting' },
+    { name: 'Any API', category: 'Custom' },
 ];
 
 const faqItems = [
     { question: 'What is Nexus?', answer: 'Nexus is Braintrust\'s workflow automation platform. It connects your existing tools, automates repetitive tasks across every department, and provides real-time analytics on your business processes — saving thousands of hours per year.' },
-    { question: 'How many integrations does Nexus support?', answer: 'Nexus offers 100+ pre-built integrations including Salesforce, Slack, Workday, Greenhouse, NetSuite, HubSpot, Lever, Jira, Microsoft Teams, Google Workspace, and many more. We also support custom API integrations for virtually any system.' },
+    { question: 'What systems does Nexus integrate with?', answer: 'Nexus connects to every enterprise application with an API. Pre-built connectors are available for Salesforce, Slack, Workday, Greenhouse, NetSuite, HubSpot, Lever, Jira, Microsoft Teams, Google Workspace, and many more. Custom API integrations are supported for virtually any system.' },
     { question: 'Can Nexus work beyond recruiting?', answer: 'Absolutely. While Nexus is powerful for recruiting automation, it\'s designed for any department — finance, operations, sales, marketing, admin, legal, and more. Any repetitive, multi-step process can be automated with Nexus.' },
     { question: 'Do I need technical skills to use Nexus?', answer: 'No. Nexus features a visual workflow builder and pre-built templates that let anyone create automations. For more advanced needs, our team provides implementation support and custom integrations.' },
     { question: 'How quickly can I see ROI?', answer: 'Most customers see measurable time savings within the first 30 days. On average, Nexus eliminates 20+ hours per week of manual work per team, translating to significant cost savings.' },
@@ -121,13 +133,31 @@ export default function Nexus() {
                 <div className="container">
                     <div className="section-header">
                         <div className="badge">Integrations</div>
-                        <h2>Connect your entire stack</h2>
-                        <p>100+ pre-built integrations — plus custom API support for virtually any system.</p>
+                        <h2>Connects to every enterprise system via API</h2>
+                        <p>Pre-built connectors available for leading enterprise platforms. Custom integrations for any system with an API.</p>
                     </div>
-                    <div className="grid grid--auto" style={{ maxWidth: '900px', margin: '0 auto', gap: 'var(--space-3)' }}>
-                        {integrations.map((name) => (
-                            <div key={name} className="card" style={{ padding: 'var(--space-3) var(--space-5)', textAlign: 'center' }}>
-                                <span style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>{name}</span>
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(4, 1fr)',
+                        gap: '12px',
+                        maxWidth: '900px',
+                        margin: '0 auto',
+                    }}>
+                        {integrations.map((item) => (
+                            <div key={item.name} className="card--enterprise" style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                padding: '20px 16px',
+                                background: 'var(--color-white)',
+                                border: '1px solid rgba(50, 50, 93, 0.08)',
+                                borderRadius: 'var(--radius-lg)',
+                                textAlign: 'center',
+                                gap: '4px',
+                            }}>
+                                <span style={{ fontWeight: 700, fontSize: '14px', color: 'var(--text-primary)' }}>{item.name}</span>
+                                <span style={{ fontSize: '11px', fontWeight: 500, color: 'var(--text-tertiary)', letterSpacing: '0.03em', textTransform: 'uppercase' }}>{item.category}</span>
                             </div>
                         ))}
                     </div>
@@ -138,7 +168,7 @@ export default function Nexus() {
             <section className="section section--dark">
                 <div className="container">
                     <div className="stats-grid">
-                        <div><div className="stat__value text-gradient">100+</div><div className="stat__label">Pre-Built Integrations</div></div>
+                        <div><div className="stat__value text-gradient">Any API</div><div className="stat__label">Universal Connectivity</div></div>
                         <div><div className="stat__value text-gradient">20hrs+</div><div className="stat__label">Saved Per Week, Per Person</div></div>
                         <div><div className="stat__value text-gradient">99.9%</div><div className="stat__label">Uptime SLA</div></div>
                         <div><div className="stat__value text-gradient">30 days</div><div className="stat__label">Avg. Time to ROI</div></div>
