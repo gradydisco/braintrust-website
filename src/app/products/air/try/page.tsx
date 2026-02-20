@@ -50,7 +50,7 @@ export default function TryAIR() {
 
     return (
         <>
-            <section className="hero hero--centered" style={{ minHeight: 'auto', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-8)' }}>
+            <section className="hero hero--centered" style={{ minHeight: 'auto', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-8)' }}>
                 <div className="container container--narrow">
                     <div className="hero__content">
                         <div className="badge" style={{ marginBottom: 'var(--space-4)' }}>Try It Free</div>
