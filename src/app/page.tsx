@@ -359,26 +359,27 @@ export default function Home() {
             </div>
             <div className={styles.logoGrid}>
               {[
-                { name: 'NASA', domain: 'nasa.gov' },
-                { name: 'Nike', domain: 'nike.com' },
-                { name: 'Goldman Sachs', domain: 'goldmansachs.com' },
-                { name: 'Porsche', domain: 'porsche.com' },
-                { name: 'Atlassian', domain: 'atlassian.com' },
-                { name: 'Deloitte', domain: 'deloitte.com' },
-                { name: 'Nestlé', domain: 'nestle.com' },
-                { name: 'Pacific Life', domain: 'pacificlife.com' },
-                { name: 'Colgate', domain: 'colgate.com' },
-                { name: 'Pepsi', domain: 'pepsi.com' },
-                { name: 'Honda', domain: 'honda.com' },
-                { name: 'Wayfair', domain: 'wayfair.com' },
+                { name: 'NASA', weight: 800, spacing: '0.2em', size: '16px' },
+                { name: 'Nike', weight: 700, spacing: '0.08em', size: '17px', italic: true },
+                { name: 'Goldman Sachs', weight: 400, spacing: '0.06em', size: '14px' },
+                { name: 'Porsche', weight: 600, spacing: '0.15em', size: '14px' },
+                { name: 'Atlassian', weight: 700, spacing: '0.02em', size: '15px' },
+                { name: 'Deloitte', weight: 400, spacing: '0.04em', size: '15px' },
+                { name: 'Nestlé', weight: 700, spacing: '0.04em', size: '16px' },
+                { name: 'Pacific Life', weight: 600, spacing: '0.06em', size: '13px' },
+                { name: 'Colgate', weight: 700, spacing: '0.04em', size: '15px' },
+                { name: 'Pepsi', weight: 800, spacing: '0.06em', size: '16px' },
+                { name: 'Honda', weight: 700, spacing: '0.1em', size: '16px' },
+                { name: 'Wayfair', weight: 600, spacing: '0.02em', size: '15px' },
               ].map((co) => (
-                <div key={co.name} className={styles.logoPlaceholder} title={co.name}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`https://logo.clearbit.com/${co.domain}`}
-                    alt={co.name}
-                    className={styles.logoImg}
-                  />
+                <div key={co.name} className={styles.logoPlaceholder}>
+                  <span style={{
+                    fontSize: co.size,
+                    fontWeight: co.weight,
+                    letterSpacing: co.spacing,
+                    fontStyle: co.italic ? 'italic' : 'normal',
+                    textTransform: co.name === 'NASA' ? 'uppercase' as const : 'none' as const,
+                  }}>{co.name}</span>
                 </div>
               ))}
             </div>
