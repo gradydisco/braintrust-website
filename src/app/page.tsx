@@ -67,17 +67,17 @@ export default function Home() {
       </section>
 
       {/* ====== SOCIAL PROOF / STATS ====== */}
-      <section className="section section--gray">
+      <section className="section section--dark" style={{ padding: 'var(--space-10) 0' }}>
         <div className="container">
           <RevealSection>
-            <div className="stats-grid">
+            <div className="stats-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-4)' }}>
               <div className={styles.stat}>
                 <div className="stat__value text-gradient">2M+</div>
                 <div className="stat__label">Talent Network Members</div>
               </div>
               <div className={styles.stat}>
-                <div className="stat__value text-gradient">Fortune 10</div>
-                <div className="stat__label">Enterprise Clients</div>
+                <div className="stat__value text-gradient">100+</div>
+                <div className="stat__label">Enterprise &amp; Fortune 2000 Customers</div>
               </div>
               <div className={styles.stat}>
                 <div className="stat__value text-gradient">80%</div>
