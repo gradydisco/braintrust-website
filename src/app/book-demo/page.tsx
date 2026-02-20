@@ -11,6 +11,7 @@ export default function BookDemo() {
         company: '',
         jobTitle: '',
         companySize: '',
+        productInterest: [] as string[],
         message: '',
     });
     const [submitted, setSubmitted] = useState(false);
@@ -146,6 +147,48 @@ export default function BookDemo() {
                                 <option value="1001-5000">1,001-5,000 employees</option>
                                 <option value="5001+">5,001+ employees</option>
                             </select>
+                        </div>
+
+                        <div className="form-group">
+                            <label className="form-label">Which product(s) are you interested in?</label>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '6px' }}>
+                                {[
+                                    { value: 'talent-marketplace', label: 'Talent Marketplace', desc: 'Access 2M+ vetted professionals' },
+                                    { value: 'air', label: 'AIR | AI Recruiter', desc: 'AI-powered screening, interviews & assessments' },
+                                    { value: 'nexus', label: 'Nexus', desc: 'Custom AI agents for operational work' },
+                                ].map((product) => (
+                                    <label
+                                        key={product.value}
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'flex-start',
+                                            gap: '10px',
+                                            padding: '12px 14px',
+                                            borderRadius: '10px',
+                                            border: `1.5px solid ${formData.productInterest.includes(product.value) ? 'var(--color-primary)' : 'var(--color-gray-200)'}`,
+                                            background: formData.productInterest.includes(product.value) ? 'rgba(245, 87, 51, 0.04)' : 'white',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.2s',
+                                        }}
+                                    >
+                                        <input
+                                            type="checkbox"
+                                            checked={formData.productInterest.includes(product.value)}
+                                            onChange={() => {
+                                                const updated = formData.productInterest.includes(product.value)
+                                                    ? formData.productInterest.filter(p => p !== product.value)
+                                                    : [...formData.productInterest, product.value];
+                                                setFormData({ ...formData, productInterest: updated });
+                                            }}
+                                            style={{ marginTop: '3px', accentColor: 'var(--color-primary)' }}
+                                        />
+                                        <div>
+                                            <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)' }}>{product.label}</div>
+                                            <div style={{ fontSize: '12px', color: 'var(--text-tertiary)', marginTop: '2px' }}>{product.desc}</div>
+                                        </div>
+                                    </label>
+                                ))}
+                            </div>
                         </div>
 
                         <div className="form-group">
