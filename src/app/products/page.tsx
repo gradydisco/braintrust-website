@@ -183,9 +183,9 @@ function AIRVisual() {
 
 function NexusVisual() {
     const agents = [
-        { name: 'Revenue Ops', icon: '📊', tasks: 4, color: '#6366f1' },
-        { name: 'Onboarding', icon: '🚀', tasks: 3, color: '#22c55e' },
-        { name: 'Support', icon: '💬', tasks: 6, color: '#f59e0b' },
+        { name: 'Revenue Ops', tasks: 4, color: '#6366f1', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round"><path d="M18 20V10M12 20V4M6 20v-6" /></svg> },
+        { name: 'Onboarding', tasks: 3, color: '#22c55e', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg> },
+        { name: 'Support', tasks: 6, color: '#f59e0b', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg> },
     ];
 
     return (
@@ -224,7 +224,7 @@ function NexusVisual() {
                         <div style={{
                             width: '32px', height: '32px', borderRadius: '8px',
                             background: `${a.color}12`, display: 'flex',
-                            alignItems: 'center', justifyContent: 'center', fontSize: '14px',
+                            alignItems: 'center', justifyContent: 'center',
                         }}>{a.icon}</div>
                         <div style={{ flex: 1 }}>
                             <div style={{ fontSize: '11px', fontWeight: 600, color: '#1e293b' }}>{a.name}</div>
