@@ -110,19 +110,6 @@ export default function LiveInterviewTicker() {
 
     return (
         <div style={{ position: 'relative', overflow: 'hidden' }}>
-            {/* Subtle animated background accent */}
-            <div style={{
-                position: 'absolute', top: '-100px', right: '-100px',
-                width: '500px', height: '500px', borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(232,119,34,0.06) 0%, transparent 70%)',
-                pointerEvents: 'none',
-            }} />
-            <div style={{
-                position: 'absolute', bottom: '-80px', left: '-60px',
-                width: '400px', height: '400px', borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(34,197,94,0.05) 0%, transparent 70%)',
-                pointerEvents: 'none',
-            }} />
 
             {/* LIVE indicator + headline */}
             <div style={{
@@ -155,18 +142,18 @@ export default function LiveInterviewTicker() {
                 <StatBlock
                     value={<AnimatedCounter value={concurrent} duration={800} />}
                     label="Interviews right now"
-                    accent="#22c55e"
+                    accent="#1a1a2e"
                 />
                 <StatBlock
                     value={<AnimatedCounter value={totalInterviews} duration={1200} />}
                     suffix="+"
                     label="Interviews completed"
-                    accent="var(--color-primary)"
+                    accent="#1a1a2e"
                 />
                 <StatBlock
                     value={<><AnimatedCounter value={totalMinutes} duration={1500} />+</>}
                     label="Minutes interviewed (last 90 days)"
-                    accent="#8b5cf6"
+                    accent="#1a1a2e"
                 />
             </div>
 
