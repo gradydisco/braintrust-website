@@ -243,11 +243,11 @@ export default function Header() {
                   <span className={styles.dropdownItemDesc}>Access the Talent Marketplace</span>
                 </a>
                 <a href="https://app.usebraintrust.com/client/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
-                  <span className={styles.dropdownItemLabel}>Client — Marketplace</span>
+                  <span className={styles.dropdownItemLabel}>Client Marketplace</span>
                   <span className={styles.dropdownItemDesc}>Manage talent and hiring</span>
                 </a>
                 <a href="https://air.usebraintrust.com/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
-                  <span className={styles.dropdownItemLabel}>Client — AIR</span>
+                  <span className={styles.dropdownItemLabel}>Client AIR</span>
                   <span className={styles.dropdownItemDesc}>AI Recruiter platform login</span>
                 </a>
               </div>
@@ -320,10 +320,10 @@ export default function Header() {
               Talent Login
             </a>
             <a href="https://app.usebraintrust.com/client/login" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
-              Client — Marketplace
+              Client Marketplace
             </a>
             <a href="https://air.usebraintrust.com/login" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
-              Client — AIR
+              Client AIR
             </a>
           </div>
           <div className={styles.mobileCTA}>
