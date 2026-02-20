@@ -55,7 +55,7 @@ export default function AIR() {
             </section>
 
             {/* ====== LIVE ACTIVITY TICKER ====== */}
-            <section className="section section--gray" style={{ paddingTop: 'var(--space-10)', paddingBottom: 'var(--space-10)' }}>
+            <section className="section" style={{ paddingTop: 'var(--space-10)', paddingBottom: 'var(--space-10)', background: '#f8f9fb' }}>
                 <div className="container">
                     <LiveInterviewTicker />
                 </div>
