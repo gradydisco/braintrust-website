@@ -376,6 +376,18 @@
     transition: all var(--transition-base);
 }
 
+.logoImg {
+    height: 28px;
+    max-width: 100px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.5);
+    transition: filter 0.3s;
+}
+
+.logoPlaceholder:hover .logoImg {
+    filter: grayscale(0%) opacity(1);
+}
+
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {

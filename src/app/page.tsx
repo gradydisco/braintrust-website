@@ -14,10 +14,6 @@ export default function Home() {
         </div>
         <div className="container">
           <div className="hero__content">
-            <div className={`badge ${styles.heroBadge}`}>
-              <span className={styles.pulse}></span>
-              AI-Powered Talent Network
-            </div>
             <h1>
               The future of work,
               <br />
@@ -381,15 +377,7 @@ export default function Home() {
                   <img
                     src={`https://logo.clearbit.com/${co.domain}`}
                     alt={co.name}
-                    style={{
-                      height: '28px',
-                      maxWidth: '100px',
-                      objectFit: 'contain',
-                      filter: 'grayscale(100%) opacity(0.5)',
-                      transition: 'filter 0.3s',
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.filter = 'grayscale(0%) opacity(1)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.filter = 'grayscale(100%) opacity(0.5)')}
+                    className={styles.logoImg}
                   />
                 </div>
               ))}
