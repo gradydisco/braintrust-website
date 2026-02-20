@@ -115,9 +115,14 @@ export default function SavingsCalculator() {
         const totalApplicants = inputs.hiresPerYear * inputs.applicantsPerRole;
         const totalInterviews = inputs.hiresPerYear * inputs.interviewsPerHire;
 
-        // 1) Resume review: AIR automates ~85% of resume screening
-        const resumeHours = (totalApplicants * advanced.resumeReviewTime) / 60;
-        const resumeSavedHours = Math.round(resumeHours * 0.85);
+        // 1) Resume review — realistic baseline: only ~50% of resumes
+        //    currently get reviewed manually. The other 50% are never seen.
+        //    AIR replaces the manual 50% and also screens the missed half.
+        //    Savings = the 50% that are currently reviewed × review time.
+        const resumesCurrentlyReviewed = Math.round(totalApplicants * 0.50);
+        const resumesMissed = totalApplicants - resumesCurrentlyReviewed;
+        const resumeManualHours = (resumesCurrentlyReviewed * advanced.resumeReviewTime) / 60;
+        const resumeSavedHours = Math.round(resumeManualHours);
         const resumeSavedCost = Math.round(resumeSavedHours * hourlyRate);
 
         // 2) Scheduling: AIR eliminates ~90% of coordination
@@ -125,9 +130,14 @@ export default function SavingsCalculator() {
         const schedSavedHours = Math.round(schedHours * 0.90);
         const schedSavedCost = Math.round(schedSavedHours * hourlyRate);
 
-        // 3) Interview automation: AIR handles ~60% of interviews (first-round)
-        const firstRound = Math.round(totalInterviews * 0.60);
-        const interviewSavedHours = Math.round((firstRound * inputs.interviewDuration) / 60);
+        // 3) Interview automation — AIR screens 2× manual interview volume.
+        //    The team currently interviews `interviewsPerHire` candidates per role.
+        //    AIR conducts 2× that (wider funnel, better coverage) and replaces
+        //    all first-round interviews, saving the team's entire first-round time.
+        const airInterviewsPerHire = inputs.interviewsPerHire * 2;
+        const airTotalInterviews = inputs.hiresPerYear * airInterviewsPerHire;
+        // Savings = all current first-round interviews (team no longer does them)
+        const interviewSavedHours = Math.round((totalInterviews * inputs.interviewDuration) / 60);
         const interviewSavedCost = Math.round(interviewSavedHours * hourlyRate);
 
         // 4) Note-taking: automated transcripts eliminate ~95% of manual notes
@@ -145,14 +155,14 @@ export default function SavingsCalculator() {
         const directHours = resumeSavedHours + schedSavedHours + interviewSavedHours + noteSavedHours + noShowSavedHours;
         const directCost = resumeSavedCost + schedSavedCost + interviewSavedCost + noteSavedCost + noShowSavedCost;
 
-        // 6) Time-to-hire acceleration (opportunity cost — separate category)
-        // Faster pipeline reduces vacant-position cost.
-        // Assumption: each open position costs ~1× daily recruiter salary per day.
-        // AIR reduces time-to-fill by roughly (interviewsPerHire × 2) days.
-        const daysReduced = Math.min(18, Math.round(inputs.interviewsPerHire * 2));
-        const dailyPositionCost = inputs.recruiterCost / 260;
+        // 6) Time-to-hire acceleration (opportunity cost — reduced ~3× for credibility)
+        //    Faster pipeline reduces vacant-position cost.
+        //    Conservative: each open position costs ~0.33× daily recruiter salary.
+        //    AIR reduces time-to-fill by roughly (interviewsPerHire × 1.5) days.
+        const daysReduced = Math.min(14, Math.round(inputs.interviewsPerHire * 1.5));
+        const dailyPositionCost = (inputs.recruiterCost / 260) * 0.33;
         const timeToHireCost = Math.round(inputs.hiresPerYear * daysReduced * dailyPositionCost);
-        const timeToHirePercent = Math.max(15, Math.min(60, Math.round((daysReduced / (inputs.interviewsPerHire * 4)) * 100)));
+        const timeToHirePercent = Math.max(15, Math.min(45, Math.round((daysReduced / (inputs.interviewsPerHire * 4)) * 100)));
 
         // Grand total = direct + time-to-hire (verifiable sum)
         const totalSavings = directCost + timeToHireCost;
@@ -167,11 +177,13 @@ export default function SavingsCalculator() {
             timeToHireCost,
             timeToHirePercent,
             daysReduced,
+            airTotalInterviews,
+            resumesMissed,
             breakdown: [
                 {
                     key: 'resume',
-                    label: 'Resume screening time saved',
-                    explanation: `AIR automatically scores and ranks ${fmt(totalApplicants)} applicants/year, reducing manual resume review by ~85%.`,
+                    label: 'Resume screening time recovered',
+                    explanation: `Today, only ~50% of your ${fmt(totalApplicants)} applicants are reviewed — ${fmt(resumesMissed)} resumes go unseen. AIR screens 100% automatically, recovering all ${fmt(resumeSavedHours)} hours spent on manual review and ensuring no qualified candidate is missed.`,
                     hours: resumeSavedHours,
                     cost: resumeSavedCost,
                 },
@@ -185,7 +197,7 @@ export default function SavingsCalculator() {
                 {
                     key: 'interviews',
                     label: 'First-round interviews automated',
-                    explanation: `AIR conducts ${fmt(firstRound)} first-round interviews autonomously, freeing recruiter time for high-value conversations.`,
+                    explanation: `Your team currently conducts ${fmt(totalInterviews)} interviews/year. AIR handles ${fmt(airTotalInterviews)} — 2× your current volume — giving you wider coverage and better candidates while eliminating all first-round recruiter time.`,
                     hours: interviewSavedHours,
                     cost: interviewSavedCost,
                 },
@@ -539,9 +551,8 @@ export default function SavingsCalculator() {
                                             <div style={{ padding: '0 0 14px 0', fontSize: '13px', color: 'rgba(255,255,255,0.4)', lineHeight: 1.6 }}>
                                                 <div style={{ marginBottom: '6px' }}>
                                                     AIR accelerates your hiring pipeline by an estimated <strong style={{ color: 'rgba(255,255,255,0.7)' }}>{results.daysReduced} days per hire</strong>.
-                                                    Each day a position remains open costs roughly {fmtDollar(Math.round(inputs.recruiterCost / 260))}/day in lost productivity
-                                                    (based on your recruiter cost as a proxy for position value).
-                                                    Across {fmt(inputs.hiresPerYear)} hires, this represents {fmtDollar(results.timeToHireCost)} in reduced vacancy cost.
+                                                    Open positions carry an estimated productivity cost of ~{fmtDollar(Math.round((inputs.recruiterCost / 260) * 0.33))}/day.
+                                                    Across {fmt(inputs.hiresPerYear)} hires, faster filling reduces vacancy costs by {fmtDollar(results.timeToHireCost)}.
                                                 </div>
                                                 <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.25)', fontStyle: 'italic', marginTop: '4px' }}>
                                                     This is an estimated opportunity cost, not a direct labor saving.
@@ -566,8 +577,8 @@ export default function SavingsCalculator() {
                                 </button>
                                 {showMethodology && (
                                     <div style={{ marginTop: '12px', padding: '16px 20px', background: 'rgba(255,255,255,0.03)', borderRadius: '10px', textAlign: 'left', fontSize: '12px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.7 }}>
-                                        <p style={{ margin: '0 0 8px' }}><strong style={{ color: 'rgba(255,255,255,0.5)' }}>Direct labor savings</strong> are calculated by estimating recruiter hours saved across five categories (resume screening, scheduling, interviewing, documentation, and no-show recovery), then multiplying by your hourly recruiter rate (annual salary ÷ 2,080 hours).</p>
-                                        <p style={{ margin: 0 }}><strong style={{ color: 'rgba(255,255,255,0.5)' }}>Business impact</strong> estimates the cost of vacant positions during the hiring process. We use your recruiter cost as a proxy for daily position value and estimate how many days AIR accelerates each hire. This is an opportunity cost estimate, not a direct cash saving.</p>
+                                        <p style={{ margin: '0 0 8px' }}><strong style={{ color: 'rgba(255,255,255,0.5)' }}>Direct labor savings</strong> are calculated by estimating recruiter hours saved across five categories (resume screening, scheduling, interviewing, documentation, and no-show recovery), then multiplying by your hourly recruiter rate (annual salary ÷ 2,080 hours). Resume review assumes only ~50% of applicants are currently screened manually — AIR screens 100%. Interview savings reflect AIR handling 2× your current manual volume.</p>
+                                        <p style={{ margin: 0 }}><strong style={{ color: 'rgba(255,255,255,0.5)' }}>Business impact</strong> conservatively estimates vacancy cost at roughly one-third of the daily recruiter salary as a proxy, multiplied by the estimated days AIR accelerates each hire. This is an opportunity cost estimate, not a direct cash saving.</p>
                                     </div>
                                 )}
                             </div>
