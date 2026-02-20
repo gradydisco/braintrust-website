@@ -182,11 +182,10 @@ function AIRVisual() {
 }
 
 function NexusVisual() {
-    const steps = [
-        { label: 'Application received', status: 'done' },
-        { label: 'AI screening', status: 'done' },
-        { label: 'Interview scheduled', status: 'active' },
-        { label: 'Offer & onboarding', status: 'pending' },
+    const agents = [
+        { name: 'Revenue Ops', icon: '📊', tasks: 4, color: '#6366f1' },
+        { name: 'Onboarding', icon: '🚀', tasks: 3, color: '#22c55e' },
+        { name: 'Support', icon: '💬', tasks: 6, color: '#f59e0b' },
     ];
 
     return (
@@ -202,64 +201,54 @@ function NexusVisual() {
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f59e0b' }} />
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e' }} />
                 <div style={{ flex: 1 }} />
-                <div style={{ width: '80px', height: '6px', borderRadius: '3px', background: 'rgba(0,0,0,0.06)' }} />
+                <div style={{
+                    fontSize: '9px', fontWeight: 700, color: '#eab308',
+                    display: 'flex', alignItems: 'center', gap: '4px',
+                }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="3" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+                    3 AGENTS ACTIVE
+                </div>
             </div>
 
-            {/* Workflow pipeline */}
-            <div style={{
-                background: 'white',
-                borderRadius: '14px',
-                padding: '20px',
-                marginBottom: '14px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
-                border: '1px solid rgba(0,0,0,0.04)',
-            }}>
-                <div style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#eab308', marginBottom: '16px' }}>
-                    Active Workflow
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    {steps.map((step, i) => (
-                        <div key={step.label} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '20px' }}>
-                                <div style={{
-                                    width: '20px', height: '20px', borderRadius: '50%',
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    background: step.status === 'done' ? '#22c55e'
-                                        : step.status === 'active' ? '#6366f1' : '#e2e8f0',
-                                    color: step.status === 'pending' ? '#94a3b8' : 'white',
-                                    fontSize: '10px', fontWeight: 700,
-                                }}>
-                                    {step.status === 'done' ? (
-                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round"><path d="M20 6L9 17l-5-5" /></svg>
-                                    ) : (i + 1)}
-                                </div>
-                                {i < steps.length - 1 && (
-                                    <div style={{
-                                        width: '2px', height: '10px',
-                                        background: step.status === 'done' ? '#22c55e' : '#e2e8f0',
-                                    }} />
-                                )}
-                            </div>
-                            <div style={{
-                                fontSize: '11px', fontWeight: step.status === 'active' ? 600 : 500,
-                                color: step.status === 'pending' ? '#94a3b8' : '#1e293b',
-                            }}>
-                                {step.label}
-                            </div>
+            {/* AI Agent lanes */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '14px' }}>
+                {agents.map(a => (
+                    <div key={a.name} style={{
+                        background: 'white',
+                        borderRadius: '12px',
+                        padding: '14px 16px',
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
+                        border: '1px solid rgba(0,0,0,0.04)',
+                        display: 'flex', alignItems: 'center', gap: '12px',
+                    }}>
+                        <div style={{
+                            width: '32px', height: '32px', borderRadius: '8px',
+                            background: `${a.color}12`, display: 'flex',
+                            alignItems: 'center', justifyContent: 'center', fontSize: '14px',
+                        }}>{a.icon}</div>
+                        <div style={{ flex: 1 }}>
+                            <div style={{ fontSize: '11px', fontWeight: 600, color: '#1e293b' }}>{a.name}</div>
+                            <div style={{ fontSize: '9px', color: '#94a3b8' }}>{a.tasks} tasks running</div>
                         </div>
-                    ))}
-                </div>
+                        <div style={{
+                            display: 'flex', alignItems: 'center', gap: '4px',
+                        }}>
+                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e' }} />
+                            <span style={{ fontSize: '9px', fontWeight: 600, color: '#22c55e' }}>Active</span>
+                        </div>
+                    </div>
+                ))}
             </div>
 
             {/* Automation stats */}
             <div style={{ display: 'flex', gap: '10px' }}>
                 <div style={{ flex: 1, background: 'white', borderRadius: '10px', padding: '12px', border: '1px solid rgba(0,0,0,0.04)' }}>
                     <div style={{ fontSize: '18px', fontWeight: 800, color: '#1e293b' }}>84%</div>
-                    <div style={{ fontSize: '9px', color: '#94a3b8' }}>Automated</div>
+                    <div style={{ fontSize: '9px', color: '#94a3b8' }}>Ops automated</div>
                 </div>
                 <div style={{ flex: 1, background: 'white', borderRadius: '10px', padding: '12px', border: '1px solid rgba(0,0,0,0.04)' }}>
-                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#22c55e' }}>3.2x</div>
-                    <div style={{ fontSize: '9px', color: '#94a3b8' }}>Faster pipeline</div>
+                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#22c55e' }}>12K+</div>
+                    <div style={{ fontSize: '9px', color: '#94a3b8' }}>Tasks / month</div>
                 </div>
                 <div style={{ flex: 1, background: 'white', borderRadius: '10px', padding: '12px', border: '1px solid rgba(0,0,0,0.04)' }}>
                     <div style={{ fontSize: '18px', fontWeight: 800, color: '#6366f1' }}>24/7</div>
@@ -310,16 +299,16 @@ const products = [
     },
     {
         name: 'Nexus',
-        tagline: 'Your recruiting command center.',
-        description: 'Orchestrate your entire hiring workflow. Automate approvals, connect tools, set custom rules, and get real-time analytics on every stage of your pipeline.',
+        tagline: 'Automate the grind. Amplify the impact.',
+        description: 'Custom AI agents that handle the repetitive, manual, operational work — from revenue ops to onboarding to customer service. Automate what\'s draining your budget and slowing you down.',
         href: '/products/nexus',
         color: 'var(--color-token)',
         features: [
-            'End-to-end workflow automation',
-            'ATS & HRIS integrations',
-            'Custom automation rules engine',
-            'Real-time pipeline analytics',
-            'Team collaboration tools',
+            'Custom AI agents for your unique processes',
+            'Revenue ops, onboarding & support automation',
+            'Reimagines operations from the ground up',
+            'Scale without ballooning headcount',
+            'Works across your entire tool stack',
         ],
     },
 ];
