@@ -343,6 +343,22 @@
     padding-top: var(--space-6);
 }
 
+.mobileLoginSection {
+    padding-top: var(--space-4);
+    margin-top: var(--space-2);
+    border-top: 1px solid var(--color-gray-100);
+}
+
+.mobileLoginTitle {
+    display: block;
+    padding: var(--space-3) 0 var(--space-2);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-gray-400);
+}
+
 @media (max-width: 1024px) {
     .nav {
         display: none;
@@ -353,11 +369,35 @@
         display: none;
     }
 
+    .right .navItem {
+        display: none;
+    }
+
     .mobileToggle {
         display: flex;
     }
 
     .mobileMenu {
         display: block;
+    }
+}
+
+@media (max-width: 640px) {
+    .inner {
+        padding: 0 var(--space-4);
+    }
+
+    .logoImage {
+        height: 26px !important;
+        min-width: 100px;
+    }
+
+    .right {
+        gap: var(--space-2);
+    }
+
+    .right :global(.btn--sm) {
+        padding: 8px 14px;
+        font-size: 12px;
     }
 }

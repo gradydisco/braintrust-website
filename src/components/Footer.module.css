@@ -133,4 +133,36 @@
         gap: var(--space-4);
         text-align: center;
     }
+
+    .footer {
+        padding: var(--space-12) 0 var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .links {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+    }
+
+    .brandDesc {
+        font-size: var(--text-xs);
+    }
+
+    .columnTitle {
+        font-size: 10px;
+    }
+
+    .link {
+        font-size: var(--text-xs);
+    }
+
+    .footer {
+        padding: var(--space-10) 0 var(--space-4);
+    }
+
+    .top {
+        padding-bottom: var(--space-8);
+        gap: var(--space-8);
+    }
 }

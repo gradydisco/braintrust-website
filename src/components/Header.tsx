@@ -314,6 +314,18 @@ export default function Header() {
           <Link href="/token" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
             BTRST Token
           </Link>
+          <div className={styles.mobileLoginSection}>
+            <span className={styles.mobileLoginTitle}>Log In</span>
+            <a href="https://app.usebraintrust.com/talent/login" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+              Talent Login
+            </a>
+            <a href="https://app.usebraintrust.com/client/login" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+              Client — Marketplace
+            </a>
+            <a href="https://air.usebraintrust.com/login" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+              Client — AIR
+            </a>
+          </div>
           <div className={styles.mobileCTA}>
             <Link
               href={audience === 'company' ? '/book-demo' : '/jobs'}

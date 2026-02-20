@@ -157,11 +157,16 @@
 }
 
 /* Hide on mobile to avoid obstruction */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .ticker {
         bottom: 16px;
         left: 12px;
-        right: 12px;
-        max-width: none;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 640px) {
+    .ticker {
+        display: none;
     }
 }
