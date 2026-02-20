@@ -1,0 +1,315 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    z-index: var(--z-sticky);
+    transition: all var(--transition-base);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom-color: rgba(50, 50, 93, 0.08);
+    box-shadow: 0 2px 8px rgba(50, 50, 93, 0.06);
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logoImage {
+    height: 32px !important;
+    width: auto !important;
+    min-width: 120px;
+    object-fit: contain;
+    image-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.navItem {
+    position: relative;
+}
+
+.navItem button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.tokenLink {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em;
+    color: var(--color-token);
+}
+
+.tokenLink:hover {
+    color: var(--color-primary);
+}
+
+.tokenDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-token);
+    box-shadow: 0 0 6px rgba(232, 96, 76, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* ---- Stripe-style Mega Dropdown ---- */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-white);
+    border: 1px solid rgba(50, 50, 93, 0.06);
+    border-radius: var(--radius-xl);
+    padding: 0;
+    min-width: 340px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.12),
+        0 5px 15px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(50, 50, 93, 0.04);
+    animation: dropdownIn 0.2s ease-out;
+    overflow: hidden;
+}
+
+.dropdownHeader {
+    padding: 14px 20px 8px;
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.dropdownTitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-gray-400);
+}
+
+.dropdownItem {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    position: relative;
+    border-left: 3px solid transparent;
+}
+
+.dropdownItem:hover {
+    background: var(--color-gray-50);
+    border-left-color: var(--color-primary);
+}
+
+.dropdownItem:hover .dropdownArrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.dropdownItemLabel {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: color var(--transition-fast);
+}
+
+.dropdownItem:hover .dropdownItemLabel {
+    color: var(--color-primary);
+}
+
+.dropdownItemDesc {
+    font-size: 12px;
+    color: var(--color-gray-400);
+    line-height: 1.4;
+}
+
+.dropdownArrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -8px;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all var(--transition-fast);
+    color: var(--color-primary);
+}
+
+.dropdownFooter {
+    padding: 10px 20px;
+    border-top: 1px solid var(--color-gray-100);
+    background: var(--color-gray-50);
+}
+
+.dropdownFooterLink {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.dropdownFooterLink:hover {
+    color: var(--color-primary-dark);
+}
+
+@keyframes dropdownIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ---- Mobile ---- */
+.mobileToggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--space-2);
+    cursor: pointer;
+}
+
+.mobileToggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+}
+
+.mobileMenu {
+    display: none;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-white);
+    padding: var(--space-6);
+    overflow-y: auto;
+    animation: slideDown 0.25s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobileAudienceToggle {
+    padding-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.mobileLink {
+    display: block;
+    padding: var(--space-4) 0;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.mobileLink:hover {
+    color: var(--color-primary);
+}
+
+.mobileSubLink {
+    display: block;
+    padding: var(--space-3) 0 var(--space-3) var(--space-6);
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--color-gray-50);
+}
+
+.mobileSubLink:hover {
+    color: var(--color-primary);
+}
+
+.mobileCTA {
+    padding-top: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+    .nav {
+        display: none;
+    }
+
+    .right :global(.audience-toggle),
+    .tokenLink {
+        display: none;
+    }
+
+    .mobileToggle {
+        display: flex;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+}

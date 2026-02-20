@@ -1,0 +1,136 @@
+.footer {
+    background: var(--color-gray-950);
+    color: var(--color-white);
+    padding: var(--space-20) 0 var(--space-8);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle aurora glow in footer */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 40%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(232, 96, 76, 0.4), rgba(255, 147, 124, 0.3), transparent);
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    gap: var(--space-16);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.brand {
+    flex: 0 0 280px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.logoImage {
+    filter: brightness(0) invert(1);
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brandDesc {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--color-gray-400);
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-8);
+    flex: 1;
+}
+
+.columnTitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-gray-300);
+    margin-bottom: var(--space-4);
+}
+
+.link {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-gray-400);
+    padding: var(--space-1) 0;
+    transition: color var(--transition-fast);
+}
+
+.link:hover {
+    color: var(--color-white);
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-8);
+}
+
+.copyright {
+    font-size: var(--text-sm);
+    color: var(--color-gray-500);
+}
+
+.legal {
+    display: flex;
+    gap: var(--space-6);
+}
+
+.legalLink {
+    font-size: var(--text-sm);
+    color: var(--color-gray-500);
+    transition: color var(--transition-fast);
+}
+
+.legalLink:hover {
+    color: var(--color-gray-300);
+}
+
+@media (max-width: 1024px) {
+    .top {
+        flex-direction: column;
+        gap: var(--space-10);
+    }
+
+    .brand {
+        flex: none;
+    }
+
+    .links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+    }
+}
