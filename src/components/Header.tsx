@@ -239,16 +239,16 @@ export default function Header() {
             {dropdownOpen === 'login' && (
               <div className={styles.loginDropdown}>
                 <a href="https://app.usebraintrust.com/talent/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
-                  <strong>Talent Login</strong>
-                  <span className={styles.dropdownDesc}>Access the Talent Marketplace</span>
+                  <span className={styles.dropdownItemLabel}>Talent Login</span>
+                  <span className={styles.dropdownItemDesc}>Access the Talent Marketplace</span>
                 </a>
                 <a href="https://app.usebraintrust.com/client/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
-                  <strong>Client — Marketplace</strong>
-                  <span className={styles.dropdownDesc}>Manage talent and hiring</span>
+                  <span className={styles.dropdownItemLabel}>Client — Marketplace</span>
+                  <span className={styles.dropdownItemDesc}>Manage talent and hiring</span>
                 </a>
                 <a href="https://air.usebraintrust.com/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
-                  <strong>Client — AIR</strong>
-                  <span className={styles.dropdownDesc}>AI Recruiter platform login</span>
+                  <span className={styles.dropdownItemLabel}>Client — AIR</span>
+                  <span className={styles.dropdownItemDesc}>AI Recruiter platform login</span>
                 </a>
               </div>
             )}
