@@ -21,14 +21,14 @@ const faqItems = [
 ];
 
 const industries = [
-    { name: 'Technology', icon: '💻', desc: 'Software engineering, product, and technical roles at every level.' },
-    { name: 'Healthcare', icon: '🏥', desc: 'Clinical, research, and administrative healthcare professionals.' },
-    { name: 'Financial Services', icon: '🏦', desc: 'Banking, insurance, fintech, and financial operations talent.' },
-    { name: 'Retail & E-Commerce', icon: '🛍️', desc: 'Digital commerce, supply chain, and customer experience roles.' },
-    { name: 'Manufacturing', icon: '🏭', desc: 'Engineering, operations, and quality assurance professionals.' },
-    { name: 'Professional Services', icon: '📊', desc: 'Consulting, legal, accounting, and advisory talent.' },
-    { name: 'Media & Entertainment', icon: '🎬', desc: 'Creative, production, and digital media professionals.' },
-    { name: 'Energy & Utilities', icon: '⚡', desc: 'Sustainable energy, infrastructure, and operations roles.' },
+    { name: 'Technology', desc: 'Software engineering, product, and technical roles at every level.', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg> },
+    { name: 'Healthcare', desc: 'Clinical, research, and administrative healthcare professionals.', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg> },
+    { name: 'Financial Services', desc: 'Banking, insurance, fintech, and financial operations talent.', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5M2 12l10 5 10-5" /></svg> },
+    { name: 'Retail & E-Commerce', desc: 'Digital commerce, supply chain, and customer experience roles.', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" /></svg> },
+    { name: 'Manufacturing', desc: 'Engineering, operations, and quality assurance professionals.', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg> },
+    { name: 'Professional Services', desc: 'Consulting, legal, accounting, and advisory talent.', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" /></svg> },
+    { name: 'Media & Entertainment', desc: 'Creative, production, and digital media professionals.', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" /></svg> },
+    { name: 'Energy & Utilities', desc: 'Sustainable energy, infrastructure, and operations roles.', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg> },
 ];
 
 export default function AIR() {
@@ -153,7 +153,12 @@ export default function AIR() {
                                     className="card card--feature"
                                     style={{ textAlign: 'center', padding: 'var(--space-6)' }}
                                 >
-                                    <div style={{ fontSize: 'var(--text-3xl)', marginBottom: 'var(--space-3)' }}>{industry.icon}</div>
+                                    <div style={{
+                                        width: '48px', height: '48px', borderRadius: '50%',
+                                        background: 'var(--color-primary-50)', color: 'var(--color-primary)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        margin: '0 auto var(--space-3)',
+                                    }}>{industry.icon}</div>
                                     <h4 style={{ marginBottom: 'var(--space-2)', fontSize: 'var(--text-base)' }}>{industry.name}</h4>
                                     <p style={{ fontSize: 'var(--text-xs)', margin: 0 }}>{industry.desc}</p>
                                 </div>

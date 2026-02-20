@@ -5,15 +5,15 @@ import { useState, FormEvent } from 'react';
    INTERVIEW ROLES — Live AIR sessions
    ============================================ */
 const interviewRoles = [
-    { title: 'Executive Assistant', icon: '📋', url: 'https://air.usebraintrust.com/i/44/86', duration: '5–8 min' },
-    { title: 'Recruiter', icon: '🤝', url: 'https://air.usebraintrust.com/i/44/85', duration: '5–8 min' },
-    { title: 'Accountant', icon: '📊', url: 'https://air.usebraintrust.com/i/44/90', duration: '5–8 min' },
-    { title: 'Front-End Developer', icon: '💻', url: 'https://air.usebraintrust.com/i/44/87', duration: '5–8 min' },
-    { title: 'IT Project Manager', icon: '🗂️', url: 'https://air.usebraintrust.com/i/44/83', duration: '5–8 min' },
-    { title: 'Product Designer', icon: '🎨', url: 'https://air.usebraintrust.com/i/44/81', duration: '5–8 min' },
-    { title: 'Sales Rep (SaaS)', icon: '📈', url: 'https://air.usebraintrust.com/i/44/88', duration: '5–8 min' },
-    { title: 'Call Center Rep', icon: '📞', url: 'https://air.usebraintrust.com/i/44/89', duration: '5–8 min' },
-    { title: 'Retail Associate', icon: '🛍️', url: 'https://air.usebraintrust.com/i/44/84', duration: '5–8 min' },
+    { title: 'Executive Assistant', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" /><rect x="8" y="2" width="8" height="4" rx="1" /></svg>, url: 'https://air.usebraintrust.com/i/44/86', duration: '5–8 min' },
+    { title: 'Recruiter', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" /></svg>, url: 'https://air.usebraintrust.com/i/44/85', duration: '5–8 min' },
+    { title: 'Accountant', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" /><path d="M8 6h8M8 10h8M8 14h4" /><circle cx="16" cy="16" r="2" /></svg>, url: 'https://air.usebraintrust.com/i/44/90', duration: '5–8 min' },
+    { title: 'Front-End Developer', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>, url: 'https://air.usebraintrust.com/i/44/87', duration: '5–8 min' },
+    { title: 'IT Project Manager', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" /><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" /></svg>, url: 'https://air.usebraintrust.com/i/44/83', duration: '5–8 min' },
+    { title: 'Product Designer', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="13.5" cy="6.5" r="0.5" fill="currentColor" /><circle cx="17.5" cy="10.5" r="0.5" fill="currentColor" /><circle cx="8.5" cy="7.5" r="0.5" fill="currentColor" /><circle cx="6.5" cy="12.5" r="0.5" fill="currentColor" /><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" /></svg>, url: 'https://air.usebraintrust.com/i/44/81', duration: '5–8 min' },
+    { title: 'Sales Rep (SaaS)', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>, url: 'https://air.usebraintrust.com/i/44/88', duration: '5–8 min' },
+    { title: 'Call Center Rep', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>, url: 'https://air.usebraintrust.com/i/44/89', duration: '5–8 min' },
+    { title: 'Retail Associate', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" /></svg>, url: 'https://air.usebraintrust.com/i/44/84', duration: '5–8 min' },
 ];
 
 /* ============================================
@@ -321,7 +321,11 @@ export default function TryAIR() {
                                         }}
                                     >
                                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                            <span style={{ fontSize: '28px' }}>{role.icon}</span>
+                                            <div style={{
+                                                width: '44px', height: '44px', borderRadius: '50%',
+                                                background: 'var(--color-primary-50)', color: 'var(--color-primary)',
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                                            }}>{role.icon}</div>
                                             <span style={{ fontSize: '11px', color: 'var(--text-tertiary)', fontWeight: 500 }}>{role.duration}</span>
                                         </div>
                                         <div>
