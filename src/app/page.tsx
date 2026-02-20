@@ -225,30 +225,128 @@ export default function Home() {
           <RevealSection>
             <div className="section-header">
               <div className="badge">Talent</div>
-              <h2>World-class talent<br />across every discipline.</h2>
-              <p>Hire across the full spectrum of professional expertise — all rigorously vetted.</p>
+              <h2>The people behind<br />every breakthrough.</h2>
+              <p>From engineers shipping production code to designers crafting pixel-perfect experiences — meet the 2M+ professionals who make it happen.</p>
             </div>
           </RevealSection>
           <RevealSection delay={200}>
-            <div className="grid grid--auto" style={{ maxWidth: '900px', margin: '0 auto', gap: 'var(--space-4)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', maxWidth: '1000px', margin: '0 auto' }}>
               {[
-                'Software Engineering',
-                'Machine Learning & AI',
-                'Product Design & UX',
-                'Product Management',
-                'Data Science & Analytics',
-                'DevOps & Infrastructure',
-                'Marketing & Growth',
-                'Operations & Strategy',
-                'Finance & Accounting',
-                'Legal & Compliance',
-                'STEM & Research',
-                'Sales & Business Development',
-              ].map((cap) => (
-                <div key={cap} className="card" style={{ padding: 'var(--space-4) var(--space-6)', textAlign: 'center' }}>
-                  <span style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-primary)' }}>{cap}</span>
+                {
+                  title: 'Software Engineering',
+                  desc: 'Full-stack, backend, mobile, and embedded engineers building at scale.',
+                  count: '450K+',
+                  color: '#6366f1',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
+                },
+                {
+                  title: 'Machine Learning & AI',
+                  desc: 'ML engineers, AI researchers, and data annotators training the next generation of models.',
+                  count: '120K+',
+                  color: '#8b5cf6',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.58-3.25 3.93M12 2a4 4 0 00-4 4c0 1.95 1.4 3.58 3.25 3.93M12 22v-8m0 0a3 3 0 110-6" /><circle cx="12" cy="18" r="4" /></svg>,
+                },
+                {
+                  title: 'Product Design & UX',
+                  desc: 'UI/UX designers, researchers, and design system architects with enterprise portfolio experience.',
+                  count: '180K+',
+                  color: '#ec4899',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="13.5" cy="6.5" r="2.5" /><circle cx="17.5" cy="10.5" r="2.5" /><circle cx="8.5" cy="7.5" r="2.5" /><circle cx="6.5" cy="12.5" r="2.5" /><path d="M12 22c-4.97 0-9-2.69-9-6v-1c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v1c0 3.31-4.03 6-9 6z" /></svg>,
+                },
+                {
+                  title: 'Product Management',
+                  desc: 'PMs who have shipped at startups and Fortune 500s — roadmaps, strategy, and execution.',
+                  count: '95K+',
+                  color: '#f59e0b',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" /></svg>,
+                },
+                {
+                  title: 'Data Science & Analytics',
+                  desc: 'Analysts, data engineers, and statisticians turning raw data into business intelligence.',
+                  count: '200K+',
+                  color: '#10b981',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M18 20V10M12 20V4M6 20v-6" /></svg>,
+                },
+                {
+                  title: 'DevOps & Infrastructure',
+                  desc: 'Cloud architects, SREs, and platform engineers keeping systems reliable at scale.',
+                  count: '85K+',
+                  color: '#0ea5e9',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="2" width="20" height="8" rx="2" /><rect x="2" y="14" width="20" height="8" rx="2" /><line x1="6" y1="6" x2="6.01" y2="6" /><line x1="6" y1="18" x2="6.01" y2="18" /></svg>,
+                },
+                {
+                  title: 'Marketing & Growth',
+                  desc: 'Growth marketers, content strategists, and performance experts who drive real pipeline.',
+                  count: '160K+',
+                  color: '#f97316',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>,
+                },
+                {
+                  title: 'Operations & Strategy',
+                  desc: 'Ops leaders and strategists who streamline processes and drive organizational efficiency.',
+                  count: '110K+',
+                  color: '#64748b',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" /></svg>,
+                },
+                {
+                  title: 'Finance & Accounting',
+                  desc: 'CFO-level strategists to financial analysts — FP&A, audit, and compliance experts.',
+                  count: '75K+',
+                  color: '#059669',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" /></svg>,
+                },
+                {
+                  title: 'Legal & Compliance',
+                  desc: 'In-house counsel, regulatory specialists, and contract professionals.',
+                  count: '40K+',
+                  color: '#78716c',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
+                },
+                {
+                  title: 'STEM & Research',
+                  desc: 'Scientists, researchers, and technical experts across biotech, physics, and engineering.',
+                  count: '65K+',
+                  color: '#7c3aed',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M9 3h6M12 3v7m0 0l-4 8h8l-4-8z" /><circle cx="12" cy="19" r="2" /></svg>,
+                },
+                {
+                  title: 'Sales & Business Dev',
+                  desc: 'BDRs, account executives, and sales leaders who close enterprise deals.',
+                  count: '130K+',
+                  color: '#e11d48',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" /></svg>,
+                },
+              ].map((d) => (
+                <div key={d.title} style={{
+                  background: 'white',
+                  borderRadius: '16px',
+                  padding: '24px',
+                  border: '1px solid rgba(0,0,0,0.06)',
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                  cursor: 'default',
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
+                    <div style={{
+                      width: '40px', height: '40px', borderRadius: '10px',
+                      background: `${d.color}10`,
+                      color: d.color,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>{d.icon}</div>
+                    <span style={{
+                      fontSize: '12px', fontWeight: 800, color: d.color,
+                      background: `${d.color}08`,
+                      padding: '2px 8px', borderRadius: '6px',
+                    }}>{d.count}</span>
+                  </div>
+                  <div style={{ fontSize: '14px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>{d.title}</div>
+                  <div style={{ fontSize: '12px', color: '#64748b', lineHeight: '1.5' }}>{d.desc}</div>
                 </div>
               ))}
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '40px' }}>
+              <Link href="/for-talent" className="btn btn--primary btn--lg">
+                Explore Our Talent Network
+              </Link>
             </div>
           </RevealSection>
         </div>
