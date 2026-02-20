@@ -1,0 +1,155 @@
+.chartContainer {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.chartHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--space-6) var(--space-6) 0;
+}
+
+.chartTitle {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-1);
+}
+
+.chartPrice {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.changeBadge {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 100px;
+}
+
+.changeBadge.positive {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+}
+
+.changeBadge.negative {
+    background: rgba(239, 68, 68, 0.1);
+    color: #DC2626;
+}
+
+.timeFilters {
+    display: flex;
+    gap: 2px;
+    background: var(--color-gray-50);
+    border-radius: var(--radius-md);
+    padding: 3px;
+}
+
+.timeBtn {
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.timeBtn:hover {
+    color: var(--text-primary);
+}
+
+.timeBtnActive {
+    background: var(--color-white);
+    color: var(--text-primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.chartWrapper {
+    position: relative;
+    padding: var(--space-4) 0;
+}
+
+.canvas {
+    display: block;
+    cursor: crosshair;
+}
+
+.tooltip {
+    position: absolute;
+    transform: translateX(-50%);
+    background: var(--color-gray-900);
+    color: white;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.tooltipPrice {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.tooltipDate {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.chartFooter {
+    padding: var(--space-4) var(--space-6);
+    border-top: 1px solid var(--color-gray-100);
+    background: var(--color-gray-25);
+}
+
+.statRow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+}
+
+.miniStat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.miniLabel {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.miniValue {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .chartHeader {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .statRow {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

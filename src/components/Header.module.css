@@ -86,6 +86,27 @@
     color: var(--color-primary);
 }
 
+.loginBtn {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: var(--text-xs) !important;
+    font-weight: 600 !important;
+    color: var(--text-secondary);
+    background: none;
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.loginBtn:hover {
+    color: var(--text-primary);
+    border-color: var(--color-gray-300);
+    background: var(--color-gray-50);
+}
+
 .tokenDot {
     width: 6px;
     height: 6px;

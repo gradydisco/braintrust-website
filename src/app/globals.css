@@ -273,12 +273,14 @@ p {
   color: var(--text-secondary);
 }
 
-/* Gradient text — Braintrust aurora blend */
+/* Gradient text — Braintrust aurora blend with single shimmer */
 .text-gradient {
   background: var(--gradient-aurora);
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: shimmer 3s ease-in-out 1 forwards;
 }
 
 /* Cool gradient — indigo/violet */
@@ -289,14 +291,14 @@ p {
   background-clip: text;
 }
 
-/* Token gradient — purple-focused with shimmer */
+/* Token gradient — purple-focused with single shimmer */
 .text-gradient-token {
   background: linear-gradient(90deg, var(--color-token), var(--color-primary), var(--color-token), var(--color-gold));
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 4s ease-in-out infinite;
+  animation: shimmer 3s ease-in-out 1 forwards;
 }
 
 /* Warm gradient — coral to gold */

@@ -217,6 +217,43 @@ export default function Header() {
             BTRST
           </Link>
 
+          <div
+            className={styles.navItem}
+            onMouseEnter={() => handleDropdownEnter('login')}
+            onMouseLeave={() => handleDropdownLeave()}
+            style={{ position: 'relative' }}
+          >
+            <button
+              className={`nav-link ${styles.loginBtn}`}
+              onClick={() => setDropdownOpen(dropdownOpen === 'login' ? null : 'login')}
+              aria-expanded={dropdownOpen === 'login'}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}>
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+              </svg>
+              Log In
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ marginLeft: '2px' }}>
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            {dropdownOpen === 'login' && (
+              <div className={styles.dropdown} style={{ right: 0, left: 'auto', minWidth: '260px' }}>
+                <a href="https://app.usebraintrust.com/talent/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
+                  <strong>Talent Login</strong>
+                  <span className={styles.dropdownDesc}>Access the Talent Marketplace</span>
+                </a>
+                <a href="https://app.usebraintrust.com/client/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
+                  <strong>Client — Marketplace</strong>
+                  <span className={styles.dropdownDesc}>Manage talent and hiring</span>
+                </a>
+                <a href="https://air.usebraintrust.com/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
+                  <strong>Client — AIR</strong>
+                  <span className={styles.dropdownDesc}>AI Recruiter platform login</span>
+                </a>
+              </div>
+            )}
+          </div>
+
           <Link href={audience === 'company' ? '/book-demo' : '/jobs'} className="btn btn--primary btn--sm">
             {audience === 'company' ? 'Book a Demo' : 'Find Jobs'}
           </Link>

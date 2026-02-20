@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import PriceChart from '@/components/PriceChart';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -83,6 +84,16 @@ export default function Token() {
                         <div><div className="stat__value text-gradient-token">100%</div><div className="stat__label">Community Governed</div></div>
                         <div><div className="stat__value text-gradient-token">ERC-20</div><div className="stat__label">Token Standard</div></div>
                     </div>
+                </div>
+            </section>
+
+            <section className="section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>BTRST Price</h2>
+                        <p>Live market data — 90 day view.</p>
+                    </div>
+                    <PriceChart />
                 </div>
             </section>
 
