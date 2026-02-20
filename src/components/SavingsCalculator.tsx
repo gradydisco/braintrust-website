@@ -169,6 +169,13 @@ export default function SavingsCalculator() {
         const totalHours = directHours;
         const fte = (directHours / 2080).toFixed(1);
 
+        // 7) ROI calculation — hidden cost model
+        //    AIR cost: $4-5 per interview conducted (averaged to $4.50)
+        //    Not displayed to user; only the resulting ROI multiple is shown.
+        const airCostPerInterview = 4.50;
+        const estimatedAirCost = Math.round(airTotalInterviews * airCostPerInterview);
+        const roiMultiple = estimatedAirCost > 0 ? Math.round(totalSavings / estimatedAirCost) : 0;
+
         return {
             totalSavings,
             directCost,
@@ -179,6 +186,8 @@ export default function SavingsCalculator() {
             daysReduced,
             airTotalInterviews,
             resumesMissed,
+            roiMultiple,
+            estimatedAirCost,
             breakdown: [
                 {
                     key: 'resume',
@@ -470,22 +479,26 @@ export default function SavingsCalculator() {
                             </div>
 
                             {/* Key metrics */}
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '32px' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px', marginBottom: '32px' }}>
                                 <div style={resultCardStyle}>
-                                    <div style={{ fontSize: '32px', ...gradientText }}>{fmt(results.directHours)}</div>
-                                    <div style={{ fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Hours Saved / Year</div>
+                                    <div style={{ fontSize: '30px', ...gradientText }}>{fmt(results.directHours)}</div>
+                                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Hours Saved / Year</div>
                                 </div>
                                 <div style={resultCardStyle}>
-                                    <div style={{ fontSize: '32px', ...gradientText }}>{fmtDollar(results.directCost)}</div>
-                                    <div style={{ fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Direct Labor Savings</div>
+                                    <div style={{ fontSize: '30px', ...gradientText }}>{fmtDollar(results.directCost)}</div>
+                                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Direct Labor Savings</div>
                                 </div>
                                 <div style={resultCardStyle}>
-                                    <div style={{ fontSize: '32px', ...gradientText }}>{results.fte}</div>
-                                    <div style={{ fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>FTE Equivalent</div>
+                                    <div style={{ fontSize: '30px', ...gradientText }}>{results.fte}</div>
+                                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>FTE Equivalent</div>
                                 </div>
                                 <div style={resultCardStyle}>
-                                    <div style={{ fontSize: '32px', ...gradientText }}>{results.timeToHirePercent}%</div>
-                                    <div style={{ fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Faster Time-to-Hire</div>
+                                    <div style={{ fontSize: '30px', ...gradientText }}>{results.timeToHirePercent}%</div>
+                                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Faster Time-to-Hire</div>
+                                </div>
+                                <div style={resultCardStyle}>
+                                    <div style={{ fontSize: '30px', ...gradientText }}>{results.roiMultiple}×</div>
+                                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Estimated ROI</div>
                                 </div>
                             </div>
 

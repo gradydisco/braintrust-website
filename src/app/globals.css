@@ -684,6 +684,20 @@ p {
   .grid--4 {
     grid-template-columns: 1fr;
   }
+
+  /* Inline 4-col / 5-col grids (AIR capabilities + calculator results) */
+  [style*="repeat(4, 1fr)"],
+  [style*="repeat(5, 1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  [style*="repeat(4, 1fr)"],
+  [style*="repeat(5, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ============================================

@@ -96,10 +96,7 @@ export default function AIR() {
                 </div>
             </section>
 
-            {/* ====== TIME & COST SAVINGS CALCULATOR ====== */}
-            <SavingsCalculator />
-
-            {/* ====== CAPABILITIES ====== */}
+            {/* ====== CAPABILITIES — How AIR Transforms Recruiting ====== */}
             <section className="section">
                 <div className="container">
                     <RevealSection>
@@ -110,46 +107,64 @@ export default function AIR() {
                         </div>
                     </RevealSection>
                     <RevealSection delay={200}>
-                        <div className="grid grid--3">
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(4, 1fr)',
+                            gap: '16px',
+                        }}>
                             {[
                                 {
                                     title: 'Conversational Voice Interviews',
-                                    desc: 'Real-time, adaptive voice interviews — evaluating communication, technical depth, and cultural fit. Thousands of interviews per day with consistent quality.',
+                                    desc: 'Real-time, adaptive voice interviews evaluating communication, depth, and fit — at any volume, 24/7.',
                                     stat: '1000s/day',
                                     statLabel: 'interview capacity',
                                     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /><line x1="12" y1="19" x2="12" y2="23" /><line x1="8" y1="23" x2="16" y2="23" /></svg>,
                                 },
                                 {
                                     title: 'Resume Scoring & Matching',
-                                    desc: 'Process thousands of applications instantly. AI-powered scoring ranks candidates by skills, experience, and role fit with transparent rationale.',
-                                    stat: '80%',
-                                    statLabel: 'faster screening',
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" /></svg>,
+                                    desc: 'AI-powered scoring ranks every applicant by skills, experience, and role fit — no resume goes unseen.',
+                                    stat: '100%',
+                                    statLabel: 'applicants screened',
+                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>,
                                 },
                                 {
                                     title: 'Semantic Candidate Search',
-                                    desc: 'Go beyond keyword matching. AIR understands context, skills adjacency, and career trajectories to surface candidates traditional searches miss.',
+                                    desc: 'Context-aware matching surfaces candidates traditional keyword searches miss — including skills adjacency and career trajectory.',
                                     stat: '3×',
                                     statLabel: 'more qualified matches',
                                     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>,
                                 },
                                 {
                                     title: 'Customizable Scoring Frameworks',
-                                    desc: 'Design evaluation criteria tailored to your roles. Weight technical skills, communication, domain expertise, and behavioral signals.',
+                                    desc: 'Weight technical skills, communication, domain expertise, and behavioral signals — tailored rubrics for every role.',
                                     stat: 'Custom',
                                     statLabel: 'scoring rubrics',
                                     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" /></svg>,
                                 },
                                 {
                                     title: '16+ Languages Supported',
-                                    desc: 'Conduct interviews and assessments in 16+ languages natively. Global-ready hiring for distributed teams and international talent pools.',
+                                    desc: 'Conduct interviews and assessments natively in 16+ languages — built for global teams and international talent pools.',
                                     stat: '16+',
                                     statLabel: 'native languages',
                                     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" /></svg>,
                                 },
                                 {
+                                    title: 'Lower Attrition, Better Hires',
+                                    desc: 'Deeper, more consistent evaluation leads to stronger matches — reducing first-year attrition and improving long-term retention.',
+                                    stat: '35%',
+                                    statLabel: 'less first-year attrition',
+                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
+                                },
+                                {
+                                    title: 'Measurable Cost Savings',
+                                    desc: 'Replace multiple point solutions with one platform. Clients typically see 10–20× return on their AIR investment within the first year.',
+                                    stat: '10–20×',
+                                    statLabel: 'typical ROI',
+                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" /></svg>,
+                                },
+                                {
                                     title: 'Enterprise Scale & Integrations',
-                                    desc: 'Built for high-volume hiring. Native ATS integrations with Greenhouse, Lever, Workday, and more. No scaling of recruiter headcount required.',
+                                    desc: 'Native ATS integrations with Greenhouse, Lever, Workday, and 50+ more. Scale hiring without scaling headcount.',
                                     stat: '50+',
                                     statLabel: 'ATS integrations',
                                     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2" /><rect x="2" y="14" width="20" height="8" rx="2" ry="2" /><line x1="6" y1="6" x2="6.01" y2="6" /><line x1="6" y1="18" x2="6.01" y2="18" /></svg>,
@@ -158,42 +173,38 @@ export default function AIR() {
                                 <div key={item.title} className="card--enterprise" style={{
                                     background: 'var(--color-white)',
                                     border: '1px solid rgba(50, 50, 93, 0.08)',
-                                    borderRadius: 'var(--radius-xl)',
+                                    borderRadius: '14px',
                                     overflow: 'hidden',
                                     display: 'flex',
                                     flexDirection: 'column',
                                 }}>
                                     {/* Accent bar */}
-                                    <div style={{ height: '3px', background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))', opacity: 0.5 }} />
-                                    <div style={{ padding: 'var(--space-7) var(--space-7) var(--space-5)', flex: 1 }}>
-                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
-                                            <div style={{
-                                                width: '42px', height: '42px', borderRadius: '10px',
-                                                background: 'linear-gradient(135deg, rgba(245, 87, 51, 0.08), rgba(245, 87, 51, 0.02))',
-                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                color: 'var(--color-primary)', flexShrink: 0,
-                                            }}>
-                                                {item.icon}
-                                            </div>
-                                            <div>
-                                                <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '6px', lineHeight: 1.35 }}>
-                                                    {item.title}
-                                                </h4>
-                                                <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-secondary)', margin: 0 }}>
-                                                    {item.desc}
-                                                </p>
-                                            </div>
+                                    <div style={{ height: '3px', background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))', opacity: 0.4 }} />
+                                    <div style={{ padding: '24px 20px 16px', flex: 1 }}>
+                                        <div style={{
+                                            width: '40px', height: '40px', borderRadius: '10px',
+                                            background: 'linear-gradient(135deg, rgba(245, 87, 51, 0.08), rgba(245, 87, 51, 0.02))',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            color: 'var(--color-primary)', marginBottom: '14px',
+                                        }}>
+                                            {item.icon}
                                         </div>
+                                        <h4 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px', lineHeight: 1.35 }}>
+                                            {item.title}
+                                        </h4>
+                                        <p style={{ fontSize: '12.5px', lineHeight: 1.6, color: 'var(--text-secondary)', margin: 0 }}>
+                                            {item.desc}
+                                        </p>
                                     </div>
                                     <div style={{
                                         borderTop: '1px solid rgba(50, 50, 93, 0.05)',
-                                        padding: '10px var(--space-7)',
-                                        display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
+                                        padding: '10px 20px',
+                                        display: 'flex', alignItems: 'center', gap: '6px',
                                         background: 'rgba(245, 87, 51, 0.012)',
                                         marginTop: 'auto',
                                     }}>
                                         <span style={{ fontSize: '14px', fontWeight: 800, color: 'var(--color-primary)' }}>{item.stat}</span>
-                                        <span style={{ fontSize: '11.5px', color: 'var(--text-tertiary)', fontWeight: 500 }}>{item.statLabel}</span>
+                                        <span style={{ fontSize: '11px', color: 'var(--text-tertiary)', fontWeight: 500 }}>{item.statLabel}</span>
                                     </div>
                                 </div>
                             ))}
@@ -201,6 +212,9 @@ export default function AIR() {
                     </RevealSection>
                 </div>
             </section>
+
+            {/* ====== TIME & COST SAVINGS CALCULATOR ====== */}
+            <SavingsCalculator />
 
             {/* ====== STATS ====== */}
             <section className="section section--dark">
