@@ -362,9 +362,35 @@ export default function Home() {
               </p>
             </div>
             <div className={styles.logoGrid}>
-              {['NASA', 'Nike', 'Goldman Sachs', 'Porsche', 'Atlassian', 'Deloitte', 'Nestle', 'Pacific Life', 'Colgate', 'Pepsi', 'Honda', 'Wayfair'].map((name) => (
-                <div key={name} className={styles.logoPlaceholder}>
-                  <span>{name}</span>
+              {[
+                { name: 'NASA', domain: 'nasa.gov' },
+                { name: 'Nike', domain: 'nike.com' },
+                { name: 'Goldman Sachs', domain: 'goldmansachs.com' },
+                { name: 'Porsche', domain: 'porsche.com' },
+                { name: 'Atlassian', domain: 'atlassian.com' },
+                { name: 'Deloitte', domain: 'deloitte.com' },
+                { name: 'Nestlé', domain: 'nestle.com' },
+                { name: 'Pacific Life', domain: 'pacificlife.com' },
+                { name: 'Colgate', domain: 'colgate.com' },
+                { name: 'Pepsi', domain: 'pepsi.com' },
+                { name: 'Honda', domain: 'honda.com' },
+                { name: 'Wayfair', domain: 'wayfair.com' },
+              ].map((co) => (
+                <div key={co.name} className={styles.logoPlaceholder} title={co.name}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://logo.clearbit.com/${co.domain}`}
+                    alt={co.name}
+                    style={{
+                      height: '28px',
+                      maxWidth: '100px',
+                      objectFit: 'contain',
+                      filter: 'grayscale(100%) opacity(0.5)',
+                      transition: 'filter 0.3s',
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.filter = 'grayscale(0%) opacity(1)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.filter = 'grayscale(100%) opacity(0.5)')}
+                  />
                 </div>
               ))}
             </div>

@@ -372,23 +372,10 @@
     align-items: center;
     justify-content: center;
     height: 48px;
-    padding: 0 var(--space-5);
-    border-radius: var(--radius-md);
-    background: transparent;
-    border: none;
-    font-size: var(--text-sm);
-    font-weight: 700;
-    color: var(--color-gray-400);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    padding: 0 var(--space-4);
     transition: all var(--transition-base);
-    opacity: 0.7;
 }
 
-.logoPlaceholder:hover {
-    color: var(--color-gray-600);
-    opacity: 1;
-}
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
