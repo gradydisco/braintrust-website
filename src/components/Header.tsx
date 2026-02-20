@@ -27,7 +27,7 @@ const companyNav: NavItem[] = [
   },
   {
     label: 'Solutions', href: '/solutions', children: [
-      { label: 'Enterprise Hiring', href: '/solutions/enterprise-hiring', desc: 'Scale your talent pipeline with enterprise-grade tools' },
+      { label: 'Enterprise Hiring', href: '/solutions/enterprise-hiring', desc: 'Enterprise-grade AI hiring at scale' },
       { label: 'High-Volume Hiring', href: '/solutions/high-volume-hiring', desc: 'Fill hundreds of roles efficiently at scale' },
       { label: 'AI Training Data', href: '/solutions/ai-training-data', desc: 'Human data and RLHF for AI model training' },
     ]
