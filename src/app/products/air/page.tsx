@@ -5,6 +5,7 @@ import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import RevealSection from '@/components/RevealSection';
+import LiveInterviewTicker from '@/components/LiveInterviewTicker';
 
 export const metadata: Metadata = {
     title: 'AIR | AI Recruiter | Conversational Voice Interviews & AI Assessments',
@@ -50,6 +51,13 @@ export default function AIR() {
                             <Link href="/products/air/try" className="btn btn--secondary btn--lg">Try It Yourself →</Link>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* ====== LIVE ACTIVITY TICKER ====== */}
+            <section className="section" style={{ paddingTop: 0, paddingBottom: 'var(--space-6)' }}>
+                <div className="container">
+                    <LiveInterviewTicker />
                 </div>
             </section>
 
@@ -126,6 +134,128 @@ export default function AIR() {
                             <div><div className="stat__value text-gradient">80%</div><div className="stat__label">Faster Screening</div></div>
                             <div><div className="stat__value text-gradient">16+</div><div className="stat__label">Languages Supported</div></div>
                             <div><div className="stat__value text-gradient">50+</div><div className="stat__label">ATS Integrations</div></div>
+                        </div>
+                    </RevealSection>
+                </div>
+            </section>
+
+            {/* ====== SOCIAL PROOF — CUSTOMER QUOTES ====== */}
+            <section className="section">
+                <div className="container">
+                    <RevealSection>
+                        <div className="section-header">
+                            <div className="badge">What Leaders Are Saying</div>
+                            <h2>Trusted by recruiting teams everywhere</h2>
+                            <p>Hear from talent leaders who&apos;ve transformed their hiring with AIR.</p>
+                        </div>
+                    </RevealSection>
+                    <RevealSection delay={200}>
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+                            gap: 'var(--space-6)',
+                        }}>
+                            {[
+                                {
+                                    quote: 'AIR cut our screening time by 85%. We went from 3 weeks to 2 days for initial candidate assessments. The conversational interviews feel natural and candidates actually prefer them over phone screens.',
+                                    name: 'Sarah M.',
+                                    title: 'VP of Talent Acquisition',
+                                    company: '5,000+ employee SaaS company',
+                                    metric: '85% faster screening',
+                                },
+                                {
+                                    quote: 'We evaluated 6 AI interviewing platforms. AIR was the only one that could handle our volume — 2,000+ interviews per month — without quality degradation. The scoring consistency is remarkable.',
+                                    name: 'James K.',
+                                    title: 'Head of Recruiting',
+                                    company: 'Fortune 500 financial services',
+                                    metric: '2,000+ interviews/month',
+                                },
+                                {
+                                    quote: 'Our candidate NPS went from 32 to 78 after implementing AIR. Candidates love the flexibility of interviewing on their own schedule. The AI adapts to each person naturally.',
+                                    name: 'Emily C.',
+                                    title: 'Talent Operations Manager',
+                                    company: '10,000+ employee consulting firm',
+                                    metric: 'NPS 32 → 78',
+                                },
+                                {
+                                    quote: 'Hiring 500+ nurses per quarter was a nightmare. AIR screens candidates 24/7, conducts initial interviews in 16 languages, and our time-to-fill dropped from 45 to 12 days.',
+                                    name: 'Marcus T.',
+                                    title: 'CHRO',
+                                    company: '15,000+ employee healthcare system',
+                                    metric: '45 → 12 day time-to-fill',
+                                },
+                                {
+                                    quote: 'We were paying for resume screening, skills assessments, phone screening, and scheduling tools separately. AIR replaced all of them. ROI was positive in the first month.',
+                                    name: 'Priya R.',
+                                    title: 'Director of People Operations',
+                                    company: 'Series C startup (400 employees)',
+                                    metric: 'Replaced 4 tools',
+                                },
+                                {
+                                    quote: 'Last holiday season we needed to hire 1,200 warehouse and CS roles in 6 weeks. AIR handled all initial screening and interviews. We did it with the same team size as when we hired 400.',
+                                    name: 'Rachel W.',
+                                    title: 'Head of Talent Acquisition',
+                                    company: '2,000+ employee e-commerce platform',
+                                    metric: '3x hiring, same team',
+                                },
+                            ].map((q, i) => (
+                                <div key={i} className="card" style={{
+                                    padding: 'var(--space-8)',
+                                    borderRadius: 'var(--radius-xl)',
+                                    background: 'var(--color-white)',
+                                    border: '1px solid var(--color-gray-100)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: 'var(--space-4)',
+                                }}>
+                                    {/* Metric highlight */}
+                                    <span style={{
+                                        display: 'inline-block',
+                                        fontSize: '11px',
+                                        fontWeight: 700,
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.06em',
+                                        color: 'var(--color-primary)',
+                                        padding: '4px 10px',
+                                        borderRadius: '100px',
+                                        background: 'var(--color-primary-50)',
+                                        alignSelf: 'flex-start',
+                                    }}>
+                                        {q.metric}
+                                    </span>
+                                    {/* Quote */}
+                                    <p style={{
+                                        fontSize: 'var(--text-base)',
+                                        lineHeight: 1.7,
+                                        color: 'var(--text-secondary)',
+                                        margin: 0,
+                                        flex: 1,
+                                    }}>
+                                        &ldquo;{q.quote}&rdquo;
+                                    </p>
+                                    {/* Attribution */}
+                                    <div style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 'var(--space-3)',
+                                        paddingTop: 'var(--space-4)',
+                                        borderTop: '1px solid var(--color-gray-100)',
+                                    }}>
+                                        <div style={{
+                                            width: '36px', height: '36px', borderRadius: '50%',
+                                            background: `hsl(${210 + (i * 30) % 120}, 45%, 55%)`,
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            color: 'white', fontWeight: 700, fontSize: '13px', flexShrink: 0,
+                                        }}>
+                                            {q.name.split(' ').map(n => n[0]).join('')}
+                                        </div>
+                                        <div>
+                                            <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)' }}>{q.name}</div>
+                                            <div style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>{q.title} · {q.company}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </RevealSection>
                 </div>
