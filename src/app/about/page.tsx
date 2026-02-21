@@ -275,12 +275,12 @@ export default function About() {
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-6)', marginBottom: 'var(--space-12)' }}>
                         {[
-                            { icon: '🌐', title: 'Talent Marketplace', body: 'A global network of 2M+ vetted professionals connecting with enterprise clients across IT, finance, design, and specialized AI training work — with zero agency fees for talent.' },
-                            { icon: '🎙️', title: 'Braintrust AIR', body: 'AI interview software that automates first-round screening at enterprise scale. Conversational voice interviews, semantic scoring, and ATS integration — out of the box.' },
-                            { icon: '⚡', title: 'Braintrust Nexus', body: 'AI-native workflow automation. Connect your enterprise systems, remove manual coordination steps, and automate structured decisions across every business function.' },
+                            { label: 'Marketplace', title: 'Talent Marketplace', body: 'A global network of 2M+ vetted professionals connecting with enterprise clients across IT, finance, design, and specialized AI training work — with zero agency fees for talent.' },
+                            { label: 'AIR', title: 'Braintrust AIR', body: 'AI interview software that automates first-round screening at enterprise scale. Conversational voice interviews, semantic scoring, and ATS integration — out of the box.' },
+                            { label: 'Nexus', title: 'Braintrust Nexus', body: 'AI-native workflow automation. Connect your enterprise systems, remove manual coordination steps, and automate structured decisions across every business function.' },
                         ].map((card, i) => (
                             <div key={i} className="card" style={{ padding: 'var(--space-8)' }}>
-                                <div style={{ fontSize: '2rem', marginBottom: 'var(--space-4)' }}>{card.icon}</div>
+                                <div style={{ display: 'inline-flex', padding: '8px 14px', borderRadius: 'var(--radius-md)', background: 'var(--color-primary-50)', color: 'var(--color-primary)', fontWeight: 700, fontSize: 'var(--text-xs)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 'var(--space-5)' }}>{card.label}</div>
                                 <h3 style={{ marginBottom: 'var(--space-3)', fontSize: 'var(--text-lg)' }}>{card.title}</h3>
                                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>{card.body}</p>
                             </div>
@@ -308,7 +308,7 @@ export default function About() {
                         <h2>Executive Team</h2>
                         <p>The leadership team building Braintrust's AI infrastructure platform.</p>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-8)', maxWidth: '1100px', margin: '0 auto' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-6)', maxWidth: '1200px', margin: '0 auto' }}>
                         {team.map((person) => (
                             <div key={person.name} style={{
                                 background: 'var(--color-white)',
