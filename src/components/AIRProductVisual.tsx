@@ -185,53 +185,84 @@ export default function AIRProductVisual() {
 
                 {/* Interview panel */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '10px' }}>
-                    {/* Video/audio panel */}
+                    {/* Video call panel with headshot */}
                     <div style={{
-                        background: '#1e293b', borderRadius: '10px', padding: '12px',
-                        display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '120px',
+                        borderRadius: '10px',
+                        overflow: 'hidden',
+                        position: 'relative',
+                        minHeight: '120px',
+                        background: '#1e293b',
                     }}>
-                        <div>
-                            <div style={{ fontSize: '7px', color: '#64748b', marginBottom: '2px' }}>Sr. Software Engineer · Data Engineering</div>
-                            <div style={{ fontSize: '11px', fontWeight: 700, color: '#fff' }}>Jake Smithers</div>
+                        {/* Photo background */}
+                        <img
+                            src="/jake-smithers.png"
+                            alt="Jake Smithers"
+                            style={{
+                                position: 'absolute', inset: 0,
+                                width: '100%', height: '100%',
+                                objectFit: 'cover', objectPosition: 'center top',
+                                opacity: phase === 'intro' ? 0.5 : 0.88,
+                                transition: 'opacity 600ms ease',
+                            }}
+                        />
+                        {/* Dark gradient overlay at top and bottom */}
+                        <div style={{
+                            position: 'absolute', inset: 0,
+                            background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, transparent 35%, transparent 55%, rgba(0,0,0,0.65) 100%)',
+                        }} />
+
+                        {/* Top-left name tag */}
+                        <div style={{ position: 'absolute', top: '8px', left: '8px' }}>
+                            <div style={{ fontSize: '6.5px', color: 'rgba(255,255,255,0.7)', marginBottom: '1px' }}>Sr. Software Engineer</div>
+                            <div style={{ fontSize: '10px', fontWeight: 700, color: '#fff' }}>Jake Smithers</div>
                         </div>
 
-                        {/* Animated mic / waveform */}
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                            {phase === 'interview' ? (
-                                <div style={{ display: 'flex', alignItems: 'flex-end', gap: '3px', height: '28px' }}>
-                                    {[0.4, 0.7, 1, 0.85, 0.6, 0.9, 0.5, 0.75, 0.45].map((h, i) => (
-                                        <div key={i} style={{
-                                            width: '3px', borderRadius: '2px', background: 'var(--color-primary)',
-                                            height: `${h * 20}px`,
-                                            animation: `airWave ${0.5 + i * 0.12}s ease-in-out infinite alternate`,
-                                            animationDelay: `${i * 0.08}s`,
-                                        }} />
-                                    ))}
-                                </div>
-                            ) : (
-                                <div style={{
-                                    width: '28px', height: '28px', borderRadius: '50%',
-                                    background: 'rgba(255,255,255,0.1)',
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    animation: phase === 'intro' ? 'airPulse 1.5s ease-in-out infinite' : 'none',
-                                }}>
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="white">
-                                        <polygon points="5 3 19 12 5 21" />
-                                    </svg>
-                                </div>
-                            )}
-                        </div>
+                        {/* REC indicator top-right */}
+                        {phase === 'interview' && (
+                            <div style={{
+                                position: 'absolute', top: '8px', right: '8px',
+                                display: 'flex', alignItems: 'center', gap: '4px',
+                                background: 'rgba(0,0,0,0.45)', borderRadius: '4px',
+                                padding: '2px 5px',
+                            }}>
+                                <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#ef4444', animation: 'airPulse 1s ease-in-out infinite' }} />
+                                <span style={{ fontSize: '7px', fontWeight: 700, color: '#fff', letterSpacing: '0.04em' }}>REC</span>
+                            </div>
+                        )}
 
-                        {/* Progress bar */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                            <div style={{ flex: 1, height: '3px', borderRadius: '2px', background: 'rgba(255,255,255,0.1)' }}>
+                        {/* Waveform during interview */}
+                        {phase === 'interview' && (
+                            <div style={{
+                                position: 'absolute', bottom: '22px', left: '50%',
+                                transform: 'translateX(-50%)',
+                                display: 'flex', alignItems: 'flex-end', gap: '2px', height: '18px',
+                            }}>
+                                {[0.4, 0.7, 1, 0.85, 0.6, 0.9, 0.5, 0.75, 0.45].map((h, i) => (
+                                    <div key={i} style={{
+                                        width: '2.5px', borderRadius: '2px',
+                                        background: 'rgba(255,255,255,0.85)',
+                                        height: `${h * 14}px`,
+                                        animation: `airWave ${0.5 + i * 0.12}s ease-in-out infinite alternate`,
+                                        animationDelay: `${i * 0.08}s`,
+                                    }} />
+                                ))}
+                            </div>
+                        )}
+
+                        {/* Progress bar bottom */}
+                        <div style={{
+                            position: 'absolute', bottom: 0, left: 0, right: 0,
+                            padding: '4px 8px 6px',
+                            display: 'flex', alignItems: 'center', gap: '6px',
+                        }}>
+                            <div style={{ flex: 1, height: '2px', borderRadius: '2px', background: 'rgba(255,255,255,0.2)' }}>
                                 <div style={{
                                     height: '100%', borderRadius: '2px', background: 'var(--color-primary)',
                                     width: phase === 'intro' ? '0%' : phase === 'interview' ? '30%' : phase === 'transcript' ? '60%' : '90%',
                                     transition: 'width 800ms ease',
                                 }} />
                             </div>
-                            <span style={{ fontSize: '7px', color: '#64748b' }}>
+                            <span style={{ fontSize: '6.5px', color: 'rgba(255,255,255,0.6)', flexShrink: 0 }}>
                                 {phase === 'intro' ? '0:00' : phase === 'interview' ? '0:14' : phase === 'transcript' ? '1:28' : '2:05'}
                             </span>
                         </div>
