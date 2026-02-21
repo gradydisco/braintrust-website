@@ -969,6 +969,7 @@ p {
   font-weight: 800;
   letter-spacing: var(--tracking-tight);
   line-height: 1;
+  padding-bottom: 0.15em;
   color: var(--color-primary);
 }
 
