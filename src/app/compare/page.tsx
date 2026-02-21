@@ -3,9 +3,9 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Compare Braintrust AIR — Side-by-Side with HireVue, TestGorilla, Paradox & More',
-    description: 'Compare Braintrust AIR with the top AI interview and assessment platforms. Detailed feature comparisons, voice AI analysis, enterprise readiness, and scoring sophistication.',
-    keywords: 'Braintrust AIR comparison, AIR vs HireVue, AIR vs TestGorilla, AIR vs Paradox, AI interview comparison, AI hiring platform comparison',
+    title: 'Compare Braintrust — AIR, Marketplace & Talent Network Comparisons',
+    description: 'Compare Braintrust AIR, Marketplace, and talent network vs. HireVue, TestGorilla, Upwork, Toptal, Fiverr, and more. Detailed structural comparisons for enterprise hiring teams.',
+    keywords: 'Braintrust comparison, AIR vs HireVue, Braintrust vs Upwork, Braintrust vs Toptal, Braintrust vs Fiverr, AI interview comparison, talent marketplace comparison',
 };
 
 const comparisons = [
@@ -60,6 +60,36 @@ export default function ComparePage() {
                                 <p style={{ fontSize: '12px', color: 'var(--text-tertiary)', margin: 0, lineHeight: 1.5 }}>{c.desc}</p>
                             </Link>
                         ))}
+                    </div>
+
+                    {/* Marketplace Comparisons */}
+                    <div style={{ marginTop: '48px', marginBottom: '24px' }}>
+                        <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '8px' }}>Talent Marketplace Comparisons</h2>
+                        <p style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '20px' }}>How Braintrust&apos;s vetted network compares to open freelance marketplaces.</p>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
+                            {[
+                                { name: 'Upwork', slug: 'upwork', desc: 'Open freelance marketplace', type: 'Open Market' },
+                                { name: 'Fiverr', slug: 'fiverr', desc: 'Task-based gig marketplace', type: 'Gig' },
+                                { name: 'Toptal', slug: 'toptal', desc: 'Manual-vetting freelance network', type: 'Vetted' },
+                            ].map((c) => (
+                                <Link key={c.slug} href={`/compare/braintrust-vs-${c.slug}`} style={{
+                                    display: 'block', padding: '20px 24px', borderRadius: '12px',
+                                    background: 'var(--color-white)', border: '1px solid var(--color-gray-100)',
+                                    textDecoration: 'none', transition: 'border-color 0.2s',
+                                }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+                                        <h3 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>Braintrust vs {c.name}</h3>
+                                        <span style={{
+                                            fontSize: '10px', fontWeight: 700, padding: '3px 8px',
+                                            borderRadius: '4px', background: 'var(--color-primary-50)',
+                                            color: 'var(--color-primary)', textTransform: 'uppercase',
+                                            letterSpacing: '0.04em',
+                                        }}>{c.type}</span>
+                                    </div>
+                                    <p style={{ fontSize: '12px', color: 'var(--text-tertiary)', margin: 0, lineHeight: 1.5 }}>{c.desc}</p>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

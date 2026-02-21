@@ -50,6 +50,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: '/token/faq', changeFrequency: 'monthly' as const, priority: 0.6 },
         { url: '/token/price', changeFrequency: 'daily' as const, priority: 0.6 },
 
+        // Human Data / AI Training Workforce
+        { url: '/human-data-for-ai', changeFrequency: 'weekly' as const, priority: 0.9 },
+        { url: '/data-annotation-experts', changeFrequency: 'monthly' as const, priority: 0.8 },
+        { url: '/data-labeling-talent', changeFrequency: 'monthly' as const, priority: 0.8 },
+        { url: '/rlhf-talent-network', changeFrequency: 'monthly' as const, priority: 0.8 },
+        { url: '/ai-model-evaluation-experts', changeFrequency: 'monthly' as const, priority: 0.8 },
+
+        // Marketplace Hiring Pages
+        { url: '/hire-ai-engineers', changeFrequency: 'weekly' as const, priority: 0.9 },
+        { url: '/hire-machine-learning-engineers', changeFrequency: 'weekly' as const, priority: 0.9 },
+        { url: '/hire-data-scientists', changeFrequency: 'weekly' as const, priority: 0.9 },
+        { url: '/hire-technical-talent', changeFrequency: 'weekly' as const, priority: 0.9 },
+        { url: '/hire-contract-engineers', changeFrequency: 'weekly' as const, priority: 0.8 },
+
+        // Competitor Comparisons — Marketplace
+        { url: '/compare/braintrust-vs-upwork', changeFrequency: 'monthly' as const, priority: 0.8 },
+        { url: '/compare/braintrust-vs-fiverr', changeFrequency: 'monthly' as const, priority: 0.8 },
+        { url: '/compare/braintrust-vs-toptal', changeFrequency: 'monthly' as const, priority: 0.8 },
+
         // Legal
         { url: '/privacy', changeFrequency: 'yearly' as const, priority: 0.3 },
         { url: '/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
