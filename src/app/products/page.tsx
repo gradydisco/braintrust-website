@@ -3,119 +3,14 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import NexusProductVisual from '@/components/NexusProductVisual';
+import MarketplaceProductVisual from '@/components/MarketplaceProductVisual';
 
 export const metadata: Metadata = {
     title: 'Products — AI-Powered Talent & Recruiting Platform',
     description: 'Explore Braintrust products: Talent Marketplace for elite hiring, AIR for AI-powered recruiting, and Nexus for workflow automation. Built for the enterprise, powered by AI.',
 };
 
-/* ===========================
-   CSS-rendered product visuals
-   =========================== */
 
-function MarketplaceVisual() {
-    const candidates = [
-        { initials: 'RT', name: 'Rashad T.', role: 'Sr. Software Developer', location: 'Toronto, CA', color: '#a78bfa', bgColor: '#ddd6fe' },
-        { initials: 'AH', name: 'Amanda H.', role: 'Full Stack Engineer', location: 'Austin, TX', color: '#34d399', bgColor: '#a7f3d0' },
-        { initials: 'BM', name: 'Breno M.', role: 'Sr. Software Engineer', location: 'Vancouver, CA', color: '#a78bfa', bgColor: '#ddd6fe' },
-        { initials: 'IM', name: 'Irving M.', role: 'Front-End Engineer', location: 'Los Mochos, MX', color: '#fbbf24', bgColor: '#fde68a' },
-    ];
-
-    return (
-        <div style={{
-            background: '#fff',
-            borderRadius: 'var(--radius-2xl)',
-            padding: '20px',
-            border: '1px solid rgba(0,0,0,0.06)',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-        }}>
-            {/* Top bar */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="3" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#1e293b' }}>Braintrust</span>
-                </div>
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#94a3b8' }} />
-                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#94a3b8' }} />
-                    <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: '#f59e0b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '9px', fontWeight: 700, color: 'white' }}>G</div>
-                </div>
-            </div>
-
-            {/* Welcome */}
-            <div style={{ fontSize: '18px', fontWeight: 800, color: '#1e293b', marginBottom: '14px' }}>Welcome!</div>
-
-            {/* Top candidates section */}
-            <div style={{
-                background: '#faf5ff',
-                borderRadius: '14px',
-                padding: '14px',
-                marginBottom: '12px',
-                border: '1px solid rgba(139,92,246,0.08)',
-            }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="3" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42" /></svg>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#1e293b' }}>Your top 5 candidates</span>
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
-                    {candidates.map(c => (
-                        <div key={c.initials} style={{
-                            background: 'white',
-                            borderRadius: '10px',
-                            padding: '10px 6px 8px',
-                            textAlign: 'center',
-                            border: '1px solid rgba(0,0,0,0.04)',
-                        }}>
-                            <div style={{
-                                width: '30px', height: '30px', borderRadius: '50%',
-                                background: c.bgColor, color: c.color,
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                fontSize: '9px', fontWeight: 800, margin: '0 auto 6px',
-                                border: `2px solid ${c.color}`,
-                            }}>{c.initials}</div>
-                            <div style={{
-                                fontSize: '7px', fontWeight: 700, color: 'white',
-                                background: c.color, borderRadius: '3px',
-                                padding: '1px 4px', marginBottom: '4px',
-                                display: 'inline-block', lineHeight: '1.4',
-                            }}>{c.role}</div>
-                            <div style={{ fontSize: '8px', fontWeight: 600, color: '#1e293b', marginBottom: '1px' }}>{c.name}</div>
-                            <div style={{ fontSize: '7px', color: '#94a3b8', marginBottom: '6px' }}>{c.location}</div>
-                            <div style={{
-                                fontSize: '7px', fontWeight: 700, color: '#1e293b',
-                                background: '#fff', border: '1.5px solid #1e293b',
-                                borderRadius: '4px', padding: '2px 0', cursor: 'pointer',
-                            }}>Make offer</div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Bottom row: My Workers + My Tasks */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                <div style={{ background: '#fff', borderRadius: '10px', padding: '12px', border: '1px solid rgba(0,0,0,0.06)' }}>
-                    <div style={{ fontSize: '10px', fontWeight: 700, color: '#1e293b', marginBottom: '8px' }}>My workers</div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: '#6366f1', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: 700, color: 'white' }}>CA</div>
-                        <div>
-                            <div style={{ fontSize: '9px', fontWeight: 600, color: '#1e293b' }}>Christian A.</div>
-                            <div style={{ fontSize: '7px', color: '#94a3b8' }}>Team: Enterprise</div>
-                        </div>
-                    </div>
-                </div>
-                <div style={{ background: '#fff', borderRadius: '10px', padding: '12px', border: '1px solid rgba(0,0,0,0.06)' }}>
-                    <div style={{ fontSize: '10px', fontWeight: 700, color: '#1e293b', marginBottom: '8px' }}>My tasks</div>
-                    {['Approve invoice', 'Provide feedback'].map((t, i) => (
-                        <div key={t} style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
-                            <div style={{ width: '14px', height: '14px', borderRadius: '50%', background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '7px', fontWeight: 700, color: '#6366f1' }}>{i + 1}</div>
-                            <span style={{ fontSize: '8px', color: '#475569' }}>{t}</span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
-}
 
 function AIRVisual() {
     const criteria = [
@@ -226,7 +121,7 @@ function AIRVisual() {
 }
 
 const productVisuals: Record<string, React.ReactNode> = {
-    'Talent Marketplace': <MarketplaceVisual />,
+    'Talent Marketplace': <MarketplaceProductVisual />,
     'AIR | AI Recruiter': <AIRVisual />,
     'Nexus': <NexusProductVisual />,
 };
