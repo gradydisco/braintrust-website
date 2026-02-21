@@ -240,11 +240,11 @@ export default function Header() {
             </button>
             {dropdownOpen === 'login' && (
               <div className={styles.loginDropdown}>
-                <a href="https://app.usebraintrust.com/auth/login/" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
+                <a href="https://app.usebraintrust.com" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
                   <span className={styles.dropdownItemLabel}>Talent Login</span>
                   <span className={styles.dropdownItemDesc}>Access the Talent Marketplace</span>
                 </a>
-                <a href="https://app.usebraintrust.com/auth/login/" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
+                <a href="https://app.usebraintrust.com" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
                   <span className={styles.dropdownItemLabel}>Client Marketplace</span>
                   <span className={styles.dropdownItemDesc}>Manage talent and hiring</span>
                 </a>
@@ -318,7 +318,7 @@ export default function Header() {
             <a href="https://app.usebraintrust.com/auth/login/" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
               Talent Login
             </a>
-            <a href="https://app.usebraintrust.com/auth/login/" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+            <a href="https://app.usebraintrust.com" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
               Client Marketplace
             </a>
             <a href="https://signin.usebraintrust.com/" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
