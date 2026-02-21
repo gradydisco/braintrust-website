@@ -1,3 +1,9 @@
+import { batch1 } from './blogBatch1';
+import { batch2 } from './blogBatch2';
+import { batch3 } from './blogBatch3';
+import { batch4 } from './blogBatch4';
+import { batch5 } from './blogBatch5';
+
 export interface Author {
     slug: string;
     name: string;
@@ -31,12 +37,22 @@ export const authors: Author[] = [
     {
         slug: 'adam-jackson',
         name: 'Adam Jackson',
-        role: 'Co-Founder & CEO',
+        role: 'Founder CEO',
         bio: 'Adam co-founded Braintrust to build a talent network that returns value to the people who create it. Previously, he co-founded Doctor on Demand and has been building marketplaces for over a decade.',
         avatar: '/authors/adam-jackson.jpg',
         social: {
             twitter: 'https://x.com/adamjceo',
             linkedin: 'https://www.linkedin.com/in/adamjackson/',
+        },
+    },
+    {
+        slug: 'grady-gardner',
+        name: 'Grady Gardner',
+        role: 'GM and CRO',
+        bio: 'Grady leads the Go-To-Market and Revenue teams at Braintrust, bringing deep expertise in scaling enterprise high-volume recruiting solutions and AI workforce automation.',
+        avatar: '/authors/braintrust-team.jpg',
+        social: {
+            linkedin: 'https://www.linkedin.com/in/gradygardner/',
         },
     },
     {
@@ -62,6 +78,11 @@ export const authors: Author[] = [
 // BLOG POSTS
 // ============================================
 export const blogPosts: BlogPost[] = [
+    ...batch1,
+    ...batch2,
+    ...batch3,
+    ...batch4,
+    ...batch5,
     {
         slug: 'ai-interviewing-enterprise-guide',
         title: 'AI Interviewing: The Enterprise Leader\'s Complete Guide',
