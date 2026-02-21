@@ -219,7 +219,7 @@ export default function TalentMarketplace() {
             </section>
 
             {/* ====== CLIENT LOGO MARQUEE ====== */}
-            <section className="section" style={{ padding: 'var(--space-8) 0', borderBottom: '1px solid var(--color-gray-100)' }}>
+            <section style={{ background: 'white', padding: 'var(--space-12) 0', '--lm-bg': '#fff' } as React.CSSProperties}>
                 <div className="container">
                     <LogoMarquee label="Trusted by the world's best companies" />
                 </div>

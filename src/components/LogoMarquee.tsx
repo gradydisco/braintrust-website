@@ -65,23 +65,22 @@ export default function LogoMarquee({
                 </p>
             )}
 
-            {/* Fade edges */}
+            {/* Fade edges — color set via --lm-bg to match the parent section */}
             <div style={{ position: 'relative' }}>
                 <div style={{
-                    position: 'absolute', left: 0, top: 0, bottom: 0, width: '80px', zIndex: 2,
-                    background: 'linear-gradient(90deg, var(--marquee-bg, white) 0%, transparent 100%)',
+                    position: 'absolute', left: 0, top: 0, bottom: 0, width: '100px', zIndex: 2,
+                    background: 'linear-gradient(90deg, var(--lm-bg, #fff) 0%, transparent 100%)',
                     pointerEvents: 'none',
                 }} />
                 <div style={{
-                    position: 'absolute', right: 0, top: 0, bottom: 0, width: '80px', zIndex: 2,
-                    background: 'linear-gradient(270deg, var(--marquee-bg, white) 0%, transparent 100%)',
+                    position: 'absolute', right: 0, top: 0, bottom: 0, width: '100px', zIndex: 2,
+                    background: 'linear-gradient(270deg, var(--lm-bg, #fff) 0%, transparent 100%)',
                     pointerEvents: 'none',
                 }} />
 
                 {/* Scrolling track */}
                 <div style={{
-                    display: 'flex',
-                    gap: '48px',
+                    display: 'flex', alignItems: 'center', gap: '64px',
                     animation: `logo-marquee ${speed}s linear infinite`,
                     width: 'max-content',
                 }}>
@@ -101,12 +100,12 @@ export default function LogoMarquee({
                             <img
                                 src={logo.src}
                                 alt={logo.name}
-                                width={100}
-                                height={36}
+                                width={120}
+                                height={44}
                                 style={{
-                                    height: '32px',
+                                    height: '40px',
                                     width: 'auto',
-                                    maxWidth: '110px',
+                                    maxWidth: '130px',
                                     objectFit: 'contain',
                                     filter: 'grayscale(100%)',
                                     opacity: 0.45,

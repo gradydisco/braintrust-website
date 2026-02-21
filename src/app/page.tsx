@@ -64,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* ====== CLIENT LOGO MARQUEE ====== */}
-      <section className="section section--gray" style={{ padding: 'var(--space-8) 0' }}>
+      <section style={{ background: 'white', padding: 'var(--space-12) 0', '--lm-bg': '#fff' } as React.CSSProperties}>
         <div className="container">
           <LogoMarquee />
         </div>
@@ -433,7 +433,7 @@ export default function Home() {
       </section>
 
       {/* ====== TRUSTED BY — Logo Marquee (bottom) ====== */}
-      <section className="section section--gray" style={{ padding: 'var(--space-10) 0' }}>
+      <section style={{ background: 'white', padding: 'var(--space-12) 0', '--lm-bg': '#fff' } as React.CSSProperties}>
         <div className="container">
           <LogoMarquee speed={50} />
         </div>
