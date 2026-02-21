@@ -5,6 +5,7 @@ import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
 import AutomationAnalysisForm from '@/components/AutomationAnalysisForm';
 import NexusBottomCapture from '@/components/NexusBottomCapture';
+import NexusWorkflow from '@/components/NexusWorkflow';
 
 export const metadata: Metadata = {
     title: 'Nexus — Workflow Automation Platform for Modern Enterprise',
@@ -110,6 +111,9 @@ export default function Nexus() {
                     </div>
                 </div>
             </section>
+
+            {/* Animated Workflow */}
+            <NexusWorkflow />
 
             {/* Department Use Cases */}
             <section className="section section--gray">
