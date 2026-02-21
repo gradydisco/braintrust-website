@@ -5,6 +5,7 @@ import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
 import RevealSection from '@/components/RevealSection';
 import MarketplaceStatsStrip from '@/components/MarketplaceStatsStrip';
+import LogoMarquee from '@/components/LogoMarquee';
 
 export const metadata: Metadata = {
     title: 'Talent Marketplace — Access 2M+ Vetted Professionals',
@@ -214,6 +215,13 @@ export default function TalentMarketplace() {
                             </div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* ====== CLIENT LOGO MARQUEE ====== */}
+            <section className="section" style={{ padding: 'var(--space-8) 0', borderBottom: '1px solid var(--color-gray-100)' }}>
+                <div className="container">
+                    <LogoMarquee label="Trusted by the world's best companies" />
                 </div>
             </section>
 

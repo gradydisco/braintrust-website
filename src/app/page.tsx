@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './page.module.css';
 import RevealSection from '@/components/RevealSection';
+import LogoMarquee from '@/components/LogoMarquee';
 
 export default function Home() {
   return (
@@ -59,6 +60,13 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ====== CLIENT LOGO MARQUEE ====== */}
+      <section className="section section--gray" style={{ padding: 'var(--space-8) 0' }}>
+        <div className="container">
+          <LogoMarquee />
         </div>
       </section>
 
@@ -424,42 +432,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== TRUSTED BY ====== */}
-      <section className="section section--gray">
+      {/* ====== TRUSTED BY — Logo Marquee (bottom) ====== */}
+      <section className="section section--gray" style={{ padding: 'var(--space-10) 0' }}>
         <div className="container">
-          <RevealSection>
-            <div className="section-header">
-              <p style={{ fontSize: 'var(--text-sm)', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--text-tertiary)' }}>
-                Trusted by industry leaders
-              </p>
-            </div>
-            <div className={styles.logoGrid}>
-              {[
-                { name: 'NASA', weight: 800, spacing: '0.2em', size: '16px' },
-                { name: 'Nike', weight: 700, spacing: '0.08em', size: '17px', italic: true },
-                { name: 'Goldman Sachs', weight: 400, spacing: '0.06em', size: '14px' },
-                { name: 'Porsche', weight: 600, spacing: '0.15em', size: '14px' },
-                { name: 'Atlassian', weight: 700, spacing: '0.02em', size: '15px' },
-                { name: 'Deloitte', weight: 400, spacing: '0.04em', size: '15px' },
-                { name: 'Nestlé', weight: 700, spacing: '0.04em', size: '16px' },
-                { name: 'Pacific Life', weight: 600, spacing: '0.06em', size: '13px' },
-                { name: 'Colgate', weight: 700, spacing: '0.04em', size: '15px' },
-                { name: 'Pepsi', weight: 800, spacing: '0.06em', size: '16px' },
-                { name: 'Honda', weight: 700, spacing: '0.1em', size: '16px' },
-                { name: 'Wayfair', weight: 600, spacing: '0.02em', size: '15px' },
-              ].map((co) => (
-                <div key={co.name} className={styles.logoPlaceholder}>
-                  <span style={{
-                    fontSize: co.size,
-                    fontWeight: co.weight,
-                    letterSpacing: co.spacing,
-                    fontStyle: co.italic ? 'italic' : 'normal',
-                    textTransform: co.name === 'NASA' ? 'uppercase' as const : 'none' as const,
-                  }}>{co.name}</span>
-                </div>
-              ))}
-            </div>
-          </RevealSection>
+          <LogoMarquee speed={50} />
         </div>
       </section>
 
