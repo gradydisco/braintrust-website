@@ -219,11 +219,6 @@ export default function Header() {
             </button>
           </div>
 
-          <Link href="/token" className={`nav-link ${styles.tokenLink}`}>
-            <span className={styles.tokenDot}></span>
-            BTRST
-          </Link>
-
           <div
             className={styles.navItem}
             onMouseEnter={() => handleDropdownEnter('login')}
@@ -245,15 +240,15 @@ export default function Header() {
             </button>
             {dropdownOpen === 'login' && (
               <div className={styles.loginDropdown}>
-                <a href="https://app.usebraintrust.com/talent/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
+                <a href="https://app.usebraintrust.com/auth/login/" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
                   <span className={styles.dropdownItemLabel}>Talent Login</span>
                   <span className={styles.dropdownItemDesc}>Access the Talent Marketplace</span>
                 </a>
-                <a href="https://app.usebraintrust.com/client/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
+                <a href="https://app.usebraintrust.com/auth/login/" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
                   <span className={styles.dropdownItemLabel}>Client Marketplace</span>
                   <span className={styles.dropdownItemDesc}>Manage talent and hiring</span>
                 </a>
-                <a href="https://air.usebraintrust.com/login" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
+                <a href="https://signin.usebraintrust.com/" className={styles.dropdownItem} target="_blank" rel="noopener noreferrer">
                   <span className={styles.dropdownItemLabel}>Client AIR</span>
                   <span className={styles.dropdownItemDesc}>AI Recruiter platform login</span>
                 </a>
@@ -318,18 +313,15 @@ export default function Header() {
               ))}
             </div>
           ))}
-          <Link href="/token" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
-            BTRST Token
-          </Link>
           <div className={styles.mobileLoginSection}>
             <span className={styles.mobileLoginTitle}>Log In</span>
-            <a href="https://app.usebraintrust.com/talent/login" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+            <a href="https://app.usebraintrust.com/auth/login/" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
               Talent Login
             </a>
-            <a href="https://app.usebraintrust.com/client/login" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+            <a href="https://app.usebraintrust.com/auth/login/" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
               Client Marketplace
             </a>
-            <a href="https://air.usebraintrust.com/login" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+            <a href="https://signin.usebraintrust.com/" className={styles.mobileSubLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
               Client AIR
             </a>
           </div>

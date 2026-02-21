@@ -79,7 +79,7 @@ export default function Token() {
             <section className="section">
                 <div className="container">
                     <div className="stats-grid">
-                        <div><div className="stat__value text-gradient-token">750K+</div><div className="stat__label">Token Holders</div></div>
+                        <div><div className="stat__value text-gradient-token">200K+</div><div className="stat__label">Token Holders</div></div>
                         <div><div className="stat__value text-gradient-token">250M</div><div className="stat__label">Total Supply</div></div>
                         <div><div className="stat__value text-gradient-token">100%</div><div className="stat__label">Community Governed</div></div>
                         <div><div className="stat__value text-gradient-token">ERC-20</div><div className="stat__label">Token Standard</div></div>
