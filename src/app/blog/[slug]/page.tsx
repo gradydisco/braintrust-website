@@ -5,6 +5,57 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import { blogPosts, getPostBySlug, getAuthor } from '@/data/blog';
 
+// Parse inline markdown: **bold**, [text](url)
+function parseInline(text: string): React.ReactNode[] {
+    const parts: React.ReactNode[] = [];
+    // Combined regex for **bold** and [text](url)
+    const regex = /\*\*(.+?)\*\*|\[([^\]]+)\]\(([^)]+)\)/g;
+    let lastIndex = 0;
+    let match;
+    let key = 0;
+    while ((match = regex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(text.slice(lastIndex, match.index));
+        }
+        if (match[1] !== undefined) {
+            // Bold
+            parts.push(<strong key={key++}>{match[1]}</strong>);
+        } else {
+            // Link
+            const href = match[3];
+            const isExternal = href.startsWith('http');
+            parts.push(
+                isExternal
+                    ? <a key={key++} href={href} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>{match[2]}</a>
+                    : <Link key={key++} href={href} style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>{match[2]}</Link>
+            );
+        }
+        lastIndex = regex.lastIndex;
+    }
+    if (lastIndex < text.length) {
+        parts.push(text.slice(lastIndex));
+    }
+    return parts;
+}
+
+// Render a paragraph - detects headings (lines starting with **text:**)
+function renderParagraph(paragraph: string, i: number): React.ReactNode {
+    // Heading style: lines that are purely **Some heading**
+    if (/^\*\*[^*]+\*\*$/.test(paragraph.trim())) {
+        const headingText = paragraph.trim().replace(/^\*\*/, '').replace(/\*\*$/, '');
+        return (
+            <h3 key={i} style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--text-primary)', margin: 'var(--space-8) 0 var(--space-3)' }}>
+                {headingText}
+            </h3>
+        );
+    }
+    return (
+        <p key={i} style={{ marginBottom: 'var(--space-6)' }}>
+            {parseInline(paragraph)}
+        </p>
+    );
+}
+
 interface Props {
     params: Promise<{ slug: string }>;
 }
@@ -72,9 +123,7 @@ export default async function BlogPost({ params }: Props) {
                         lineHeight: 'var(--leading-relaxed)',
                         color: 'var(--text-secondary)',
                     }}>
-                        {post.content.split('\n\n').map((paragraph, i) => (
-                            <p key={i} style={{ marginBottom: 'var(--space-6)' }}>{paragraph}</p>
-                        ))}
+                        {post.content.split('\n\n').map((paragraph, i) => renderParagraph(paragraph, i))}
                     </article>
 
                     {/* Tags */}

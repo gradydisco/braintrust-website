@@ -3,6 +3,7 @@ import { batch2 } from './blogBatch2';
 import { batch3 } from './blogBatch3';
 import { batch4 } from './blogBatch4';
 import { batch5 } from './blogBatch5';
+import { batch6 } from './blogBatch6';
 
 export interface Author {
     slug: string;
@@ -66,6 +67,13 @@ export const authors: Author[] = [
         },
     },
     {
+        slug: 'anne-muscarella',
+        name: 'Anne Muscarella',
+        role: 'Content Writer',
+        bio: 'Anne writes about AI recruiting, workforce automation, and the evolving talent landscape. She covers real-world case studies, product updates, and compliance topics for Braintrust.',
+        avatar: '/authors/braintrust-team.jpg',
+    },
+    {
         slug: 'braintrust-team',
         name: 'Braintrust Team',
         role: 'Editorial',
@@ -83,6 +91,7 @@ export const blogPosts: BlogPost[] = [
     ...batch3,
     ...batch4,
     ...batch5,
+    ...batch6,
     {
         slug: 'ai-interviewing-enterprise-guide',
         title: 'AI Interviewing: The Enterprise Leader\'s Complete Guide',
