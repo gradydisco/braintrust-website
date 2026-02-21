@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
+import NexusProductVisual from '@/components/NexusProductVisual';
 
 export const metadata: Metadata = {
     title: 'Products — AI-Powered Talent & Recruiting Platform',
@@ -224,88 +225,10 @@ function AIRVisual() {
     );
 }
 
-function NexusVisual() {
-    const agents = [
-        { name: 'Revenue Ops', tasks: 4, color: '#6366f1', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round"><path d="M18 20V10M12 20V4M6 20v-6" /></svg> },
-        { name: 'Onboarding', tasks: 3, color: '#22c55e', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg> },
-        { name: 'Support', tasks: 6, color: '#f59e0b', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg> },
-    ];
-
-    return (
-        <div style={{
-            background: 'linear-gradient(145deg, #fffbeb 0%, #fef9c3 30%, #fff 100%)',
-            borderRadius: 'var(--radius-2xl)',
-            padding: '32px 24px 28px',
-            border: '1px solid rgba(234, 179, 8, 0.08)',
-        }}>
-            {/* Mini header */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ef4444' }} />
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f59e0b' }} />
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e' }} />
-                <div style={{ flex: 1 }} />
-                <div style={{
-                    fontSize: '9px', fontWeight: 700, color: '#eab308',
-                    display: 'flex', alignItems: 'center', gap: '4px',
-                }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="3" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
-                    3 AGENTS ACTIVE
-                </div>
-            </div>
-
-            {/* AI Agent lanes */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '14px' }}>
-                {agents.map(a => (
-                    <div key={a.name} style={{
-                        background: 'white',
-                        borderRadius: '12px',
-                        padding: '14px 16px',
-                        boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
-                        border: '1px solid rgba(0,0,0,0.04)',
-                        display: 'flex', alignItems: 'center', gap: '12px',
-                    }}>
-                        <div style={{
-                            width: '32px', height: '32px', borderRadius: '8px',
-                            background: `${a.color}12`, display: 'flex',
-                            alignItems: 'center', justifyContent: 'center',
-                        }}>{a.icon}</div>
-                        <div style={{ flex: 1 }}>
-                            <div style={{ fontSize: '11px', fontWeight: 600, color: '#1e293b' }}>{a.name}</div>
-                            <div style={{ fontSize: '9px', color: '#94a3b8' }}>{a.tasks} tasks running</div>
-                        </div>
-                        <div style={{
-                            display: 'flex', alignItems: 'center', gap: '4px',
-                        }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e' }} />
-                            <span style={{ fontSize: '9px', fontWeight: 600, color: '#22c55e' }}>Active</span>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {/* Automation stats */}
-            <div style={{ display: 'flex', gap: '10px' }}>
-                <div style={{ flex: 1, background: 'white', borderRadius: '10px', padding: '12px', border: '1px solid rgba(0,0,0,0.04)' }}>
-                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#1e293b' }}>84%</div>
-                    <div style={{ fontSize: '9px', color: '#94a3b8' }}>Ops automated</div>
-                </div>
-                <div style={{ flex: 1, background: 'white', borderRadius: '10px', padding: '12px', border: '1px solid rgba(0,0,0,0.04)' }}>
-                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#22c55e' }}>12K+</div>
-                    <div style={{ fontSize: '9px', color: '#94a3b8' }}>Tasks / month</div>
-                </div>
-                <div style={{ flex: 1, background: 'white', borderRadius: '10px', padding: '12px', border: '1px solid rgba(0,0,0,0.04)' }}>
-                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#6366f1' }}>24/7</div>
-                    <div style={{ fontSize: '9px', color: '#94a3b8' }}>Always on</div>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 const productVisuals: Record<string, React.ReactNode> = {
     'Talent Marketplace': <MarketplaceVisual />,
     'AIR | AI Recruiter': <AIRVisual />,
-    'Nexus': <NexusVisual />,
+    'Nexus': <NexusProductVisual />,
 };
 
 /* ===========================
