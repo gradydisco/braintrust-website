@@ -6,6 +6,7 @@ import CTASection from '@/components/CTASection';
 import AutomationAnalysisForm from '@/components/AutomationAnalysisForm';
 import NexusBottomCapture from '@/components/NexusBottomCapture';
 import NexusWorkflow from '@/components/NexusWorkflow';
+import NexusBeforeAfter from '@/components/NexusBeforeAfter';
 
 export const metadata: Metadata = {
     title: 'Nexus — Workflow Automation Platform for Modern Enterprise',
@@ -114,6 +115,9 @@ export default function Nexus() {
 
             {/* Animated Workflow */}
             <NexusWorkflow />
+
+            {/* Before vs After */}
+            <NexusBeforeAfter />
 
             {/* Department Use Cases */}
             <section className="section section--gray">
