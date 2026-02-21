@@ -5,15 +5,30 @@ import styles from './Footer.module.css';
 const footerLinks = {
     Products: [
         { label: 'Talent Marketplace', href: '/products/talent-marketplace' },
-        { label: 'AI Training Data', href: '/products/talent-marketplace/ai-training' },
-        { label: 'Human Data', href: '/products/talent-marketplace/human-data' },
         { label: 'AIR | AI Recruiter', href: '/products/air' },
         { label: 'Nexus', href: '/products/nexus' },
+        { label: 'Pricing', href: '/pricing' },
+        { label: 'Book a Demo', href: '/book-demo' },
+    ],
+    'Human Data for AI': [
+        { label: 'Human Data Overview', href: '/human-data-for-ai' },
+        { label: 'Data Annotation Experts', href: '/data-annotation-experts' },
+        { label: 'Data Labeling Talent', href: '/data-labeling-talent' },
+        { label: 'RLHF Talent Network', href: '/rlhf-talent-network' },
+        { label: 'AI Model Evaluation', href: '/ai-model-evaluation-experts' },
+    ],
+    'Hire Talent': [
+        { label: 'Hire AI Engineers', href: '/hire-ai-engineers' },
+        { label: 'Hire ML Engineers', href: '/hire-machine-learning-engineers' },
+        { label: 'Hire Data Scientists', href: '/hire-data-scientists' },
+        { label: 'Hire Technical Talent', href: '/hire-technical-talent' },
+        { label: 'Hire Contract Engineers', href: '/hire-contract-engineers' },
     ],
     Solutions: [
         { label: 'Enterprise Hiring', href: '/solutions/enterprise-hiring' },
         { label: 'High-Volume Hiring', href: '/solutions/high-volume-hiring' },
         { label: 'AI Training Data', href: '/solutions/ai-training-data' },
+        { label: 'For Companies', href: '/for-companies' },
     ],
     'For Talent': [
         { label: 'Find Jobs', href: '/jobs' },
@@ -21,11 +36,6 @@ const footerLinks = {
         { label: 'How It Works', href: '/how-it-works' },
         { label: 'Talent FAQ', href: '/talent-faq' },
         { label: 'Trust & Safety', href: '/trust-safety' },
-    ],
-    Programs: [
-        { label: 'Refer & Earn — AIR', href: '/refer/air' },
-        { label: 'Refer & Earn — Marketplace', href: '/refer/marketplace' },
-        { label: 'Try AIR', href: '/products/air/try' },
     ],
     'BTRST Token': [
         { label: 'What is BTRST', href: '/token/what-is-btrst' },
@@ -37,16 +47,16 @@ const footerLinks = {
     Guides: [
         { label: 'Best AI Interview Software', href: '/best-ai-interview-software-2025' },
         { label: 'AI Interview Software', href: '/ai-interview-software' },
-        { label: 'AI Voice Interviews', href: '/ai-voice-interview-software' },
-        { label: 'AI Recruiting Software', href: '/ai-recruiting-software' },
-        { label: 'Compare AIR', href: '/compare' },
+        { label: 'Compare Platforms', href: '/compare' },
+        { label: 'vs Upwork', href: '/compare/braintrust-vs-upwork' },
+        { label: 'vs Toptal', href: '/compare/braintrust-vs-toptal' },
     ],
     Company: [
         { label: 'About', href: '/about' },
         { label: 'Blog', href: '/blog' },
         { label: 'Resources', href: '/resources' },
         { label: 'Contact', href: '/contact' },
-        { label: 'Book a Demo', href: '/book-demo' },
+        { label: 'Programs', href: '/refer/air' },
     ],
 };
 

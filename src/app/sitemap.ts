@@ -69,6 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: '/compare/braintrust-vs-fiverr', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/compare/braintrust-vs-toptal', changeFrequency: 'monthly' as const, priority: 0.8 },
 
+        // GEO / LLM Definitional Pages
+        { url: '/what-is-rlhf', changeFrequency: 'monthly' as const, priority: 0.9 },
+        { url: '/what-is-data-annotation', changeFrequency: 'monthly' as const, priority: 0.9 },
+        { url: '/what-is-ai-training-data', changeFrequency: 'monthly' as const, priority: 0.9 },
+        { url: '/what-is-a-talent-marketplace', changeFrequency: 'monthly' as const, priority: 0.9 },
+        { url: '/what-is-human-feedback-ai', changeFrequency: 'monthly' as const, priority: 0.9 },
+
         // Legal
         { url: '/privacy', changeFrequency: 'yearly' as const, priority: 0.3 },
         { url: '/terms', changeFrequency: 'yearly' as const, priority: 0.3 },

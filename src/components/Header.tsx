@@ -20,24 +20,34 @@ interface NavItem {
 const companyNav: NavItem[] = [
   {
     label: 'Products', href: '/products', children: [
-      { label: 'Talent Marketplace', href: '/products/talent-marketplace', desc: 'Access 2M+ vetted professionals with AI-powered matching' },
+      { label: 'Talent Marketplace', href: '/products/talent-marketplace', desc: 'Access 750K+ vetted professionals with AI-powered matching' },
       { label: 'AIR | AI Recruiter', href: '/products/air', desc: 'AI-powered screening, interviews, and assessments' },
       { label: 'Nexus', href: '/products/nexus', desc: 'Workflow automation across your entire business' },
     ]
   },
   {
-    label: 'Solutions', href: '/solutions', children: [
-      { label: 'Enterprise Hiring', href: '/solutions/enterprise-hiring', desc: 'Enterprise-grade AI hiring at scale' },
-      { label: 'High-Volume Hiring', href: '/solutions/high-volume-hiring', desc: 'Fill hundreds of roles efficiently at scale' },
-      { label: 'AI Training Data', href: '/solutions/ai-training-data', desc: 'Human data and RLHF for AI model training' },
+    label: 'Human Data', href: '/human-data-for-ai', children: [
+      { label: 'Human Data for AI', href: '/human-data-for-ai', desc: 'Enterprise AI training workforce infrastructure' },
+      { label: 'Data Annotation Experts', href: '/data-annotation-experts', desc: 'Vetted annotators deployed at scale globally' },
+      { label: 'Data Labeling Talent', href: '/data-labeling-talent', desc: 'Assessed data labeling professionals, rapid deployment' },
+      { label: 'RLHF Talent Network', href: '/rlhf-talent-network', desc: 'Specialists in reinforcement learning from human feedback' },
+      { label: 'AI Model Evaluation', href: '/ai-model-evaluation-experts', desc: 'Domain-credentialed AI model evaluation experts' },
+    ]
+  },
+  {
+    label: 'Hire Talent', href: '/hire-technical-talent', children: [
+      { label: 'Hire AI Engineers', href: '/hire-ai-engineers', desc: 'Pre-vetted, ranked AI engineers matched in hours' },
+      { label: 'Hire ML Engineers', href: '/hire-machine-learning-engineers', desc: 'Assessed ML specialists, peer-ranked by domain score' },
+      { label: 'Hire Data Scientists', href: '/hire-data-scientists', desc: 'Verified data science talent, same-day introductions' },
+      { label: 'Hire Technical Talent', href: '/hire-technical-talent', desc: 'Engineers across all technical domains' },
+      { label: 'Hire Contract Engineers', href: '/hire-contract-engineers', desc: 'Fast-deploy vetted contractors for project needs' },
     ]
   },
   { label: 'Pricing', href: '/pricing' },
   {
     label: 'Resources', href: '/resources', children: [
       { label: 'Best AI Interview Software 2025', href: '/best-ai-interview-software-2025', desc: 'Top 15 platforms ranked and compared' },
-      { label: 'AI Interview Software Guide', href: '/ai-interview-software', desc: 'Comprehensive guide to AI-powered interviewing' },
-      { label: 'Compare AIR vs Competitors', href: '/compare', desc: 'Side-by-side comparisons with HireVue, Paradox & more' },
+      { label: 'Compare Platforms', href: '/compare', desc: 'AIR vs competitors + Braintrust vs Upwork, Toptal & more' },
       { label: 'Blog', href: '/blog', desc: 'Insights, case studies, and product updates' },
     ]
   },
