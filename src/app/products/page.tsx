@@ -53,7 +53,7 @@ const products = [
     },
     {
         name: 'Nexus',
-        tagline: 'Automate the grind. Amplify the impact.',
+        tagline: 'Automate every process. Connect every system.',
         description: 'Custom AI agents that handle the repetitive, manual, operational work — from revenue ops to onboarding to customer service. Automate what\'s draining your budget and slowing you down.',
         href: '/products/nexus',
         color: 'var(--color-token)',
