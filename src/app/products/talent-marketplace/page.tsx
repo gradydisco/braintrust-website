@@ -4,7 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
 import RevealSection from '@/components/RevealSection';
-import LiveMarketplaceTicker from '@/components/LiveMarketplaceTicker';
+import MarketplaceStatsStrip from '@/components/MarketplaceStatsStrip';
 
 export const metadata: Metadata = {
     title: 'Talent Marketplace — Access 2M+ Vetted Professionals',
@@ -217,24 +217,10 @@ export default function TalentMarketplace() {
                 </div>
             </section>
 
-            {/* ====== LIVE ACTIVITY TICKER ====== */}
-            <section className="section" style={{ paddingTop: 'var(--space-10)', paddingBottom: 'var(--space-10)' }}>
-                <div className="container">
-                    <LiveMarketplaceTicker />
-                </div>
-            </section>
-
-            {/* ====== STATS STRIP — Dark ====== */}
+            {/* ====== STATS STRIP — Dark, animated real community data ====== */}
             <section className="section section--dark">
                 <div className="container">
-                    <RevealSection>
-                        <div className="stats-grid">
-                            <div><div className="stat__value text-gradient">2M+</div><div className="stat__label">Vetted Professionals</div></div>
-                            <div><div className="stat__value text-gradient">5 days</div><div className="stat__label">Avg. Time to Hire</div></div>
-                            <div><div className="stat__value text-gradient">95%</div><div className="stat__label">Client Satisfaction</div></div>
-                            <div><div className="stat__value text-gradient">$0</div><div className="stat__label">Agency Fees</div></div>
-                        </div>
-                    </RevealSection>
+                    <MarketplaceStatsStrip />
                 </div>
             </section>
 
