@@ -530,7 +530,7 @@ export default function AIRWorkflow() {
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                    gridTemplateColumns: 'repeat(4, 1fr)',
                     gap: '16px',
                 }}>
                     {OUTPUTS.map((out, i) => (
