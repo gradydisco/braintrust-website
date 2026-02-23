@@ -56,18 +56,21 @@ const footerLinks = {
         { label: 'Blog', href: '/blog' },
         { label: 'Resources', href: '/resources' },
         { label: 'Contact', href: '/contact' },
-        { label: 'Programs', href: '/refer/air' },
+    ],
+    'Referral Programs': [
+        { label: 'AIR Referral Program', href: '/refer/air' },
+        { label: 'Marketplace Referral Program', href: '/refer/marketplace' },
     ],
     Legal: [
-        { label: 'AIR Terms', href: '/air-terms' },
-        { label: 'AIR Privacy Policy', href: '/air-privacy-policy' },
-        { label: 'Marketplace Terms', href: '/terms' },
-        { label: 'Marketplace Privacy', href: '/privacy-policy' },
-        { label: 'Code of Conduct', href: '/code-of-conduct' },
+        { label: 'Marketplace | Terms', href: '/terms' },
+        { label: 'Marketplace | Privacy', href: '/privacy-policy' },
+        { label: 'Marketplace | Code of Conduct', href: '/code-of-conduct' },
+        { label: 'Marketplace | Referral Terms', href: '/referral-terms' },
+        { label: 'Marketplace | Network Standards', href: '/network-standards' },
+        { label: 'AIR | Terms', href: '/air-terms' },
+        { label: 'AIR | Privacy Policy', href: '/air-privacy-policy' },
+        { label: 'AIR | Referral Terms', href: '/air-referral-terms' },
         { label: 'BTRST Purchaser Terms', href: '/btrst-purchaser-terms' },
-        { label: 'Referral Terms', href: '/referral-terms' },
-        { label: 'AIR Referral Terms', href: '/air-referral-terms' },
-        { label: 'Network Standards', href: '/network-standards' },
         { label: 'Cookie Policy', href: '/cookie-policy' },
     ],
 };
@@ -114,11 +117,7 @@ export default function Footer() {
                     <p className={styles.copyright}>
                         &copy; {new Date().getFullYear()} Braintrust. All rights reserved.
                     </p>
-                    <div className={styles.legal}>
-                        <Link href="/privacy-policy" className={styles.legalLink}>Privacy Policy</Link>
-                        <Link href="/terms" className={styles.legalLink}>Terms of Service</Link>
-                        <Link href="/cookie-policy" className={styles.legalLink}>Cookie Policy</Link>
-                    </div>
+
                 </div>
             </div>
         </footer>

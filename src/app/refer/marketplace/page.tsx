@@ -635,6 +635,11 @@ export default function ReferEarnMarketplace() {
                                 BTRST is the governance token of the Braintrust network (ERC-20 on Ethereum). Token rewards are used for governance participation, community voting, and ecosystem development. BTRST tokens do not represent ownership or equity claims. Braintrust does not promote BTRST as a speculative investment.{' '}
                                 <Link href="/token/what-is-btrst" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>Learn more about BTRST</Link>
                             </p>
+                            <div style={{ marginTop: 'var(--space-3)', paddingTop: 'var(--space-3)', borderTop: '1px solid var(--color-gray-100)' }}>
+                                <Link href="/referral-terms" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+                                    View full referral program terms →
+                                </Link>
+                            </div>
                         </div>
                     </RevealSection>
                 </div>
