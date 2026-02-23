@@ -705,6 +705,15 @@ p {
 }
 
 /* ============================================
+   COMPLIANCE SECTION — governance grid
+   ============================================ */
+@media (max-width: 1024px) {
+  [style*="1fr 380px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================
    FEATURE GRID
    ============================================ */
 .feature-icon {
