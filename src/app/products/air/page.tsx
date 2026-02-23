@@ -153,60 +153,67 @@ export default function AIR() {
                 </div>
             </section>
             {/* ====== CANDIDATE LOVE ====== */}
-            <section className="section">
-                <div className="container" style={{ maxWidth: '860px' }}>
+            <section className="section section--gray">
+                <div className="container">
                     <RevealSection>
-                        <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
+                        <div className="section-header">
                             <div className="badge">Candidate Experience</div>
-                            <h2 style={{ marginBottom: 'var(--space-3)' }}>Candidates love AIR.<br />Not just recruiters.</h2>
-                            <p style={{ maxWidth: '520px', margin: '0 auto' }}>
-                                AIR isn&apos;t just efficient &mdash; candidates overwhelmingly rate it positive, fair, and easier than traditional phone screens.
-                            </p>
+                            <h2>Fair, fast, and flexible &mdash;<br />candidates prefer it.</h2>
+                            <p>Most candidates expect to dread AI interviews. Instead, they&apos;re surprised. Here&apos;s what 30,000+ told us.</p>
                         </div>
                     </RevealSection>
                     <RevealSection delay={150}>
                         <div style={{
-                            display: 'flex', flexDirection: 'column', gap: '0',
-                            background: 'var(--color-white)',
-                            border: '1px solid rgba(50,50,93,0.08)',
-                            borderRadius: 'var(--radius-2xl)',
-                            overflow: 'hidden',
-                            boxShadow: '0 4px 24px rgba(50,50,93,0.06)',
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                            gap: '16px',
                         }}>
                             {[
-                                { pct: '90%', stat: 'more willing to do AI interviews again', quote: '&ldquo;This changed my mind about AI interviews &mdash; I&apos;d be happy to do more like this in the future.&rdquo;', color: '#f55733' },
-                                { pct: '94%', stat: 'appreciated completing interviews on their own time', quote: '&ldquo;I did this at 9pm after work &mdash; it made applying possible.&rdquo;', color: '#e14e2a' },
-                                { pct: '93%', stat: 'said the experience was clear and easy to follow', quote: '&ldquo;Super clear and simple. Honestly easier than a phone screen.&rdquo;', color: '#f55733' },
-                                { pct: '89%', stat: 'satisfied with their overall experience', quote: '&ldquo;Everyone got the same questions. Felt more objective.&rdquo;', color: '#e14e2a' },
-                                { pct: '87%', stat: 'felt they had a fair chance to showcase their experience', quote: '&ldquo;Better than I expected. I&apos;d definitely do this again.&rdquo;', color: '#f55733' },
-                            ].map((item, i, arr) => (
-                                <div key={i} style={{
-                                    display: 'flex', alignItems: 'flex-start', gap: '28px',
-                                    padding: 'var(--space-7) var(--space-10)',
-                                    borderBottom: i < arr.length - 1 ? '1px solid rgba(50,50,93,0.06)' : 'none',
-                                    transition: 'background 200ms',
-                                }} className="air-stat-row">
-                                    {/* Big percentage */}
-                                    <div style={{
-                                        fontSize: 'clamp(2rem, 4vw, 2.8rem)',
-                                        fontWeight: 900,
-                                        color: item.color,
-                                        lineHeight: 1,
-                                        minWidth: '90px',
-                                        letterSpacing: '-0.02em',
-                                        paddingTop: '2px',
-                                    }}>
-                                        {item.pct}
-                                    </div>
-                                    {/* Stat + quote */}
-                                    <div style={{ flex: 1 }}>
-                                        <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '5px', lineHeight: 1.4 }} dangerouslySetInnerHTML={{ __html: item.stat }} />
-                                        <div style={{ fontSize: '13.5px', fontStyle: 'italic', color: 'var(--text-tertiary)', lineHeight: 1.6 }} dangerouslySetInnerHTML={{ __html: item.quote }} />
+                                { pct: '94%', stat: 'Completed interviews on their own schedule', quote: '&ldquo;I did this at 9pm after work &mdash; it made applying possible.&rdquo;' },
+                                { pct: '93%', stat: 'Found the experience clear and easy to follow', quote: '&ldquo;Super clear and simple. Honestly easier than a phone screen.&rdquo;' },
+                                { pct: '90%', stat: 'Would do an AI interview again', quote: '&ldquo;This changed my mind about AI interviews entirely.&rdquo;' },
+                                { pct: '89%', stat: 'Satisfied with their overall experience', quote: '&ldquo;Everyone got the same questions. Felt more objective.&rdquo;' },
+                                { pct: '87%', stat: 'Felt they had a fair shot to showcase their skills', quote: '&ldquo;Better than I expected. I&apos;d definitely do this again.&rdquo;' },
+                            ].map((item, i) => (
+                                <div key={i} className="card--enterprise" style={{
+                                    background: 'var(--color-white)',
+                                    borderRadius: 'var(--radius-xl)',
+                                    border: '1px solid rgba(50,50,93,0.08)',
+                                    overflow: 'hidden',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                }}>
+                                    {/* Accent bar */}
+                                    <div style={{ height: '3px', background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))', opacity: 0.7 }} />
+                                    <div style={{ padding: '28px 24px 20px', flex: 1 }}>
+                                        <div style={{
+                                            fontSize: 'clamp(2.4rem, 4vw, 3rem)',
+                                            fontWeight: 900,
+                                            color: 'var(--color-primary)',
+                                            lineHeight: 1,
+                                            letterSpacing: '-0.03em',
+                                            marginBottom: '12px',
+                                        }}>{item.pct}</div>
+                                        <div style={{
+                                            fontSize: '14px',
+                                            fontWeight: 700,
+                                            color: 'var(--text-primary)',
+                                            lineHeight: 1.45,
+                                            marginBottom: '12px',
+                                        }} dangerouslySetInnerHTML={{ __html: item.stat }} />
+                                        <div style={{
+                                            fontSize: '12.5px',
+                                            fontStyle: 'italic',
+                                            color: 'var(--text-tertiary)',
+                                            lineHeight: 1.55,
+                                            borderTop: '1px solid rgba(50,50,93,0.05)',
+                                            paddingTop: '12px',
+                                        }} dangerouslySetInnerHTML={{ __html: item.quote }} />
                                     </div>
                                 </div>
                             ))}
                         </div>
-                        <p style={{ textAlign: 'center', fontSize: '11px', color: 'var(--text-tertiary)', marginTop: 'var(--space-5)', letterSpacing: '0.01em' }}>
+                        <p style={{ textAlign: 'center', fontSize: '11px', color: 'var(--text-tertiary)', marginTop: 'var(--space-6)', letterSpacing: '0.01em' }}>
                             Based on 30,000+ candidate feedback surveys across all clients &amp; role types
                         </p>
                     </RevealSection>
@@ -501,6 +508,130 @@ export default function AIR() {
                                     <p style={{ fontSize: 'var(--text-xs)', margin: 0 }}>{industry.desc}</p>
                                 </div>
                             ))}
+                        </div>
+                    </RevealSection>
+                </div>
+            </section>
+
+            {/* ====== BIAS AUDIT & COMPLIANCE ====== */}
+            <section className="section">
+                <div className="container" style={{ maxWidth: '900px' }}>
+                    <RevealSection>
+                        <div className="section-header">
+                            <div className="badge badge--accent">Compliance &amp; Fairness</div>
+                            <h2>Independently audited.<br />Zero bias detected.</h2>
+                            <p>AIR is the only AI recruiting platform with a published third-party bias audit. We hired independent auditors to test our model across every protected class &mdash; and we share the results publicly.</p>
+                        </div>
+                    </RevealSection>
+                    <RevealSection delay={150}>
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+                            gap: '24px',
+                            alignItems: 'start',
+                        }}>
+                            {/* Bias audit card */}
+                            <div style={{
+                                background: 'var(--color-white)',
+                                border: '1px solid rgba(50,50,93,0.09)',
+                                borderRadius: 'var(--radius-xl)',
+                                padding: '28px 28px 24px',
+                                boxShadow: '0 2px 16px rgba(50,50,93,0.06)',
+                            }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                                    <div style={{
+                                        width: '40px', height: '40px', borderRadius: '10px',
+                                        background: 'rgba(5,150,105,0.08)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        flexShrink: 0,
+                                    }}>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+                                    </div>
+                                    <div style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-primary)' }}>Third-Party Bias Audit</div>
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
+                                    {['Gender', 'Ethnicity', 'Intersectional: Gender &amp; Ethnicity', 'Age', 'Disability Status', 'Veteran Status'].map(cat => (
+                                        <div key={cat} style={{
+                                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                            padding: '9px 14px', borderRadius: '8px',
+                                            background: 'rgba(5,150,105,0.04)',
+                                            border: '1px solid rgba(5,150,105,0.1)',
+                                        }}>
+                                            <span style={{ fontSize: '13.5px', color: 'var(--text-primary)', fontWeight: 500 }} dangerouslySetInnerHTML={{ __html: cat }} />
+                                            <span style={{
+                                                fontSize: '11px', fontWeight: 700, color: '#059669',
+                                                background: 'rgba(5,150,105,0.1)', padding: '3px 10px',
+                                                borderRadius: '100px', letterSpacing: '0.02em',
+                                            }}>No Exceptions</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <a
+                                    href="https://drive.google.com/file/d/1hk5QdxnecwI94ppp7HvxOcTZNEZBPuJs/view"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'inline-flex', alignItems: 'center', gap: '6px',
+                                        fontSize: '13px', fontWeight: 700,
+                                        color: '#059669',
+                                        textDecoration: 'none',
+                                        padding: '10px 16px',
+                                        borderRadius: '8px',
+                                        border: '1px solid rgba(5,150,105,0.25)',
+                                        background: 'rgba(5,150,105,0.05)',
+                                        transition: 'all 200ms',
+                                    }}
+                                >
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
+                                    View Full Audit Report
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                                </a>
+                            </div>
+
+                            {/* Compliance callouts */}
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                                {[
+                                    {
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>,
+                                        color: '#0ea5e9',
+                                        title: 'SOC 2 Type II Certified',
+                                        desc: 'Independently verified security controls covering data availability, confidentiality, and processing integrity.',
+                                    },
+                                    {
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
+                                        color: '#7c3aed',
+                                        title: 'EEOC Compliant',
+                                        desc: 'AIR\'s scoring framework complies with EEOC guidelines. Skills-based, structured, and auditable — every candidate gets the same fair evaluation.',
+                                    },
+                                    {
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>,
+                                        color: '#f59e0b',
+                                        title: 'Transparent Scoring',
+                                        desc: 'Every candidate receives a full scoring rationale. No black-box decisions — hiring teams can review and override any AI assessment.',
+                                    },
+                                    {
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" /></svg>,
+                                        color: '#059669',
+                                        title: 'NYC Local Law 144 Ready',
+                                        desc: 'Designed to meet the most stringent municipal AI hiring laws, including annual bias audit requirements and candidate notification rules.',
+                                    },
+                                ].map((item, i) => (
+                                    <div key={i} style={{
+                                        display: 'flex', gap: '14px', alignItems: 'flex-start',
+                                        padding: '16px 18px',
+                                        background: 'var(--color-white)',
+                                        border: '1px solid rgba(50,50,93,0.08)',
+                                        borderRadius: 'var(--radius-lg)',
+                                        borderLeft: `3px solid ${item.color}`,
+                                    }}>
+                                        <div style={{ color: item.color, flexShrink: 0, marginTop: '1px' }}>{item.icon}</div>
+                                        <div>
+                                            <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>{item.title}</div>
+                                            <div style={{ fontSize: '12.5px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>{item.desc}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </RevealSection>
                 </div>
