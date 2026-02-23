@@ -470,6 +470,11 @@ export default function ReferEarnAIR() {
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" strokeWidth="2" strokeLinecap="round" style={{ flexShrink: 0, marginTop: '3px' }}><circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" /></svg>
                                     <span>Braintrust reserves the right to modify or discontinue the referral program at any time.</span>
                                 </div>
+                                <div style={{ marginTop: 'var(--space-4)', paddingTop: 'var(--space-4)', borderTop: '1px solid var(--color-gray-100)' }}>
+                                    <Link href="/air-referral-terms" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+                                        View full referral program terms →
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </RevealSection>

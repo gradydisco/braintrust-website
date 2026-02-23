@@ -66,6 +66,7 @@ const footerLinks = {
         { label: 'Code of Conduct', href: '/code-of-conduct' },
         { label: 'BTRST Purchaser Terms', href: '/btrst-purchaser-terms' },
         { label: 'Referral Terms', href: '/referral-terms' },
+        { label: 'AIR Referral Terms', href: '/air-referral-terms' },
         { label: 'Network Standards', href: '/network-standards' },
         { label: 'Cookie Policy', href: '/cookie-policy' },
     ],
