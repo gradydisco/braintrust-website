@@ -12,28 +12,31 @@
  */
 
 // ─── Logo list ────────────────────────────────────────────────────────────────
-// Replace `src` values with `/logos/filename.svg` after uploading your files.
+// To add/remove logos: edit this array and drop files in /public/logos/
 const logos: { name: string; src: string }[] = [
-    { name: 'NASA', src: 'https://logo.clearbit.com/nasa.gov' },
-    { name: 'Nike', src: 'https://logo.clearbit.com/nike.com' },
-    { name: 'Goldman Sachs', src: 'https://logo.clearbit.com/goldmansachs.com' },
-    { name: 'Porsche', src: 'https://logo.clearbit.com/porsche.com' },
-    { name: 'Atlassian', src: 'https://logo.clearbit.com/atlassian.com' },
-    { name: 'Deloitte', src: 'https://logo.clearbit.com/deloitte.com' },
-    { name: 'Nestlé', src: 'https://logo.clearbit.com/nestle.com' },
-    { name: 'Wayfair', src: 'https://logo.clearbit.com/wayfair.com' },
-    { name: 'Honda', src: 'https://logo.clearbit.com/honda.com' },
-    { name: 'Colgate', src: 'https://logo.clearbit.com/colgate.com' },
-    { name: 'Capgemini', src: 'https://logo.clearbit.com/capgemini.com' },
-    { name: 'Coursera', src: 'https://logo.clearbit.com/coursera.org' },
-    { name: 'Pacific Life', src: 'https://logo.clearbit.com/pacificlife.com' },
-    { name: 'Pepsi', src: 'https://logo.clearbit.com/pepsi.com' },
-    { name: 'Airbnb', src: 'https://logo.clearbit.com/airbnb.com' },
-    { name: 'Stripe', src: 'https://logo.clearbit.com/stripe.com' },
-    { name: 'Shopify', src: 'https://logo.clearbit.com/shopify.com' },
-    { name: 'Zendesk', src: 'https://logo.clearbit.com/zendesk.com' },
-    { name: 'Dropbox', src: 'https://logo.clearbit.com/dropbox.com' },
-    { name: 'Square', src: 'https://logo.clearbit.com/squareup.com' },
+    { name: 'NASA', src: '/logos/nasa.png' },
+    { name: 'Google', src: '/logos/google.png' },
+    { name: 'Goldman Sachs', src: '/logos/goldman-sachs.png' },
+    { name: 'Deloitte', src: '/logos/deloitte.png' },
+    { name: 'Atlassian', src: '/logos/atlassian.png' },
+    { name: 'Porsche', src: '/logos/porsche.png' },
+    { name: 'PayPal', src: '/logos/paypal.png' },
+    { name: 'Honda', src: '/logos/honda.svg' },
+    { name: 'Whole Foods', src: '/logos/whole-foods.png' },
+    { name: 'Reddit', src: '/logos/reddit.png' },
+    { name: 'Coursera', src: '/logos/coursera.webp' },
+    { name: 'Wayfair', src: '/logos/wayfair.png' },
+    { name: 'Colgate', src: '/logos/colgate.svg' },
+    { name: 'Pepsi', src: '/logos/pepsi.png' },
+    { name: 'Bank of America', src: '/logos/bank-of-america.png' },
+    { name: 'Scale AI', src: '/logos/scale-ai.webp' },
+    { name: 'Dayforce', src: '/logos/dayforce.webp' },
+    { name: 'Pacific Life', src: '/logos/pacific-life.webp' },
+    { name: 'Guardian', src: '/logos/guardian.png' },
+    { name: 'Motley Fool', src: '/logos/motley-fool.png' },
+    { name: 'Task Rabbit', src: '/logos/taskrabbit.png' },
+    { name: 'Stanley', src: '/logos/stanley.png' },
+    { name: 'Celsius', src: '/logos/celsius.png' },
 ];
 
 // Duplicate so the marquee loops seamlessly
