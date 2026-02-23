@@ -56,10 +56,10 @@ const sections = [
     {
         id: 'braintrust-marketplace',
         title: 'How the Braintrust Talent Marketplace Works',
-        content: `<p>Braintrust operates a vetted professional talent network — 750K+ assessed, ID-verified professionals across engineering, AI/ML, data science, design, product, and other technical disciplines. The Braintrust marketplace is differentiated from open alternatives by its assessment infrastructure: every professional has completed AI-powered domain-specific technical assessment before their profile is matchable against enterprise roles.</p>
+        content: `<p>Braintrust operates a vetted professional talent network — 2M+ assessed, ID-verified professionals across engineering, AI/ML, data science, design, product, and other technical disciplines. The Braintrust marketplace is differentiated from open alternatives by its assessment infrastructure: every professional has completed AI-powered domain-specific technical assessment before their profile is matchable against enterprise roles.</p>
 <p>When a client posts a role, the Braintrust matching engine runs against the pre-assessed, pre-ranked talent pool — surfacing verified, scored candidates within hours. The result is a fundamentally shorter hiring cycle for enterprise teams: job posted to first interview in under 24 hours for most technical roles.</p>`,
         bullets: [
-            '<strong>750K+ pre-assessed professionals:</strong> Assessment completed before matching — not as part of the hiring process',
+            '<strong>2M+ pre-assessed professionals:</strong> Assessment completed before matching — not as part of the hiring process',
             '<strong>AI-powered matching:</strong> Candidates ranked by domain assessment score and role-fit — not by keyword proximity or application recency',
             '<strong>ID-verified talent pool:</strong> Every professional government-ID verified — enterprise-grade accountability',
             '<strong>Hours to match:</strong> Pre-assessed pool enables same-day candidate delivery for roles with clear requirements',

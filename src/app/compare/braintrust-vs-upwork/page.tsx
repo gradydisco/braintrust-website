@@ -16,7 +16,7 @@ const comparisonRows = [
     { dimension: 'Domain expertise', braintrust: 'Ranked by verified domain assessment', competitor: 'Self-reported specializations with no verification', advantage: 'braintrust' as const },
     { dimension: 'Background checks', braintrust: 'Available for qualifying roles', competitor: 'Not available', advantage: 'braintrust' as const },
     { dimension: 'Enterprise integration', braintrust: 'Designed for enterprise procurement and compliance', competitor: 'Consumer-grade with enterprise tier add-ons', advantage: 'braintrust' as const },
-    { dimension: 'Talent pool size', braintrust: '750K+ professionals — curated and assessed', competitor: 'Millions of freelancers — unfiltered at entry', advantage: 'neutral' as const },
+    { dimension: 'Talent pool size', braintrust: '2M+ professionals — curated and assessed', competitor: 'Millions of freelancers — unfiltered at entry', advantage: 'neutral' as const },
     { dimension: 'Platform model', braintrust: 'Decentralized — no platform take from freelancers', competitor: 'Platform fee structure (10%–20% taken from freelancers)', advantage: 'neutral' as const },
 ];
 

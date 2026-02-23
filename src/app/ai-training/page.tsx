@@ -6,7 +6,7 @@ import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
     title: 'AI Training Work — Earn Money Training AI Models',
-    description: 'Contribute your expertise to AI model training. Earn money for RLHF, data labeling, evaluation, and domain-specific AI training tasks. Join 750K+ professionals.',
+    description: 'Contribute your expertise to AI model training. Earn money for RLHF, data labeling, evaluation, and domain-specific AI training tasks. Join 2M+ professionals.',
 };
 
 const faqItems = [

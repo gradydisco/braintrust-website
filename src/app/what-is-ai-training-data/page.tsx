@@ -74,7 +74,7 @@ const sections = [
         title: 'How Braintrust Provides AI Training Data Infrastructure',
         content: `<p>Braintrust operates human data infrastructure for enterprise AI programs — a global network of vetted domain experts providing annotation, RLHF preference labeling, model evaluation, and training data production services. Every professional in the network is assessed in their specific domain and ID-verified before deployment.</p>`,
         bullets: [
-            '<strong>750K+ assessed professionals:</strong> Global workforce assessed in domain-specific AI training tasks',
+            '<strong>2M+ assessed professionals:</strong> Global workforce assessed in domain-specific AI training tasks',
             '<strong>100+ countries, 50+ languages:</strong> Multilingual data production for globally capable models',
             '<strong>Domain coverage:</strong> Medical, legal, scientific, technical, linguistic, and general domain annotation expertise',
             '<strong>Full pipeline:</strong> Annotation, RLHF, preference labeling, model evaluation, and quality review',

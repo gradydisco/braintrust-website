@@ -11,7 +11,7 @@ const comparisonRows = [
     { dimension: 'Vetting model', braintrust: 'AI-powered automated assessment at scale', competitor: 'Manual expert vetting (multi-week process)', advantage: 'braintrust' as const },
     { dimension: 'Time to match', braintrust: 'Ranked candidates surfaced in hours', competitor: 'Matching takes days to weeks after vetting', advantage: 'braintrust' as const },
     { dimension: 'Identity verification', braintrust: 'Government-issued ID required for all professionals', competitor: 'Identity verified through vetting process', advantage: 'neutral' as const },
-    { dimension: 'Network scale', braintrust: '750K+ assessed professionals globally', competitor: 'Smaller curated network (top 3% claim)', advantage: 'neutral' as const },
+    { dimension: 'Network scale', braintrust: '2M+ assessed professionals globally', competitor: 'Smaller curated network (top 3% claim)', advantage: 'neutral' as const },
     { dimension: 'Domain coverage', braintrust: 'AI, ML, data science, engineering, and AI training', competitor: 'Software, design, finance — general technical', advantage: 'neutral' as const },
     { dimension: 'AI training workforce', braintrust: 'Full human data and AI training infrastructure', competitor: 'Not a primary capability', advantage: 'braintrust' as const },
     { dimension: 'Assessment infrastructure', braintrust: 'Automated, scalable, AI-driven — runs at any volume', competitor: 'Manual — does not scale without adding screeners', advantage: 'braintrust' as const },
@@ -67,7 +67,7 @@ const faqItems = [
     },
     {
         question: 'Does Braintrust have a smaller network than Toptal?',
-        answer: 'No. Braintrust has 750K+ professionals in its assessed network — significantly larger than Toptal. Braintrust\'s automated assessment infrastructure allows it to scale vetting at a volume that manual processes cannot achieve.',
+        answer: 'No. Braintrust has 2M+ professionals in its assessed network — significantly larger than Toptal. Braintrust\'s automated assessment infrastructure allows it to scale vetting at a volume that manual processes cannot achieve.',
     },
     {
         question: 'Does Toptal support AI training workforce? How does Braintrust compare?',

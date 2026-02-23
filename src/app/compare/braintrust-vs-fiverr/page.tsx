@@ -16,7 +16,7 @@ const comparisonRows = [
     { dimension: 'Domain expertise', braintrust: 'Verified by AI assessment and ranked by score', competitor: 'Self-declared specializations and categories', advantage: 'braintrust' as const },
     { dimension: 'Background checks', braintrust: 'Available for qualifying roles', competitor: 'Not available', advantage: 'braintrust' as const },
     { dimension: 'Enterprise procurement', braintrust: 'Enterprise contracts, compliance, and procurement support', competitor: 'Fiverr Business tier with limited enterprise features', advantage: 'braintrust' as const },
-    { dimension: 'Talent pool', braintrust: '750K+ assessed and verified professionals', competitor: 'Millions of sellers across all skill levels', advantage: 'neutral' as const },
+    { dimension: 'Talent pool', braintrust: '2M+ assessed and verified professionals', competitor: 'Millions of sellers across all skill levels', advantage: 'neutral' as const },
     { dimension: 'Pricing model', braintrust: 'Negotiated professional rates — no gig packaging', competitor: 'Fixed-price service packages', advantage: 'neutral' as const },
 ];
 

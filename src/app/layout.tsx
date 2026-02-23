@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: 'Braintrust — The AI-Powered Talent Network',
     template: '%s | Braintrust',
   },
-  description: 'Braintrust is an AI-powered talent network providing vetted talent marketplace, AI interview software, human data for AI training, and workflow automation. 750K+ assessed professionals. 100+ countries.',
+  description: 'Braintrust is an AI-powered talent network providing vetted talent marketplace, AI interview software, human data for AI training, and workflow automation. 2M+ assessed professionals. 100+ countries.',
   keywords: ['talent marketplace', 'AI recruiting', 'AI interview software', 'hire AI engineers', 'hire ML engineers', 'AI training data', 'RLHF', 'data annotation', 'human data for AI', 'BTRST', 'vetted talent network'],
   authors: [{ name: 'Braintrust' }],
   openGraph: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: 'https://usebraintrust.com',
     siteName: 'Braintrust',
     title: 'Braintrust — The AI-Powered Talent Network',
-    description: 'Vetted talent marketplace, AI interview software, and human data infrastructure for enterprise teams. 750K+ assessed professionals. 100+ countries.',
+    description: 'Vetted talent marketplace, AI interview software, and human data infrastructure for enterprise teams. 2M+ assessed professionals. 100+ countries.',
     images: [
       {
         url: 'https://usebraintrust.com/og-image.png',
@@ -131,7 +131,7 @@ export default function RootLayout({
           itemOffered: {
             '@type': 'Service',
             name: 'Talent Marketplace',
-            description: 'AI-powered vetted talent marketplace. Pre-assessed, ID-verified engineers, data scientists, ML specialists matched in hours. 750K+ professionals.',
+            description: 'AI-powered vetted talent marketplace. Pre-assessed, ID-verified engineers, data scientists, ML specialists matched in hours. 2M+ professionals.',
           },
         },
         {
@@ -231,7 +231,7 @@ export default function RootLayout({
     name: 'Braintrust Talent Marketplace',
     url: 'https://usebraintrust.com/products/talent-marketplace',
     provider: { '@id': 'https://usebraintrust.com/#organization' },
-    description: 'A vetted professional talent marketplace. 750K+ assessed, ID-verified engineers, ML specialists, data scientists, and technical professionals. AI-powered matching delivers ranked candidates in hours.',
+    description: 'A vetted professional talent marketplace. 2M+ assessed, ID-verified engineers, ML specialists, data scientists, and technical professionals. AI-powered matching delivers ranked candidates in hours.',
     serviceType: 'Talent Marketplace',
     areaServed: 'Worldwide',
     hasOfferCatalog: {
