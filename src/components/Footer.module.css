@@ -53,6 +53,26 @@
     color: var(--color-gray-400);
 }
 
+.socials {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray-400);
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.socialLink:hover {
+    color: var(--color-white);
+    transform: translateY(-1px);
+}
+
 .links {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
