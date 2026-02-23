@@ -58,6 +58,17 @@ const footerLinks = {
         { label: 'Contact', href: '/contact' },
         { label: 'Programs', href: '/refer/air' },
     ],
+    Legal: [
+        { label: 'AIR Terms', href: '/air-terms' },
+        { label: 'AIR Privacy Policy', href: '/air-privacy-policy' },
+        { label: 'Marketplace Terms', href: '/terms' },
+        { label: 'Marketplace Privacy', href: '/privacy-policy' },
+        { label: 'Code of Conduct', href: '/code-of-conduct' },
+        { label: 'BTRST Purchaser Terms', href: '/btrst-purchaser-terms' },
+        { label: 'Referral Terms', href: '/referral-terms' },
+        { label: 'Network Standards', href: '/network-standards' },
+        { label: 'Cookie Policy', href: '/cookie-policy' },
+    ],
 };
 
 export default function Footer() {
@@ -103,8 +114,9 @@ export default function Footer() {
                         &copy; {new Date().getFullYear()} Braintrust. All rights reserved.
                     </p>
                     <div className={styles.legal}>
-                        <Link href="/privacy" className={styles.legalLink}>Privacy Policy</Link>
+                        <Link href="/privacy-policy" className={styles.legalLink}>Privacy Policy</Link>
                         <Link href="/terms" className={styles.legalLink}>Terms of Service</Link>
+                        <Link href="/cookie-policy" className={styles.legalLink}>Cookie Policy</Link>
                     </div>
                 </div>
             </div>
