@@ -353,6 +353,10 @@ p {
   color: var(--color-gray-300);
 }
 
+.section--dark .stat__label {
+  color: rgba(255, 255, 255, 0.55);
+}
+
 .section--gray {
   background-color: var(--bg-secondary);
 }

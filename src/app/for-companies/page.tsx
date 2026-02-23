@@ -35,9 +35,9 @@ const products = [
     },
     {
         title: 'Nexus',
-        description: 'Orchestrate your entire recruiting workflow. Connect your ATS, automate approvals, and get real-time analytics on your hiring pipeline.',
+        description: 'Automate workflows across your entire organization — not just recruiting. Connect every tool you use, trigger custom rules, and let Nexus handle the coordination so your team can focus on decisions, not administration.',
         href: '/products/nexus',
-        features: ['Workflow Automation', 'ATS Integration', 'Custom Rules Engine', 'Real-time Analytics'],
+        features: ['Cross-Functional Automation', '200+ Integrations', 'Custom Rules Engine', 'Real-time Dashboards'],
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
