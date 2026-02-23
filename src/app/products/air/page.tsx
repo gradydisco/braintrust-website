@@ -8,6 +8,7 @@ import RevealSection from '@/components/RevealSection';
 import LiveInterviewTicker from '@/components/LiveInterviewTicker';
 import G2BadgeStrip from '@/components/G2BadgeStrip';
 import SavingsCalculator from '@/components/SavingsCalculator';
+import AIRWorkflow from '@/components/AIRWorkflow';
 
 export const metadata: Metadata = {
     title: 'AIR | AI Recruiter | Conversational Voice Interviews & AI Assessments',
@@ -168,6 +169,9 @@ export default function AIR() {
                     </RevealSection>
                 </div>
             </section>
+
+            {/* ====== WORKFLOW ANIMATION ====== */}
+            <AIRWorkflow />
 
             {/* ====== CAPABILITIES — How AIR Transforms Recruiting ====== */}
             <section className="section">
