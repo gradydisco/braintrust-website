@@ -118,11 +118,11 @@ export default function AIR() {
                             gap: '16px',
                         }}>
                             {[
-                                { pct: '94%', stat: 'Completed interviews on their own schedule', quote: '&ldquo;I did this at 9pm after work &mdash; it made applying possible.&rdquo;' },
-                                { pct: '93%', stat: 'Found the experience clear and easy to follow', quote: '&ldquo;Super clear and simple. Honestly easier than a phone screen.&rdquo;' },
-                                { pct: '90%', stat: 'Would do an AI interview again', quote: '&ldquo;This changed my mind about AI interviews entirely.&rdquo;' },
-                                { pct: '89%', stat: 'Satisfied with their overall experience', quote: '&ldquo;Everyone got the same questions. Felt more objective.&rdquo;' },
-                                { pct: '87%', stat: 'Felt they had a fair shot to showcase their skills', quote: '&ldquo;Better than I expected. I&apos;d definitely do this again.&rdquo;' },
+                                { pct: '94%', stat: 'Completed interviews on their own schedule', quote: '&ldquo;I applied at 11pm after the kids were asleep. No recruiter would take that call.&rdquo;' },
+                                { pct: '93%', stat: 'Found the experience clear and easy to follow', quote: '&ldquo;Honestly, it was less stressful than a live interview. I could actually think before I answered.&rdquo;' },
+                                { pct: '90%', stat: 'Would do an AI interview again', quote: '&ldquo;I was skeptical going in. Now I&apos;d pick this over a phone screen any day.&rdquo;' },
+                                { pct: '89%', stat: 'Satisfied with their overall experience', quote: '&ldquo;Same questions, same process, no favoritism. That&apos;s how hiring should work.&rdquo;' },
+                                { pct: '87%', stat: 'Felt they had a fair shot to showcase their skills', quote: '&ldquo;I finally got to explain what I actually know &mdash; not just how well I perform under pressure.&rdquo;' },
                             ].map((item, i) => (
                                 <div key={i} className="card--enterprise" style={{
                                     background: 'var(--color-white)',
@@ -469,7 +469,7 @@ export default function AIR() {
                         <div className="section-header">
                             <div className="badge badge--accent">Compliance &amp; Fairness</div>
                             <h2>Independently audited.<br />Zero bias detected.</h2>
-                            <p>AIR is the only AI recruiting platform with a published third-party bias audit. We hired independent auditors to test our model across every protected class &mdash; and we share the results publicly.</p>
+                            <p>We commissioned an independent, third-party bias audit &mdash; testing our model across every EEOC-protected class. Not only did we pass every single category, we publish the full results so you never have to take our word for it.</p>
                         </div>
                     </RevealSection>
                     <RevealSection delay={150}>
