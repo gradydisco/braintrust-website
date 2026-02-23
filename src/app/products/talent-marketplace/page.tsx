@@ -190,30 +190,60 @@ export default function TalentMarketplace() {
                         </div>
                     </div>
 
-                    {/* G2 trust badges */}
+                    {/* G2 trust badges — FALL 2025 */}
                     <div style={{
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        flexWrap: 'wrap', gap: 'var(--space-6)', marginTop: 'var(--space-12)',
+                        flexWrap: 'wrap', gap: '10px', marginTop: 'var(--space-12)',
                     }}>
+                        {/* Rating chip */}
+                        <div style={{
+                            display: 'flex', flexDirection: 'column', alignItems: 'center',
+                            padding: '10px 18px', borderRadius: 'var(--radius-lg)',
+                            background: 'white', border: '1px solid rgba(50,50,93,0.1)',
+                            boxShadow: '0 2px 8px rgba(50,50,93,0.06)', gap: '3px',
+                        }}>
+                            <div style={{ fontSize: '11px', fontWeight: 800, color: '#ff492c', letterSpacing: '0.04em' }}>G2</div>
+                            <div style={{ display: 'flex', gap: '1px' }}>
+                                {[...Array(4)].map((_, i) => (
+                                    <svg key={i} width="11" height="11" viewBox="0 0 24 24" fill="#ff492c" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                                ))}
+                                <svg width="11" height="11" viewBox="0 0 24 24" stroke="none"><defs><linearGradient id="half2"><stop offset="60%" stopColor="#ff492c" /><stop offset="60%" stopColor="#e2e8f0" /></linearGradient></defs><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="url(#half2)" /></svg>
+                            </div>
+                            <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-primary)' }}>4.6 / 5</div>
+                        </div>
+
+                        {/* Award badges */}
                         {[
-                            { label: 'Leader', category: 'Freelance Platforms', season: 'Winter 2025' },
-                            { label: 'Highest Rated', category: 'Talent Management', season: 'G2 · 4.6★' },
-                            { label: 'Easiest to Use', category: 'Staffing Software', season: 'G2 · 2025' },
+                            { label: 'Best Est. ROI', category: 'Fall 2025' },
+                            { label: 'Fastest Implementation', category: 'Fall 2025' },
+                            { label: 'Best Results', category: 'Fall 2025' },
+                            { label: 'Leader', category: 'Fall 2025' },
+                            { label: 'Highest User Adoption', category: 'Fall 2025' },
                         ].map(b => (
                             <div key={b.label} style={{
                                 display: 'flex', flexDirection: 'column', alignItems: 'center',
-                                padding: '10px 18px', borderRadius: 'var(--radius-lg)',
-                                background: 'white',
-                                border: '1px solid rgba(50,50,93,0.1)',
+                                padding: '10px 16px', borderRadius: 'var(--radius-lg)',
+                                background: 'white', border: '1px solid rgba(50,50,93,0.1)',
                                 boxShadow: '0 2px 8px rgba(50,50,93,0.06)',
-                                gap: '2px', minWidth: '120px',
+                                gap: '2px', borderBottom: '3px solid #ff492c',
                             }}>
-                                <div style={{ fontSize: '11px', fontWeight: 700, color: '#ff492c', textTransform: 'uppercase', letterSpacing: '0.05em' }}>G2</div>
-                                <div style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)' }}>{b.label}</div>
-                                <div style={{ fontSize: '10px', color: 'var(--text-tertiary)', textAlign: 'center', lineHeight: 1.3 }}>{b.category}</div>
-                                <div style={{ fontSize: '10px', color: '#ff492c', fontWeight: 600 }}>{b.season}</div>
+                                <div style={{ fontSize: '9px', fontWeight: 600, color: 'var(--text-tertiary)', textTransform: 'uppercase' as const, letterSpacing: '0.06em' }}>{b.category}</div>
+                                <div style={{ fontSize: '10px', fontWeight: 700, color: '#ff492c', letterSpacing: '0.04em' }}>G2</div>
+                                <div style={{ fontSize: '12px', fontWeight: 800, color: 'var(--text-primary)', textAlign: 'center', lineHeight: 1.2 }}>{b.label}</div>
                             </div>
                         ))}
+
+                        {/* AICPA SOC */}
+                        <div style={{
+                            display: 'flex', flexDirection: 'column', alignItems: 'center',
+                            padding: '10px 16px', borderRadius: 'var(--radius-lg)',
+                            background: 'white', border: '1px solid rgba(50,50,93,0.1)',
+                            boxShadow: '0 2px 8px rgba(50,50,93,0.06)', gap: '2px',
+                        }}>
+                            <div style={{ fontSize: '11px', fontWeight: 800, color: '#0ea5e9', letterSpacing: '0.04em' }}>AICPA</div>
+                            <div style={{ fontSize: '12px', fontWeight: 800, color: 'var(--text-primary)' }}>SOC 2</div>
+                            <div style={{ fontSize: '9px', color: 'var(--text-tertiary)', textTransform: 'uppercase' as const, letterSpacing: '0.05em' }}>Type II</div>
+                        </div>
                     </div>
                 </div>
             </section>
