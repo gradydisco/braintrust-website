@@ -51,6 +51,33 @@ export default function AIR() {
                             <Link href="/book-demo" className="btn btn--primary btn--lg">Book a Demo</Link>
                             <Link href="/products/air/try" className="btn btn--secondary btn--lg">Try It Yourself →</Link>
                         </div>
+
+                        {/* G2 trust badges */}
+                        <div style={{
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            flexWrap: 'wrap', gap: 'var(--space-4)', marginTop: 'var(--space-10)',
+                        }}>
+                            {[
+                                { label: 'Leader', category: 'AI Interview Software', season: 'Winter 2025' },
+                                { label: 'Highest Rated', category: 'Recruiting Automation', season: 'G2 · 4.7★' },
+                                { label: 'Easiest to Use', category: 'AI Assessment Tools', season: 'G2 · 2025' },
+                                { label: 'Best Results', category: 'HR Software', season: 'G2 · 2025' },
+                            ].map(b => (
+                                <div key={b.label} style={{
+                                    display: 'flex', flexDirection: 'column', alignItems: 'center',
+                                    padding: '8px 16px', borderRadius: 'var(--radius-lg)',
+                                    background: 'white',
+                                    border: '1px solid rgba(50,50,93,0.1)',
+                                    boxShadow: '0 2px 8px rgba(50,50,93,0.06)',
+                                    gap: '1px', minWidth: '110px',
+                                }}>
+                                    <div style={{ fontSize: '10px', fontWeight: 700, color: '#ff492c', textTransform: 'uppercase', letterSpacing: '0.05em' }}>G2</div>
+                                    <div style={{ fontSize: '12px', fontWeight: 800, color: 'var(--text-primary)' }}>{b.label}</div>
+                                    <div style={{ fontSize: '9.5px', color: 'var(--text-tertiary)', textAlign: 'center', lineHeight: 1.3 }}>{b.category}</div>
+                                    <div style={{ fontSize: '9.5px', color: '#ff492c', fontWeight: 600 }}>{b.season}</div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
@@ -92,6 +119,66 @@ export default function AIR() {
                                 Access Demo Interviews →
                             </Link>
                         </div>
+                    </RevealSection>
+                </div>
+            </section>
+            {/* ====== CANDIDATE LOVE ====== */}
+            <section className="section">
+                <div className="container" style={{ maxWidth: '860px' }}>
+                    <RevealSection>
+                        <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
+                            <div className="badge">Candidate Experience</div>
+                            <h2 style={{ marginBottom: 'var(--space-3)' }}>Candidates love AIR.<br />Not just recruiters.</h2>
+                            <p style={{ maxWidth: '520px', margin: '0 auto' }}>
+                                AIR isn&apos;t just efficient &mdash; candidates overwhelmingly rate it positive, fair, and easier than traditional phone screens.
+                            </p>
+                        </div>
+                    </RevealSection>
+                    <RevealSection delay={150}>
+                        <div style={{
+                            display: 'flex', flexDirection: 'column', gap: '0',
+                            background: 'var(--color-white)',
+                            border: '1px solid rgba(50,50,93,0.08)',
+                            borderRadius: 'var(--radius-2xl)',
+                            overflow: 'hidden',
+                            boxShadow: '0 4px 24px rgba(50,50,93,0.06)',
+                        }}>
+                            {[
+                                { pct: '90%', stat: 'more willing to do AI interviews again', quote: '&ldquo;This changed my mind about AI interviews &mdash; I&apos;d be happy to do more like this in the future.&rdquo;', color: '#f55733' },
+                                { pct: '94%', stat: 'appreciated completing interviews on their own time', quote: '&ldquo;I did this at 9pm after work &mdash; it made applying possible.&rdquo;', color: '#e14e2a' },
+                                { pct: '93%', stat: 'said the experience was clear and easy to follow', quote: '&ldquo;Super clear and simple. Honestly easier than a phone screen.&rdquo;', color: '#f55733' },
+                                { pct: '89%', stat: 'satisfied with their overall experience', quote: '&ldquo;Everyone got the same questions. Felt more objective.&rdquo;', color: '#e14e2a' },
+                                { pct: '87%', stat: 'felt they had a fair chance to showcase their experience', quote: '&ldquo;Better than I expected. I&apos;d definitely do this again.&rdquo;', color: '#f55733' },
+                            ].map((item, i, arr) => (
+                                <div key={i} style={{
+                                    display: 'flex', alignItems: 'flex-start', gap: '28px',
+                                    padding: 'var(--space-7) var(--space-10)',
+                                    borderBottom: i < arr.length - 1 ? '1px solid rgba(50,50,93,0.06)' : 'none',
+                                    transition: 'background 200ms',
+                                }} className="air-stat-row">
+                                    {/* Big percentage */}
+                                    <div style={{
+                                        fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+                                        fontWeight: 900,
+                                        color: item.color,
+                                        lineHeight: 1,
+                                        minWidth: '90px',
+                                        letterSpacing: '-0.02em',
+                                        paddingTop: '2px',
+                                    }}>
+                                        {item.pct}
+                                    </div>
+                                    {/* Stat + quote */}
+                                    <div style={{ flex: 1 }}>
+                                        <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '5px', lineHeight: 1.4 }} dangerouslySetInnerHTML={{ __html: item.stat }} />
+                                        <div style={{ fontSize: '13.5px', fontStyle: 'italic', color: 'var(--text-tertiary)', lineHeight: 1.6 }} dangerouslySetInnerHTML={{ __html: item.quote }} />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <p style={{ textAlign: 'center', fontSize: '11px', color: 'var(--text-tertiary)', marginTop: 'var(--space-5)', letterSpacing: '0.01em' }}>
+                            Based on 30,000+ candidate feedback surveys across all clients &amp; role types
+                        </p>
                     </RevealSection>
                 </div>
             </section>
