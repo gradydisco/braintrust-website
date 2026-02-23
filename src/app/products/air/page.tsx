@@ -612,194 +612,105 @@ export default function AIR() {
                         </div>
                     </RevealSection>
 
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 380px',
-                        gap: '48px',
-                        alignItems: 'start',
-                    }}>
-                        {/* LEFT — Governance pillars */}
-                        <RevealSection delay={100}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                                {[
-                                    {
-                                        color: '#0ea5e9',
-                                        title: 'SOC 2 Type II',
-                                        detail: 'Aligned with ISO 27001 / NIST 800-30. Encrypted, AWS-based infrastructure with regular risk assessments and penetration testing.',
-                                        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>,
-                                    },
-                                    {
-                                        color: '#a78bfa',
-                                        title: 'Data Privacy & Residency',
-                                        detail: 'GDPR / DPA compliant. PII encrypted at rest and in transit, stored in the EU if required, and permanently deleted on request.',
-                                        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
-                                    },
-                                    {
-                                        color: '#34d399',
-                                        title: 'Human-in-the-Loop AI',
-                                        detail: 'Every AI interview is fully reviewable with video playback and a detailed scorecard. Recruiters retain final decision authority — always.',
-                                        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
-                                    },
-                                    {
-                                        color: '#f4845f',
-                                        title: 'Bias Testing & Explainability',
-                                        detail: 'Third-party audits completed regularly for adverse impact and bias detection. Standardized grading rubrics, full scoring transparency, and recruiter training built-in.',
-                                        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>,
-                                    },
-                                    {
-                                        color: '#fbbf24',
-                                        title: 'Access Controls',
-                                        detail: 'Role-based access control (RBAC), multi-factor authentication (MFA), and Single Sign-On (SSO) supported across all enterprise deployments.',
-                                        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /><circle cx="12" cy="16" r="1" fill="currentColor" /></svg>,
-                                    },
-                                    {
-                                        color: '#fb7185',
-                                        title: 'Ethical AI Use',
-                                        detail: 'Candidates are always informed upfront that the interview is AI-led, recorded, and participated in on an opt-in basis. No surprises, no deception.',
-                                        icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>,
-                                    },
-                                ].map((item) => (
-                                    <div key={item.title} style={{
-                                        display: 'flex',
-                                        gap: '16px',
-                                        alignItems: 'flex-start',
-                                        padding: '18px 20px',
-                                        background: 'rgba(255,255,255,0.04)',
-                                        border: '1px solid rgba(255,255,255,0.07)',
-                                        borderRadius: 'var(--radius-lg)',
-                                        borderLeft: `3px solid ${item.color}`,
-                                        transition: 'background 200ms',
-                                    }}>
-                                        <div style={{
-                                            width: '34px', height: '34px', borderRadius: '8px',
-                                            background: `${item.color}1a`,
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            color: item.color, flexShrink: 0,
-                                        }}>
-                                            {item.icon}
-                                        </div>
-                                        <div>
-                                            <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-white)', marginBottom: '4px' }}>{item.title}</div>
-                                            <div style={{ fontSize: '12.5px', color: 'var(--color-gray-300)', lineHeight: 1.6 }}>{item.detail}</div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </RevealSection>
-
-                        {/* RIGHT — Bias & Fairness status card */}
-                        <RevealSection delay={200}>
-                            <div style={{
-                                background: 'rgba(255,255,255,0.05)',
-                                border: '1px solid rgba(255,255,255,0.1)',
-                                borderRadius: 'var(--radius-2xl)',
-                                padding: '28px',
-                                backdropFilter: 'blur(12px)',
-                                WebkitBackdropFilter: 'blur(12px)',
-                            }}>
-                                {/* Card header */}
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-                                    <div style={{
-                                        width: '32px', height: '32px', borderRadius: '8px',
-                                        background: 'rgba(52,211,153,0.15)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        color: '#34d399',
-                                    }}>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
-                                    </div>
-                                    <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--color-white)' }}>Bias &amp; Fairness</div>
-                                    <div style={{
-                                        marginLeft: 'auto',
-                                        fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em',
-                                        textTransform: 'uppercase',
-                                        color: '#34d399',
-                                        background: 'rgba(52,211,153,0.12)',
-                                        padding: '3px 8px', borderRadius: '100px',
-                                    }}>Audited</div>
-                                </div>
-                                <p style={{ fontSize: '12px', color: 'var(--color-gray-400)', marginBottom: '20px', lineHeight: 1.5 }}>
-                                    Independent third-party audit — all EEOC-protected classes tested.
-                                </p>
-
-                                {/* Category rows */}
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
-                                    {[
-                                        'Sex bias',
-                                        'Race / Ethnicity bias',
-                                        'Intersectional (Sex × Race/Ethnicity)',
-                                        'Age bias',
-                                        'Disability bias',
-                                        'Veteran bias',
-                                    ].map((cat) => (
-                                        <div key={cat} style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'space-between',
-                                            padding: '10px 14px',
-                                            background: 'rgba(255,255,255,0.04)',
-                                            border: '1px solid rgba(255,255,255,0.06)',
-                                            borderRadius: '8px',
-                                        }}>
-                                            <span style={{ fontSize: '13px', color: 'var(--color-gray-300)', fontWeight: 500 }}>{cat}</span>
-                                            <span style={{
-                                                fontSize: '11px', fontWeight: 700,
-                                                color: '#34d399',
-                                                background: 'rgba(52,211,153,0.15)',
-                                                padding: '3px 10px',
-                                                borderRadius: '100px',
-                                                letterSpacing: '0.02em',
-                                                flexShrink: 0,
-                                            }}>Clear</span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Divider + report link */}
-                                <div style={{
-                                    borderTop: '1px solid rgba(255,255,255,0.08)',
-                                    paddingTop: '16px',
+                    <RevealSection delay={100}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '720px', margin: '0 auto' }}>
+                            {[
+                                {
+                                    color: '#0ea5e9',
+                                    title: 'SOC 2 Type II',
+                                    detail: 'Aligned with ISO 27001 / NIST 800-30. Encrypted, AWS-based infrastructure with regular risk assessments and penetration testing.',
+                                    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>,
+                                },
+                                {
+                                    color: '#a78bfa',
+                                    title: 'Data Privacy & Residency',
+                                    detail: 'GDPR / DPA compliant. PII encrypted at rest and in transit, stored in the EU if required, and permanently deleted on request.',
+                                    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
+                                },
+                                {
+                                    color: '#34d399',
+                                    title: 'Human-in-the-Loop AI',
+                                    detail: 'Every AI interview is fully reviewable with video playback and a detailed scorecard. Recruiters retain final decision authority — always.',
+                                    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
+                                },
+                                {
+                                    color: '#f4845f',
+                                    title: 'Bias Testing & Explainability',
+                                    detail: 'Third-party audits completed regularly for adverse impact and bias detection. Standardized grading rubrics, full scoring transparency, and recruiter training built-in.',
+                                    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>,
+                                },
+                                {
+                                    color: '#fbbf24',
+                                    title: 'Access Controls',
+                                    detail: 'Role-based access control (RBAC), multi-factor authentication (MFA), and Single Sign-On (SSO) supported across all enterprise deployments.',
+                                    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /><circle cx="12" cy="16" r="1" fill="currentColor" /></svg>,
+                                },
+                                {
+                                    color: '#fb7185',
+                                    title: 'Ethical AI Use',
+                                    detail: 'Candidates are always informed upfront that the interview is AI-led, recorded, and participated in on an opt-in basis. No surprises, no deception.',
+                                    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>,
+                                },
+                            ].map((item) => (
+                                <div key={item.title} style={{
                                     display: 'flex',
-                                    flexDirection: 'column',
-                                    gap: '10px',
+                                    gap: '16px',
+                                    alignItems: 'flex-start',
+                                    padding: '18px 20px',
+                                    background: 'rgba(255,255,255,0.04)',
+                                    border: '1px solid rgba(255,255,255,0.07)',
+                                    borderRadius: 'var(--radius-lg)',
+                                    borderLeft: `3px solid ${item.color}`,
+                                    transition: 'background 200ms',
                                 }}>
-                                    <div style={{ fontSize: '11px', color: 'var(--color-gray-500)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                                        Compliance status
+                                    <div style={{
+                                        width: '34px', height: '34px', borderRadius: '8px',
+                                        background: `${item.color}1a`,
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        color: item.color, flexShrink: 0,
+                                    }}>
+                                        {item.icon}
                                     </div>
-                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                                        {['EEOC', 'NYC Local Law 144', 'GDPR', 'SOC 2'].map(label => (
-                                            <span key={label} style={{
-                                                fontSize: '11px', fontWeight: 600,
-                                                color: 'var(--color-gray-300)',
-                                                background: 'rgba(255,255,255,0.06)',
-                                                border: '1px solid rgba(255,255,255,0.1)',
-                                                padding: '4px 10px', borderRadius: '100px',
-                                            }}>{label}</span>
-                                        ))}
+                                    <div>
+                                        <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-white)', marginBottom: '4px' }}>{item.title}</div>
+                                        <div style={{ fontSize: '12.5px', color: 'var(--color-gray-300)', lineHeight: 1.6 }}>{item.detail}</div>
                                     </div>
-                                    <a
-                                        href="https://drive.google.com/file/d/1hk5QdxnecwI94ppp7HvxOcTZNEZBPuJs/view"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{
-                                            display: 'inline-flex', alignItems: 'center', gap: '6px',
-                                            fontSize: '12.5px', fontWeight: 700,
-                                            color: '#34d399',
-                                            textDecoration: 'none',
-                                            padding: '9px 14px',
-                                            borderRadius: '8px',
-                                            border: '1px solid rgba(52,211,153,0.25)',
-                                            background: 'rgba(52,211,153,0.07)',
-                                            transition: 'all 200ms',
-                                            marginTop: '4px',
-                                        }}>
-                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
-                                        View Full Audit Report
-                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
-                                    </a>
                                 </div>
-                            </div>
-                        </RevealSection>
-                    </div>
+                            ))}
+                        </div>
+                    </RevealSection>
+
+                    {/* Trust Center CTA */}
+                    <RevealSection delay={200}>
+                        <div style={{ textAlign: 'center', marginTop: 'var(--space-12)' }}>
+                            <a
+                                href="https://app.vanta.com/usebraintrust.com/trust/b7n730pooch9160wkcu31g"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                    display: 'inline-flex', alignItems: 'center', gap: '8px',
+                                    fontSize: '14px', fontWeight: 700,
+                                    color: 'var(--color-white)',
+                                    textDecoration: 'none',
+                                    padding: '14px 28px',
+                                    borderRadius: 'var(--radius-full)',
+                                    background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.04) 100%)',
+                                    border: '1px solid rgba(255,255,255,0.15)',
+                                    backdropFilter: 'blur(8px)',
+                                    WebkitBackdropFilter: 'blur(8px)',
+                                    transition: 'all 250ms',
+                                    letterSpacing: '0.01em',
+                                }}
+                            >
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+                                Visit Our Trust Center
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                            </a>
+                            <p style={{ fontSize: '12px', color: 'var(--color-gray-500)', marginTop: 'var(--space-3)' }}>
+                                SOC 2 reports, security policies, and compliance documentation — all in one place.
+                            </p>
+                        </div>
+                    </RevealSection>
                 </div>
             </section>
 
