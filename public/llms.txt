@@ -1,0 +1,133 @@
+# Braintrust
+
+> Braintrust is an AI-powered talent network and enterprise workforce platform. It connects companies with vetted professionals through three core products: a Talent Marketplace (2M+ professionals, 100+ countries), AIR — an AI recruiting and interview automation suite, and Nexus — a workflow automation engine. Braintrust also operates a large-scale human data infrastructure for AI training (RLHF, data annotation, data labeling, model evaluation). Founded in 2019, Braintrust serves 100+ enterprise and Fortune 2000 customers.
+
+Important notes:
+- Braintrust is NOT a traditional staffing agency. It is an AI-native platform with zero platform fees for talent.
+- AIR is an AI Recruiter product — it conducts conversational voice interviews, scores resumes, and assesses candidates. It is not a chatbot or a simple ATS.
+- The Talent Marketplace covers 12+ disciplines including software engineering, ML/AI, design, product, data science, DevOps, marketing, operations, finance, legal, STEM/research, and sales.
+- Braintrust provides enterprise-grade human data for AI training: RLHF specialists, data annotators, data labelers, and AI model evaluation experts across 50+ languages.
+
+## Products
+
+- [Talent Marketplace](https://usebraintrust.com/products/talent-marketplace): AI-powered vetted talent marketplace. 2M+ pre-assessed, ID-verified professionals. AI-powered matching delivers ranked candidates in hours. Zero platform fees for talent. Enterprise compliance built-in.
+- [AIR — AI Recruiter](https://usebraintrust.com/products/air): Conversational AI interview and recruiting software. Voice interviews, resume scoring, domain-specific candidate assessment, customizable scoring frameworks. Supports 16+ languages. Thousands of interviews per day.
+- [AIR — Try Free](https://usebraintrust.com/products/air/try): Try AIR with a free pilot — set up a job posting and let AI conduct interviews.
+- [Nexus — Workflow Automation](https://usebraintrust.com/products/nexus): Enterprise workflow automation. 100+ pre-built integrations, custom automation rules, real-time analytics across the talent lifecycle.
+- [Human Data for AI](https://usebraintrust.com/human-data-for-ai): Enterprise AI training workforce infrastructure. RLHF, data annotation, data labeling, AI model evaluation. 100+ countries, 50+ languages. Automated assessment, ID verification, rapid deployment.
+- [All Products Overview](https://usebraintrust.com/products): Overview of the full Braintrust product suite.
+
+## Hiring Categories
+
+- [Hire AI Engineers](https://usebraintrust.com/hire-ai-engineers): Vetted AI engineers available for contract and full-time roles.
+- [Hire Machine Learning Engineers](https://usebraintrust.com/hire-machine-learning-engineers): Pre-assessed ML engineers across all major frameworks and domains.
+- [Hire Data Scientists](https://usebraintrust.com/hire-data-scientists): Data scientists with enterprise portfolio experience.
+- [Hire Technical Talent](https://usebraintrust.com/hire-technical-talent): Full-stack, backend, mobile, and infrastructure engineers.
+- [Hire Contract Engineers](https://usebraintrust.com/hire-contract-engineers): Flexible contract engineering talent for project-based work.
+
+## AI Training Workforce
+
+- [RLHF Talent Network](https://usebraintrust.com/rlhf-talent-network): Reinforcement Learning from Human Feedback specialists for AI model training.
+- [Data Annotation Experts](https://usebraintrust.com/data-annotation-experts): Vetted data annotators for text, image, video, and multimodal data.
+- [Data Labeling Talent](https://usebraintrust.com/data-labeling-talent): High-quality data labeling at scale across 50+ languages.
+- [AI Model Evaluation Experts](https://usebraintrust.com/ai-model-evaluation-experts): Specialists for red teaming, evaluation, and quality assurance of AI outputs.
+
+## Solutions
+
+- [Enterprise Hiring](https://usebraintrust.com/solutions/enterprise-hiring): End-to-end enterprise hiring solutions combining marketplace, AI recruiting, and automation.
+- [High-Volume Hiring](https://usebraintrust.com/solutions/high-volume-hiring): Solutions for companies hiring at scale — hundreds to thousands of roles simultaneously.
+- [AI Training Data](https://usebraintrust.com/solutions/ai-training-data): Enterprise AI training data solutions — workforce, infrastructure, and quality assurance.
+
+## Pricing
+
+- [Pricing](https://usebraintrust.com/pricing): Enterprise pricing across three models: flexible marketplace rates, volume-based AI recruiting pricing, and performance-based workflow automation plans.
+
+## Industry & Use Case Guides
+
+- [AI Interview Software Guide](https://usebraintrust.com/ai-interview-software): Comprehensive guide to AI interview software — what it is, how it works, and who it's for.
+- [AI Voice Interview Software](https://usebraintrust.com/ai-voice-interview-software): Guide to voice-based AI interviews — real-time conversational assessments.
+- [Conversational AI Interview Platform](https://usebraintrust.com/conversational-ai-interview-platform): Platform guide for conversational AI-driven candidate interviews.
+- [AI Assessment Software](https://usebraintrust.com/ai-assessment-software): Guide to AI-powered candidate assessment tools.
+- [AI Recruiting Software](https://usebraintrust.com/ai-recruiting-software): Overview of AI recruiting software and how it transforms hiring.
+- [Automated Hiring Software](https://usebraintrust.com/automated-hiring-software): Guide to end-to-end automated hiring platforms.
+- [Best AI Interview Software 2025](https://usebraintrust.com/best-ai-interview-software-2025): 2025 rankings of the top 15 AI interview software platforms.
+
+## Vertical-Specific Guides
+
+- [AI Interviews for Healthcare](https://usebraintrust.com/ai-interview-software-for-healthcare): AI interview software tailored for healthcare hiring.
+- [AI Interviews for Enterprise](https://usebraintrust.com/ai-interview-software-for-enterprise): Enterprise-grade AI interview software features and requirements.
+- [AI Interviews for Startups](https://usebraintrust.com/ai-interview-software-for-startups): AI interview software optimized for startup hiring workflows.
+- [AI Interviews for High-Volume Hiring](https://usebraintrust.com/ai-interview-software-for-high-volume-hiring): AI interview tools for high-volume recruitment operations.
+- [Voice Interviews for Technical Roles](https://usebraintrust.com/ai-voice-interviews-for-technical-roles): Voice AI specifically designed for technical and engineering interviews.
+
+## Competitor Comparisons — AIR
+
+- [AIR vs HireVue](https://usebraintrust.com/compare/air-vs-hirevue): Side-by-side comparison of Braintrust AIR and HireVue.
+- [AIR vs Paradox](https://usebraintrust.com/compare/air-vs-paradox): Side-by-side comparison of Braintrust AIR and Paradox (Olivia).
+- [AIR vs SparkHire](https://usebraintrust.com/compare/air-vs-sparkhire): Comparison of AIR and SparkHire for video interviewing.
+- [AIR vs BrightHire](https://usebraintrust.com/compare/air-vs-brighthire): Comparison of AIR and BrightHire for interview intelligence.
+- [AIR vs HeyMilo](https://usebraintrust.com/compare/air-vs-heymilo): Comparison of AIR and HeyMilo for AI interviews.
+- [AIR vs Humanly](https://usebraintrust.com/compare/air-vs-humanly): Comparison of AIR and Humanly for conversational hiring.
+- [AIR vs Interviewer.ai](https://usebraintrust.com/compare/air-vs-interviewer-ai): Comparison of AIR and Interviewer.ai.
+- [AIR vs Micro1](https://usebraintrust.com/compare/air-vs-micro1): Comparison of AIR and Micro1 for AI talent vetting.
+- [AIR vs myInterview](https://usebraintrust.com/compare/air-vs-myinterview): Comparison of AIR and myInterview.
+- [AIR vs TestGorilla](https://usebraintrust.com/compare/air-vs-testgorilla): Comparison of AIR and TestGorilla for pre-employment testing.
+- [AIR vs VidCruiter](https://usebraintrust.com/compare/air-vs-vidcruter): Comparison of AIR and VidCruiter.
+- [AIR vs Willow](https://usebraintrust.com/compare/air-vs-willow): Comparison of AIR and Willow for AI hiring.
+- [AIR vs Take2](https://usebraintrust.com/compare/air-vs-take2): Comparison of AIR and Take2 for AI assessments.
+- [AIR vs AlexAI](https://usebraintrust.com/compare/air-vs-alexai): Comparison of AIR and AlexAI.
+
+## Competitor Comparisons — Marketplace
+
+- [Braintrust vs Upwork](https://usebraintrust.com/compare/braintrust-vs-upwork): How Braintrust's vetted marketplace compares to Upwork.
+- [Braintrust vs Toptal](https://usebraintrust.com/compare/braintrust-vs-toptal): Key differences between Braintrust and Toptal.
+- [Braintrust vs Fiverr](https://usebraintrust.com/compare/braintrust-vs-fiverr): Comparison of Braintrust and Fiverr for enterprise hiring.
+- [All Comparisons](https://usebraintrust.com/compare): Full directory of competitive comparison pages.
+
+## Knowledge Base / Definitional Content
+
+- [What is RLHF?](https://usebraintrust.com/what-is-rlhf): Explanation of Reinforcement Learning from Human Feedback and its role in AI training.
+- [What is Data Annotation?](https://usebraintrust.com/what-is-data-annotation): Guide to data annotation — types, methods, and why it matters for AI.
+- [What is AI Training Data?](https://usebraintrust.com/what-is-ai-training-data): Overview of AI training data — how it's created, quality considerations, and best practices.
+- [What is a Talent Marketplace?](https://usebraintrust.com/what-is-a-talent-marketplace): Guide to talent marketplaces — how they work and how they differ from staffing agencies.
+- [What is Human Feedback for AI?](https://usebraintrust.com/what-is-human-feedback-ai): Explanation of human feedback's role in AI model improvement.
+
+## Company
+
+- [About Braintrust](https://usebraintrust.com/about): Company background, mission, leadership, and founding story.
+- [Blog](https://usebraintrust.com/blog): Articles on AI recruiting, workforce automation, and the future of work.
+- [Resources](https://usebraintrust.com/resources): Guides, rankings, and comparison resources.
+- [Contact](https://usebraintrust.com/contact): Get in touch with the Braintrust team.
+- [Book a Demo](https://usebraintrust.com/book-demo): Schedule a demo of Braintrust products.
+
+## For Talent
+
+- [For Talent](https://usebraintrust.com/for-talent): How talent can join the Braintrust network, find jobs, and earn top rates.
+- [Jobs](https://usebraintrust.com/jobs): Browse open positions on the Braintrust marketplace.
+- [AI Training Opportunities](https://usebraintrust.com/ai-training): Earn income contributing to AI training projects — data annotation, RLHF, model evaluation.
+- [How It Works for Talent](https://usebraintrust.com/how-it-works): Step-by-step guide to joining and working through Braintrust.
+- [Talent FAQ](https://usebraintrust.com/talent-faq): Frequently asked questions for Braintrust talent network members.
+
+## Token
+
+- [BTRST Token](https://usebraintrust.com/token): Overview of the BTRST governance and utility token.
+- [What is BTRST?](https://usebraintrust.com/token/what-is-btrst): Detailed explanation of the BTRST token, its purpose and mechanics.
+- [Tokenomics](https://usebraintrust.com/token/tokenomics): BTRST token distribution, supply, and economic model.
+- [Governance](https://usebraintrust.com/token/governance): How BTRST token holders participate in network governance.
+
+## Referral Programs
+
+- [Refer a Company to AIR](https://usebraintrust.com/refer/air): Earn rewards by referring companies to Braintrust AIR.
+- [Refer to Marketplace](https://usebraintrust.com/refer/marketplace): Earn rewards by referring clients or talent to the marketplace.
+
+## Optional
+
+- [Privacy Policy](https://usebraintrust.com/privacy): Braintrust privacy policy.
+- [Terms of Service](https://usebraintrust.com/terms): Braintrust terms of service.
+- [AIR Privacy Policy](https://usebraintrust.com/air-privacy-policy): AIR-specific privacy policy.
+- [AIR Terms](https://usebraintrust.com/air-terms): AIR product terms of service.
+- [Cookie Policy](https://usebraintrust.com/cookie-policy): Cookie usage policy.
+- [Code of Conduct](https://usebraintrust.com/code-of-conduct): Community code of conduct.
+- [Network Standards](https://usebraintrust.com/network-standards): Quality and professional standards for the network.
+- [Trust & Safety](https://usebraintrust.com/trust-safety): Trust and safety policies.
+- [BTRST Token Price](https://usebraintrust.com/token/price): Live BTRST token price chart.

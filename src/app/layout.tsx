@@ -285,6 +285,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* LLM-friendly content discovery */}
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-friendly site summary" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM-friendly full site content" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(allSchemas) }}
