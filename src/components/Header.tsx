@@ -45,10 +45,20 @@ const companyNav: NavItem[] = [
 ];
 
 const talentNav: NavItem[] = [
-  { label: 'Find Jobs', href: '/jobs' },
-  { label: 'AI Training', href: '/ai-training' },
-  { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Resources', href: '/resources' },
+  {
+    label: 'Find Work', href: '/jobs', children: [
+      { label: 'Browse Open Roles', href: '/jobs', desc: 'Preview high-quality matched opportunities across every field' },
+      { label: 'AI Gig Work', href: '/ai-training', desc: 'Flexible, remote AI training work in your discipline' },
+      { label: 'Talent Types', href: '/talent-types', desc: 'See all 12+ specialty categories we support' },
+    ]
+  },
+  {
+    label: 'Get Certified', href: '/talent-certification', children: [
+      { label: 'Certification Overview', href: '/talent-certification', desc: 'What Certified Braintrust Talent means and how to get it' },
+      { label: 'How It Works', href: '/how-it-works', desc: '5-step journey from profile to paycheck' },
+      { label: 'Start Your Profile', href: 'https://app.usebraintrust.com', desc: 'Create your free profile and begin certification' },
+    ]
+  },
   { label: 'About', href: '/about' },
 ];
 
@@ -70,7 +80,7 @@ export default function Header() {
       if (val === 'company' || val === 'talent') setAudience(val);
     }
 
-    if (pathname.startsWith('/for-talent') || pathname.startsWith('/jobs') || pathname.startsWith('/ai-training') || pathname.startsWith('/how-it-works')) {
+    if (pathname.startsWith('/for-talent') || pathname.startsWith('/jobs') || pathname.startsWith('/ai-training') || pathname.startsWith('/how-it-works') || pathname.startsWith('/talent-certification') || pathname.startsWith('/talent-types') || pathname.startsWith('/talent-faq')) {
       setAudience('talent');
     } else if (pathname.startsWith('/for-companies') || pathname.startsWith('/products') || pathname.startsWith('/solutions') || pathname.startsWith('/pricing') || pathname.startsWith('/book-demo')) {
       setAudience('company');
@@ -256,8 +266,8 @@ export default function Header() {
             )}
           </div>
 
-          <Link href={audience === 'company' ? '/book-demo' : '/jobs'} className="btn btn--primary btn--sm">
-            {audience === 'company' ? 'Book a Demo' : 'Find Jobs'}
+          <Link href={audience === 'company' ? '/book-demo' : 'https://app.usebraintrust.com'} className="btn btn--primary btn--sm">
+            {audience === 'company' ? 'Book a Demo' : 'Start Your Profile'}
           </Link>
 
           <button
@@ -327,12 +337,12 @@ export default function Header() {
           </div>
           <div className={styles.mobileCTA}>
             <Link
-              href={audience === 'company' ? '/book-demo' : '/jobs'}
+              href={audience === 'company' ? '/book-demo' : 'https://app.usebraintrust.com'}
               className="btn btn--primary btn--lg"
               style={{ width: '100%' }}
               onClick={() => setMobileOpen(false)}
             >
-              {audience === 'company' ? 'Book a Demo' : 'Find Jobs'}
+              {audience === 'company' ? 'Book a Demo' : 'Start Your Profile'}
             </Link>
           </div>
         </div>

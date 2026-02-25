@@ -54,6 +54,46 @@ export default function AIR() {
                             <Link href="/products/air/try" className="btn btn--secondary btn--lg">Try It Yourself →</Link>
                         </div>
 
+                        {/* HERO MEDIA w/ OVERLAY TEXT */}
+                        <div style={{
+                            position: 'relative', maxWidth: 960, margin: 'var(--space-12) auto 0',
+                            borderRadius: 'var(--radius-2xl)', overflow: 'hidden',
+                            boxShadow: 'var(--shadow-xl)', border: '1px solid rgba(0,0,0,0.05)',
+                        }}>
+                            <img
+                                src="/images/air_interview_side.png"
+                                alt="Candidate confidently speaking during an AI interview"
+                                style={{ width: '100%', display: 'block', objectFit: 'cover', height: 'auto', maxHeight: '500px', filter: 'brightness(0.9)' }}
+                            />
+                            {/* Floating Convo Bubbles */}
+                            <div style={{
+                                position: 'absolute', top: '10%', right: '10%',
+                                background: 'white', padding: '12px 20px', borderRadius: '20px 20px 4px 20px',
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.1)', maxWidth: '300px',
+                                animation: 'fadeUp 1s ease-out',
+                            }}>
+                                <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /></svg>
+                                    AIR
+                                </div>
+                                <p style={{ fontSize: '14px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.4, fontWeight: 500 }}>
+                                    "That's a great example. Could you elaborate on how you scaled the database during that traffic spike?"
+                                </p>
+                            </div>
+
+                            <div style={{
+                                position: 'absolute', bottom: '15%', left: '8%',
+                                background: 'var(--color-primary)', padding: '12px 20px', borderRadius: '20px 20px 20px 4px',
+                                boxShadow: '0 8px 24px rgba(245, 87, 51, 0.3)', maxWidth: '320px',
+                                animation: 'fadeUp 1s ease-out 0.5s both',
+                                color: 'white'
+                            }}>
+                                <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.4, fontWeight: 500 }}>
+                                    "Sure! We clustered the reader instances and added a Redis caching layer for the main leaderboard queries..."
+                                </p>
+                            </div>
+                        </div>
+
                         {/* G2 badges — FALL 2025 */}
                         <div style={{ marginTop: 'var(--space-10)' }}>
                             <G2BadgeStrip showSoc2 />

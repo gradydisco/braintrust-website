@@ -333,8 +333,17 @@ export default function About() {
                                         fontSize: 'var(--text-lg)',
                                         flexShrink: 0,
                                         letterSpacing: '0.02em',
+                                        overflow: 'hidden'
                                     }}>
-                                        {person.initials}
+                                        {person.name === 'Adam Jackson' ? (
+                                            <img src="/images/founder_adam.png" alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        ) : person.name === 'Nick Velloff' ? (
+                                            <img src="/images/founder_nikhil.png" alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        ) : person.name === 'Andy Wang' ? (
+                                            <img src="/images/founder_andy.png" alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        ) : (
+                                            person.initials
+                                        )}
                                     </div>
                                     <div>
                                         <div style={{ fontWeight: 700, fontSize: 'var(--text-lg)', color: 'var(--text-primary)' }}>{person.name}</div>

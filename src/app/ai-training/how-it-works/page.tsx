@@ -15,7 +15,18 @@ export default function HowAITrainingWorks() {
                     <div className="hero__content">
                         <div className="badge badge--accent">How It Works</div>
                         <h1>Getting started is simple.</h1>
-                        <p>Four steps from signup to your first payment.</p>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-5)', justifyContent: 'center', flexWrap: 'wrap' }}>
+                            <div style={{
+                                width: 72, height: 72, borderRadius: '50%', overflow: 'hidden', flexShrink: 0,
+                                boxShadow: '0 8px 24px rgba(0,0,0,0.1), 0 0 0 3px rgba(0,212,170,0.2)',
+                            }}>
+                                <img src="/images/talent_portrait_4.png" alt="AI training domain expert"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            </div>
+                            <p style={{ margin: 0, fontSize: 'var(--text-lg)', textAlign: 'left', maxWidth: 380 }}>
+                                Four steps from signup to your first payment — no AI experience required.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

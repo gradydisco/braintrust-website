@@ -29,6 +29,31 @@ export default function TalentFAQ() {
                         <h1>Questions?<br />We&apos;ve got answers.</h1>
                         <p>Everything you need to know about working on Braintrust.</p>
                     </div>
+
+                    {/* Testimonial-style avatar card */}
+                    <div style={{
+                        maxWidth: 480, margin: 'var(--space-8) auto 0',
+                        background: 'var(--color-white)', borderRadius: 'var(--radius-xl)',
+                        border: '1px solid var(--color-gray-100)', padding: 'var(--space-6)',
+                        display: 'flex', alignItems: 'center', gap: 'var(--space-5)',
+                        boxShadow: 'var(--shadow-md)',
+                    }}>
+                        <div style={{
+                            width: 64, height: 64, borderRadius: '50%', overflow: 'hidden', flexShrink: 0,
+                            boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+                        }}>
+                            <img src="/images/talent_portrait_5.png" alt="Professional talent member"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        </div>
+                        <div>
+                            <p style={{ margin: 0, fontSize: 'var(--text-sm)', fontStyle: 'italic', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                                &ldquo;I signed up on a Tuesday and had my first match by Thursday. Zero fees, real roles.&rdquo;
+                            </p>
+                            <p style={{ margin: '4px 0 0', fontSize: 12, fontWeight: 600, color: 'var(--text-tertiary)' }}>
+                                — Marcus T., Senior Engineer
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

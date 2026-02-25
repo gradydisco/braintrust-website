@@ -59,6 +59,20 @@ export default function Home() {
                 </span>
               </Link>
             </div>
+
+            {/* HERO MEDIA */}
+            <div style={{
+              position: 'relative', maxWidth: 1080, margin: 'var(--space-16) auto 0',
+              borderRadius: 'var(--radius-2xl)', overflow: 'hidden',
+              boxShadow: 'var(--shadow-xl)', border: '1px solid rgba(0,0,0,0.05)',
+              background: 'var(--color-white)',
+            }}>
+              <img
+                src="/images/home_collab.png"
+                alt="Tech team collaborating"
+                style={{ width: '100%', display: 'block', objectFit: 'cover', height: 'auto', maxHeight: '600px' }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -231,6 +245,33 @@ export default function Home() {
               <div className="badge">Talent</div>
               <h2>The people behind<br />every breakthrough.</h2>
               <p>From engineers shipping production code to designers crafting pixel-perfect experiences — meet the 2M+ professionals who make it happen.</p>
+
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 'var(--space-6)' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  {[1, 2, 3, 4, 5].map((num, i) => (
+                    <div key={num} style={{
+                      width: '48px', height: '48px', borderRadius: '50%',
+                      border: '3px solid var(--color-gray-50)',
+                      marginLeft: i > 0 ? '-12px' : '0',
+                      overflow: 'hidden', position: 'relative', zIndex: 5 - i,
+                      boxShadow: 'var(--shadow-md)',
+                      background: 'var(--color-gray-100)',
+                    }}>
+                      <img src={`/images/talent_portrait_${num}.png`} alt="Braintrust Talent" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                  ))}
+                  <div style={{
+                    width: '48px', height: '48px', borderRadius: '50%',
+                    border: '3px solid var(--color-gray-50)',
+                    marginLeft: '-12px',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    background: 'var(--color-primary-50)', color: 'var(--color-primary)',
+                    fontSize: '11px', fontWeight: 800, position: 'relative', zIndex: 0,
+                  }}>
+                    2M+
+                  </div>
+                </div>
+              </div>
             </div>
           </RevealSection>
           <RevealSection delay={200}>

@@ -60,6 +60,19 @@ export default function ForCompanies() {
                             <Link href="/book-demo" className="btn btn--primary btn--lg" id="companies-hero-demo">Book a Demo</Link>
                             <Link href="/products" className="btn btn--secondary btn--lg" id="companies-hero-products">Explore Products</Link>
                         </div>
+
+                        {/* HERO MEDIA */}
+                        <div style={{
+                            position: 'relative', maxWidth: 960, margin: 'var(--space-12) auto 0',
+                            borderRadius: 'var(--radius-2xl)', overflow: 'hidden',
+                            boxShadow: 'var(--shadow-xl)', border: '1px solid rgba(0,0,0,0.05)',
+                        }}>
+                            <img
+                                src="/images/companies_hiring.png"
+                                alt="Founders discussing hiring strategy"
+                                style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+                            />
+                        </div>
                     </div>
                 </div>
             </section>

@@ -189,6 +189,19 @@ export default function TalentMarketplace() {
                             <Link href="/book-demo" className="btn btn--primary btn--lg">Book a Demo</Link>
                             <Link href="/products" className="btn btn--secondary btn--lg">View All Products →</Link>
                         </div>
+
+                        {/* HERO MEDIA */}
+                        <div style={{
+                            position: 'relative', maxWidth: 960, margin: 'var(--space-12) auto 0',
+                            borderRadius: 'var(--radius-2xl)', overflow: 'hidden',
+                            boxShadow: 'var(--shadow-xl)', border: '1px solid rgba(0,0,0,0.05)',
+                        }}>
+                            <img
+                                src="/images/marketplace_talent.png"
+                                alt="Diverse tech professional working in a vibrant remote space"
+                                style={{ width: '100%', display: 'block', objectFit: 'cover', height: 'auto', maxHeight: '550px' }}
+                            />
+                        </div>
                     </div>
 
                     {/* G2 badges — FALL 2025 */}
