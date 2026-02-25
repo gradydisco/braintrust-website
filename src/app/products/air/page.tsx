@@ -66,30 +66,51 @@ export default function AIR() {
                                 style={{ width: '100%', display: 'block', objectFit: 'cover', height: 'auto', maxHeight: '500px', filter: 'brightness(0.9)' }}
                             />
                             {/* Floating Convo Bubbles */}
+
+                            {/* Box 1 - AIR */}
                             <div style={{
-                                position: 'absolute', top: '10%', right: '10%',
-                                background: 'white', padding: '12px 20px', borderRadius: '20px 20px 4px 20px',
-                                boxShadow: '0 4px 12px rgba(0,0,0,0.1)', maxWidth: '300px',
+                                position: 'absolute', top: '15%', left: '8%',
+                                background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
+                                padding: '12px 20px', borderRadius: '20px 20px 20px 4px',
+                                boxShadow: '0 4px 16px rgba(0,0,0,0.1)', maxWidth: '300px',
                                 animation: 'fadeUp 1s ease-out',
                             }}>
                                 <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /></svg>
                                     AIR
                                 </div>
-                                <p style={{ fontSize: '14px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.4, fontWeight: 500 }}>
+                                <p style={{ fontSize: '13.5px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.45, fontWeight: 500 }}>
                                     "That's a great example. Could you elaborate on how you scaled the database during that traffic spike?"
                                 </p>
                             </div>
 
+                            {/* Box 2 - Candidate */}
                             <div style={{
-                                position: 'absolute', bottom: '15%', left: '8%',
-                                background: 'var(--color-primary)', padding: '12px 20px', borderRadius: '20px 20px 20px 4px',
-                                boxShadow: '0 8px 24px rgba(245, 87, 51, 0.3)', maxWidth: '320px',
-                                animation: 'fadeUp 1s ease-out 0.5s both',
-                                color: 'white'
+                                position: 'absolute', top: '42%', left: '16%',
+                                background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
+                                padding: '12px 20px', borderRadius: '20px 20px 4px 20px',
+                                boxShadow: '0 4px 16px rgba(0,0,0,0.1)', maxWidth: '320px',
+                                animation: 'fadeUp 1s ease-out 0.8s both',
                             }}>
-                                <p style={{ fontSize: '14px', margin: 0, lineHeight: 1.4, fontWeight: 500 }}>
+                                <p style={{ fontSize: '13.5px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.45, fontWeight: 500 }}>
                                     "Sure! We clustered the reader instances and added a Redis caching layer for the main leaderboard queries..."
+                                </p>
+                            </div>
+
+                            {/* Box 3 - AIR Follow Up */}
+                            <div style={{
+                                position: 'absolute', bottom: '10%', left: '8%',
+                                background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
+                                padding: '12px 20px', borderRadius: '20px 20px 20px 4px',
+                                boxShadow: '0 4px 16px rgba(0,0,0,0.1)', maxWidth: '300px',
+                                animation: 'fadeUp 1s ease-out 1.6s both',
+                            }}>
+                                <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /></svg>
+                                    AIR
+                                </div>
+                                <p style={{ fontSize: '13.5px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.45, fontWeight: 500 }}>
+                                    "And how did you handle cache invalidation to ensure users saw real-time ranks?"
                                 </p>
                             </div>
                         </div>

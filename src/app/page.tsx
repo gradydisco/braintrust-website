@@ -123,13 +123,20 @@ export default function Home() {
 
           <RevealSection delay={200}>
             <div className={`grid grid--3 ${styles.ecosystemGrid}`}>
-              <div className={`card card--feature ${styles.ecosystemCard}`}>
-                <div className="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                    <line x1="12" y1="22.08" x2="12" y2="12" />
-                  </svg>
+              <div className={`card card--feature ${styles.ecosystemCard}`} style={{ paddingTop: '0', overflow: 'hidden' }}>
+                <div style={{ height: '140px', background: 'var(--color-gray-100)', position: 'relative', margin: '0 -24px 24px', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+                  <img src="/images/air_interview_side.png" alt="AIR UI Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{
+                    position: 'absolute', bottom: '12%', left: '10%', right: '10%',
+                    background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+                    padding: '10px 14px', borderRadius: '12px 12px 12px 2px',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                  }}>
+                    <div style={{ fontSize: '9px', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '2px' }}>AIR</div>
+                    <p style={{ fontSize: '11px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.3, fontWeight: 500 }}>
+                      "That's a great example. Could you elaborate..."
+                    </p>
+                  </div>
                 </div>
                 <h4>Products &amp; Platform</h4>
                 <p>Talent Marketplace, AIR (AI Recruiter), and Nexus — enterprise tools built for the AI era.</p>
@@ -138,14 +145,20 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className={`card card--feature ${styles.ecosystemCard}`}>
-                <div className="feature-icon feature-icon--accent">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
+              <div className={`card card--feature ${styles.ecosystemCard}`} style={{ paddingTop: '0', overflow: 'hidden' }}>
+                <div style={{ height: '140px', background: 'var(--color-gray-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 -24px 24px', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    {[1, 2, 3, 4, 5].map((num, i) => (
+                      <div key={num} style={{
+                        width: '56px', height: '56px', borderRadius: '50%',
+                        border: '3px solid white', marginLeft: i > 0 ? '-16px' : '0',
+                        overflow: 'hidden', position: 'relative', zIndex: 5 - i,
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
+                      }}>
+                        <img src={`/images/talent_portrait_${num}.png`} alt="Talent" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <h4>Talent Network</h4>
                 <p>2M+ professionals finding jobs, earning income, and contributing to AI training initiatives.</p>
@@ -154,13 +167,15 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className={`card card--feature ${styles.ecosystemCard}`}>
-                <div className="feature-icon feature-icon--token">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M8 12h8" />
-                    <path d="M12 8v8" />
-                  </svg>
+              <div className={`card card--feature ${styles.ecosystemCard}`} style={{ paddingTop: '0', overflow: 'hidden' }}>
+                <div style={{ height: '140px', background: 'linear-gradient(135deg, #111827, #1f2937)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 -24px 24px', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+                  <div style={{
+                    width: '80px', height: '80px', borderRadius: '20px',
+                    background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    boxShadow: '0 8px 20px rgba(0,0,0,0.2)', padding: '12px'
+                  }}>
+                    <img src="/images/braintrust-btrst-logo.png" alt="BTRST Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
                 </div>
                 <h4>BTRST Token</h4>
                 <p>Network incentives, ecosystem rewards, and transparent tokenomics powering the platform.</p>
