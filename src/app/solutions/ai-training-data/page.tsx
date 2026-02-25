@@ -3,12 +3,18 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
 import RevealSection from '@/components/RevealSection';
+import AnnotationDemo from '@/components/AnnotationDemo';
+import ModelTrainingVisual from '@/components/ModelTrainingVisual';
 
 export const metadata: Metadata = {
     title: 'AI Training Data Solutions — RLHF, Red Teaming, Model Evaluations & Annotation | Braintrust',
     description: 'Enterprise AI training data infrastructure: RLHF, red teaming, model evaluations, data annotation, safety alignment, and benchmark creation from 2M+ domain experts across 100+ countries and 50+ languages. Trusted by leading AI labs.',
     keywords: 'AI training data, RLHF, reinforcement learning human feedback, red teaming AI, model evaluation, data annotation, data labeling, AI safety alignment, prompt testing, benchmark creation, expert review AI',
 };
+
+const aiCompanies = [
+    'iMerit', 'Scale AI', 'Toloka', 'Mindrift', 'SuperAnnotate', 'Datamundi', 'Mistral',
+];
 
 const terminology = [
     { term: 'RLHF', full: 'Reinforcement Learning from Human Feedback', definition: 'A technique where domain experts rate, rank, and compare AI model outputs to provide feedback signals that improve model performance, accuracy, and alignment with human preferences. Braintrust provides credentialed evaluators across dozens of domains for high-quality preference data at scale.' },
@@ -61,15 +67,45 @@ const capabilities = [
     },
 ];
 
-const domains = [
-    { name: 'Software Engineering', examples: 'Code review, system design, debugging, algorithms, DevOps, cloud architecture' },
-    { name: 'Healthcare & Medicine', examples: 'Clinical reasoning, medical coding, drug interactions, patient communication, diagnostics' },
-    { name: 'Legal & Compliance', examples: 'Contract analysis, case law research, regulatory compliance, legal writing, IP law' },
-    { name: 'Finance & Economics', examples: 'Financial modeling, risk analysis, market research, accounting standards, tax law' },
-    { name: 'Science & Research', examples: 'Scientific papers, lab protocols, data analysis, statistical methods, peer review' },
-    { name: 'Creative & Content', examples: 'Copywriting, brand voice, creative writing, content strategy, UX writing' },
-    { name: 'Education & Training', examples: 'Curriculum design, assessment creation, pedagogy, tutoring quality, adaptive learning' },
-    { name: 'Marketing & Analytics', examples: 'Campaign analysis, SEO strategy, social media, customer insights, A/B testing' },
+const skillCategories = [
+    {
+        title: 'Data & AI Annotation',
+        color: '#6366f1',
+        skills: ['AI Annotation Specialist', 'Data Annotator', 'Human-in-the-loop QA', 'AI Trainer', 'Prompt Engineer', 'AI Conversational Designer', 'GPT Specialist', 'Linguistic Annotator', 'Audio Transcriber', 'Transcription QA', 'Labeling QA Specialist', 'Image / Video Tagger', 'Taxonomy Designer', 'Content Rater'],
+    },
+    {
+        title: 'Software Engineering',
+        color: '#059669',
+        skills: ['Backend & API Development', 'Frontend & UI Engineering', 'Full Stack Engineering', 'DevOps & Automation', 'Data Engineering', 'Cloud Architecture & Infra', 'Security & Access Control', 'QA & Test Engineering', 'Mobile Development', 'Platform Engineering'],
+    },
+    {
+        title: 'Regulated Domains',
+        color: '#ec4899',
+        skills: ['Health & Life Sciences', 'Law & Policy', 'Finance & Accounting', 'Consulting & Strategy', 'Compliance & Risk', 'Privacy & Ethics', 'Insurance & Benefits', 'Governance & Standards'],
+    },
+    {
+        title: 'Creative & Content',
+        color: '#f59e0b',
+        skills: ['Content & Copywriting', 'Marketing & Brand Strategy', 'Design & Visual Communication', 'Social & Community', 'Advertising & Campaigns', 'UX Writing & Research', 'Creative Direction', 'Multimedia & Production'],
+    },
+    {
+        title: 'Product',
+        color: '#0ea5e9',
+        skills: ['Product Management', 'Technical PM', 'Growth & Ops Strategy', 'Business Analysis', 'Product Ownership', 'Platform & Tooling Strategy', 'User Research', 'Workflow Optimization'],
+    },
+    {
+        title: 'STEM & Technical Domains',
+        color: '#8b5cf6',
+        skills: ['Physics', 'Chemistry', 'Biology / Life Sciences', 'Environmental Science', 'Electrical / Mechanical Eng', 'Mathematics / Statistics', 'Quantitative Analysis', 'Data Science / AI Research', 'Machine Learning Engineering'],
+    },
+];
+
+const globalRegions = [
+    { region: 'United States', pct: '25%' },
+    { region: 'Europe', pct: '15%' },
+    { region: 'Asia, Middle East, Africa', pct: '40%' },
+    { region: 'Canada', pct: '10%' },
+    { region: 'South America', pct: '10%' },
 ];
 
 const faqItems = [
@@ -84,6 +120,8 @@ const faqItems = [
 ];
 
 export default function AITrainingDataSolution() {
+    const aiLogoTrack = [...aiCompanies, ...aiCompanies];
+
     return (
         <>
             {/* ====== HERO ====== */}
@@ -99,6 +137,77 @@ export default function AITrainingDataSolution() {
                             <a href="#capabilities" className="btn btn--secondary btn--lg">See Capabilities →</a>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* ====== AI COMPANY LOGO MARQUEE ====== */}
+            <section style={{ background: 'white', padding: 'var(--space-10) 0', borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
+                <div className="container">
+                    <p style={{
+                        textAlign: 'center', fontSize: '12px', fontWeight: 600,
+                        letterSpacing: '0.08em', textTransform: 'uppercase',
+                        color: 'var(--text-tertiary)', marginBottom: '24px',
+                    }}>
+                        Trusted by innovative AI companies worldwide
+                    </p>
+                    <div style={{ overflow: 'hidden', position: 'relative' }}>
+                        <div style={{
+                            position: 'absolute', left: 0, top: 0, bottom: 0, width: '80px', zIndex: 2,
+                            background: 'linear-gradient(90deg, #fff 0%, transparent 100%)',
+                            pointerEvents: 'none',
+                        }} />
+                        <div style={{
+                            position: 'absolute', right: 0, top: 0, bottom: 0, width: '80px', zIndex: 2,
+                            background: 'linear-gradient(270deg, #fff 0%, transparent 100%)',
+                            pointerEvents: 'none',
+                        }} />
+                        <div className="ai-logo-track" style={{
+                            display: 'flex', alignItems: 'center', gap: '72px',
+                            width: 'max-content',
+                        }}>
+                            {aiLogoTrack.map((name, i) => (
+                                <div key={`${name}-${i}`} style={{
+                                    flexShrink: 0, display: 'flex', alignItems: 'center',
+                                    justifyContent: 'center', height: '40px',
+                                }}>
+                                    <span style={{
+                                        fontSize: '18px', fontWeight: 800,
+                                        color: 'var(--text-tertiary)',
+                                        letterSpacing: '-0.01em',
+                                        opacity: 0.4,
+                                        whiteSpace: 'nowrap',
+                                    }}>
+                                        {name}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <style>{`
+                    .ai-logo-track {
+                        animation: ai-logo-scroll 25s linear infinite;
+                    }
+                    @keyframes ai-logo-scroll {
+                        from { transform: translateX(0); }
+                        to { transform: translateX(-50%); }
+                    }
+                `}</style>
+            </section>
+
+            {/* ====== MODEL TRAINING PIPELINE VISUAL ====== */}
+            <section className="section">
+                <div className="container">
+                    <RevealSection>
+                        <div className="section-header">
+                            <div className="badge">How It Works</div>
+                            <h2>The AI model training pipeline</h2>
+                            <p>From raw data to production-ready models — we power every human touchpoint in the training loop.</p>
+                        </div>
+                    </RevealSection>
+                    <RevealSection delay={200}>
+                        <ModelTrainingVisual />
+                    </RevealSection>
                 </div>
             </section>
 
@@ -127,6 +236,105 @@ export default function AITrainingDataSolution() {
                                     <div className="text-gradient" style={{ fontSize: '42px', fontWeight: 800, lineHeight: 1 }}>{s.value}</div>
                                     <div style={{ fontSize: '13px', fontWeight: 700, color: 'rgba(255,255,255,0.7)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.label}</div>
                                     <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', marginTop: '6px', lineHeight: 1.5 }}>{s.desc}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </RevealSection>
+                </div>
+            </section>
+
+            {/* ====== ANNOTATION DEMO ====== */}
+            <section className="section" style={{ background: 'linear-gradient(180deg, var(--color-gray-50) 0%, white 100%)' }}>
+                <div className="container">
+                    <RevealSection>
+                        <div className="section-header">
+                            <div className="badge badge--accent">Live Demo</div>
+                            <h2>Data annotation in action</h2>
+                            <p>See how our expert annotators label, tag, and structure data for AI model training — with multi-layer quality assurance at every step.</p>
+                        </div>
+                    </RevealSection>
+                    <RevealSection delay={200}>
+                        <AnnotationDemo />
+                    </RevealSection>
+                </div>
+            </section>
+
+            {/* ====== MANAGED SERVICES — THE BRAINTRUST DIFFERENCE ====== */}
+            <section className="section section--dark" style={{ position: 'relative', overflow: 'hidden' }}>
+                <div style={{
+                    position: 'absolute', inset: 0, zIndex: 0,
+                    backgroundImage: 'radial-gradient(ellipse 80% 50% at 70% 60%, rgba(244,132,95,0.07) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 20% 30%, rgba(155,138,255,0.06) 0%, transparent 60%)',
+                    pointerEvents: 'none',
+                }} />
+                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+                    <RevealSection>
+                        <div className="section-header" style={{ textAlign: 'center' }}>
+                            <div className="badge badge--dark">Managed Services</div>
+                            <h2 style={{ color: 'var(--color-white)' }}>
+                                The #1 managed service provider for<br />
+                                <span className="text-gradient">global AI talent sourcing.</span>
+                            </h2>
+                            <p style={{ color: 'var(--color-gray-300)', maxWidth: '640px', margin: '0 auto', fontSize: 'var(--text-lg)' }}>
+                                We don&apos;t just find talent — we vet, deploy, manage, and deliver outcomes. Our end-to-end pipeline ensures quality from day one.
+                            </p>
+                        </div>
+                    </RevealSection>
+
+                    <RevealSection delay={150}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', maxWidth: '900px', margin: 'var(--space-12) auto 0' }}>
+                            {[
+                                {
+                                    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>,
+                                    color: '#6366f1',
+                                    title: 'Global Talent Sourcing',
+                                    desc: 'Source from our 2M+ network across 100+ countries. Find niche domain experts, multilingual annotators, and specialized evaluators — fast.',
+                                },
+                                {
+                                    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M12 2a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /></svg>,
+                                    color: '#f59e0b',
+                                    title: 'AI-Powered Vetting (AIR)',
+                                    desc: 'Every contributor is assessed through AIR — our AI recruiter that conducts voice interviews, skills evaluations, and customizable scoring frameworks.',
+                                },
+                                {
+                                    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>,
+                                    color: '#059669',
+                                    title: 'IDV & Background Checks',
+                                    desc: 'Identity verification, background screening, and NDA enforcement ensure every contributor meets your security and compliance requirements.',
+                                },
+                                {
+                                    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
+                                    color: '#ec4899',
+                                    title: 'Funnel Management & Deployment',
+                                    desc: 'From candidate pipeline to active deployment — we manage the full funnel, calibration, onboarding, and ramp to production speed.',
+                                },
+                                {
+                                    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" /></svg>,
+                                    color: '#0ea5e9',
+                                    title: 'QA & Quality Management',
+                                    desc: 'Dedicated QA managers run multi-layer quality pipelines with IAA scoring, gold standard checks, feedback loops, and real-time reporting dashboards.',
+                                },
+                                {
+                                    icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>,
+                                    color: '#8b5cf6',
+                                    title: 'Dedicated Project Management',
+                                    desc: 'Every engagement has a dedicated PM who owns timelines, SLAs, daily standups, and delivery metrics — acting as an extension of your team.',
+                                },
+                            ].map((item) => (
+                                <div key={item.title} style={{
+                                    padding: '24px',
+                                    background: 'rgba(255,255,255,0.04)',
+                                    border: '1px solid rgba(255,255,255,0.08)',
+                                    borderRadius: '16px',
+                                    borderLeft: `3px solid ${item.color}`,
+                                }}>
+                                    <div style={{
+                                        width: '36px', height: '36px', borderRadius: '10px',
+                                        background: `${item.color}1a`, color: item.color,
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        marginBottom: '14px',
+                                    }}>{item.icon}</div>
+                                    <div style={{ fontSize: '14px', fontWeight: 700, color: 'white', marginBottom: '6px' }}>{item.title}</div>
+                                    <div style={{ fontSize: '12.5px', color: 'var(--color-gray-300)', lineHeight: 1.6 }}>{item.desc}</div>
                                 </div>
                             ))}
                         </div>
@@ -177,31 +385,126 @@ export default function AITrainingDataSolution() {
                 </div>
             </section>
 
-            {/* ====== DOMAIN EXPERTISE ====== */}
+            {/* ====== EXPERT SKILL CATEGORIES ====== */}
             <section className="section section--gray">
                 <div className="container">
                     <RevealSection>
                         <div className="section-header">
-                            <div className="badge badge--accent">Domain Coverage</div>
-                            <h2>Experts in every domain your model needs</h2>
-                            <p>Our expert network spans every major knowledge domain — credentialed professionals who understand the nuances your model is learning.</p>
+                            <div className="badge badge--accent">Expertise</div>
+                            <h2>Expert skill categories</h2>
+                            <p>Data labeling, evals, annotation, and domain expertise across every category your AI models need — plus multi-language capabilities across all disciplines.</p>
                         </div>
                     </RevealSection>
                     <RevealSection delay={200}>
                         <div style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(4, 1fr)',
-                            gap: '14px',
+                            gridTemplateColumns: 'repeat(3, 1fr)',
+                            gap: '16px',
+                            maxWidth: '1100px',
+                            margin: '0 auto',
                         }}>
-                            {domains.map((d) => (
-                                <div key={d.name} style={{
+                            {skillCategories.map((cat) => (
+                                <div key={cat.title} style={{
                                     background: 'var(--color-white)',
                                     border: '1px solid var(--color-gray-100)',
-                                    borderRadius: '12px',
-                                    padding: '20px',
+                                    borderRadius: '14px',
+                                    overflow: 'hidden',
                                 }}>
-                                    <h4 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>{d.name}</h4>
-                                    <p style={{ fontSize: '12px', lineHeight: 1.6, color: 'var(--text-tertiary)', margin: 0 }}>{d.examples}</p>
+                                    <div style={{
+                                        padding: '14px 20px',
+                                        background: `${cat.color}08`,
+                                        borderBottom: `2px solid ${cat.color}25`,
+                                        display: 'flex', alignItems: 'center', gap: '10px',
+                                    }}>
+                                        <div style={{ width: 10, height: 10, borderRadius: '3px', background: cat.color }} />
+                                        <h4 style={{ fontSize: '14px', fontWeight: 700, color: cat.color, margin: 0 }}>{cat.title}</h4>
+                                    </div>
+                                    <div style={{ padding: '16px 20px' }}>
+                                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                                            {cat.skills.map((skill) => (
+                                                <span key={skill} style={{
+                                                    fontSize: '11.5px', fontWeight: 500,
+                                                    color: 'var(--text-secondary)',
+                                                    padding: '4px 10px', borderRadius: '6px',
+                                                    background: 'var(--color-gray-50)',
+                                                    border: '1px solid var(--color-gray-100)',
+                                                    whiteSpace: 'nowrap',
+                                                }}>
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Multi-language note */}
+                        <div style={{
+                            maxWidth: '600px', margin: 'var(--space-8) auto 0', textAlign: 'center',
+                            padding: '16px 24px', borderRadius: '12px',
+                            background: 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(139,92,246,0.06))',
+                            border: '1px solid rgba(99,102,241,0.12)',
+                        }}>
+                            <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', margin: 0, lineHeight: 1.6 }}>
+                                🌐 <strong>Multi-language capabilities across all categories</strong> — e.g. find Python developers who speak Swedish, or medical annotators fluent in Mandarin.
+                            </p>
+                        </div>
+                    </RevealSection>
+                </div>
+            </section>
+
+            {/* ====== GLOBAL NETWORK REACH ====== */}
+            <section className="section">
+                <div className="container">
+                    <RevealSection>
+                        <div className="section-header">
+                            <div className="badge">Global Reach</div>
+                            <h2>2M+ global talent members<br />vetted &amp; enterprise ready</h2>
+                            <p>Our network spans every continent, covering every time zone and language your AI projects need.</p>
+                        </div>
+                    </RevealSection>
+                    <RevealSection delay={200}>
+                        {/* Discipline breakdown */}
+                        <div style={{
+                            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px',
+                            maxWidth: '800px', margin: '0 auto var(--space-10)',
+                        }}>
+                            {[
+                                { pct: '40%', label: 'Software, AI, Data, & Engineering', color: '#6366f1' },
+                                { pct: '35%', label: 'Design, Research, Creative', color: '#ec4899' },
+                                { pct: '25%', label: 'STEM & Regulated Domains', color: '#059669' },
+                            ].map((d) => (
+                                <div key={d.label} style={{
+                                    textAlign: 'center', padding: '28px 20px',
+                                    background: 'var(--color-white)',
+                                    border: '1px solid var(--color-gray-100)',
+                                    borderRadius: '16px',
+                                }}>
+                                    <div style={{ fontSize: '42px', fontWeight: 900, color: d.color, lineHeight: 1 }}>{d.pct}</div>
+                                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)', marginTop: '8px', lineHeight: 1.5, fontWeight: 500 }}>{d.label}</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Region breakdown */}
+                        <div style={{
+                            display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap',
+                        }}>
+                            {globalRegions.map((r) => (
+                                <div key={r.region} style={{
+                                    display: 'flex', alignItems: 'center', gap: '10px',
+                                    padding: '10px 20px', borderRadius: '100px',
+                                    background: 'var(--color-gray-50)',
+                                    border: '1px solid var(--color-gray-100)',
+                                }}>
+                                    <span style={{
+                                        width: '32px', height: '32px', borderRadius: '50%',
+                                        background: 'white', border: '1px solid var(--color-gray-200)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        fontSize: '12px', fontWeight: 800, color: 'var(--text-primary)',
+                                    }}>{r.pct}</span>
+                                    <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)' }}>{r.region}</span>
                                 </div>
                             ))}
                         </div>
@@ -210,7 +513,7 @@ export default function AITrainingDataSolution() {
             </section>
 
             {/* ====== HOW IT WORKS ====== */}
-            <section className="section">
+            <section className="section section--gray">
                 <div className="container container--narrow">
                     <RevealSection>
                         <div className="section-header">
@@ -223,8 +526,8 @@ export default function AITrainingDataSolution() {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
                             {[
                                 { step: '01', title: 'Scope & Design', desc: 'We work with your AI team to define task specifications, quality criteria, domain requirements, and annotation guidelines. Custom rubrics are developed for your specific evaluation needs.' },
-                                { step: '02', title: 'Expert Sourcing & Calibration', desc: 'We recruit and vet domain experts from our 2M+ network, then calibrate them on your specific task through training rounds with gold-standard examples and feedback.' },
-                                { step: '03', title: 'Production & QA', desc: 'Data operations run continuously with multi-layer quality assurance — automated consistency checks, expert review, IAA scoring, and real-time feedback loops with your team.' },
+                                { step: '02', title: 'Expert Sourcing & Calibration', desc: 'We recruit and vet domain experts from our 2M+ network using AIR assessments, IDV, and background checks — then calibrate them on your specific task through training rounds with gold-standard examples.' },
+                                { step: '03', title: 'Production & QA', desc: 'Data operations run continuously with multi-layer quality assurance — automated consistency checks, expert review, IAA scoring, and real-time feedback loops with your team. Dedicated PMs manage the entire engagement.' },
                                 { step: '04', title: 'Delivery & Integration', desc: 'Labeled data, preference signals, and evaluation results are delivered in your preferred format. We support custom APIs, cloud storage push, and direct pipeline integrations.' },
                             ].map((s, i) => (
                                 <div key={s.step} style={{
@@ -252,7 +555,7 @@ export default function AITrainingDataSolution() {
             </section>
 
             {/* ====== TERMINOLOGY / GLOSSARY — SEO Rich ====== */}
-            <section className="section section--gray">
+            <section className="section">
                 <div className="container">
                     <RevealSection>
                         <div className="section-header">
@@ -283,7 +586,7 @@ export default function AITrainingDataSolution() {
             </section>
 
             {/* ====== FAQ — SEO Rich ====== */}
-            <section className="section">
+            <section className="section section--gray">
                 <div className="container container--narrow">
                     <div className="section-header">
                         <h2>AI Training Data FAQ</h2>
