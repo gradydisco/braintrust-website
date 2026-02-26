@@ -76,11 +76,11 @@ export default function NexusBeforeAfter() {
                 .bna-icon-after {
                     width: 36px; height: 36px; border-radius: 10px;
                     display: flex; align-items: center; justify-content: center;
-                    background: rgba(245,87,51,0.2); color: var(--color-primary); flex-shrink: 0;
+                    background: rgba(234,179,8,0.18); color: #fbbf24; flex-shrink: 0;
                 }
                 .bna-label { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.95); margin-bottom: 2px; }
                 .bna-sub-before { font-size: 12.5px; color: rgba(255,160,144,0.85); line-height: 1.5; }
-                .bna-sub-after  { font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+                .bna-sub-after  { font-size: 12.5px; color: rgba(253,224,138,0.75); line-height: 1.5; }
             `}</style>
 
             <section className="section" style={{
@@ -159,18 +159,18 @@ export default function NexusBeforeAfter() {
 
                         {/* After column */}
                         <div style={{
-                            background: 'rgba(245,87,51,0.06)',
-                            border: '1px solid rgba(245,87,51,0.25)',
+                            background: 'rgba(234,179,8,0.05)',
+                            border: '1px solid rgba(234,179,8,0.2)',
                             borderRadius: 'var(--radius-xl)',
                             padding: 'var(--space-8)',
                             backdropFilter: 'blur(16px)',
                             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)',
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                                <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--color-primary)', flexShrink: 0 }} />
+                                <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#fbbf24', flexShrink: 0 }} />
                                 <div>
                                     <div style={{ fontWeight: 800, fontSize: 'var(--text-lg)', color: 'rgba(255,255,255,0.95)' }}>With Nexus</div>
-                                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-primary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Automated · Connected · Instant</div>
+                                    <div style={{ fontSize: 'var(--text-xs)', color: '#fbbf24', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Automated · Connected · Instant</div>
                                 </div>
                             </div>
                             {nexusSteps.map((step) => (
@@ -184,12 +184,12 @@ export default function NexusBeforeAfter() {
                             ))}
                             <div style={{
                                 marginTop: 'var(--space-6)', padding: 'var(--space-4)',
-                                borderRadius: 'var(--radius-lg)', background: 'rgba(245,87,51,0.12)',
-                                border: '1px solid rgba(245,87,51,0.25)', textAlign: 'center',
+                                borderRadius: 'var(--radius-lg)', background: 'rgba(234,179,8,0.1)',
+                                border: '1px solid rgba(234,179,8,0.2)', textAlign: 'center',
                             }}>
-                                <div style={{ fontWeight: 700, fontSize: 'var(--text-sm)', color: 'var(--color-primary)' }}>Avg. time to resolution</div>
-                                <div style={{ fontWeight: 800, fontSize: 'var(--text-2xl)', color: 'var(--color-primary)', marginTop: '4px' }}>Same day</div>
-                                <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>Zero manual steps. Full audit trail.</div>
+                                <div style={{ fontWeight: 700, fontSize: 'var(--text-sm)', color: '#fbbf24' }}>Avg. time to resolution</div>
+                                <div style={{ fontWeight: 800, fontSize: 'var(--text-2xl)', color: '#fbbf24', marginTop: '4px' }}>Same day</div>
+                                <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(253,224,138,0.6)', marginTop: '4px' }}>Zero manual steps. Full audit trail.</div>
                             </div>
                         </div>
                     </div>
