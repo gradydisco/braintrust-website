@@ -192,27 +192,28 @@ export default function TalentMarketplace() {
 
                         {/* AI Training Data CTA */}
                         <Link href="/solutions/ai-training-data" style={{
-                            display: 'inline-flex', alignItems: 'center', gap: '10px',
-                            marginTop: 'var(--space-5)',
-                            padding: '10px 20px 10px 14px',
-                            borderRadius: 'var(--radius-full)',
-                            background: 'rgba(99, 102, 241, 0.06)',
-                            border: '1px solid rgba(99, 102, 241, 0.12)',
+                            display: 'inline-flex', alignItems: 'center', gap: '14px',
+                            marginTop: 'var(--space-6)',
+                            padding: '14px 24px',
+                            borderRadius: '14px',
+                            background: 'linear-gradient(135deg, #1e1b4b, #312e81)',
+                            border: '1px solid rgba(129, 140, 248, 0.2)',
                             textDecoration: 'none',
-                            transition: 'all 0.2s ease',
+                            boxShadow: '0 4px 20px rgba(99, 102, 241, 0.15)',
+                            transition: 'all 0.25s ease',
                         }}>
                             <span style={{
-                                width: 28, height: 28, borderRadius: '50%',
-                                background: 'rgba(99, 102, 241, 0.1)',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                                fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.85)',
                             }}>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.57-3.25 3.92L12 22" /><path d="M12 2a4 4 0 00-4 4c0 1.95 1.4 3.57 3.25 3.92" /><circle cx="12" cy="14" r="2" /></svg>
+                                🧠 Need <strong style={{ color: '#c7d2fe' }}>AI training data & human experts</strong>? See our dedicated program
                             </span>
-                            <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)' }}>
-                                Looking for <strong style={{ color: 'var(--text-primary)' }}>AI training data & human experts</strong>?
-                            </span>
-                            <span style={{ fontSize: '13px', fontWeight: 700, color: '#6366f1', whiteSpace: 'nowrap' }}>
-                                Learn more →
+                            <span style={{
+                                padding: '5px 12px', borderRadius: 'var(--radius-full)',
+                                background: 'rgba(99, 102, 241, 0.3)',
+                                fontSize: '12px', fontWeight: 700, color: '#a5b4fc',
+                                whiteSpace: 'nowrap',
+                            }}>
+                                Explore →
                             </span>
                         </Link>
                         {/* HERO MEDIA */}
