@@ -464,86 +464,113 @@ export default function AITrainingDataSolution() {
 
             {/* ====== CASE STUDIES — VERIFIED RESULTS ====== */}
             <section className="section" style={{ background: 'var(--color-gray-950)', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 50% at 20% 50%, rgba(99,102,241,0.06) 0%, transparent 60%)', pointerEvents: 'none' }} />
+                {/* Ambient glow blobs */}
+                <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+                    <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '45%', height: '60%', background: 'radial-gradient(ellipse, rgba(99,102,241,0.10) 0%, transparent 65%)', filter: 'blur(40px)' }} />
+                    <div style={{ position: 'absolute', bottom: '-10%', right: '5%', width: '40%', height: '50%', background: 'radial-gradient(ellipse, rgba(244,132,95,0.06) 0%, transparent 65%)', filter: 'blur(40px)' }} />
+                </div>
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                     <RevealSection>
-                        <div style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: '40px', maxWidth: '1100px', margin: '0 auto', alignItems: 'center' }}>
-                            {/* Left — Sticky heading panel */}
+                        <div style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: '48px', maxWidth: '1100px', margin: '0 auto', alignItems: 'center' }}>
+                            {/* Left — Heading panel */}
                             <div>
                                 <div style={{
-                                    width: 56, height: 56, borderRadius: '16px',
-                                    background: 'rgba(99,102,241,0.12)',
+                                    width: 64, height: 64, borderRadius: '18px',
+                                    background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.15))',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    marginBottom: '24px',
+                                    marginBottom: '28px',
+                                    boxShadow: '0 8px 32px rgba(99,102,241,0.15)',
                                 }}>
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" strokeWidth="1.8" strokeLinecap="round">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" strokeWidth="1.8" strokeLinecap="round">
                                         <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
                                     </svg>
                                 </div>
-                                <h2 style={{ color: 'white', fontSize: 'clamp(1.75rem, 3vw, 2.4rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '16px' }}>
-                                    Verified Results<br />Across Human Data<br />Workflows
+                                <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '18px' }}>
+                                    <span style={{ color: 'white' }}>Verified Results</span><br />
+                                    <span style={{ background: 'linear-gradient(135deg, #a5b4fc, #818cf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Across Human Data</span><br />
+                                    <span style={{ color: 'white' }}>Workflows</span>
                                 </h2>
-                                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '15px', lineHeight: 1.7, marginBottom: '24px', maxWidth: '340px' }}>
+                                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', lineHeight: 1.7, marginBottom: '28px', maxWidth: '360px' }}>
                                     Proven performance backed by real client deployments — not hypothetical benchmarks.
                                 </p>
                                 <div style={{ display: 'flex', alignItems: 'center' }}>
                                     {['/images/talent_portrait_1.png', '/images/talent_portrait_2.png', '/images/talent_portrait_4.png'].map((src, i) => (
                                         <img key={i} src={src} alt="" style={{
-                                            width: 36, height: 36, borderRadius: '50%', objectFit: 'cover',
-                                            border: '2px solid var(--color-gray-950)',
+                                            width: 40, height: 40, borderRadius: '50%', objectFit: 'cover',
+                                            border: '2.5px solid var(--color-gray-950)',
                                             marginLeft: i > 0 ? '-10px' : 0,
+                                            boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
                                         }} />
                                     ))}
-                                    <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', marginLeft: '12px', fontWeight: 500 }}>Deployed across Fortune 500 AI teams</span>
+                                    <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginLeft: '14px', fontWeight: 500 }}>Deployed across Fortune 500 AI teams</span>
                                 </div>
                             </div>
 
                             {/* Right — Case study cards */}
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                                 {[
                                     {
-                                        stat: '+25,000 contributors',
+                                        stat: '+25,000',
+                                        statLabel: 'contributors',
                                         subtitle: 'in the past 18 months',
                                         desc: 'For a leading data labeling vendor, we placed over 25,000 contributors in the past 18 months, scaling to thousands/month to support high-volume multilingual and compliance-heavy pipelines.',
                                         quote: 'Unlike closed platforms with hidden metrics, Braintrust gives you full visibility into who you\'re hiring — and how they perform.',
                                         color: '#6366f1',
+                                        gradient: 'linear-gradient(135deg, #6366f1, #818cf8)',
                                     },
                                     {
-                                        stat: '10,000+ candidate',
-                                        subtitle: 'assessments/month',
+                                        stat: '10,000+',
+                                        statLabel: 'candidate assessments',
+                                        subtitle: 'per month',
                                         desc: 'For a leading AI Training Data vendor, AIR powered 10,000+ candidate assessments/month, enabling them to onboard over 4,000+ fully vetted contributors/month into live client projects.',
                                         quote: 'Most vetting tools stop at a score. We give you explainability — every score is backed by a transcript and audit trail.',
                                         color: '#059669',
+                                        gradient: 'linear-gradient(135deg, #059669, #34d399)',
                                     },
                                     {
-                                        stat: 'Full-service projects',
-                                        subtitle: 'launched in < 3 days',
+                                        stat: '< 3 days',
+                                        statLabel: 'to launch',
+                                        subtitle: 'full-service projects',
                                         desc: 'For a leading data labeling vendor, we helped them launch full-service projects in <3 days while simultaneously running AIR-based assessments around the clock to screen thousands of internal contributors.',
                                         quote: 'Most platforms lock you into their contributors or tools. Braintrust gives you both flexibility and speed — at scale.',
                                         color: '#f59e0b',
+                                        gradient: 'linear-gradient(135deg, #f59e0b, #fbbf24)',
                                     },
                                 ].map((study, i) => (
                                     <div key={i} style={{
-                                        background: 'var(--color-white)',
-                                        borderRadius: '16px',
+                                        background: 'rgba(255,255,255,0.97)',
+                                        borderRadius: '18px',
                                         overflow: 'hidden',
                                         position: 'relative',
-                                    }}>
-                                        <div style={{ height: '3px', background: `linear-gradient(90deg, ${study.color}, ${study.color}40)` }} />
-                                        <div style={{ padding: '28px 28px 20px' }}>
-                                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '24px', marginBottom: '16px' }}>
-                                                <div>
-                                                    <h3 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-primary)', margin: 0, lineHeight: 1.2 }}>{study.stat}</h3>
-                                                    <span style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.2 }}>{study.subtitle}</span>
+                                        boxShadow: `0 4px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,1)`,
+                                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                    }}
+                                        className="card--hover-lift"
+                                    >
+                                        <div style={{ height: '4px', background: study.gradient }} />
+                                        <div style={{ padding: '28px 32px 22px' }}>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '28px', marginBottom: '18px' }}>
+                                                <div style={{ flexShrink: 0 }}>
+                                                    <h3 style={{
+                                                        fontSize: '32px', fontWeight: 900, margin: 0, lineHeight: 1.1,
+                                                        background: study.gradient,
+                                                        WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                                                    }}>{study.stat}</h3>
+                                                    <span style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.3 }}>{study.statLabel}</span>
+                                                    <div style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text-tertiary)', marginTop: '2px' }}>{study.subtitle}</div>
                                                 </div>
-                                                <p style={{ fontSize: '14px', lineHeight: 1.7, color: 'var(--text-secondary)', margin: 0, maxWidth: '360px', textAlign: 'right' }}>
+                                                <p style={{ fontSize: '14px', lineHeight: 1.7, color: 'var(--text-secondary)', margin: 0, maxWidth: '380px' }}>
                                                     {study.desc}
                                                 </p>
                                             </div>
                                             <div style={{
                                                 borderTop: '1px solid var(--color-gray-100)',
-                                                paddingTop: '14px',
+                                                paddingTop: '16px',
+                                                display: 'flex', alignItems: 'flex-start', gap: '10px',
                                             }}>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={study.color} strokeWidth="2.5" strokeLinecap="round" style={{ flexShrink: 0, marginTop: '3px' }}>
+                                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
+                                                </svg>
                                                 <p style={{ fontSize: '14px', lineHeight: 1.7, color: 'var(--text-primary)', margin: 0, fontWeight: 500 }}>
                                                     {study.quote}
                                                 </p>
