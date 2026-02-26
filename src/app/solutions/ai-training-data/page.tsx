@@ -92,7 +92,7 @@ export default function AITrainingDataSolution() {
                             </p>
                             <div className="hero__actions" style={{ justifyContent: 'flex-start', marginTop: '28px' }}>
                                 <a href="/book-demo" className="btn btn--primary btn--lg">Contact Sales</a>
-                                <a href="#how-we-work" className="btn btn--secondary btn--lg">How We Work →</a>
+                                <a href="#experts" className="btn btn--secondary btn--lg">See Our Experts →</a>
                             </div>
                         </div>
                         {/* Right — Annotation demo */}
@@ -541,7 +541,7 @@ export default function AITrainingDataSolution() {
             </section>
 
             {/* ====== EXPERT SKILL CATEGORIES ====== */}
-            <section className="section" style={{ background: 'linear-gradient(180deg, var(--color-white) 0%, #F8F7FF 100%)' }}>
+            <section id="experts" className="section" style={{ background: 'linear-gradient(180deg, var(--color-white) 0%, #F8F7FF 100%)' }}>
                 <div className="container">
                     <RevealSection>
                         <div className="section-header">
