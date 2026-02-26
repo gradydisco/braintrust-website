@@ -81,20 +81,20 @@ export default function Jobs() {
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                     <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
                         <h1 style={{ marginBottom: 'var(--space-5)' }}>
-                            See what you could<br />
-                            <span className="text-gradient">be matched to.</span>
+                            Skip the job hunt.<br />
+                            <span className="text-gradient">We bring the work to you.</span>
                         </h1>
 
                         <p style={{ fontSize: 'var(--text-xl)', maxWidth: 640, margin: '0 auto var(--space-8)', lineHeight: 1.65 }}>
-                            These aren&apos;t listings to blindly apply to. They&apos;re a preview of the quality of roles
-                            Braintrust members get matched with — roles you are highly likely to win,
-                            competing with fewer, qualified peers. No more spray and pray.
+                            No more endless applications, ghosted interviews, or competing with thousands.
+                            Join Braintrust and get matched directly to high-paying roles with companies
+                            that actually want to hire you — faster and with zero fees.
                         </p>
 
                         {/* CTA split */}
                         <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap', marginBottom: 'var(--space-8)' }}>
                             <Link href="https://app.usebraintrust.com" className="btn btn--primary btn--lg" id="jobs-hero-join">
-                                Get Matched to These Roles
+                                Join & Get Matched
                             </Link>
                             <Link href="/talent-certification" className="btn btn--secondary btn--lg" id="jobs-hero-cert">
                                 Learn About Certification
