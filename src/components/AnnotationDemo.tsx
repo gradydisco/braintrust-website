@@ -8,13 +8,13 @@ import { useState } from 'react';
  */
 
 const TABS = [
-    { id: 'annotation', label: 'Data Annotation', icon: '🏷️' },
-    { id: 'rlhf', label: 'RLHF Ranking', icon: '⚖️' },
-    { id: 'evals', label: 'Model Evaluation', icon: '📊' },
+    { id: 'rlhf', label: 'RLHF Ranking' },
+    { id: 'annotation', label: 'Data Annotation' },
+    { id: 'evals', label: 'Model Evaluation' },
 ] as const;
 
 export default function AnnotationDemo() {
-    const [activeTab, setActiveTab] = useState<string>('annotation');
+    const [activeTab, setActiveTab] = useState<string>('rlhf');
 
     return (
         <div style={{ position: 'relative' }}>
@@ -39,7 +39,7 @@ export default function AnnotationDemo() {
                             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
                         }}
                     >
-                        <span>{tab.icon}</span> {tab.label}
+                        {tab.label}
                     </button>
                 ))}
             </div>

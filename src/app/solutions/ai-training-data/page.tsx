@@ -452,8 +452,8 @@ export default function AITrainingDataSolution() {
                     <RevealSection>
                         <div className="section-header">
                             <div className="badge badge--accent">In Action</div>
-                            <h2>Your annotators, powered by our pipeline</h2>
-                            <p>This is what it looks like when expert contributors — sourced, vetted, and managed by Braintrust — are working inside your annotation platform.</p>
+                            <h2>Our annotators, powering your pipeline</h2>
+                            <p>This is what it looks like when our expert contributors — sourced, vetted, and managed by Braintrust — are working inside your systems.</p>
                         </div>
                     </RevealSection>
                     <RevealSection delay={200}>
