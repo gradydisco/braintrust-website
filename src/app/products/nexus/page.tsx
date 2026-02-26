@@ -79,16 +79,31 @@ const faqItems = [
 export default function Nexus() {
     return (
         <>
-            <section className="hero hero--centered">
-                <div className="container">
+            <section className="hero hero--centered" style={{
+                background: 'linear-gradient(180deg, #0a0a14 0%, #111827 60%, #0f172a 100%)',
+                position: 'relative', overflow: 'hidden',
+            }}>
+                {/* Ambient background effects */}
+                <div style={{
+                    position: 'absolute', inset: 0, pointerEvents: 'none',
+                    backgroundImage: 'radial-gradient(ellipse 50% 60% at 50% 20%, rgba(99,102,241,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 70% 80%, rgba(245,87,51,0.04) 0%, transparent 70%)',
+                }} />
+                {/* Grid pattern overlay */}
+                <div style={{
+                    position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.03,
+                    backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                    backgroundSize: '40px 40px',
+                }} />
+
+                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Products', href: '/products' }, { label: 'Nexus' }]} />
                     <div className="hero__content">
-                        <div className="badge badge--token">Nexus</div>
-                        <h1>Automate anything.<br /><span className="text-gradient">across everything.</span></h1>
-                        <p>Nexus is a workflow automation platform that eliminates mundane, repetitive tasks — moving data between systems, powering complex workflows, and saving thousands of hours across every part of your business.</p>
+                        <div className="badge badge--dark">Nexus</div>
+                        <h1 style={{ color: 'white' }}>Automate anything.<br /><span className="text-gradient">across everything.</span></h1>
+                        <p style={{ color: 'rgba(255,255,255,0.55)' }}>Nexus is a workflow automation platform that eliminates mundane, repetitive tasks — moving data between systems, powering complex workflows, and saving thousands of hours across every part of your business.</p>
                         <div className="hero__actions">
                             <Link href="/book-demo" className="btn btn--primary btn--lg">Book a Demo</Link>
-                            <Link href="/products" className="btn btn--secondary btn--lg">All Products →</Link>
+                            <Link href="/products" className="btn btn--secondary btn--lg" style={{ color: 'rgba(255,255,255,0.7)', borderColor: 'rgba(255,255,255,0.15)' }}>All Products →</Link>
                         </div>
                     </div>
                 </div>

@@ -65,22 +65,22 @@ export default function NexusBeforeAfter() {
                     align-items: flex-start;
                     gap: var(--space-3);
                     padding: var(--space-4) 0;
-                    border-bottom: 1px solid rgba(255,255,255,0.06);
+                    border-bottom: 1px solid rgba(255,255,255,0.08);
                 }
                 .bna-row:last-child { border-bottom: none; }
                 .bna-icon-before {
                     width: 36px; height: 36px; border-radius: 10px;
                     display: flex; align-items: center; justify-content: center;
-                    background: rgba(208,64,32,0.15); color: #ff8a70; flex-shrink: 0;
+                    background: rgba(208,64,32,0.2); color: #ffa090; flex-shrink: 0;
                 }
                 .bna-icon-after {
                     width: 36px; height: 36px; border-radius: 10px;
                     display: flex; align-items: center; justify-content: center;
-                    background: rgba(245,87,51,0.15); color: var(--color-primary); flex-shrink: 0;
+                    background: rgba(245,87,51,0.2); color: var(--color-primary); flex-shrink: 0;
                 }
-                .bna-label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 2px; }
-                .bna-sub-before { font-size: 12px; color: rgba(255,140,120,0.7); line-height: 1.5; }
-                .bna-sub-after  { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+                .bna-label { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.95); margin-bottom: 2px; }
+                .bna-sub-before { font-size: 12.5px; color: rgba(255,160,144,0.85); line-height: 1.5; }
+                .bna-sub-after  { font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.5; }
             `}</style>
 
             <section className="section" style={{
@@ -108,11 +108,12 @@ export default function NexusBeforeAfter() {
                     }}>
                         {/* Before column */}
                         <div style={{
-                            background: 'rgba(208,64,32,0.06)',
-                            border: '1px solid rgba(208,64,32,0.2)',
+                            background: 'rgba(208,64,32,0.08)',
+                            border: '1px solid rgba(208,64,32,0.25)',
                             borderRadius: 'var(--radius-xl)',
                             padding: 'var(--space-8)',
-                            backdropFilter: 'blur(12px)',
+                            backdropFilter: 'blur(16px)',
+                            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)',
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff6b4a', flexShrink: 0 }} />
@@ -158,11 +159,12 @@ export default function NexusBeforeAfter() {
 
                         {/* After column */}
                         <div style={{
-                            background: 'rgba(245,87,51,0.04)',
-                            border: '1px solid rgba(245,87,51,0.2)',
+                            background: 'rgba(245,87,51,0.06)',
+                            border: '1px solid rgba(245,87,51,0.25)',
                             borderRadius: 'var(--radius-xl)',
                             padding: 'var(--space-8)',
-                            backdropFilter: 'blur(12px)',
+                            backdropFilter: 'blur(16px)',
+                            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)',
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--color-primary)', flexShrink: 0 }} />
