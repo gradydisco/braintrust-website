@@ -58,8 +58,8 @@ const globalRegions = [
 ];
 
 const faqItems = [
-    { question: 'What does Braintrust do for AI training data?', answer: 'Braintrust is the premier managed service provider for expert contributor sourcing. We find, vet, and deploy domain experts into your annotation platforms and AI training pipelines. We don\'t build the tools — we staff them with the best people in the world, manage the engagement end-to-end, and deliver data points at scale.' },
-    { question: 'Do you have your own annotation platform?', answer: 'No — and that\'s by design. We\'re platform-agnostic. Our experts work directly inside your systems, whether it\'s Scale, Labelbox, RLHF tooling, or custom internal platforms. This means seamless integration with your existing workflows and zero migration costs.' },
+    { question: 'What does Braintrust do for AI training data?', answer: 'Braintrust is the premier managed service provider for expert contributor sourcing. We find, vet, and deploy domain experts into your AI training pipelines — then manage communications, training, quality assurance, and project delivery end-to-end. Our mission is getting vetted experts onto your projects fast using AIR (our AI-powered assessment platform), so you can deliver data outcomes at scale.' },
+    { question: 'How do your experts integrate with our existing tools?', answer: 'Our contributors work directly inside your systems — your annotation platforms, your RLHF tooling, your custom internal tools. Your data stays secure in your own environment, and we handle the people side: sourcing, vetting, training, communication, and ongoing management to deliver the data outcomes you need.' },
     { question: 'How fast can you ramp contributors?', answer: 'Our network of 2M+ experts across 100+ countries allows rapid scaling. For standard annotation and labeling tasks, we can ramp to thousands of contributors within days. For specialized domain tasks (e.g., medical RLHF), ramp time is typically 1-2 weeks to ensure qualification and calibration.' },
     { question: 'How do you vet and qualify contributors?', answer: 'Every contributor goes through AIR (our AI-powered assessment platform) for skills evaluation, plus identity verification (IDV), background checks, and NDA enforcement. For domain-specific tasks, we verify credentials and run calibration rounds with gold-standard examples before deployment.' },
     { question: 'What domains do your experts cover?', answer: 'Our expert network spans every major domain: software engineering, healthcare, legal, finance, science, education, creative, marketing, STEM research, and more. Experts are credentialed and vetted — doctors, lawyers, engineers, scientists, and career professionals with verified expertise.' },
@@ -184,11 +184,11 @@ export default function AITrainingDataSolution() {
                             border: '1px solid rgba(99,102,241,0.08)',
                         }}>
                             <h2 style={{ marginBottom: 'var(--space-4)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)' }}>
-                                We don&apos;t build annotation tools.<br />
-                                <span className="text-gradient">We staff them with the best people on earth.</span>
+                                A talent network built for<br />
+                                <span className="text-gradient">the AI training era.</span>
                             </h2>
-                            <p style={{ maxWidth: '640px', margin: '0 auto', fontSize: 'var(--text-lg)', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
-                                Most AI data companies sell you a platform. We&apos;re different. We&apos;re a <strong>managed service provider</strong> — we source, vet, and deploy expert contributors directly into <strong>your</strong> systems. Scale, Labelbox, your custom tooling — we work inside whatever platform you use, and deliver the data outcomes you need.
+                            <p style={{ maxWidth: '660px', margin: '0 auto', fontSize: 'var(--text-lg)', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
+                                Braintrust is a <strong>staffing platform and talent network</strong> with the entire infrastructure to source, vet, and deliver expert contributors better and faster than anyone. We work with clients to customize outputs, QA processes, and project management — running fully managed engagements where your data stays secure in your own systems while we handle the hard people part.
                             </p>
                         </div>
                     </RevealSection>
@@ -279,7 +279,7 @@ export default function AITrainingDataSolution() {
                                     color: '#ec4899',
                                     title: 'Funnel Management & Deployment',
                                     desc: 'We manage the full candidate funnel — sourcing, calibration, onboarding, and seamless deployment directly into your annotation platforms and systems.',
-                                    stat: 'Platform-agnostic',
+                                    stat: 'Full lifecycle',
                                 },
                                 {
                                     icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" /></svg>,
@@ -526,8 +526,8 @@ export default function AITrainingDataSolution() {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
                             {[
                                 {
-                                    title: 'Platform-agnostic deployment',
-                                    desc: 'We deploy contributors into your systems — Scale, Labelbox, Surge, custom internal tools, whatever you use. No migration, no vendor lock-in. Your workflows stay intact.',
+                                    title: 'Your systems, our people',
+                                    desc: 'Our contributors work directly inside your environment — your annotation platform, your internal tools, your workflows. Your data stays secure, and we manage the people delivering the outcomes.',
                                     icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="2" width="20" height="8" rx="2" /><rect x="2" y="14" width="20" height="8" rx="2" /><line x1="6" y1="6" x2="6.01" y2="6" /><line x1="6" y1="18" x2="6.01" y2="18" /></svg>,
                                     color: '#6366f1',
                                 },
