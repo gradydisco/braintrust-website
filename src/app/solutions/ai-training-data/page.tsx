@@ -284,7 +284,7 @@ export default function AITrainingDataSolution() {
                                     <h3 style={{ color: 'white', fontSize: '22px', fontWeight: 800, margin: '0 0 8px', lineHeight: 1.25 }}>
                                         Vetted experts,<br />deployed in days.
                                     </h3>
-                                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', margin: 0, lineHeight: 1.6 }}>
+                                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', margin: 0, lineHeight: 1.7 }}>
                                         Every contributor is sourced from our 2M+ network, assessed through AIR, identity-verified, and calibrated before they touch your data.
                                     </p>
                                 </div>
@@ -330,9 +330,9 @@ export default function AITrainingDataSolution() {
                                             background: `${item.color}0a`, color: item.color,
                                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         }}>{item.icon}</div>
-                                        <h4 style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>{item.title}</h4>
-                                        <p style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.55, margin: 0 }}>{item.desc}</p>
-                                        <span style={{ fontSize: '11px', fontWeight: 700, color: item.color, marginTop: 'auto' }}>{item.stat}</span>
+                                        <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>{item.title}</h4>
+                                        <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+                                        <span style={{ fontSize: '12px', fontWeight: 700, color: item.color, marginTop: 'auto' }}>{item.stat}</span>
                                     </div>
                                 ))}
                             </div>
@@ -370,11 +370,11 @@ export default function AITrainingDataSolution() {
                                         transform: 'translate(-50%, -50%)', pointerEvents: 'none',
                                     }} />
                                     <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', marginBottom: '8px' }}>Most Requested</span>
-                                    <h3 style={{ color: 'white', fontSize: '20px', fontWeight: 800, margin: '0 0 8px' }}>RLHF Contributors</h3>
-                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', margin: 0, lineHeight: 1.6, maxWidth: '320px' }}>
+                                    <h3 style={{ color: 'white', fontSize: '22px', fontWeight: 800, margin: '0 0 8px' }}>RLHF Contributors</h3>
+                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', margin: 0, lineHeight: 1.7, maxWidth: '340px' }}>
                                         Domain experts who rate, rank, and compare model outputs — providing the human preference signals your post-training pipeline needs.
                                     </p>
-                                    <span style={{ marginTop: '14px', fontSize: '12px', fontWeight: 700, color: '#a5b4fc' }}>Enterprise scale →</span>
+                                    <span style={{ marginTop: '14px', fontSize: '13px', fontWeight: 700, color: '#a5b4fc' }}>Enterprise scale →</span>
                                 </div>
 
                                 {/* Data Annotators */}
@@ -388,11 +388,11 @@ export default function AITrainingDataSolution() {
                                     <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: '#0596690a', color: '#059669', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" /><line x1="7" y1="7" x2="7.01" y2="7" /></svg>
                                     </div>
-                                    <h4 style={{ fontSize: '17px', fontWeight: 700, margin: '0 0 8px' }}>Data Annotators &amp; Labelers</h4>
-                                    <p style={{ fontSize: '13px', lineHeight: 1.65, color: 'var(--text-secondary)', margin: '0 0 12px' }}>
+                                    <h4 style={{ fontSize: '18px', fontWeight: 700, margin: '0 0 8px' }}>Data Annotators &amp; Labelers</h4>
+                                    <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', margin: '0 0 12px' }}>
                                         Structured annotation across text, image, video, and audio. Multi-language, multi-domain capability.
                                     </p>
-                                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#059669' }}>Multi-modal →</span>
+                                    <span style={{ fontSize: '13px', fontWeight: 700, color: '#059669' }}>Multi-modal →</span>
                                 </div>
                             </div>
 
@@ -409,9 +409,9 @@ export default function AITrainingDataSolution() {
                                         borderRadius: '14px',
                                         padding: '22px', borderTop: `3px solid ${item.color}`,
                                     }}>
-                                        <h4 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>{item.title}</h4>
-                                        <p style={{ fontSize: '12.5px', lineHeight: 1.6, color: 'var(--text-secondary)', margin: '0 0 10px' }}>{item.desc}</p>
-                                        <span style={{ fontSize: '11px', fontWeight: 700, color: item.color, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{item.stat}</span>
+                                        <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>{item.title}</h4>
+                                        <p style={{ fontSize: '14px', lineHeight: 1.7, color: 'var(--text-secondary)', margin: '0 0 10px' }}>{item.desc}</p>
+                                        <span style={{ fontSize: '12px', fontWeight: 700, color: item.color, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{item.stat}</span>
                                     </div>
                                 ))}
                             </div>
@@ -434,12 +434,12 @@ export default function AITrainingDataSolution() {
                                     ))}
                                 </div>
                                 <div style={{ flex: 1 }}>
-                                    <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 4px' }}>Domain Expert Reviewers</h4>
-                                    <p style={{ fontSize: '13px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                                    <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 4px' }}>Domain Expert Reviewers</h4>
+                                    <p style={{ fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.7 }}>
                                         Credentialed specialists — doctors, lawyers, engineers, scientists — who validate AI output accuracy and provide authoritative corrections.
                                     </p>
                                 </div>
-                                <span style={{ fontSize: '12px', fontWeight: 700, color: '#8b5cf6', whiteSpace: 'nowrap', flexShrink: 0 }}>Credentialed →</span>
+                                <span style={{ fontSize: '13px', fontWeight: 700, color: '#8b5cf6', whiteSpace: 'nowrap', flexShrink: 0 }}>Credentialed →</span>
                             </div>
                         </div>
                     </RevealSection>
@@ -537,13 +537,13 @@ export default function AITrainingDataSolution() {
                                             display: 'flex', alignItems: 'center', gap: '8px',
                                         }}>
                                             <div style={{ width: 8, height: 8, borderRadius: '3px', background: cat.color }} />
-                                            <h4 style={{ fontSize: '13px', fontWeight: 700, color: cat.color, margin: 0 }}>{cat.title}</h4>
+                                            <h4 style={{ fontSize: '14px', fontWeight: 700, color: cat.color, margin: 0 }}>{cat.title}</h4>
                                         </div>
-                                        <div style={{ padding: '12px 16px' }}>
-                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                                        <div style={{ padding: '14px 18px' }}>
+                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
                                                 {cat.skills.map((skill) => (
                                                     <span key={skill} style={{
-                                                        fontSize: '10.5px', fontWeight: 500,
+                                                        fontSize: '12px', fontWeight: 500,
                                                         color: 'var(--text-secondary)',
                                                         padding: '3px 8px', borderRadius: '5px',
                                                         background: 'var(--color-gray-50)',
