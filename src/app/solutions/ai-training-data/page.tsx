@@ -195,21 +195,6 @@ export default function AITrainingDataSolution() {
                 </div>
             </section>
 
-            {/* ====== HOW WE WORK — PIPELINE ====== */}
-            <section className="section section--gray" id="how-we-work">
-                <div className="container">
-                    <RevealSection>
-                        <div className="section-header">
-                            <div className="badge">How We Work</div>
-                            <h2>From need to delivery</h2>
-                            <p>Your AI team tells us what they need. We handle everything else.</p>
-                        </div>
-                    </RevealSection>
-                    <RevealSection delay={200}>
-                        <ModelTrainingVisual />
-                    </RevealSection>
-                </div>
-            </section>
 
             {/* ====== CORE STATS ====== */}
             <section className="section section--dark">
@@ -1024,6 +1009,22 @@ export default function AITrainingDataSolution() {
                                 </div>
                             ))}
                         </div>
+                    </RevealSection>
+                </div>
+            </section>
+
+            {/* ====== HOW WE WORK — PIPELINE ====== */}
+            <section className="section section--gray" id="how-we-work">
+                <div className="container">
+                    <RevealSection>
+                        <div className="section-header">
+                            <div className="badge">How We Work</div>
+                            <h2>From need to delivery</h2>
+                            <p>Your AI team tells us what they need. We handle everything else.</p>
+                        </div>
+                    </RevealSection>
+                    <RevealSection delay={200}>
+                        <ModelTrainingVisual />
                     </RevealSection>
                 </div>
             </section>
