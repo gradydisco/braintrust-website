@@ -201,7 +201,6 @@ export default function TalentTypes() {
                         gap: 'var(--space-6)', textAlign: 'center',
                     }}>
                         {[
-                            { val: '12+', label: 'Specialty Categories' },
                             { val: '100+', label: 'Role Types Supported' },
                             { val: '12K+', label: 'Active Openings' },
                             { val: '$0', label: 'Fees for Talent' },
