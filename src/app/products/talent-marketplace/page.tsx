@@ -190,6 +190,31 @@ export default function TalentMarketplace() {
                             <Link href="/products" className="btn btn--secondary btn--lg">View All Products →</Link>
                         </div>
 
+                        {/* AI Training Data CTA */}
+                        <Link href="/solutions/ai-training-data" style={{
+                            display: 'inline-flex', alignItems: 'center', gap: '10px',
+                            marginTop: 'var(--space-5)',
+                            padding: '10px 20px 10px 14px',
+                            borderRadius: 'var(--radius-full)',
+                            background: 'rgba(99, 102, 241, 0.06)',
+                            border: '1px solid rgba(99, 102, 241, 0.12)',
+                            textDecoration: 'none',
+                            transition: 'all 0.2s ease',
+                        }}>
+                            <span style={{
+                                width: 28, height: 28, borderRadius: '50%',
+                                background: 'rgba(99, 102, 241, 0.1)',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                            }}>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.57-3.25 3.92L12 22" /><path d="M12 2a4 4 0 00-4 4c0 1.95 1.4 3.57 3.25 3.92" /><circle cx="12" cy="14" r="2" /></svg>
+                            </span>
+                            <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)' }}>
+                                Looking for <strong style={{ color: 'var(--text-primary)' }}>AI training data & human experts</strong>?
+                            </span>
+                            <span style={{ fontSize: '13px', fontWeight: 700, color: '#6366f1', whiteSpace: 'nowrap' }}>
+                                Learn more →
+                            </span>
+                        </Link>
                         {/* HERO MEDIA */}
                         <div style={{
                             position: 'relative', maxWidth: 960, margin: 'var(--space-12) auto 0',
