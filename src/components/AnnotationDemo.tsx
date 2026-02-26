@@ -29,11 +29,11 @@ export default function AnnotationDemo() {
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
                         style={{
-                            flex: 1, padding: '10px 16px', borderRadius: '10px',
+                            flex: 1, padding: '7px 12px', borderRadius: '8px',
                             border: 'none', cursor: 'pointer',
                             background: activeTab === tab.id ? 'var(--color-white)' : 'transparent',
                             boxShadow: activeTab === tab.id ? '0 2px 8px rgba(0,0,0,0.06)' : 'none',
-                            fontSize: '13px', fontWeight: 600,
+                            fontSize: '11px', fontWeight: 600,
                             color: activeTab === tab.id ? 'var(--text-primary)' : 'var(--text-tertiary)',
                             transition: 'all 0.2s ease',
                             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
@@ -56,18 +56,18 @@ export default function AnnotationDemo() {
             }}>
                 {/* Top bar */}
                 <div style={{
-                    padding: '14px 20px',
+                    padding: '10px 16px',
                     borderBottom: '1px solid rgba(50,50,93,0.06)',
                     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                     background: 'rgba(248,250,252,0.8)',
                 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <div style={{ display: 'flex', gap: '5px' }}>
-                            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#ff5f57' }} />
-                            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#febc2e' }} />
-                            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#28c840' }} />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div style={{ display: 'flex', gap: '4px' }}>
+                            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#ff5f57' }} />
+                            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#febc2e' }} />
+                            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#28c840' }} />
                         </div>
-                        <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-tertiary)', letterSpacing: '0.02em' }}>
+                        <span style={{ fontSize: '10px', fontWeight: 700, color: 'var(--text-tertiary)', letterSpacing: '0.02em' }}>
                             {activeTab === 'annotation' && 'annotation_task_2847.jsonl'}
                             {activeTab === 'rlhf' && 'rlhf_comparison_batch_41.json'}
                             {activeTab === 'evals' && 'eval_scoring_run_19.json'}
@@ -199,14 +199,14 @@ export default function AnnotationDemo() {
 /* ===== ANNOTATION TAB ===== */
 function AnnotationContent() {
     return (
-        <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', minHeight: '260px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', minHeight: '200px' }}>
             <div style={{
                 borderRight: '1px solid rgba(50,50,93,0.06)',
-                padding: '16px 14px',
+                padding: '12px 10px',
                 background: 'rgba(248,250,252,0.5)',
-                display: 'flex', flexDirection: 'column', gap: '6px',
+                display: 'flex', flexDirection: 'column', gap: '4px',
             }}>
-                <div style={{ fontSize: '10px', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+                <div style={{ fontSize: '9px', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '4px' }}>
                     Entity Labels
                 </div>
                 {[
@@ -217,9 +217,9 @@ function AnnotationContent() {
                     { label: 'DATE', color: '#8b5cf6' },
                 ].map((cat) => (
                     <div key={cat.label} style={{
-                        display: 'flex', alignItems: 'center', gap: '8px',
-                        padding: '5px 8px', borderRadius: '6px',
-                        fontSize: '11px', fontWeight: 600, color: cat.color,
+                        display: 'flex', alignItems: 'center', gap: '6px',
+                        padding: '3px 6px', borderRadius: '5px',
+                        fontSize: '10px', fontWeight: 600, color: cat.color,
                         background: `${cat.color}0a`,
                         border: `1px solid ${cat.color}15`,
                     }}>
@@ -229,7 +229,7 @@ function AnnotationContent() {
                 ))}
             </div>
 
-            <div style={{ padding: '24px', fontSize: '15px', lineHeight: 2.2, color: 'var(--text-primary)' }}>
+            <div style={{ padding: '16px', fontSize: '13px', lineHeight: 2, color: 'var(--text-primary)' }}>
                 <span className="anno-highlight anno-h1" style={{ '--anno-color': '#6366f1' } as React.CSSProperties}>
                     Dr. Sarah Chen
                     <span className="anno-tag" style={{ background: '#6366f1' }}>PERSON</span>
@@ -273,48 +273,48 @@ function AnnotationContent() {
 /* ===== RLHF TAB ===== */
 function RLHFContent() {
     return (
-        <div style={{ padding: '24px' }}>
-            <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+        <div style={{ padding: '16px 18px' }}>
+            <div style={{ fontSize: '9px', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>
                 Which response is more helpful, harmless, and honest?
             </div>
-            <div style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '16px', padding: '12px 16px', background: 'var(--color-gray-50)', borderRadius: '10px', lineHeight: 1.6 }}>
+            <div style={{ fontSize: '11px', color: 'var(--text-secondary)', marginBottom: '12px', padding: '8px 12px', background: 'var(--color-gray-50)', borderRadius: '8px', lineHeight: 1.6 }}>
                 <strong style={{ color: 'var(--text-primary)' }}>Prompt:</strong> &quot;Explain the difference between supervised fine-tuning and RLHF in language model training.&quot;
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '16px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '12px' }}>
                 {/* Response A */}
                 <div style={{
-                    border: '2px solid rgba(50,50,93,0.08)', borderRadius: '12px', padding: '16px',
-                    fontSize: '13px', lineHeight: 1.7, color: 'var(--text-secondary)',
+                    border: '1.5px solid rgba(50,50,93,0.08)', borderRadius: '10px', padding: '12px',
+                    fontSize: '11.5px', lineHeight: 1.6, color: 'var(--text-secondary)',
                     position: 'relative',
                 }}>
-                    <div style={{ fontSize: '10px', fontWeight: 800, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Response A</div>
+                    <div style={{ fontSize: '9px', fontWeight: 800, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>Response A</div>
                     <p style={{ margin: 0 }}>SFT trains on labeled examples with correct answers. RLHF uses human preferences to train a reward model, then optimizes the language model using reinforcement learning (PPO). RLHF better captures nuanced quality...</p>
                 </div>
                 {/* Response B — selected */}
                 <div style={{
-                    border: '2px solid #6366f1', borderRadius: '12px', padding: '16px',
-                    fontSize: '13px', lineHeight: 1.7, color: 'var(--text-secondary)',
+                    border: '1.5px solid #6366f1', borderRadius: '10px', padding: '12px',
+                    fontSize: '11.5px', lineHeight: 1.6, color: 'var(--text-secondary)',
                     position: 'relative',
-                    boxShadow: '0 0 0 3px rgba(99,102,241,0.12)',
+                    boxShadow: '0 0 0 2px rgba(99,102,241,0.10)',
                     animation: 'rlhf-select 1.5s ease-out both 0.8s',
                 }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                        <div style={{ fontSize: '10px', fontWeight: 800, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Response B</div>
-                        <div style={{ fontSize: '9px', fontWeight: 700, color: '#6366f1', padding: '2px 8px', borderRadius: '4px', background: 'rgba(99,102,241,0.08)' }}>PREFERRED</div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                        <div style={{ fontSize: '9px', fontWeight: 800, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Response B</div>
+                        <div style={{ fontSize: '8px', fontWeight: 700, color: '#6366f1', padding: '2px 6px', borderRadius: '4px', background: 'rgba(99,102,241,0.08)' }}>PREFERRED</div>
                     </div>
                     <p style={{ margin: 0 }}>SFT teaches the model to imitate — it learns from example outputs. RLHF teaches the model to improve — it learns from human judgments about what&apos;s better. Think of SFT as &quot;learn to write like this&quot; and RLHF as &quot;learn what good writing is.&quot;</p>
                 </div>
             </div>
             {/* Scoring rubric */}
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 {[
                     { label: 'Helpfulness', score: 4, max: 5, color: '#6366f1' },
                     { label: 'Accuracy', score: 5, max: 5, color: '#059669' },
                     { label: 'Harmlessness', score: 5, max: 5, color: '#0ea5e9' },
                     { label: 'Conciseness', score: 4, max: 5, color: '#f59e0b' },
                 ].map(r => (
-                    <div key={r.label} style={{ flex: 1, minWidth: '120px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10px', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+                    <div key={r.label} style={{ flex: 1, minWidth: '80px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '8px', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '3px' }}>
                             <span>{r.label}</span>
                             <span style={{ color: r.color }}>{r.score}/{r.max}</span>
                         </div>

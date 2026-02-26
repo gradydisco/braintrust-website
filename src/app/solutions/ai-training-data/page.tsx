@@ -74,7 +74,7 @@ export default function AITrainingDataSolution() {
     return (
         <>
             {/* ====== HERO ====== */}
-            <section className="hero hero--centered" style={{ position: 'relative', overflow: 'hidden' }}>
+            <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
                 {/* Animated gradient mesh */}
                 <div className="ai-hero-mesh" style={{
                     position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none',
@@ -82,19 +82,21 @@ export default function AITrainingDataSolution() {
                 }} />
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions', href: '/solutions' }, { label: 'AI Training Data' }]} />
-                    <div className="hero__content">
-                        <div className="badge">AI Training Data</div>
-                        <h1>Expert contributors for<br /><span className="text-gradient">every AI training need.</span></h1>
-                        <p style={{ maxWidth: '640px', margin: '0 auto' }}>
-                            We source, vet, and deploy domain experts into your annotation platforms and training pipelines — delivering the data points your models need, faster than anyone.
-                        </p>
-                        <div className="hero__actions">
-                            <a href="/book-demo" className="btn btn--primary btn--lg">Contact Sales</a>
-                            <a href="#how-we-work" className="btn btn--secondary btn--lg">How We Work →</a>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: '48px', alignItems: 'center' }}>
+                        {/* Left — Hero text */}
+                        <div>
+                            <div className="badge" style={{ marginBottom: '16px' }}>AI Training Data</div>
+                            <h1 style={{ textAlign: 'left' }}>Expert contributors for<br /><span className="text-gradient">every AI training need.</span></h1>
+                            <p style={{ maxWidth: '480px', textAlign: 'left', marginTop: '16px' }}>
+                                We source, vet, and deploy domain experts into your annotation platforms and training pipelines — delivering the data points your models need, faster than anyone.
+                            </p>
+                            <div className="hero__actions" style={{ justifyContent: 'flex-start', marginTop: '28px' }}>
+                                <a href="/book-demo" className="btn btn--primary btn--lg">Contact Sales</a>
+                                <a href="#how-we-work" className="btn btn--secondary btn--lg">How We Work →</a>
+                            </div>
                         </div>
-
-                        {/* Annotation demo — inline */}
-                        <div style={{ marginTop: 'var(--space-12)', maxWidth: '820px', marginLeft: 'auto', marginRight: 'auto' }}>
+                        {/* Right — Annotation demo */}
+                        <div>
                             <AnnotationDemo />
                         </div>
                     </div>
