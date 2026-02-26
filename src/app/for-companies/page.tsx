@@ -178,14 +178,14 @@ function BetterWaySection() {
                             <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
                                 <div className="co-btw-check" style={{
                                     width: 24, height: 24, borderRadius: '50%', flexShrink: 0,
-                                    background: 'rgba(5,150,105,0.1)', color: '#059669',
+                                    background: 'rgba(245,87,51,0.1)', color: 'var(--color-primary)',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                                 }}>
                                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <span className="co-btw-new" style={{ fontSize: 15, fontWeight: 700, color: '#059669' }}>{p.better}</span>
+                                <span className="co-btw-new" style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)' }}>{p.better}</span>
                             </div>
                         </div>
                     ))}
