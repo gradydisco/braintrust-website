@@ -81,7 +81,7 @@ export default function AITrainingDataSolution() {
                     background: 'radial-gradient(ellipse 60% 50% at 50% 45%, rgba(99,102,241,0.06) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 80% 30%, rgba(245,87,51,0.04) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 20% 60%, rgba(5,150,105,0.04) 0%, transparent 60%)',
                 }} />
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions', href: '/solutions' }, { label: 'AI Training Data' }]} />
+                    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'AI Training Data' }]} />
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: '48px', alignItems: 'center' }}>
                         {/* Left — Hero text */}
                         <div>

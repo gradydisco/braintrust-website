@@ -17,7 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: '/products/air/try', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/products/air/demos', changeFrequency: 'monthly' as const, priority: 0.7 },
         { url: '/products/nexus', changeFrequency: 'weekly' as const, priority: 0.8 },
-        { url: '/solutions', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/solutions/enterprise-hiring', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/solutions/high-volume-hiring', changeFrequency: 'monthly' as const, priority: 0.8 },
         { url: '/solutions/ai-training-data', changeFrequency: 'monthly' as const, priority: 0.8 },

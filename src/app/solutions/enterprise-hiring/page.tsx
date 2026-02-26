@@ -80,7 +80,7 @@ export default function EnterpriseHiring() {
             {/* ====== HERO ====== */}
             <section className="hero hero--centered">
                 <div className="container">
-                    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions', href: '/solutions' }, { label: 'Enterprise Hiring' }]} />
+                    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Enterprise Hiring' }]} />
                     <div className="hero__content">
                         <div className="badge">Enterprise</div>
                         <h1>Built for the<br /><span className="text-gradient">Fortune 1000.</span></h1>

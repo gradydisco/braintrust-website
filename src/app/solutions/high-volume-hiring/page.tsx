@@ -84,7 +84,7 @@ export default function HighVolumeHiring() {
             {/* ====== HERO ====== */}
             <section className="hero hero--centered">
                 <div className="container">
-                    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions', href: '/solutions' }, { label: 'High-Volume Hiring' }]} />
+                    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'High-Volume Hiring' }]} />
                     <div className="hero__content">
                         <div className="badge">High-Volume</div>
                         <h1>Scale without<br /><span className="text-gradient">scaling headcount.</span></h1>
