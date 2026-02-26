@@ -315,16 +315,97 @@ export default function ForCompanies() {
                             }}
                                 className="card--hover-lift"
                             >
-                                {/* Colored top accent */}
-                                <div style={{ height: '4px', background: `linear-gradient(90deg, ${product.color}, ${product.color}80)` }} />
-                                <div style={{ padding: 'var(--space-8) var(--space-8) var(--space-6)' }}>
+                                {/* Visual header */}
+                                {product.title === 'Talent Marketplace' && (
                                     <div style={{
-                                        width: 52, height: 52, borderRadius: 'var(--radius-lg)',
-                                        background: `${product.color}10`, color: product.color,
+                                        height: '150px', background: 'var(--color-gray-50)',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        marginBottom: 'var(--space-5)',
-                                    }}>{product.icon}</div>
-                                    <h3 style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-3)' }}>{product.title}</h3>
+                                        borderBottom: '1px solid rgba(0,0,0,0.05)',
+                                    }}>
+                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                            {[1, 2, 3, 4, 5].map((num, i) => (
+                                                <div key={num} style={{
+                                                    width: '48px', height: '48px', borderRadius: '50%',
+                                                    border: '3px solid white', marginLeft: i > 0 ? '-12px' : '0',
+                                                    overflow: 'hidden', position: 'relative', zIndex: 5 - i,
+                                                    boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
+                                                }}>
+                                                    <img src={`/images/talent_portrait_${num}.png`} alt="Talent" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                </div>
+                                            ))}
+                                            <div style={{
+                                                width: '48px', height: '48px', borderRadius: '50%',
+                                                border: '3px solid white', marginLeft: '-12px',
+                                                background: 'var(--color-primary)', display: 'flex',
+                                                alignItems: 'center', justifyContent: 'center',
+                                                fontSize: '12px', fontWeight: 700, color: 'white',
+                                                zIndex: 0, boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
+                                            }}>
+                                                2M+
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {product.title === 'AIR | AI Recruiter' && (
+                                    <div style={{
+                                        height: '150px', background: 'var(--color-gray-100)',
+                                        position: 'relative', borderBottom: '1px solid rgba(0,0,0,0.05)',
+                                        overflow: 'hidden',
+                                    }}>
+                                        <img src="/images/air_interview_side.png" alt="AIR Interview UI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <div style={{
+                                            position: 'absolute', bottom: '10%', left: '8%', right: '8%',
+                                            background: 'rgba(255, 255, 255, 0.88)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+                                            padding: '8px 12px', borderRadius: '10px 10px 10px 2px',
+                                            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                                        }}>
+                                            <div style={{ fontSize: '8px', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '1px' }}>AIR</div>
+                                            <p style={{ fontSize: '10px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.3, fontWeight: 500 }}>
+                                                &quot;That&apos;s a great example. Could you elaborate...&quot;
+                                            </p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {product.title === 'Nexus' && (
+                                    <div style={{
+                                        height: '150px', background: 'linear-gradient(135deg, #f8fafc, #eef2ff)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        borderBottom: '1px solid rgba(0,0,0,0.05)', padding: '0 16px',
+                                    }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0px', width: '100%', justifyContent: 'center' }}>
+                                            {[
+                                                { label: 'Trigger', bg: '#6366f1', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg> },
+                                                { label: 'Process', bg: '#059669', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg> },
+                                                { label: 'Decide', bg: '#f59e0b', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 3 21 3 21 8" /><line x1="4" y1="20" x2="21" y2="3" /><polyline points="21 16 21 21 16 21" /><line x1="15" y1="15" x2="21" y2="21" /><line x1="4" y1="4" x2="9" y2="9" /></svg> },
+                                                { label: 'Execute', bg: '#10b981', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg> },
+                                            ].map((step, i) => (
+                                                <div key={step.label} style={{ display: 'flex', alignItems: 'center' }}>
+                                                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px' }}>
+                                                        <div style={{
+                                                            width: '36px', height: '36px', borderRadius: '9px',
+                                                            background: `${step.bg}12`, border: `1.5px solid ${step.bg}25`,
+                                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                        }}>
+                                                            {step.svg}
+                                                        </div>
+                                                        <span style={{ fontSize: '8px', fontWeight: 600, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{step.label}</span>
+                                                    </div>
+                                                    {i < 3 && (
+                                                        <div style={{
+                                                            width: '20px', height: '1.5px', background: 'var(--color-gray-200)',
+                                                            margin: '0 3px', marginBottom: '16px',
+                                                        }} />
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                <div style={{ padding: 'var(--space-6) var(--space-6) var(--space-5)' }}>
+                                    <h3 style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-3)' }}>{product.title}</h3>
                                     <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-5)' }}>{product.description}</p>
                                     <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)', margin: '0 0 var(--space-5)', padding: 0, listStyle: 'none' }}>
                                         {product.features.map((f) => (
