@@ -65,30 +65,39 @@ export default function NexusBeforeAfter() {
                     align-items: flex-start;
                     gap: var(--space-3);
                     padding: var(--space-4) 0;
-                    border-bottom: 1px solid rgba(0,0,0,0.05);
+                    border-bottom: 1px solid rgba(255,255,255,0.06);
                 }
                 .bna-row:last-child { border-bottom: none; }
                 .bna-icon-before {
                     width: 36px; height: 36px; border-radius: 10px;
                     display: flex; align-items: center; justify-content: center;
-                    background: #FFF3F0; color: #D04020; flex-shrink: 0;
+                    background: rgba(208,64,32,0.15); color: #ff8a70; flex-shrink: 0;
                 }
                 .bna-icon-after {
                     width: 36px; height: 36px; border-radius: 10px;
                     display: flex; align-items: center; justify-content: center;
-                    background: var(--color-primary-50); color: var(--color-primary); flex-shrink: 0;
+                    background: rgba(245,87,51,0.15); color: var(--color-primary); flex-shrink: 0;
                 }
-                .bna-label { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
-                .bna-sub-before { font-size: 12px; color: #B04030; line-height: 1.5; }
-                .bna-sub-after  { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+                .bna-label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 2px; }
+                .bna-sub-before { font-size: 12px; color: rgba(255,140,120,0.7); line-height: 1.5; }
+                .bna-sub-after  { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
             `}</style>
 
-            <section className="section">
-                <div className="container">
+            <section className="section" style={{
+                background: 'linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%)',
+                position: 'relative', overflow: 'hidden',
+            }}>
+                {/* Ambient glow */}
+                <div style={{
+                    position: 'absolute', inset: 0, pointerEvents: 'none',
+                    backgroundImage: 'radial-gradient(ellipse 60% 40% at 50% 30%, rgba(245,87,51,0.06) 0%, transparent 70%)',
+                }} />
+
+                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                     <div className="section-header" style={{ marginBottom: 'var(--space-10)' }}>
-                        <div className="badge">Before vs. After</div>
-                        <h2>What your team deals with now — and what Nexus replaces it with</h2>
-                        <p>The same process. Completely different experience.</p>
+                        <div className="badge badge--dark">Before vs. After</div>
+                        <h2 style={{ color: 'var(--color-white)' }}>What your team deals with now —<br />and what <span className="text-gradient">Nexus replaces it with</span></h2>
+                        <p style={{ color: 'rgba(255,255,255,0.5)' }}>The same process. Completely different experience.</p>
                     </div>
 
                     <div style={{
@@ -99,16 +108,17 @@ export default function NexusBeforeAfter() {
                     }}>
                         {/* Before column */}
                         <div style={{
-                            background: 'var(--color-white)',
-                            border: '1px solid #F0C0B0',
+                            background: 'rgba(208,64,32,0.06)',
+                            border: '1px solid rgba(208,64,32,0.2)',
                             borderRadius: 'var(--radius-xl)',
                             padding: 'var(--space-8)',
+                            backdropFilter: 'blur(12px)',
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                                <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#D04020', flexShrink: 0 }} />
+                                <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff6b4a', flexShrink: 0 }} />
                                 <div>
-                                    <div style={{ fontWeight: 800, fontSize: 'var(--text-lg)', color: 'var(--text-primary)' }}>Without Nexus</div>
-                                    <div style={{ fontSize: 'var(--text-xs)', color: '#B04030', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Manual · Fragmented · Slow</div>
+                                    <div style={{ fontWeight: 800, fontSize: 'var(--text-lg)', color: 'rgba(255,255,255,0.9)' }}>Without Nexus</div>
+                                    <div style={{ fontSize: 'var(--text-xs)', color: '#ff8a70', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Manual · Fragmented · Slow</div>
                                 </div>
                             </div>
                             {manualSteps.map((step) => (
@@ -122,12 +132,12 @@ export default function NexusBeforeAfter() {
                             ))}
                             <div style={{
                                 marginTop: 'var(--space-6)', padding: 'var(--space-4)',
-                                borderRadius: 'var(--radius-lg)', background: '#FFF3F0',
-                                border: '1px solid #F0C0B0', textAlign: 'center',
+                                borderRadius: 'var(--radius-lg)', background: 'rgba(208,64,32,0.12)',
+                                border: '1px solid rgba(208,64,32,0.25)', textAlign: 'center',
                             }}>
-                                <div style={{ fontWeight: 700, fontSize: 'var(--text-sm)', color: '#D04020' }}>Avg. time to resolution</div>
-                                <div style={{ fontWeight: 800, fontSize: 'var(--text-2xl)', color: '#D04020', marginTop: '4px' }}>7–10 days</div>
-                                <div style={{ fontSize: 'var(--text-xs)', color: '#B04030', marginTop: '4px' }}>Per invoice cycle. Fully manual.</div>
+                                <div style={{ fontWeight: 700, fontSize: 'var(--text-sm)', color: '#ff8a70' }}>Avg. time to resolution</div>
+                                <div style={{ fontWeight: 800, fontSize: 'var(--text-2xl)', color: '#ff6b4a', marginTop: '4px' }}>7–10 days</div>
+                                <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,140,120,0.6)', marginTop: '4px' }}>Per invoice cycle. Fully manual.</div>
                             </div>
                         </div>
 
@@ -136,27 +146,28 @@ export default function NexusBeforeAfter() {
                             display: 'flex', flexDirection: 'column', alignItems: 'center',
                             paddingTop: 'var(--space-10)', gap: 'var(--space-2)',
                         }}>
-                            <div style={{ width: '1px', height: '60px', background: 'var(--color-gray-200)' }} />
+                            <div style={{ width: '1px', height: '60px', background: 'rgba(255,255,255,0.1)' }} />
                             <div style={{
                                 width: '40px', height: '40px', borderRadius: '50%',
                                 background: 'var(--gradient-warm)', display: 'flex',
                                 alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 700, fontSize: '18px',
-                                flexShrink: 0,
+                                flexShrink: 0, boxShadow: '0 0 20px rgba(245,87,51,0.3)',
                             }}>→</div>
-                            <div style={{ width: '1px', flex: 1, background: 'var(--color-gray-200)' }} />
+                            <div style={{ width: '1px', flex: 1, background: 'rgba(255,255,255,0.1)' }} />
                         </div>
 
                         {/* After column */}
                         <div style={{
-                            background: 'var(--color-white)',
-                            border: '1px solid var(--color-primary)',
+                            background: 'rgba(245,87,51,0.04)',
+                            border: '1px solid rgba(245,87,51,0.2)',
                             borderRadius: 'var(--radius-xl)',
                             padding: 'var(--space-8)',
+                            backdropFilter: 'blur(12px)',
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--color-primary)', flexShrink: 0 }} />
                                 <div>
-                                    <div style={{ fontWeight: 800, fontSize: 'var(--text-lg)', color: 'var(--text-primary)' }}>With Nexus</div>
+                                    <div style={{ fontWeight: 800, fontSize: 'var(--text-lg)', color: 'rgba(255,255,255,0.95)' }}>With Nexus</div>
                                     <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-primary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Automated · Connected · Instant</div>
                                 </div>
                             </div>
@@ -171,18 +182,18 @@ export default function NexusBeforeAfter() {
                             ))}
                             <div style={{
                                 marginTop: 'var(--space-6)', padding: 'var(--space-4)',
-                                borderRadius: 'var(--radius-lg)', background: 'var(--color-primary-50)',
-                                border: '1px solid var(--color-primary)', textAlign: 'center',
+                                borderRadius: 'var(--radius-lg)', background: 'rgba(245,87,51,0.12)',
+                                border: '1px solid rgba(245,87,51,0.25)', textAlign: 'center',
                             }}>
                                 <div style={{ fontWeight: 700, fontSize: 'var(--text-sm)', color: 'var(--color-primary)' }}>Avg. time to resolution</div>
                                 <div style={{ fontWeight: 800, fontSize: 'var(--text-2xl)', color: 'var(--color-primary)', marginTop: '4px' }}>Same day</div>
-                                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', marginTop: '4px' }}>Zero manual steps. Full audit trail.</div>
+                                <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>Zero manual steps. Full audit trail.</div>
                             </div>
                         </div>
                     </div>
 
                     {/* Mobile stacked note */}
-                    <p style={{ textAlign: 'center', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)', marginTop: 'var(--space-6)' }}>
+                    <p style={{ textAlign: 'center', fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.3)', marginTop: 'var(--space-6)' }}>
                         Invoice processing shown as example. Nexus automates any multi-step enterprise workflow.
                     </p>
                 </div>
