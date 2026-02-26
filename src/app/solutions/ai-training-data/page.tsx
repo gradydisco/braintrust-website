@@ -281,10 +281,10 @@ export default function AITrainingDataSolution() {
                                             border: '2px solid rgba(255,255,255,0.3)',
                                         }}>2M+</div>
                                     </div>
-                                    <h3 style={{ color: 'white', fontSize: '22px', fontWeight: 800, margin: '0 0 8px', lineHeight: 1.25 }}>
+                                    <h3 style={{ color: 'white', fontSize: '26px', fontWeight: 800, margin: '0 0 10px', lineHeight: 1.2 }}>
                                         Vetted experts,<br />deployed in days.
                                     </h3>
-                                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px', margin: 0, lineHeight: 1.7 }}>
+                                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '16px', margin: 0, lineHeight: 1.7 }}>
                                         Every contributor is sourced from our 2M+ network, assessed through AIR, identity-verified, and calibrated before they touch your data.
                                     </p>
                                 </div>
@@ -586,7 +586,7 @@ export default function AITrainingDataSolution() {
                                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
                                         {['50+ Languages', '100+ Countries', '6 Domains'].map(label => (
                                             <span key={label} style={{
-                                                fontSize: '11px', fontWeight: 700, padding: '5px 12px',
+                                                fontSize: '13px', fontWeight: 700, padding: '6px 14px',
                                                 borderRadius: '20px',
                                                 background: 'rgba(255,255,255,0.08)',
                                                 border: '1px solid rgba(255,255,255,0.12)',
@@ -595,10 +595,10 @@ export default function AITrainingDataSolution() {
                                             }}>{label}</span>
                                         ))}
                                     </div>
-                                    <h3 style={{ color: 'white', fontSize: '20px', fontWeight: 800, margin: '0 0 10px', lineHeight: 1.3 }}>
+                                    <h3 style={{ color: 'white', fontSize: '26px', fontWeight: 800, margin: '0 0 12px', lineHeight: 1.2 }}>
                                         The people behind<br />the data.
                                     </h3>
-                                    <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '13px', margin: 0, lineHeight: 1.6 }}>
+                                    <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '15px', margin: 0, lineHeight: 1.7 }}>
                                         Doctors reviewing medical AI output. Engineers validating code generation. Linguists annotating in their native language. Every contributor is matched by proven expertise — not just availability.
                                     </p>
                                     {/* Avatar row */}
@@ -610,7 +610,7 @@ export default function AITrainingDataSolution() {
                                                 marginLeft: i > 0 ? '-8px' : 0,
                                             }} />
                                         ))}
-                                        <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', marginLeft: '8px' }}>Join 2M+ verified experts</span>
+                                        <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginLeft: '10px' }}>Join 2M+ verified experts</span>
                                     </div>
                                 </div>
                             </div>
