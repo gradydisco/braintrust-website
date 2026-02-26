@@ -199,6 +199,7 @@ export default function TalentMarketplace() {
                         `}</style>
                         <Link href="/solutions/ai-training-data" className="ai-training-cta" style={{
                             display: 'inline-flex', alignItems: 'center', gap: '14px',
+                            fontFamily: 'var(--font-sans)',
                             marginTop: 'var(--space-6)',
                             padding: '14px 24px',
                             borderRadius: '14px',
