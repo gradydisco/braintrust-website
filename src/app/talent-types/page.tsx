@@ -224,53 +224,66 @@ export default function TalentTypes() {
                         <p>Explore the full range of talent categories we support. Each with real roles, fair pay, and opportunities matched to your skill level.</p>
                     </div>
 
-                    <div className="grid grid--2">
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px', maxWidth: 1100, margin: '0 auto' }}>
                         {talentCategories.map((cat) => {
                             const badge = demandBadge(cat.demand);
                             return (
-                                <div key={cat.category} className="card card--feature" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                                    {/* Header */}
-                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                        <div style={{
-                                            width: 48, height: 48, borderRadius: 'var(--radius-lg)',
-                                            background: cat.bg, display: 'flex', alignItems: 'center',
-                                            justifyContent: 'center', color: cat.color, border: `1px solid ${cat.color}20`,
-                                        }}>{cat.icon}</div>
-                                        <span style={{
-                                            fontSize: 11, fontWeight: 700, padding: '3px 10px',
-                                            borderRadius: 'var(--radius-full)',
-                                            background: badge.bg, color: badge.color,
-                                        }}>⬆ {cat.demand}</span>
-                                    </div>
+                                <div key={cat.category} style={{
+                                    background: 'var(--color-white)',
+                                    border: '1px solid var(--color-gray-100)',
+                                    borderRadius: '14px',
+                                    overflow: 'hidden',
+                                    display: 'flex', flexDirection: 'column',
+                                    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                                }}>
+                                    {/* Color accent bar */}
+                                    <div style={{ height: '3px', background: `linear-gradient(90deg, ${cat.color}, ${cat.color}50)` }} />
 
-                                    <div>
-                                        <h4 style={{ marginBottom: 4, fontSize: 'var(--text-xl)' }}>{cat.category}</h4>
-                                        <div style={{
-                                            fontSize: 13, fontWeight: 700, color: cat.color,
-                                            marginBottom: 'var(--space-3)',
-                                        }}>{cat.avgRate}</div>
-                                    </div>
-
-                                    {/* Roles */}
-                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)', flex: 1 }}>
-                                        {cat.roles.map(r => (
-                                            <span key={r} style={{
-                                                fontSize: 12, padding: '4px 12px',
+                                    <div style={{ padding: '18px 18px 14px', display: 'flex', flexDirection: 'column', gap: '10px', flex: 1 }}>
+                                        {/* Header row */}
+                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                                <div style={{
+                                                    width: 36, height: 36, borderRadius: '10px',
+                                                    background: cat.bg, display: 'flex', alignItems: 'center',
+                                                    justifyContent: 'center', color: cat.color, flexShrink: 0,
+                                                }}>{cat.icon}</div>
+                                                <div>
+                                                    <h4 style={{ fontSize: '14px', fontWeight: 700, margin: 0, lineHeight: 1.2 }}>{cat.category}</h4>
+                                                    <div style={{ fontSize: '12px', fontWeight: 700, color: cat.color, marginTop: '2px' }}>{cat.avgRate}</div>
+                                                </div>
+                                            </div>
+                                            <span style={{
+                                                fontSize: 10, fontWeight: 700, padding: '2px 8px',
                                                 borderRadius: 'var(--radius-full)',
-                                                background: 'var(--color-white)',
-                                                border: '1px solid var(--color-gray-100)',
-                                                color: 'var(--text-secondary)', fontWeight: 500,
-                                            }}>{r}</span>
-                                        ))}
-                                    </div>
+                                                background: badge.bg, color: badge.color,
+                                                whiteSpace: 'nowrap', flexShrink: 0,
+                                            }}>⬆ {cat.demand}</span>
+                                        </div>
 
-                                    <Link href="/jobs" style={{
-                                        fontSize: 'var(--text-sm)', fontWeight: 700,
-                                        color: cat.color, textDecoration: 'none',
-                                        marginTop: 'var(--space-2)', display: 'flex', alignItems: 'center', gap: 4,
-                                    }}>
-                                        View open roles <span>→</span>
-                                    </Link>
+                                        {/* Roles */}
+                                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', flex: 1 }}>
+                                            {cat.roles.map(r => (
+                                                <span key={r} style={{
+                                                    fontSize: 11, padding: '3px 9px',
+                                                    borderRadius: 'var(--radius-full)',
+                                                    background: 'var(--color-gray-50)',
+                                                    border: '1px solid var(--color-gray-100)',
+                                                    color: 'var(--text-secondary)', fontWeight: 500,
+                                                    whiteSpace: 'nowrap',
+                                                }}>{r}</span>
+                                            ))}
+                                        </div>
+
+                                        <Link href="/jobs" style={{
+                                            fontSize: '12px', fontWeight: 700,
+                                            color: cat.color, textDecoration: 'none',
+                                            display: 'flex', alignItems: 'center', gap: 4,
+                                            marginTop: 'auto',
+                                        }}>
+                                            View open roles →
+                                        </Link>
+                                    </div>
                                 </div>
                             );
                         })}

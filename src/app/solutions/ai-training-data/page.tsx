@@ -251,78 +251,91 @@ export default function AITrainingDataSolution() {
                     </RevealSection>
 
                     <RevealSection delay={150}>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', maxWidth: '1000px', margin: '0 auto' }}>
-                            {[
-                                {
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>,
-                                    color: '#6366f1',
-                                    title: 'Global Expert Sourcing',
-                                    desc: 'Source from our 2M+ vetted network across 100+ countries. Find niche domain experts, multilingual annotators, and specialized evaluators — in days, not months.',
-                                    stat: '2M+ experts',
-                                },
-                                {
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M12 2a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /></svg>,
-                                    color: '#f59e0b',
-                                    title: 'AI-Powered Vetting (AIR)',
-                                    desc: 'Every contributor is assessed through AIR — our AI recruiter that conducts voice interviews, skills evaluations, and customizable scoring frameworks to ensure quality.',
-                                    stat: 'AI-assessed',
-                                },
-                                {
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>,
-                                    color: '#059669',
-                                    title: 'IDV & Background Checks',
-                                    desc: 'Identity verification, background screening, and NDA enforcement ensure every contributor meets your enterprise security and compliance requirements.',
-                                    stat: 'SOC 2 compliant',
-                                },
-                                {
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
-                                    color: '#ec4899',
-                                    title: 'Funnel Management & Deployment',
-                                    desc: 'We manage the full candidate funnel — sourcing, calibration, onboarding, and seamless deployment directly into your annotation platforms and systems.',
-                                    stat: 'Full lifecycle',
-                                },
-                                {
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" /></svg>,
-                                    color: '#0ea5e9',
-                                    title: 'Quality Assurance',
-                                    desc: 'Dedicated QA managers run multi-layer quality pipelines — IAA scoring, gold standard checks, continuous feedback loops, and real-time reporting dashboards.',
-                                    stat: 'Multi-layer QA',
-                                },
-                                {
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>,
-                                    color: '#8b5cf6',
-                                    title: 'Dedicated Project Management',
-                                    desc: 'Every engagement has a dedicated PM who owns timelines, SLAs, daily standups, and delivery metrics — acting as an extension of your AI team.',
-                                    stat: 'Dedicated PMs',
-                                },
-                            ].map((item) => (
-                                <div key={item.title} style={{
-                                    background: 'var(--color-white)',
-                                    border: '1px solid rgba(50,50,93,0.08)',
-                                    borderRadius: '16px',
-                                    overflow: 'hidden',
-                                    display: 'flex', flexDirection: 'column',
-                                }}>
-                                    <div style={{ height: '3px', background: `linear-gradient(90deg, ${item.color}, ${item.color}60)` }} />
-                                    <div style={{ padding: '24px 22px 18px', flex: 1 }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '24px', maxWidth: '1060px', margin: '0 auto', alignItems: 'stretch' }}>
+                            {/* Left — Human image panel */}
+                            <div style={{
+                                borderRadius: '20px', overflow: 'hidden', position: 'relative',
+                                minHeight: '480px',
+                                background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
+                            }}>
+                                <img
+                                    src="/images/talent_collab_1772040088156.png"
+                                    alt="Expert contributors collaborating on AI training data"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.5, position: 'absolute', inset: 0 }}
+                                />
+                                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 30%, rgba(30,27,75,0.95) 100%)' }} />
+                                <div style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '32px' }}>
+                                    <div style={{ display: 'flex', marginBottom: '16px' }}>
+                                        {['/images/talent_portrait_1.png', '/images/talent_portrait_2.png', '/images/talent_portrait_4.png', '/images/talent_portrait_5.png'].map((src, i) => (
+                                            <img key={i} src={src} alt="" style={{
+                                                width: 40, height: 40, borderRadius: '50%', objectFit: 'cover',
+                                                border: '2px solid rgba(255,255,255,0.3)',
+                                                marginLeft: i > 0 ? '-12px' : 0,
+                                            }} />
+                                        ))}
                                         <div style={{
-                                            width: '42px', height: '42px', borderRadius: '12px',
+                                            width: 40, height: 40, borderRadius: '50%',
+                                            background: 'rgba(255,255,255,0.15)', color: 'white',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            fontSize: '11px', fontWeight: 700, marginLeft: '-12px',
+                                            border: '2px solid rgba(255,255,255,0.3)',
+                                        }}>2M+</div>
+                                    </div>
+                                    <h3 style={{ color: 'white', fontSize: '22px', fontWeight: 800, margin: '0 0 8px', lineHeight: 1.25 }}>
+                                        Vetted experts,<br />deployed in days.
+                                    </h3>
+                                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', margin: 0, lineHeight: 1.6 }}>
+                                        Every contributor is sourced from our 2M+ network, assessed through AIR, identity-verified, and calibrated before they touch your data.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Right — Capability items */}
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                                {[
+                                    {
+                                        color: '#6366f1', title: 'Global Expert Sourcing', desc: 'Source from 2M+ vetted experts across 100+ countries. Find niche domain specialists in days.', stat: '2M+ experts',
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
+                                    },
+                                    {
+                                        color: '#f59e0b', title: 'AI-Powered Vetting', desc: 'AIR conducts voice interviews, skills evaluations, and customizable scoring frameworks.', stat: 'AI-assessed',
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M12 2a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /></svg>
+                                    },
+                                    {
+                                        color: '#059669', title: 'IDV & Background Checks', desc: 'Identity verification, NDA enforcement, and screening for enterprise compliance.', stat: 'SOC 2 compliant',
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+                                    },
+                                    {
+                                        color: '#ec4899', title: 'Funnel & Deployment', desc: 'Full funnel management — sourcing, calibration, onboarding, and seamless deployment.', stat: 'Full lifecycle',
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /></svg>
+                                    },
+                                    {
+                                        color: '#0ea5e9', title: 'Quality Assurance', desc: 'Multi-layer QA — IAA scoring, gold standard checks, feedback loops, and reporting.', stat: 'Multi-layer QA',
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" /></svg>
+                                    },
+                                    {
+                                        color: '#8b5cf6', title: 'Dedicated PMs', desc: 'Dedicated PM per engagement — timelines, SLAs, standups, and delivery metrics.', stat: 'Always-on',
+                                        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
+                                    },
+                                ].map((item) => (
+                                    <div key={item.title} style={{
+                                        background: 'var(--color-white)',
+                                        border: '1px solid rgba(50,50,93,0.08)',
+                                        borderRadius: '14px',
+                                        padding: '18px',
+                                        display: 'flex', flexDirection: 'column', gap: '8px',
+                                    }}>
+                                        <div style={{
+                                            width: '34px', height: '34px', borderRadius: '10px',
                                             background: `${item.color}0a`, color: item.color,
                                             display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            marginBottom: '16px',
                                         }}>{item.icon}</div>
-                                        <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>{item.title}</h4>
-                                        <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                                        <h4 style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>{item.title}</h4>
+                                        <p style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.55, margin: 0 }}>{item.desc}</p>
+                                        <span style={{ fontSize: '11px', fontWeight: 700, color: item.color, marginTop: 'auto' }}>{item.stat}</span>
                                     </div>
-                                    <div style={{
-                                        borderTop: '1px solid rgba(50,50,93,0.05)',
-                                        padding: '10px 22px',
-                                        background: 'rgba(248,250,252,0.6)',
-                                    }}>
-                                        <span style={{ fontSize: '12px', fontWeight: 700, color: item.color }}>{item.stat}</span>
-                                    </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </RevealSection>
                 </div>
@@ -339,27 +352,95 @@ export default function AITrainingDataSolution() {
                         </div>
                     </RevealSection>
                     <RevealSection delay={200}>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', maxWidth: '1000px', margin: '0 auto' }}>
-                            {[
-                                { title: 'RLHF Contributors', desc: 'Domain experts who rate, rank, and compare model outputs — providing the human preference signals your post-training pipeline needs.', stat: 'Enterprise scale', color: '#6366f1' },
-                                { title: 'Data Annotators & Labelers', desc: 'Structured annotation across text, image, video, and audio. Multi-language, multi-domain capability — deployed directly into your labeling platform.', stat: 'Multi-modal', color: '#059669' },
-                                { title: 'Model Evaluators', desc: 'Trained evaluators who assess AI outputs for accuracy, safety, helpfulness, and domain correctness using your protocols and rubrics.', stat: 'Custom rubrics', color: '#f59e0b' },
-                                { title: 'Red Team Experts', desc: 'Adversarial testing specialists who probe your models for vulnerabilities, harmful outputs, and edge cases — across safety-critical domains.', stat: 'Pre-launch safety', color: '#ec4899' },
-                                { title: 'Prompt Engineers & Testers', desc: 'Specialists who test, validate, and optimize prompt designs — evaluating model responses across input patterns and edge cases.', stat: 'Input optimization', color: '#0ea5e9' },
-                                { title: 'Domain Expert Reviewers', desc: 'Credentialed specialists — doctors, lawyers, engineers, scientists — who validate AI output accuracy and provide authoritative corrections.', stat: 'Credentialed', color: '#8b5cf6' },
-                            ].map((item) => (
-                                <div key={item.title} style={{
-                                    background: 'var(--color-white)',
-                                    border: '1px solid var(--color-gray-100)',
-                                    borderRadius: '14px',
-                                    padding: '24px',
-                                    borderLeft: `3px solid ${item.color}`,
+                        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                            {/* Top row — 2 featured cards */}
+                            <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: '16px', marginBottom: '16px' }}>
+                                {/* RLHF — hero card */}
+                                <div style={{
+                                    background: 'linear-gradient(135deg, #312e81, #4338ca)',
+                                    borderRadius: '18px', padding: '28px', position: 'relative', overflow: 'hidden',
+                                    display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', minHeight: '220px',
                                 }}>
-                                    <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>{item.title}</h4>
-                                    <p style={{ fontSize: '13px', lineHeight: 1.65, color: 'var(--text-secondary)', margin: '0 0 12px' }}>{item.desc}</p>
-                                    <span style={{ fontSize: '11px', fontWeight: 700, color: item.color, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{item.stat}</span>
+                                    <div style={{ position: 'absolute', top: '16px', right: '16px' }}>
+                                        <img src="/images/talent_portrait_3.png" alt="" style={{ width: 48, height: 48, borderRadius: '50%', objectFit: 'cover', border: '3px solid rgba(255,255,255,0.2)' }} />
+                                    </div>
+                                    <div style={{
+                                        position: 'absolute', top: '50%', left: '60%', width: '200px', height: '200px',
+                                        background: 'radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%)',
+                                        transform: 'translate(-50%, -50%)', pointerEvents: 'none',
+                                    }} />
+                                    <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', marginBottom: '8px' }}>Most Requested</span>
+                                    <h3 style={{ color: 'white', fontSize: '20px', fontWeight: 800, margin: '0 0 8px' }}>RLHF Contributors</h3>
+                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', margin: 0, lineHeight: 1.6, maxWidth: '320px' }}>
+                                        Domain experts who rate, rank, and compare model outputs — providing the human preference signals your post-training pipeline needs.
+                                    </p>
+                                    <span style={{ marginTop: '14px', fontSize: '12px', fontWeight: 700, color: '#a5b4fc' }}>Enterprise scale →</span>
                                 </div>
-                            ))}
+
+                                {/* Data Annotators */}
+                                <div style={{
+                                    background: 'var(--color-white)', border: '1px solid var(--color-gray-100)',
+                                    borderRadius: '18px', padding: '28px',
+                                    display: 'flex', flexDirection: 'column', justifyContent: 'center',
+                                    position: 'relative', overflow: 'hidden',
+                                }}>
+                                    <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '100px', height: '100px', background: 'radial-gradient(circle, rgba(5,150,105,0.08) 0%, transparent 70%)' }} />
+                                    <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: '#0596690a', color: '#059669', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" /><line x1="7" y1="7" x2="7.01" y2="7" /></svg>
+                                    </div>
+                                    <h4 style={{ fontSize: '17px', fontWeight: 700, margin: '0 0 8px' }}>Data Annotators &amp; Labelers</h4>
+                                    <p style={{ fontSize: '13px', lineHeight: 1.65, color: 'var(--text-secondary)', margin: '0 0 12px' }}>
+                                        Structured annotation across text, image, video, and audio. Multi-language, multi-domain capability.
+                                    </p>
+                                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#059669' }}>Multi-modal →</span>
+                                </div>
+                            </div>
+
+                            {/* Middle row — 3 compact cards */}
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '16px' }}>
+                                {[
+                                    { title: 'Model Evaluators', desc: 'Trained evaluators assessing AI outputs for accuracy, safety, and domain correctness.', stat: 'Custom rubrics', color: '#f59e0b' },
+                                    { title: 'Red Team Experts', desc: 'Adversarial specialists probing your models for vulnerabilities and harmful outputs.', stat: 'Pre-launch safety', color: '#ec4899' },
+                                    { title: 'Prompt Engineers', desc: 'Specialists testing and optimizing prompt designs across input patterns and edge cases.', stat: 'Input optimization', color: '#0ea5e9' },
+                                ].map((item) => (
+                                    <div key={item.title} style={{
+                                        background: 'var(--color-white)',
+                                        border: '1px solid var(--color-gray-100)',
+                                        borderRadius: '14px',
+                                        padding: '22px', borderTop: `3px solid ${item.color}`,
+                                    }}>
+                                        <h4 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>{item.title}</h4>
+                                        <p style={{ fontSize: '12.5px', lineHeight: 1.6, color: 'var(--text-secondary)', margin: '0 0 10px' }}>{item.desc}</p>
+                                        <span style={{ fontSize: '11px', fontWeight: 700, color: item.color, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{item.stat}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Bottom — full-width callout */}
+                            <div style={{
+                                background: 'var(--color-white)',
+                                border: '1px solid var(--color-gray-100)',
+                                borderRadius: '16px',
+                                padding: '24px 28px',
+                                display: 'flex', alignItems: 'center', gap: '24px',
+                            }}>
+                                <div style={{ display: 'flex', flexShrink: 0 }}>
+                                    {['/images/talent_portrait_1.png', '/images/talent_portrait_5.png'].map((src, i) => (
+                                        <img key={i} src={src} alt="" style={{
+                                            width: 44, height: 44, borderRadius: '50%', objectFit: 'cover',
+                                            border: '3px solid white', marginLeft: i > 0 ? '-10px' : 0,
+                                            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                                        }} />
+                                    ))}
+                                </div>
+                                <div style={{ flex: 1 }}>
+                                    <h4 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 4px' }}>Domain Expert Reviewers</h4>
+                                    <p style={{ fontSize: '13px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                                        Credentialed specialists — doctors, lawyers, engineers, scientists — who validate AI output accuracy and provide authoritative corrections.
+                                    </p>
+                                </div>
+                                <span style={{ fontSize: '12px', fontWeight: 700, color: '#8b5cf6', whiteSpace: 'nowrap', flexShrink: 0 }}>Credentialed →</span>
+                            </div>
                         </div>
                     </RevealSection>
                 </div>
