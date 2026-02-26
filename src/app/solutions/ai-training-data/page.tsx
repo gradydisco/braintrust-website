@@ -93,25 +93,9 @@ export default function AITrainingDataSolution() {
                             <a href="#how-we-work" className="btn btn--secondary btn--lg">How We Work →</a>
                         </div>
 
-                        {/* Hero stat chips */}
-                        <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: 'var(--space-10)', flexWrap: 'wrap' }}>
-                            {[
-                                { value: '2M+', label: 'Domain Experts' },
-                                { value: '100+', label: 'Countries' },
-                                { value: '50+', label: 'Languages' },
-                                { value: 'Days', label: 'to Ramp' },
-                            ].map((s) => (
-                                <div key={s.label} style={{
-                                    display: 'flex', alignItems: 'center', gap: '8px',
-                                    padding: '8px 18px', borderRadius: '100px',
-                                    background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(8px)',
-                                    border: '1px solid rgba(0,0,0,0.06)',
-                                    boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
-                                }}>
-                                    <span style={{ fontSize: '16px', fontWeight: 800, color: 'var(--color-primary)' }}>{s.value}</span>
-                                    <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-tertiary)' }}>{s.label}</span>
-                                </div>
-                            ))}
+                        {/* Annotation demo — inline */}
+                        <div style={{ marginTop: 'var(--space-12)', maxWidth: '820px', marginLeft: 'auto', marginRight: 'auto' }}>
+                            <AnnotationDemo />
                         </div>
                     </div>
                 </div>
@@ -431,21 +415,6 @@ export default function AITrainingDataSolution() {
                 </div>
             </section>
 
-            {/* ====== ANNOTATION DEMO ====== */}
-            <section className="section" style={{ background: 'linear-gradient(180deg, white 0%, var(--color-gray-50) 100%)' }}>
-                <div className="container">
-                    <RevealSection>
-                        <div className="section-header">
-                            <div className="badge badge--accent">In Action</div>
-                            <h2>Our annotators, powering your pipeline</h2>
-                            <p>This is what it looks like when our expert contributors — sourced, vetted, and managed by Braintrust — are working inside your systems.</p>
-                        </div>
-                    </RevealSection>
-                    <RevealSection delay={200}>
-                        <AnnotationDemo />
-                    </RevealSection>
-                </div>
-            </section>
 
             {/* ====== CASE STUDIES — VERIFIED RESULTS ====== */}
             <section className="section" style={{ background: 'var(--color-gray-950)', position: 'relative', overflow: 'hidden' }}>
