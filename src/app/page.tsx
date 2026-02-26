@@ -123,8 +123,8 @@ export default function Home() {
 
           <RevealSection delay={200}>
             <div className={`grid grid--3 ${styles.ecosystemGrid}`}>
-              <div className={`card card--feature ${styles.ecosystemCard}`} style={{ paddingTop: '0', overflow: 'hidden' }}>
-                <div style={{ height: '140px', background: 'var(--color-gray-100)', position: 'relative', margin: '0 -24px 24px', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+              <div className={`card card--feature ${styles.ecosystemCard}`} style={{ padding: '0', overflow: 'hidden' }}>
+                <div style={{ height: '160px', background: 'var(--color-gray-100)', position: 'relative', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
                   <img src="/images/air_interview_side.png" alt="AIR UI Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <div style={{
                     position: 'absolute', bottom: '12%', left: '10%', right: '10%',
@@ -138,15 +138,17 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <h4>Products &amp; Platform</h4>
-                <p>Talent Marketplace, AIR (AI Recruiter), and Nexus — enterprise tools built for the AI era.</p>
-                <Link href="/products" className={styles.cardLink}>
-                  Explore Products →
-                </Link>
+                <div style={{ padding: '20px 24px 24px' }}>
+                  <h4>Products &amp; Platform</h4>
+                  <p>Talent Marketplace, AIR (AI Recruiter), and Nexus — enterprise tools built for the AI era.</p>
+                  <Link href="/products" className={styles.cardLink}>
+                    Explore Products →
+                  </Link>
+                </div>
               </div>
 
-              <div className={`card card--feature ${styles.ecosystemCard}`} style={{ paddingTop: '0', overflow: 'hidden' }}>
-                <div style={{ height: '140px', background: 'var(--color-gray-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 -24px 24px', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+              <div className={`card card--feature ${styles.ecosystemCard}`} style={{ padding: '0', overflow: 'hidden' }}>
+                <div style={{ height: '160px', background: 'var(--color-gray-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
                   <div style={{ display: 'flex', alignItems: 'center' }}>
                     {[1, 2, 3, 4, 5].map((num, i) => (
                       <div key={num} style={{
@@ -160,15 +162,17 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-                <h4>Talent Network</h4>
-                <p>2M+ professionals finding jobs, earning income, and contributing to AI training initiatives.</p>
-                <Link href="/for-talent" className={styles.cardLink}>
-                  Join the Network →
-                </Link>
+                <div style={{ padding: '20px 24px 24px' }}>
+                  <h4>Talent Network</h4>
+                  <p>2M+ professionals finding jobs, earning income, and contributing to AI training initiatives.</p>
+                  <Link href="/for-talent" className={styles.cardLink}>
+                    Join the Network →
+                  </Link>
+                </div>
               </div>
 
-              <div className={`card card--feature ${styles.ecosystemCard}`} style={{ paddingTop: '0', overflow: 'hidden' }}>
-                <div style={{ height: '140px', background: 'linear-gradient(135deg, #111827, #1f2937)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 -24px 24px', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+              <div className={`card card--feature ${styles.ecosystemCard}`} style={{ padding: '0', overflow: 'hidden' }}>
+                <div style={{ height: '160px', background: 'linear-gradient(135deg, #111827, #1f2937)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
                   <div style={{
                     width: '80px', height: '80px', borderRadius: '20px',
                     background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -177,11 +181,13 @@ export default function Home() {
                     <img src="/images/braintrust-btrst-logo.png" alt="BTRST Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   </div>
                 </div>
-                <h4>BTRST Token</h4>
-                <p>Network incentives, ecosystem rewards, and transparent tokenomics powering the platform.</p>
-                <Link href="/token" className={styles.cardLink}>
-                  Learn about BTRST →
-                </Link>
+                <div style={{ padding: '20px 24px 24px' }}>
+                  <h4>BTRST Token</h4>
+                  <p>Network incentives, ecosystem rewards, and transparent tokenomics powering the platform.</p>
+                  <Link href="/token" className={styles.cardLink}>
+                    Learn about BTRST →
+                  </Link>
+                </div>
               </div>
             </div>
           </RevealSection>
