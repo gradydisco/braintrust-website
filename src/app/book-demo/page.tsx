@@ -73,7 +73,7 @@ export default function BookDemo() {
                     <div style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1.2fr) minmax(300px, 0.8fr)', gap: 'var(--space-12)', alignItems: 'start' }}>
 
                         {/* LEFT FORM */}
-                        <form onSubmit={handleSubmit} className={styles.form} id="book-demo-form" style={{ maxWidth: '100%', margin: 0, padding: 0, background: 'transparent', boxShadow: 'none' }}>
+                        <form onSubmit={handleSubmit} className={styles.form} id="book-demo-form">
                             <div className={styles.formGrid}>
                                 <div className="form-group">
                                     <label htmlFor="firstName" className="form-label">First Name *</label>
