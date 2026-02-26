@@ -117,105 +117,91 @@ export default function Pricing() {
                                 {/* Visual header */}
                                 {product.name === 'Talent Marketplace' && (
                                     <div style={{
-                                        height: '140px', background: 'linear-gradient(135deg, #f0f4ff, #e8ecf8)',
+                                        height: '160px', background: 'var(--color-gray-50)',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        borderBottom: '1px solid rgba(0,0,0,0.05)', position: 'relative', overflow: 'hidden',
+                                        borderBottom: '1px solid rgba(0,0,0,0.05)',
                                     }}>
-                                        {/* Floating avatar grid */}
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                            {[
-                                                { bg: '#6366f1', icon: '👩‍💻' },
-                                                { bg: '#059669', icon: '🧑‍🔬' },
-                                                { bg: '#f59e0b', icon: '👨‍🎨' },
-                                                { bg: '#ec4899', icon: '👩‍⚕️' },
-                                                { bg: '#8b5cf6', icon: '🧑‍💼' },
-                                            ].map((a, i) => (
-                                                <div key={i} style={{
-                                                    width: '44px', height: '44px', borderRadius: '12px',
-                                                    background: `${a.bg}15`, border: `1.5px solid ${a.bg}30`,
-                                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                    fontSize: '20px',
+                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                            {[1, 2, 3, 4, 5].map((num, i) => (
+                                                <div key={num} style={{
+                                                    width: '52px', height: '52px', borderRadius: '50%',
+                                                    border: '3px solid white', marginLeft: i > 0 ? '-14px' : '0',
+                                                    overflow: 'hidden', position: 'relative', zIndex: 5 - i,
+                                                    boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
                                                 }}>
-                                                    {a.icon}
+                                                    <img src={`/images/talent_portrait_${num}.png`} alt="Talent" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                                 </div>
                                             ))}
+                                            <div style={{
+                                                width: '52px', height: '52px', borderRadius: '50%',
+                                                border: '3px solid white', marginLeft: '-14px',
+                                                background: 'var(--color-primary)', display: 'flex',
+                                                alignItems: 'center', justifyContent: 'center',
+                                                fontSize: '13px', fontWeight: 700, color: 'white',
+                                                zIndex: 0, boxShadow: '0 4px 10px rgba(0,0,0,0.08)',
+                                            }}>
+                                                2M+
+                                            </div>
                                         </div>
-                                        {/* Connection lines */}
-                                        <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.15 }}>
-                                            <line x1="20%" y1="30%" x2="40%" y2="50%" stroke="#6366f1" strokeWidth="1" />
-                                            <line x1="40%" y1="50%" x2="60%" y2="40%" stroke="#6366f1" strokeWidth="1" />
-                                            <line x1="60%" y1="40%" x2="80%" y2="60%" stroke="#6366f1" strokeWidth="1" />
-                                        </svg>
                                     </div>
                                 )}
 
                                 {product.name === 'AI Recruiting Suite' && (
                                     <div style={{
-                                        height: '140px', background: 'linear-gradient(135deg, #fff7ed, #fef3c7)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        borderBottom: '1px solid rgba(0,0,0,0.05)', position: 'relative',
+                                        height: '160px', background: 'var(--color-gray-100)',
+                                        position: 'relative', borderBottom: '1px solid rgba(0,0,0,0.05)',
+                                        overflow: 'hidden',
                                     }}>
-                                        {/* Waveform / interview visual */}
-                                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-                                            <div style={{
-                                                width: '52px', height: '52px', borderRadius: '50%',
-                                                background: 'linear-gradient(135deg, var(--color-primary), #f97316)',
-                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                boxShadow: '0 4px 16px rgba(245,87,51,0.25)',
-                                            }}>
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
-                                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
-                                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                                                    <line x1="12" y1="19" x2="12" y2="23" />
-                                                    <line x1="8" y1="23" x2="16" y2="23" />
-                                                </svg>
-                                            </div>
-                                            {/* Waveform bars */}
-                                            <div style={{ display: 'flex', gap: '2px', alignItems: 'center' }}>
-                                                {[16, 24, 32, 20, 28, 36, 24, 16, 28, 20, 32, 24, 16, 28, 36, 20, 24].map((h, i) => (
-                                                    <div key={i} style={{
-                                                        width: '3px', height: `${h}px`, borderRadius: '2px',
-                                                        background: `rgba(245,87,51,${0.2 + (h / 50)})`,
-                                                    }} />
-                                                ))}
-                                            </div>
+                                        <img src="/images/air_interview_side.png" alt="AIR Interview UI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <div style={{
+                                            position: 'absolute', bottom: '12%', left: '8%', right: '8%',
+                                            background: 'rgba(255, 255, 255, 0.88)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+                                            padding: '10px 14px', borderRadius: '12px 12px 12px 2px',
+                                            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                                        }}>
+                                            <div style={{ fontSize: '9px', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '2px' }}>AIR</div>
+                                            <p style={{ fontSize: '11px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.3, fontWeight: 500 }}>
+                                                &quot;That&apos;s a great example. Could you elaborate...&quot;
+                                            </p>
                                         </div>
                                     </div>
                                 )}
 
                                 {product.name === 'Nexus' && (
                                     <div style={{
-                                        height: '140px', background: 'linear-gradient(135deg, #111827, #1e293b)',
+                                        height: '160px', background: 'linear-gradient(135deg, #f8fafc, #eef2ff)',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        borderBottom: '1px solid rgba(0,0,0,0.05)', position: 'relative',
+                                        borderBottom: '1px solid rgba(0,0,0,0.05)', padding: '0 24px',
                                     }}>
-                                        {/* Geometric node icon */}
-                                        <div style={{
-                                            width: '64px', height: '64px', borderRadius: '16px',
-                                            background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            boxShadow: '0 4px 24px rgba(0,0,0,0.3)',
-                                        }}>
-                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(165,180,252,0.9)" strokeWidth="1.5" strokeLinecap="round">
-                                                <circle cx="12" cy="12" r="3" />
-                                                <circle cx="4" cy="6" r="2" />
-                                                <circle cx="20" cy="6" r="2" />
-                                                <circle cx="4" cy="18" r="2" />
-                                                <circle cx="20" cy="18" r="2" />
-                                                <line x1="9.5" y1="10" x2="5.5" y2="7.5" />
-                                                <line x1="14.5" y1="10" x2="18.5" y2="7.5" />
-                                                <line x1="9.5" y1="14" x2="5.5" y2="16.5" />
-                                                <line x1="14.5" y1="14" x2="18.5" y2="16.5" />
-                                            </svg>
+                                        {/* Workflow steps */}
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0px', width: '100%', justifyContent: 'center' }}>
+                                            {[
+                                                { label: 'Trigger', icon: '⚡', bg: '#6366f1' },
+                                                { label: 'Process', icon: '⚙️', bg: '#059669' },
+                                                { label: 'Decide', icon: '🔀', bg: '#f59e0b' },
+                                                { label: 'Execute', icon: '✅', bg: '#10b981' },
+                                            ].map((step, i) => (
+                                                <div key={step.label} style={{ display: 'flex', alignItems: 'center' }}>
+                                                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+                                                        <div style={{
+                                                            width: '40px', height: '40px', borderRadius: '10px',
+                                                            background: `${step.bg}12`, border: `1.5px solid ${step.bg}25`,
+                                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                            fontSize: '16px',
+                                                        }}>
+                                                            {step.icon}
+                                                        </div>
+                                                        <span style={{ fontSize: '9px', fontWeight: 600, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{step.label}</span>
+                                                    </div>
+                                                    {i < 3 && (
+                                                        <div style={{
+                                                            width: '28px', height: '1.5px', background: 'var(--color-gray-200)',
+                                                            margin: '0 4px', marginBottom: '18px',
+                                                        }} />
+                                                    )}
+                                                </div>
+                                            ))}
                                         </div>
-                                        {/* Subtle grid dots */}
-                                        <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.08 }}>
-                                            {Array.from({ length: 8 }).map((_, row) =>
-                                                Array.from({ length: 16 }).map((_, col) => (
-                                                    <circle key={`${row}-${col}`} cx={`${6 + col * 6}%`} cy={`${10 + row * 12}%`} r="1" fill="white" />
-                                                ))
-                                            )}
-                                        </svg>
                                     </div>
                                 )}
 
