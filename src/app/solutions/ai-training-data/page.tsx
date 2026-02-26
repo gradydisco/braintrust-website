@@ -19,32 +19,32 @@ const aiCompanies = [
 const skillCategories = [
     {
         title: 'Data & AI Annotation',
-        color: '#6366f1',
+        avatar: '/images/talent_portrait_1.png',
         skills: ['AI Annotation Specialist', 'Data Annotator', 'Human-in-the-loop QA', 'AI Trainer', 'Prompt Engineer', 'AI Conversational Designer', 'GPT Specialist', 'Linguistic Annotator', 'Audio Transcriber', 'Transcription QA', 'Labeling QA Specialist', 'Image / Video Tagger', 'Taxonomy Designer', 'Content Rater'],
     },
     {
         title: 'Software Engineering',
-        color: '#059669',
+        avatar: '/images/talent_portrait_2.png',
         skills: ['Backend & API Development', 'Frontend & UI Engineering', 'Full Stack Engineering', 'DevOps & Automation', 'Data Engineering', 'Cloud Architecture & Infra', 'Security & Access Control', 'QA & Test Engineering', 'Mobile Development', 'Platform Engineering'],
     },
     {
         title: 'Regulated Domains',
-        color: '#ec4899',
+        avatar: '/images/talent_portrait_3.png',
         skills: ['Health & Life Sciences', 'Law & Policy', 'Finance & Accounting', 'Consulting & Strategy', 'Compliance & Risk', 'Privacy & Ethics', 'Insurance & Benefits', 'Governance & Standards'],
     },
     {
         title: 'Creative & Content',
-        color: '#f59e0b',
+        avatar: '/images/talent_portrait_4.png',
         skills: ['Content & Copywriting', 'Marketing & Brand Strategy', 'Design & Visual Communication', 'Social & Community', 'Advertising & Campaigns', 'UX Writing & Research', 'Creative Direction', 'Multimedia & Production'],
     },
     {
         title: 'Product',
-        color: '#0ea5e9',
+        avatar: '/images/talent_portrait_5.png',
         skills: ['Product Management', 'Technical PM', 'Growth & Ops Strategy', 'Business Analysis', 'Product Ownership', 'Platform & Tooling Strategy', 'User Research', 'Workflow Optimization'],
     },
     {
         title: 'STEM & Technical Domains',
-        color: '#8b5cf6',
+        avatar: '/images/talent_portrait_1.png',
         skills: ['Physics', 'Chemistry', 'Biology / Life Sciences', 'Environmental Science', 'Electrical / Mechanical Eng', 'Mathematics / Statistics', 'Quantitative Analysis', 'Data Science / AI Research', 'Machine Learning Engineering'],
     },
 ];
@@ -610,12 +610,14 @@ export default function AITrainingDataSolution() {
                                     }}>
                                         <div style={{
                                             padding: '12px 16px',
-                                            background: `${cat.color}06`,
-                                            borderBottom: `2px solid ${cat.color}20`,
-                                            display: 'flex', alignItems: 'center', gap: '8px',
+                                            borderBottom: '1px solid var(--color-gray-100)',
+                                            display: 'flex', alignItems: 'center', gap: '10px',
                                         }}>
-                                            <div style={{ width: 8, height: 8, borderRadius: '3px', background: cat.color }} />
-                                            <h4 style={{ fontSize: '14px', fontWeight: 700, color: cat.color, margin: 0 }}>{cat.title}</h4>
+                                            <img src={cat.avatar} alt="" style={{
+                                                width: 28, height: 28, borderRadius: '50%', objectFit: 'cover',
+                                                border: '2px solid var(--color-gray-100)', flexShrink: 0,
+                                            }} />
+                                            <h4 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>{cat.title}</h4>
                                         </div>
                                         <div style={{ padding: '14px 18px' }}>
                                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
