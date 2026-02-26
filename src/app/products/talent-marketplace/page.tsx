@@ -191,7 +191,13 @@ export default function TalentMarketplace() {
                         </div>
 
                         {/* AI Training Data CTA */}
-                        <Link href="/solutions/ai-training-data" style={{
+                        <style>{`
+                            @keyframes aiCtaShimmer {
+                                0% { background-position: -200% center; }
+                                100% { background-position: 200% center; }
+                            }
+                        `}</style>
+                        <Link href="/solutions/ai-training-data" className="ai-training-cta" style={{
                             display: 'inline-flex', alignItems: 'center', gap: '14px',
                             marginTop: 'var(--space-6)',
                             padding: '14px 24px',
@@ -201,17 +207,29 @@ export default function TalentMarketplace() {
                             textDecoration: 'none',
                             boxShadow: '0 4px 20px rgba(99, 102, 241, 0.15)',
                             transition: 'all 0.25s ease',
+                            position: 'relative',
+                            overflow: 'hidden',
                         }}>
+                            {/* Shimmer overlay */}
+                            <div style={{
+                                position: 'absolute', inset: 0,
+                                background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 40%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.06) 60%, transparent 100%)',
+                                backgroundSize: '200% 100%',
+                                animation: 'aiCtaShimmer 3s ease-in-out infinite',
+                                pointerEvents: 'none',
+                            }} />
                             <span style={{
                                 fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.85)',
+                                position: 'relative', zIndex: 1,
                             }}>
-                                🧠 Need <strong style={{ color: '#c7d2fe' }}>AI training data & human experts</strong>? See our dedicated program
+                                Need <strong style={{ color: '#c7d2fe' }}>AI training data &amp; human experts</strong>? See our dedicated program
                             </span>
                             <span style={{
                                 padding: '5px 12px', borderRadius: 'var(--radius-full)',
                                 background: 'rgba(99, 102, 241, 0.3)',
                                 fontSize: '12px', fontWeight: 700, color: '#a5b4fc',
                                 whiteSpace: 'nowrap',
+                                position: 'relative', zIndex: 1,
                             }}>
                                 Explore →
                             </span>
