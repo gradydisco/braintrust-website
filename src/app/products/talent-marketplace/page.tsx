@@ -4,7 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
 import RevealSection from '@/components/RevealSection';
-import MarketplaceStatsStrip from '@/components/MarketplaceStatsStrip';
+
 import LogoMarquee from '@/components/LogoMarquee';
 import G2BadgeStrip from '@/components/G2BadgeStrip';
 
@@ -244,10 +244,152 @@ export default function TalentMarketplace() {
                 </div>
             </section>
 
-            {/* ====== STATS STRIP — Dark, animated real community data ====== */}
-            <section className="section section--dark">
+            {/* ====== HOW IT WORKS — 3 STEPS ====== */}
+            <section className="section" style={{ background: 'var(--color-white)' }}>
                 <div className="container">
-                    <MarketplaceStatsStrip />
+                    <RevealSection>
+                        <div className="section-header">
+                            <div className="badge">How It Works</div>
+                            <h2>Hire world-class talent in<br /><span className="text-gradient">three simple steps.</span></h2>
+                            <p>From job post to productive team member — in days, not months.</p>
+                        </div>
+                    </RevealSection>
+                    <RevealSection delay={200}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-8)', maxWidth: 960, margin: '0 auto' }}>
+                            {[
+                                {
+                                    step: '01',
+                                    title: 'Post your role',
+                                    description: 'Use our AI Job Assistant to craft the perfect posting in seconds — or integrate directly with your ATS. Your role is live in minutes.',
+                                    detail: 'AI-powered job descriptions',
+                                    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>,
+                                },
+                                {
+                                    step: '02',
+                                    title: 'Review matched candidates',
+                                    description: 'Our AI instantly surfaces the top candidates from 2M+ professionals. AIR handles first-round screening so you only interview the best.',
+                                    detail: 'Top 5 matches in hours',
+                                    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
+                                },
+                                {
+                                    step: '03',
+                                    title: 'Get to work',
+                                    description: 'We handle onboarding, compliance, background checks, worker classification, and global payroll — all in one platform.',
+                                    detail: 'Fully managed onboarding',
+                                    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>,
+                                },
+                            ].map((item) => (
+                                <div key={item.step} style={{
+                                    position: 'relative',
+                                    padding: 'var(--space-8)',
+                                    background: 'var(--bg-secondary)',
+                                    borderRadius: 'var(--radius-xl)',
+                                    border: '1px solid var(--color-gray-100)',
+                                }}>
+                                    <div style={{
+                                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                        marginBottom: 'var(--space-5)',
+                                    }}>
+                                        <div style={{
+                                            width: 48, height: 48, borderRadius: '14px',
+                                            background: 'linear-gradient(135deg, rgba(245,87,51,0.08), rgba(245,87,51,0.03))',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            color: 'var(--color-primary)',
+                                        }}>
+                                            {item.icon}
+                                        </div>
+                                        <span style={{
+                                            fontSize: '32px', fontWeight: 800,
+                                            color: 'rgba(245,87,51,0.1)',
+                                            lineHeight: 1,
+                                        }}>{item.step}</span>
+                                    </div>
+                                    <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>{item.title}</h4>
+                                    <p style={{ fontSize: '14px', lineHeight: 1.65, color: 'var(--text-secondary)', margin: '0 0 16px' }}>{item.description}</p>
+                                    <span style={{
+                                        fontSize: '12px', fontWeight: 700, color: 'var(--color-primary)',
+                                        padding: '4px 10px', borderRadius: 'var(--radius-full)',
+                                        background: 'var(--color-primary-50)',
+                                    }}>{item.detail}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </RevealSection>
+                </div>
+            </section>
+
+            {/* ====== TRADITIONAL VS BRAINTRUST ====== */}
+            <section className="section section--dark" style={{ position: 'relative', overflow: 'hidden' }}>
+                <div style={{
+                    position: 'absolute', inset: 0, zIndex: 0,
+                    backgroundImage: 'radial-gradient(ellipse 80% 50% at 50% 40%, rgba(245,87,51,0.06) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                }} />
+                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+                    <RevealSection>
+                        <div className="section-header" style={{ textAlign: 'center' }}>
+                            <div className="badge badge--dark">The Numbers Don&apos;t Lie</div>
+                            <h2 style={{ color: 'var(--color-white)' }}>
+                                Why 1,000+ companies<br />
+                                <span className="text-gradient">switched to Braintrust.</span>
+                            </h2>
+                        </div>
+                    </RevealSection>
+                    <RevealSection delay={200}>
+                        <div style={{
+                            maxWidth: 800, margin: '0 auto',
+                            borderRadius: 'var(--radius-xl)',
+                            overflow: 'hidden',
+                            border: '1px solid rgba(255,255,255,0.08)',
+                        }}>
+                            {/* Table header */}
+                            <div style={{
+                                display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',
+                                background: 'rgba(255,255,255,0.04)',
+                                borderBottom: '1px solid rgba(255,255,255,0.08)',
+                            }}>
+                                <div style={{ padding: '16px 24px' }} />
+                                <div style={{ padding: '16px 24px', textAlign: 'center' }}>
+                                    <span style={{ fontSize: '13px', fontWeight: 700, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Traditional Agency</span>
+                                </div>
+                                <div style={{ padding: '16px 24px', textAlign: 'center' }}>
+                                    <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Braintrust</span>
+                                </div>
+                            </div>
+                            {/* Table rows */}
+                            {[
+                                { label: 'Agency Markup', traditional: '20–40%', braintrust: '0%', highlight: true },
+                                { label: 'Time to First Match', traditional: '2–6 weeks', braintrust: '< 48 hours', highlight: false },
+                                { label: 'Cost Savings', traditional: 'Baseline', braintrust: '30–70% less', highlight: true },
+                                { label: 'Talent Vetting', traditional: 'Resume only', braintrust: 'AI + skills + references', highlight: false },
+                                { label: 'Global Compliance', traditional: 'Manual / limited', braintrust: '150+ countries, automated', highlight: false },
+                                { label: 'Talent Retention', traditional: 'Low (rate arbitrage)', braintrust: 'High (talent keeps 100%)', highlight: true },
+                            ].map((row, i) => (
+                                <div key={i} style={{
+                                    display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',
+                                    borderBottom: i < 5 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                                    background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent',
+                                }}>
+                                    <div style={{ padding: '14px 24px' }}>
+                                        <span style={{ fontSize: '14px', fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}>{row.label}</span>
+                                    </div>
+                                    <div style={{ padding: '14px 24px', textAlign: 'center' }}>
+                                        <span style={{ fontSize: '14px', fontWeight: 500, color: 'rgba(255,255,255,0.35)' }}>{row.traditional}</span>
+                                    </div>
+                                    <div style={{ padding: '14px 24px', textAlign: 'center' }}>
+                                        <span style={{
+                                            fontSize: '14px', fontWeight: 700,
+                                            color: row.highlight ? 'var(--color-primary)' : 'rgba(255,255,255,0.9)',
+                                        }}>{row.braintrust}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        {/* Bottom CTA */}
+                        <div style={{ textAlign: 'center', marginTop: 'var(--space-10)' }}>
+                            <Link href="/book-demo" className="btn btn--primary btn--lg">See How Much You&apos;d Save →</Link>
+                        </div>
+                    </RevealSection>
                 </div>
             </section>
 
@@ -257,10 +399,36 @@ export default function TalentMarketplace() {
                     <RevealSection>
                         <div className="section-header">
                             <div className="badge">Why Braintrust</div>
-                            <h2>Built differently. Built for enterprise.</h2>
+                            <h2>Built differently.<br /><span className="text-gradient">Built for enterprise.</span></h2>
                             <p>Speed, quality, and transparency — without the agency markup that inflates every traditional hiring engagement.</p>
                         </div>
                     </RevealSection>
+
+                    {/* Hero stat banner */}
+                    <RevealSection delay={100}>
+                        <div style={{
+                            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
+                            gap: 'var(--space-6)', maxWidth: 780, margin: '0 auto var(--space-12)',
+                        }}>
+                            {[
+                                { value: '< 48hrs', label: 'Time to first matched candidates', icon: '⚡' },
+                                { value: 'Top 2%', label: 'Only the most qualified make it through', icon: '🏆' },
+                                { value: '30–70%', label: 'Lower cost vs. traditional agencies', icon: '💰' },
+                            ].map(s => (
+                                <div key={s.label} style={{
+                                    textAlign: 'center', padding: 'var(--space-6) var(--space-4)',
+                                    background: 'linear-gradient(135deg, #1e1b4b, #312e81)',
+                                    borderRadius: 'var(--radius-xl)',
+                                    border: '1px solid rgba(129,140,248,0.15)',
+                                }}>
+                                    <div style={{ fontSize: '20px', marginBottom: '6px' }}>{s.icon}</div>
+                                    <div style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: 'white', lineHeight: 1 }}>{s.value}</div>
+                                    <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginTop: '6px', fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </RevealSection>
+
                     <RevealSection delay={200}>
                         <div className="grid grid--3">
                             {features.map((feature) => (
