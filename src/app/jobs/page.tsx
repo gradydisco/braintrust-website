@@ -82,7 +82,7 @@ export default function Jobs() {
                     <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
                         <h1 style={{ marginBottom: 'var(--space-5)' }}>
                             Skip the job hunt.<br />
-                            <span className="text-gradient">We bring the work to you.</span>
+                            <span className="text-gradient">We bring work to you.</span>
                         </h1>
 
                         <p style={{ fontSize: 'var(--text-xl)', maxWidth: 640, margin: '0 auto var(--space-8)', lineHeight: 1.65 }}>
