@@ -463,68 +463,120 @@ export default function AITrainingDataSolution() {
             </section>
 
             {/* ====== EXPERT SKILL CATEGORIES ====== */}
-            <section className="section">
+            <section className="section" style={{ background: 'linear-gradient(180deg, var(--color-white) 0%, #F8F7FF 100%)' }}>
                 <div className="container">
                     <RevealSection>
                         <div className="section-header">
                             <div className="badge">Expertise</div>
-                            <h2>Expert skill categories</h2>
-                            <p>Data labeling, evals, annotation, and domain expertise across every category — plus multi-language capabilities across all disciplines.</p>
+                            <h2>Real experts across<br /><span className="text-gradient">every discipline.</span></h2>
+                            <p>Our contributors aren&apos;t generic crowd workers — they&apos;re credentialed professionals performing specialized work across every domain your AI training pipeline demands.</p>
                         </div>
                     </RevealSection>
                     <RevealSection delay={200}>
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(3, 1fr)',
-                            gap: '16px',
-                            maxWidth: '1100px',
-                            margin: '0 auto',
-                        }}>
-                            {skillCategories.map((cat) => (
-                                <div key={cat.title} style={{
-                                    background: 'var(--color-white)',
-                                    border: '1px solid var(--color-gray-100)',
-                                    borderRadius: '14px',
-                                    overflow: 'hidden',
-                                }}>
-                                    <div style={{
-                                        padding: '14px 20px',
-                                        background: `${cat.color}08`,
-                                        borderBottom: `2px solid ${cat.color}25`,
-                                        display: 'flex', alignItems: 'center', gap: '10px',
-                                    }}>
-                                        <div style={{ width: 10, height: 10, borderRadius: '3px', background: cat.color }} />
-                                        <h4 style={{ fontSize: '14px', fontWeight: 700, color: cat.color, margin: 0 }}>{cat.title}</h4>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr', gap: '24px', maxWidth: '1100px', margin: '0 auto', alignItems: 'stretch' }}>
+                            {/* Left — Human feature panel */}
+                            <div style={{
+                                borderRadius: '20px', overflow: 'hidden', position: 'relative',
+                                minHeight: '520px',
+                                background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)',
+                            }}>
+                                <img
+                                    src="/images/talent_tech_pro_1772039971431.png"
+                                    alt="Expert contributor working on AI data annotation"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45, position: 'absolute', inset: 0 }}
+                                />
+                                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(26,26,46,0.3) 0%, rgba(26,26,46,0.9) 70%, rgba(26,26,46,0.98) 100%)' }} />
+                                <div style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '28px' }}>
+                                    {/* Floating stat chips */}
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
+                                        {['50+ Languages', '100+ Countries', '6 Domains'].map(label => (
+                                            <span key={label} style={{
+                                                fontSize: '11px', fontWeight: 700, padding: '5px 12px',
+                                                borderRadius: '20px',
+                                                background: 'rgba(255,255,255,0.08)',
+                                                border: '1px solid rgba(255,255,255,0.12)',
+                                                color: 'rgba(255,255,255,0.75)',
+                                                backdropFilter: 'blur(8px)',
+                                            }}>{label}</span>
+                                        ))}
                                     </div>
-                                    <div style={{ padding: '16px 20px' }}>
-                                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                                            {cat.skills.map((skill) => (
-                                                <span key={skill} style={{
-                                                    fontSize: '11.5px', fontWeight: 500,
-                                                    color: 'var(--text-secondary)',
-                                                    padding: '4px 10px', borderRadius: '6px',
-                                                    background: 'var(--color-gray-50)',
-                                                    border: '1px solid var(--color-gray-100)',
-                                                    whiteSpace: 'nowrap',
-                                                }}>
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
+                                    <h3 style={{ color: 'white', fontSize: '20px', fontWeight: 800, margin: '0 0 10px', lineHeight: 1.3 }}>
+                                        The people behind<br />the data.
+                                    </h3>
+                                    <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '13px', margin: 0, lineHeight: 1.6 }}>
+                                        Doctors reviewing medical AI output. Engineers validating code generation. Linguists annotating in their native language. Every contributor is matched by proven expertise — not just availability.
+                                    </p>
+                                    {/* Avatar row */}
+                                    <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px', gap: '4px' }}>
+                                        {['/images/talent_portrait_2.png', '/images/talent_portrait_4.png', '/images/talent_portrait_3.png'].map((src, i) => (
+                                            <img key={i} src={src} alt="" style={{
+                                                width: 32, height: 32, borderRadius: '50%', objectFit: 'cover',
+                                                border: '2px solid rgba(255,255,255,0.2)',
+                                                marginLeft: i > 0 ? '-8px' : 0,
+                                            }} />
+                                        ))}
+                                        <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', marginLeft: '8px' }}>Join 2M+ verified experts</span>
                                     </div>
                                 </div>
-                            ))}
+                            </div>
+
+                            {/* Right — Category cards */}
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                                {skillCategories.map((cat) => (
+                                    <div key={cat.title} style={{
+                                        background: 'var(--color-white)',
+                                        border: '1px solid var(--color-gray-100)',
+                                        borderRadius: '14px',
+                                        overflow: 'hidden',
+                                        display: 'flex', flexDirection: 'column',
+                                    }}>
+                                        <div style={{
+                                            padding: '12px 16px',
+                                            background: `${cat.color}06`,
+                                            borderBottom: `2px solid ${cat.color}20`,
+                                            display: 'flex', alignItems: 'center', gap: '8px',
+                                        }}>
+                                            <div style={{ width: 8, height: 8, borderRadius: '3px', background: cat.color }} />
+                                            <h4 style={{ fontSize: '13px', fontWeight: 700, color: cat.color, margin: 0 }}>{cat.title}</h4>
+                                        </div>
+                                        <div style={{ padding: '12px 16px' }}>
+                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                                                {cat.skills.map((skill) => (
+                                                    <span key={skill} style={{
+                                                        fontSize: '10.5px', fontWeight: 500,
+                                                        color: 'var(--text-secondary)',
+                                                        padding: '3px 8px', borderRadius: '5px',
+                                                        background: 'var(--color-gray-50)',
+                                                        border: '1px solid var(--color-gray-100)',
+                                                        whiteSpace: 'nowrap',
+                                                    }}>
+                                                        {skill}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
 
+                        {/* Multi-language callout */}
                         <div style={{
-                            maxWidth: '600px', margin: 'var(--space-8) auto 0', textAlign: 'center',
-                            padding: '16px 24px', borderRadius: '12px',
-                            background: 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(139,92,246,0.06))',
+                            maxWidth: '700px', margin: 'var(--space-8) auto 0',
+                            padding: '18px 28px', borderRadius: '14px',
+                            background: 'var(--color-white)',
                             border: '1px solid rgba(99,102,241,0.12)',
+                            display: 'flex', alignItems: 'center', gap: '16px',
                         }}>
+                            <div style={{
+                                width: 40, height: 40, borderRadius: '10px', flexShrink: 0,
+                                background: 'rgba(99,102,241,0.08)', color: '#6366f1',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            }}>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" /></svg>
+                            </div>
                             <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', margin: 0, lineHeight: 1.6 }}>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" style={{ display: 'inline', verticalAlign: 'middle', marginRight: '6px' }}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" /></svg>
-                                <strong>Multi-language capabilities across all categories</strong> — e.g. find Python developers who speak Swedish, or medical annotators fluent in Mandarin.
+                                <strong>Multi-language capabilities across all categories</strong> — find Python developers who speak Swedish, or medical annotators fluent in Mandarin.
                             </p>
                         </div>
                     </RevealSection>
