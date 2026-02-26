@@ -722,16 +722,80 @@ export default function AITrainingDataSolution() {
                             </h2>
                         </div>
                     </RevealSection>
+
                     <RevealSection delay={150}>
+                        {/* World map + region labels */}
+                        <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto var(--space-10)', padding: '20px 0' }}>
+                            {/* SVG Dot-grid world map */}
+                            <svg viewBox="0 0 800 400" style={{ width: '100%', height: 'auto', opacity: 0.35 }}>
+                                {/* North America */}
+                                {[[120, 80], [140, 80], [160, 80], [180, 80], [100, 100], [120, 100], [140, 100], [160, 100], [180, 100], [200, 100], [80, 120], [100, 120], [120, 120], [140, 120], [160, 120], [180, 120], [200, 120], [220, 120], [100, 140], [120, 140], [140, 140], [160, 140], [180, 140], [200, 140], [120, 160], [140, 160], [160, 160], [180, 160]].map(([x, y], i) => (
+                                    <circle key={`na${i}`} cx={x} cy={y} r="2.5" fill="rgba(165,180,252,0.5)" />
+                                ))}
+                                {/* South America */}
+                                {[[200, 220], [220, 220], [240, 220], [200, 240], [220, 240], [240, 240], [260, 240], [220, 260], [240, 260], [260, 260], [220, 280], [240, 280], [220, 300], [240, 300], [220, 320], [240, 320]].map(([x, y], i) => (
+                                    <circle key={`sa${i}`} cx={x} cy={y} r="2.5" fill="rgba(165,180,252,0.5)" />
+                                ))}
+                                {/* Europe */}
+                                {[[380, 60], [400, 60], [420, 60], [380, 80], [400, 80], [420, 80], [440, 80], [360, 100], [380, 100], [400, 100], [420, 100], [440, 100], [380, 120], [400, 120], [420, 120], [440, 120], [400, 140], [420, 140]].map(([x, y], i) => (
+                                    <circle key={`eu${i}`} cx={x} cy={y} r="2.5" fill="rgba(165,180,252,0.6)" />
+                                ))}
+                                {/* Africa */}
+                                {[[400, 180], [420, 180], [440, 180], [400, 200], [420, 200], [440, 200], [460, 200], [400, 220], [420, 220], [440, 220], [460, 220], [420, 240], [440, 240], [460, 240], [420, 260], [440, 260], [440, 280]].map(([x, y], i) => (
+                                    <circle key={`af${i}`} cx={x} cy={y} r="2.5" fill="rgba(165,180,252,0.4)" />
+                                ))}
+                                {/* Asia */}
+                                {[[480, 60], [500, 60], [520, 60], [540, 60], [560, 60], [480, 80], [500, 80], [520, 80], [540, 80], [560, 80], [580, 80], [600, 80], [480, 100], [500, 100], [520, 100], [540, 100], [560, 100], [580, 100], [600, 100], [620, 100], [500, 120], [520, 120], [540, 120], [560, 120], [580, 120], [600, 120], [620, 120], [640, 120], [520, 140], [540, 140], [560, 140], [580, 140], [600, 140], [540, 160], [560, 160], [580, 160], [600, 160], [620, 160]].map(([x, y], i) => (
+                                    <circle key={`as${i}`} cx={x} cy={y} r="2.5" fill="rgba(165,180,252,0.5)" />
+                                ))}
+                                {/* Australia */}
+                                {[[620, 240], [640, 240], [660, 240], [620, 260], [640, 260], [660, 260], [680, 260], [640, 280], [660, 280]].map(([x, y], i) => (
+                                    <circle key={`au${i}`} cx={x} cy={y} r="2.5" fill="rgba(165,180,252,0.4)" />
+                                ))}
+                                {/* Glowing hotspot dots */}
+                                {[
+                                    [150, 120, '#6366f1'], [400, 90, '#818cf8'], [550, 100, '#6366f1'],
+                                    [430, 220, '#818cf8'], [220, 250, '#6366f1'], [640, 260, '#818cf8'],
+                                ].map(([cx, cy, fill], i) => (
+                                    <g key={`glow${i}`}>
+                                        <circle cx={cx as number} cy={cy as number} r="6" fill={fill as string} opacity="0.25" />
+                                        <circle cx={cx as number} cy={cy as number} r="3" fill={fill as string} opacity="0.8" />
+                                    </g>
+                                ))}
+                            </svg>
+
+                            {/* Region labels positioned around the map */}
+                            <div style={{
+                                display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap',
+                                marginTop: '24px',
+                            }}>
+                                {globalRegions.map((r) => (
+                                    <div key={r.region} style={{
+                                        display: 'flex', alignItems: 'center', gap: '10px',
+                                        padding: '10px 20px', borderRadius: '12px',
+                                        background: 'rgba(255,255,255,0.05)',
+                                        border: '1px solid rgba(255,255,255,0.08)',
+                                    }}>
+                                        <span style={{
+                                            fontSize: '18px', fontWeight: 800,
+                                            background: 'linear-gradient(135deg, #a5b4fc, #818cf8)',
+                                            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                                        }}>{r.pct}</span>
+                                        <span style={{ fontSize: '14px', fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}>{r.region}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
                         {/* Discipline breakdown */}
                         <div style={{
                             display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px',
-                            maxWidth: '800px', margin: '0 auto var(--space-10)',
+                            maxWidth: '800px', margin: '0 auto',
                         }}>
                             {[
-                                { pct: '40%', label: 'Software, AI, Data & Engineering', color: '#6366f1' },
-                                { pct: '35%', label: 'Design, Research, Creative', color: '#ec4899' },
-                                { pct: '25%', label: 'STEM & Regulated Domains', color: '#059669' },
+                                { pct: '40%', label: 'Software, AI, Data & Engineering' },
+                                { pct: '35%', label: 'Design, Research, Creative' },
+                                { pct: '25%', label: 'STEM & Regulated Domains' },
                             ].map((d) => (
                                 <div key={d.label} style={{
                                     textAlign: 'center', padding: '28px 20px',
@@ -739,28 +803,12 @@ export default function AITrainingDataSolution() {
                                     border: '1px solid rgba(255,255,255,0.08)',
                                     borderRadius: '16px',
                                 }}>
-                                    <div style={{ fontSize: '42px', fontWeight: 900, color: d.color, lineHeight: 1 }}>{d.pct}</div>
-                                    <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', marginTop: '8px', lineHeight: 1.5, fontWeight: 500 }}>{d.label}</div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Region breakdown */}
-                        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
-                            {globalRegions.map((r) => (
-                                <div key={r.region} style={{
-                                    display: 'flex', alignItems: 'center', gap: '10px',
-                                    padding: '8px 18px', borderRadius: '100px',
-                                    background: 'rgba(255,255,255,0.06)',
-                                    border: '1px solid rgba(255,255,255,0.1)',
-                                }}>
-                                    <span style={{
-                                        width: '28px', height: '28px', borderRadius: '50%',
-                                        background: 'rgba(255,255,255,0.1)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        fontSize: '11px', fontWeight: 800, color: 'white',
-                                    }}>{r.pct}</span>
-                                    <span style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.8)' }}>{r.region}</span>
+                                    <div style={{
+                                        fontSize: '42px', fontWeight: 900, lineHeight: 1,
+                                        background: 'linear-gradient(135deg, #e0e7ff, #a5b4fc)',
+                                        WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                                    }}>{d.pct}</div>
+                                    <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', marginTop: '8px', lineHeight: 1.5, fontWeight: 500 }}>{d.label}</div>
                                 </div>
                             ))}
                         </div>
