@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const steps = [
     {
@@ -107,35 +107,36 @@ export default function NexusProductVisual() {
                 }
             `}</style>
 
-            <div style={{
-                background: 'linear-gradient(145deg, #fffbeb 0%, #fef9c3 30%, #fff 100%)',
-                borderRadius: 'var(--radius-2xl)',
-                padding: '22px 20px 20px',
-                border: '1px solid rgba(234, 179, 8, 0.1)',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-            }}>
+            <div style={{ transform: 'scale(1.23) translateX(24px)', transformOrigin: 'center right' }}>
+                <div style={{
+                    background: 'linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%)',
+                    borderRadius: 'var(--radius-2xl)',
+                    padding: '24px 22px 22px',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
+                    boxShadow: '0 12px 32px rgba(0,0,0,0.06)',
+                }}>
                 {/* Window chrome */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '18px' }}>
                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ef4444' }} />
                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f59e0b' }} />
                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e' }} />
                     <div style={{ flex: 1 }} />
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '9px', fontWeight: 700, color: '#eab308', letterSpacing: '0.04em' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '9px', fontWeight: 700, color: 'var(--color-primary)', letterSpacing: '0.04em' }}>
                         <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><circle cx="12" cy="12" r="3" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
                         NEXUS RUNNING
                     </div>
                 </div>
 
                 {/* Workflow label */}
-                <div style={{ fontSize: '10px', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+                <div style={{ fontSize: '10px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>
                     Invoice automation · Live
                 </div>
 
                 {/* Node flow */}
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 0, marginBottom: '12px' }}>
                     {steps.map((step, i) => (
-                        <>
-                            <div key={step.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', flex: 1, minWidth: 0 }}>
+                        <React.Fragment key={step.label}>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', flex: 1, minWidth: 0 }}>
                                 <div className={`npv-icon ${activeStep === i ? 'active' : ''}`}>
                                     {activeStep === i && <div className="npv-pulse" />}
                                     <span style={{ color: activeStep === i ? 'var(--color-primary)' : '#94a3b8', transition: 'color 200ms ease' }}>
@@ -146,11 +147,11 @@ export default function NexusProductVisual() {
                                 <div style={{ fontSize: '8px', color: '#94a3b8', textAlign: 'center', lineHeight: 1.2 }}>{step.sub}</div>
                             </div>
                             {i < steps.length - 1 && (
-                                <div key={`c-${i}`} className="npv-conn" style={{ marginTop: '22px' }}>
+                                <div className="npv-conn" style={{ marginTop: '22px' }}>
                                     {activeStep > i && <div className="npv-dot" />}
                                 </div>
                             )}
-                        </>
+                        </React.Fragment>
                     ))}
                 </div>
 
@@ -185,6 +186,7 @@ export default function NexusProductVisual() {
                         </div>
                     ))}
                 </div>
+              </div>
             </div>
         </>
     );

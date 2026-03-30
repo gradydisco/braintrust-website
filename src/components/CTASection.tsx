@@ -24,7 +24,7 @@ export default function CTASection({
                     <h2>{title}</h2>
                     <p>{description}</p>
                     <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', position: 'relative' }}>
-                        <Link href={primaryHref} className="btn btn--accent btn--lg" id="cta-primary">
+                        <Link href={primaryHref} className="btn btn--accent btn--lg" id="cta-primary" style={{ background: 'white', color: '#0f172a', borderColor: 'white', fontWeight: 600 }}>
                             {primaryLabel}
                         </Link>
                         {secondaryLabel && secondaryHref && (

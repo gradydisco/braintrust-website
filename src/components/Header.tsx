@@ -1,14 +1,15 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 
 interface NavChild {
   label: string;
   href: string;
   desc?: string;
+  group?: string;
 }
 
 interface NavItem {
@@ -17,96 +18,59 @@ interface NavItem {
   children?: NavChild[];
 }
 
-const companyNav: NavItem[] = [
+const unifiedNav: NavItem[] = [
   {
-    label: 'Products', href: '/products', children: [
+    label: 'Find Talent', href: '/products/talent-marketplace', children: [
       { label: 'Talent Marketplace', href: '/products/talent-marketplace', desc: 'Access 2M+ vetted professionals with AI-powered matching' },
-      { label: 'AIR | AI Recruiter', href: '/products/air', desc: 'AI-powered screening, interviews, and assessments' },
-      { label: 'Nexus', href: '/products/nexus', desc: 'Workflow automation across your entire business' },
+      { label: 'Human Data', href: '/solutions/ai-training-data', desc: 'Expert contributors for every AI training need' },
     ]
   },
   {
-    label: 'Solutions', href: '#', children: [
+    label: 'Screen Talent', href: '/products/air', children: [
+      { label: 'AIR | AI Recruiter', href: '/products/air', desc: 'AI-powered screening, interviews, and assessments' },
       { label: 'Enterprise Hiring', href: '/solutions/enterprise-hiring', desc: 'Enterprise-grade AI hiring at scale' },
       { label: 'High-Volume Hiring', href: '/solutions/high-volume-hiring', desc: 'Fill hundreds of roles efficiently at scale' },
-      { label: 'AI Training Data', href: '/solutions/ai-training-data', desc: 'Human data and RLHF for AI model training' },
+      { label: 'Best AI Interview Software 2025', href: '/best-ai-interview-software-2025', desc: 'Top 15 platforms ranked and compared', group: 'Compare' },
+      { label: 'AI Interview Software Guide', href: '/ai-interview-software', desc: 'Comprehensive guide to AI-powered interviewing', group: 'Compare' },
+      { label: 'Compare AIR vs Competitors', href: '/compare', desc: 'Side-by-side comparisons with HireVue, Paradox & more', group: 'Compare' },
+    ]
+  },
+  {
+    label: 'Automate', href: '/products/nexus', children: [
+      { label: 'Nexus', href: '/products/nexus', desc: 'Workflow automation across your entire business' },
     ]
   },
   { label: 'Pricing', href: '/pricing' },
   {
-    label: 'Resources', href: '/resources', children: [
-      { label: 'Best AI Interview Software 2025', href: '/best-ai-interview-software-2025', desc: 'Top 15 platforms ranked and compared' },
-      { label: 'AI Interview Software Guide', href: '/ai-interview-software', desc: 'Comprehensive guide to AI-powered interviewing' },
-      { label: 'Compare AIR vs Competitors', href: '/compare', desc: 'Side-by-side comparisons with HireVue, Paradox & more' },
+    label: 'Company', href: '/about', children: [
+      { label: 'About', href: '/about', desc: 'Our mission, team, and story' },
       { label: 'Blog', href: '/blog', desc: 'Insights, case studies, and product updates' },
     ]
   },
-  { label: 'About', href: '/about' },
-];
-
-const talentNav: NavItem[] = [
   {
-    label: 'Find Work', href: '/jobs', children: [
+    label: 'For Talent', href: '/jobs', children: [
       { label: 'Browse Open Roles', href: '/jobs', desc: 'Preview high-quality matched opportunities across every field' },
       { label: 'AI Gig Work', href: '/ai-training', desc: 'Flexible, remote AI training work in your discipline' },
       { label: 'Talent Types', href: '/talent-types', desc: 'See all 12+ specialty categories we support' },
-    ]
-  },
-  {
-    label: 'Get Certified', href: '/talent-certification', children: [
       { label: 'Certification Overview', href: '/talent-certification', desc: 'What Certified Braintrust Talent means and how to get it' },
       { label: 'How It Works', href: '/how-it-works', desc: '5-step journey from profile to paycheck' },
       { label: 'Start Your Profile', href: 'https://app.usebraintrust.com', desc: 'Create your free profile and begin certification' },
     ]
-  },
-  { label: 'About', href: '/about' },
+  }
 ];
-
-export type AudienceMode = 'company' | 'talent';
 
 export default function Header() {
   const pathname = usePathname();
-  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [audience, setAudience] = useState<AudienceMode>('company');
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    const stored = document.cookie.split(';').find(c => c.trim().startsWith('bt_audience='));
-    if (stored) {
-      const val = stored.split('=')[1] as AudienceMode;
-      if (val === 'company' || val === 'talent') setAudience(val);
-    }
-
-    if (pathname.startsWith('/for-talent') || pathname.startsWith('/jobs') || pathname.startsWith('/ai-training') || pathname.startsWith('/how-it-works') || pathname.startsWith('/talent-certification') || pathname.startsWith('/talent-types') || pathname.startsWith('/talent-faq')) {
-      setAudience('talent');
-    } else if (pathname.startsWith('/for-companies') || pathname.startsWith('/products') || pathname.startsWith('/solutions') || pathname.startsWith('/pricing') || pathname.startsWith('/book-demo')) {
-      setAudience('company');
-    }
-  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const switchAudience = (mode: AudienceMode) => {
-    setAudience(mode);
-    document.cookie = `bt_audience=${mode};path=/;max-age=31536000`;
-    // Route to the corresponding audience page
-    if (mode === 'company') {
-      if (pathname === '/' || pathname.startsWith('/for-talent')) {
-        router.push('/for-companies');
-      }
-    } else {
-      if (pathname === '/' || pathname.startsWith('/for-companies')) {
-        router.push('/for-talent');
-      }
-    }
-  };
 
   const handleDropdownEnter = (label: string) => {
     if (dropdownTimeoutRef.current) {
@@ -131,8 +95,6 @@ export default function Header() {
     }
   };
 
-  const nav = audience === 'company' ? companyNav : talentNav;
-
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`} role="banner">
       <div className={styles.inner}>
@@ -147,7 +109,7 @@ export default function Header() {
         </div>
 
         <nav className={styles.nav} aria-label="Main navigation">
-          {nav.map((item) => (
+          {unifiedNav.map((item) => (
             <div
               key={item.href}
               className={styles.navItem}
@@ -182,28 +144,26 @@ export default function Header() {
                   onMouseEnter={() => handleDropdownEnter(item.label)}
                   onMouseLeave={handleDropdownLeave}
                 >
-                  <div className={styles.dropdownHeader}>
-                    <span className={styles.dropdownTitle}>{item.label}</span>
-                  </div>
-                  {item.children.map(child => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      className={styles.dropdownItem}
-                      role="menuitem"
-                      onClick={() => setDropdownOpen(null)}
-                    >
-                      <span className={styles.dropdownItemLabel}>{child.label}</span>
-                      {child.desc && <span className={styles.dropdownItemDesc}>{child.desc}</span>}
-                      <svg className={styles.dropdownArrow} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  ))}
-                  <div className={styles.dropdownFooter}>
-                    <Link href={item.href} className={styles.dropdownFooterLink} onClick={() => setDropdownOpen(null)}>
-                      View all {item.label.toLowerCase()} →
-                    </Link>
+                  <div className={styles.dropdownContent}>
+                    {item.children.map((child, idx) => {
+                      const prevGroup = idx > 0 ? item.children![idx - 1].group : undefined;
+                      const showGroupHeader = child.group && child.group !== prevGroup;
+                      return (
+                        <React.Fragment key={child.href}>
+                          {showGroupHeader && (
+                            <div className={styles.dropdownGroupHeader}>{child.group}</div>
+                          )}
+                          <Link
+                            href={child.href}
+                            className={styles.dropdownItem}
+                            onClick={() => setDropdownOpen(null)}
+                          >
+                            <span className={styles.dropdownItemLabel}>{child.label}</span>
+                            {child.desc && <span className={styles.dropdownItemDesc}>{child.desc}</span>}
+                          </Link>
+                        </React.Fragment>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -212,23 +172,6 @@ export default function Header() {
         </nav>
 
         <div className={styles.right}>
-          <div className="audience-toggle">
-            <button
-              className={`audience-toggle__option ${audience === 'company' ? 'audience-toggle__option--active' : ''}`}
-              onClick={() => switchAudience('company')}
-              aria-pressed={audience === 'company'}
-            >
-              Companies
-            </button>
-            <button
-              className={`audience-toggle__option ${audience === 'talent' ? 'audience-toggle__option--active' : ''}`}
-              onClick={() => switchAudience('talent')}
-              aria-pressed={audience === 'talent'}
-            >
-              Talent
-            </button>
-          </div>
-
           <div
             className={styles.navItem}
             onMouseEnter={() => handleDropdownEnter('login')}
@@ -266,8 +209,8 @@ export default function Header() {
             )}
           </div>
 
-          <Link href={audience === 'company' ? '/book-demo' : 'https://app.usebraintrust.com'} className="btn btn--primary btn--sm">
-            {audience === 'company' ? 'Book a Demo' : 'Start Your Profile'}
+          <Link href="/book-demo" className="btn btn--primary btn--sm">
+            Book a Demo
           </Link>
 
           <button
@@ -286,23 +229,7 @@ export default function Header() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className={styles.mobileMenu}>
-          <div className={styles.mobileAudienceToggle}>
-            <div className="audience-toggle">
-              <button
-                className={`audience-toggle__option ${audience === 'company' ? 'audience-toggle__option--active' : ''}`}
-                onClick={() => switchAudience('company')}
-              >
-                Companies
-              </button>
-              <button
-                className={`audience-toggle__option ${audience === 'talent' ? 'audience-toggle__option--active' : ''}`}
-                onClick={() => switchAudience('talent')}
-              >
-                Talent
-              </button>
-            </div>
-          </div>
-          {nav.map((item) => (
+          {unifiedNav.map((item) => (
             <div key={item.href}>
               <Link
                 href={item.href}
@@ -337,12 +264,12 @@ export default function Header() {
           </div>
           <div className={styles.mobileCTA}>
             <Link
-              href={audience === 'company' ? '/book-demo' : 'https://app.usebraintrust.com'}
+              href="/book-demo"
               className="btn btn--primary btn--lg"
               style={{ width: '100%' }}
               onClick={() => setMobileOpen(false)}
             >
-              {audience === 'company' ? 'Book a Demo' : 'Start Your Profile'}
+              Book a Demo
             </Link>
           </div>
         </div>

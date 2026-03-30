@@ -245,7 +245,7 @@ export default function ForCompanies() {
                                 style={{ fontSize: '1.05rem', padding: '16px 36px' }}>
                                 Book a Demo
                             </Link>
-                            <Link href="/products" className="btn btn--secondary btn--lg" id="companies-hero-products">
+                            <Link href="/" className="btn btn--secondary btn--lg" id="companies-hero-products">
                                 Explore Products
                             </Link>
                         </div>

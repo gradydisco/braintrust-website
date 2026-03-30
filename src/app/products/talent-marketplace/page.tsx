@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
 import RevealSection from '@/components/RevealSection';
 
 import LogoMarquee from '@/components/LogoMarquee';
 import G2BadgeStrip from '@/components/G2BadgeStrip';
+import AlternatingFeatures from '@/components/AlternatingFeatures';
 
 export const metadata: Metadata = {
     title: 'Talent Marketplace — Access 2M+ Vetted Professionals',
@@ -59,14 +59,15 @@ const features = [
 ];
 
 const capabilities = [
-    { title: 'Software Engineering', examples: 'Full-stack, backend, frontend, mobile, embedded systems', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg> },
-    { title: 'Machine Learning & AI', examples: 'ML engineers, research scientists, NLP, computer vision', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.57-3.25 3.92L12 22" /><path d="M12 2a4 4 0 00-4 4c0 1.95 1.4 3.57 3.25 3.92" /><circle cx="12" cy="14" r="2" /></svg> },
-    { title: 'Product Design & UX', examples: 'Product design, UX research, visual design, design systems', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><circle cx="13.5" cy="6.5" r="2.5" /><path d="M17 2H7a5 5 0 000 10h10a5 5 0 000-10z" /><path d="M7 22a5 5 0 010-10" /><circle cx="7" cy="17" r="5" /></svg> },
-    { title: 'Product Management', examples: 'Technical PMs, growth, strategy, platform product', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" /><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" /></svg> },
-    { title: 'Data Science & Analytics', examples: 'Data engineers, analysts, statisticians, BI specialists', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M18 20V10M12 20V4M6 20v-6" /></svg> },
-    { title: 'DevOps & Infrastructure', examples: 'Cloud architects, SREs, platform engineers, Kubernetes', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><rect x="2" y="2" width="20" height="8" rx="2" /><rect x="2" y="14" width="20" height="8" rx="2" /><circle cx="6" cy="6" r="1" /><circle cx="6" cy="18" r="1" /></svg> },
-    { title: 'Finance & Accounting', examples: 'Financial analysts, controllers, FP&A, tax specialists', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" /></svg> },
-    { title: 'Operations & Strategy', examples: 'Business operations, project management, consulting', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" /></svg> },
+    { title: 'Software Engineering', examples: 'Full-stack, backend, frontend, mobile, embedded systems', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg> },
+    { title: 'Machine Learning & AI', examples: 'ML engineers, research scientists, NLP, computer vision', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.57-3.25 3.92L12 22" /><path d="M12 2a4 4 0 00-4 4c0 1.95 1.4 3.57 3.25 3.92" /><circle cx="12" cy="14" r="2" /></svg> },
+    { title: 'Product Design & UX', examples: 'Product design, UX research, visual design, design systems', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><circle cx="13.5" cy="6.5" r="2.5" /><path d="M17 2H7a5 5 0 000 10h10a5 5 0 000-10z" /><path d="M7 22a5 5 0 010-10" /><circle cx="7" cy="17" r="5" /></svg> },
+    { title: 'Product Management', examples: 'Technical PMs, growth, strategy, platform product', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" /><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" /></svg> },
+    { title: 'Data Science & Analytics', examples: 'Data engineers, analysts, statisticians, BI specialists', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M18 20V10M12 20V4M6 20v-6" /></svg> },
+    { title: 'DevOps & Infrastructure', examples: 'Cloud architects, SREs, platform engineers, Kubernetes', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><rect x="2" y="2" width="20" height="8" rx="2" /><rect x="2" y="14" width="20" height="8" rx="2" /><circle cx="6" cy="6" r="1" /><circle cx="6" cy="18" r="1" /></svg> },
+    { title: 'Sales & Marketing', examples: 'Performance marketing, growth marketing, SDRs, AEs, creative directors', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> },
+    { title: 'Operations & Strategy', examples: 'Business operations, project management, consulting', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" /></svg> },
+    { title: 'Finance & Accounting', examples: 'Fractional CFOs, financial analysts, controllers, bookkeepers', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M7 15h0M2 9.5h20" /></svg> },
 ];
 
 const clientQuotes = [
@@ -114,36 +115,7 @@ const clientQuotes = [
     },
 ];
 
-const talentQuotes = [
-    {
-        quote: 'I\'ve worked with dozens of clients over 4 years on Braintrust. The platform actually respects professional rates — I\'ve never felt pressured to undercut my value. It\'s genuinely different.',
-        name: 'Aisha N.',
-        title: 'Sr. Software Engineer',
-        location: 'Lagos, NG',
-        rate: '$145/hr',
-    },
-    {
-        quote: 'I left a traditional agency after realizing they were marking me up 60% to clients while capping what I earned. On Braintrust, I keep 100% of what I negotiate. It changed my career.',
-        name: 'Tom B.',
-        title: 'Data Scientist',
-        location: 'Toronto, CA',
-        rate: '$165/hr',
-    },
-    {
-        quote: 'The clients I work with here are top-tier. The quality of problems I get to solve is the best of my career. The matching actually works — my projects fit my strengths.',
-        name: 'Sophia R.',
-        title: 'Product Designer',
-        location: 'Berlin, DE',
-        rate: '$120/hr',
-    },
-    {
-        quote: 'Got matched with a Fortune 500 client my first week. Within 60 days I had a strong review, a renewal, and two referrals to other projects. The platform does what it promises.',
-        name: 'James O.',
-        title: 'Full Stack Engineer',
-        location: 'Austin, TX',
-        rate: '$155/hr',
-    },
-];
+
 
 const faqItems = [
     { question: 'How does Braintrust Talent Marketplace differ from traditional staffing?', answer: 'Unlike traditional staffing agencies, Braintrust connects you directly with vetted professionals through AI-powered matching. There are no middlemen — just a direct relationship between your team and the talent you hire. You pay professionals directly, saving 20–40% compared to agency markups.' },
@@ -174,78 +146,49 @@ export default function TalentMarketplace() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
 
             {/* ====== HERO ====== */}
-            <section className="hero hero--centered">
-                <div className="container">
-                    <Breadcrumbs items={[
-                        { label: 'Home', href: '/' },
-                        { label: 'Products', href: '/products' },
-                        { label: 'Talent Marketplace' },
-                    ]} />
-                    <div className="hero__content">
-                        <div className="badge">Talent Marketplace</div>
-                        <h1>Elite talent. Hired in <span className="text-gradient">days, not months.</span></h1>
-                        <p>2M+ vetted professionals, zero agency fees, and AI matching that surfaces the right fit before your first interview. Built for teams that can't afford a bad hire.</p>
-                        <div className="hero__actions">
-                            <Link href="/book-demo" className="btn btn--primary btn--lg">Book a Demo</Link>
-                            <Link href="/products" className="btn btn--secondary btn--lg">View All Products →</Link>
-                        </div>
+            <section
+                className="hero hero--centered"
+                style={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    paddingTop: '200px',
+                    paddingBottom: '160px',
+                }}
+            >
+                {/* Background Image with Light Overlay */}
+                <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    zIndex: 0,
+                }}>
+                    <img
+                        src="/images/marketplace_talent.png"
+                        alt="Tech professional working"
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            objectPosition: 'center 20%',
+                        }}
+                    />
+                    <div style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.95) 100%)',
+                    }} />
+                </div>
 
-                        {/* AI Training Data CTA */}
-                        <style>{`
-                            @keyframes aiCtaShimmer {
-                                0% { background-position: -200% center; }
-                                100% { background-position: 200% center; }
-                            }
-                        `}</style>
-                        <Link href="/solutions/ai-training-data" className="ai-training-cta" style={{
-                            display: 'inline-flex', alignItems: 'center', gap: '14px',
-                            fontFamily: 'var(--font-sans)',
-                            marginTop: 'var(--space-6)',
-                            padding: '14px 24px',
-                            borderRadius: '14px',
-                            background: 'linear-gradient(135deg, #1e1b4b, #312e81)',
-                            border: '1px solid rgba(129, 140, 248, 0.2)',
-                            textDecoration: 'none',
-                            boxShadow: '0 4px 20px rgba(99, 102, 241, 0.15)',
-                            transition: 'all 0.25s ease',
-                            position: 'relative',
-                            overflow: 'hidden',
-                        }}>
-                            {/* Shimmer overlay */}
-                            <div style={{
-                                position: 'absolute', inset: 0,
-                                background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 40%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.06) 60%, transparent 100%)',
-                                backgroundSize: '200% 100%',
-                                animation: 'aiCtaShimmer 3s ease-in-out infinite',
-                                pointerEvents: 'none',
-                            }} />
-                            <span style={{
-                                fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.85)',
-                                position: 'relative', zIndex: 1,
-                            }}>
-                                Need <strong style={{ color: '#c7d2fe' }}>AI training data &amp; human experts</strong>? See our dedicated program
-                            </span>
-                            <span style={{
-                                padding: '5px 12px', borderRadius: 'var(--radius-full)',
-                                background: 'rgba(99, 102, 241, 0.3)',
-                                fontSize: '12px', fontWeight: 700, color: '#a5b4fc',
-                                whiteSpace: 'nowrap',
-                                position: 'relative', zIndex: 1,
-                            }}>
-                                Explore →
-                            </span>
-                        </Link>
-                        {/* HERO MEDIA */}
-                        <div style={{
-                            position: 'relative', maxWidth: 960, margin: 'var(--space-12) auto 0',
-                            borderRadius: 'var(--radius-2xl)', overflow: 'hidden',
-                            boxShadow: 'var(--shadow-xl)', border: '1px solid rgba(0,0,0,0.05)',
-                        }}>
-                            <img
-                                src="/images/marketplace_talent.png"
-                                alt="Diverse tech professional working in a vibrant remote space"
-                                style={{ width: '100%', display: 'block', objectFit: 'cover', height: 'auto', maxHeight: '550px' }}
-                            />
+                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+                    <div className="hero__content">
+                        <h1 style={{ color: 'var(--text-primary)' }}>Elite talent. Hired in <span className="text-gradient">days, not months.</span></h1>
+                        <p style={{ color: 'var(--text-secondary)', maxWidth: '720px', margin: '0 auto 32px' }}>
+                            2M+ vetted professionals, zero agency fees, and AI matching that surfaces the right fit before your first interview. Built for teams that can't afford a bad hire.
+                        </p>
+                        <div className="hero__actions" style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
+                            <Link href="/book-demo" className="btn btn--primary btn--lg">Book a Demo</Link>
                         </div>
                     </div>
 
@@ -256,12 +199,6 @@ export default function TalentMarketplace() {
                 </div>
             </section>
 
-            {/* ====== CLIENT LOGO MARQUEE ====== */}
-            <section style={{ background: 'white', padding: 'var(--space-12) 0', '--lm-bg': '#fff' } as React.CSSProperties}>
-                <div className="container">
-                    <LogoMarquee label="Trusted by the world's best companies" />
-                </div>
-            </section>
 
             {/* ====== HOW IT WORKS — 3 STEPS ====== */}
             <section className="section" style={{ background: 'var(--color-white)' }}>
@@ -269,71 +206,111 @@ export default function TalentMarketplace() {
                     <RevealSection>
                         <div className="section-header">
                             <div className="badge">How It Works</div>
-                            <h2>Hire world-class talent in<br /><span className="text-gradient">three simple steps.</span></h2>
+                            <h2>Hiring in<br /><span className="text-gradient">three different ways.</span></h2>
                             <p>From job post to productive team member — in days, not months.</p>
                         </div>
                     </RevealSection>
-                    <RevealSection delay={200}>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-8)', maxWidth: 960, margin: '0 auto' }}>
+                    <RevealSection>
+                        <div style={{
+                            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                            gap: 'var(--space-6)', marginTop: 'var(--space-10)',
+                        }}>
                             {[
                                 {
-                                    step: '01',
-                                    title: 'Post your role',
-                                    description: 'Use our AI Job Assistant to craft the perfect posting in seconds — or integrate directly with your ATS. Your role is live in minutes.',
-                                    detail: 'AI-powered job descriptions',
-                                    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>,
+                                    title: 'Staff Augmentation',
+                                    description: 'Seamlessly fill skill gaps on your existing teams with highly vetted hourly contractors. Scale up or down effortlessly.',
+                                    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="8.5" cy="7" r="4" /><polyline points="17 11 19 13 23 9" /></svg>,
+                                    color: 'var(--color-primary)',
+                                    tag: 'Hourly & Part-Time'
                                 },
                                 {
-                                    step: '02',
-                                    title: 'Review matched candidates',
-                                    description: 'Our AI instantly surfaces the top candidates from 2M+ professionals. AIR handles first-round screening so you only interview the best.',
-                                    detail: 'Top 5 matches in hours',
-                                    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
+                                    title: 'Embedded Teams',
+                                    description: 'Deploy entire squads of engineers, designers, and PMs to tackle mission-critical projects from scratch.',
+                                    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>,
+                                    color: '#8b5cf6',
+                                    tag: 'Project-Based'
                                 },
                                 {
-                                    step: '03',
-                                    title: 'Get to work',
-                                    description: 'We handle onboarding, compliance, background checks, worker classification, and global payroll — all in one platform.',
-                                    detail: 'Fully managed onboarding',
-                                    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>,
+                                    title: 'Contract-To-Hire',
+                                    description: 'Try before you buy. Bring on contractors, see how they execute, and transition them to full-time at any point.',
+                                    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>,
+                                    color: '#059669',
+                                    tag: 'Direct Conversions'
                                 },
-                            ].map((item) => (
-                                <div key={item.step} style={{
-                                    position: 'relative',
-                                    padding: 'var(--space-8)',
-                                    background: 'var(--bg-secondary)',
-                                    borderRadius: 'var(--radius-xl)',
+                            ].map((model) => (
+                                <div key={model.title} style={{
+                                    padding: '32px',
+                                    background: 'var(--color-white)',
+                                    borderRadius: 'var(--radius-2xl)',
                                     border: '1px solid var(--color-gray-100)',
-                                }}>
+                                    boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
+                                    transition: 'transform 0.2s ease',
+                                    cursor: 'default',
+                                }} className="card--hover-lift">
                                     <div style={{
-                                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                                        marginBottom: 'var(--space-5)',
+                                        width: '56px', height: '56px', borderRadius: '16px',
+                                        background: `${model.color}15`, color: model.color,
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        marginBottom: '24px',
                                     }}>
-                                        <div style={{
-                                            width: 48, height: 48, borderRadius: '14px',
-                                            background: 'linear-gradient(135deg, rgba(245,87,51,0.08), rgba(245,87,51,0.03))',
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            color: 'var(--color-primary)',
-                                        }}>
-                                            {item.icon}
-                                        </div>
-                                        <span style={{
-                                            fontSize: '32px', fontWeight: 800,
-                                            color: 'rgba(245,87,51,0.1)',
-                                            lineHeight: 1,
-                                        }}>{item.step}</span>
+                                        {model.icon}
                                     </div>
-                                    <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-primary)' }}>{item.title}</h4>
-                                    <p style={{ fontSize: '14px', lineHeight: 1.65, color: 'var(--text-secondary)', margin: '0 0 16px' }}>{item.description}</p>
-                                    <span style={{
-                                        fontSize: '12px', fontWeight: 700, color: 'var(--color-primary)',
-                                        padding: '4px 10px', borderRadius: 'var(--radius-full)',
-                                        background: 'var(--color-primary-50)',
-                                    }}>{item.detail}</span>
+                                    <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '12px', color: 'var(--text-primary)' }}>{model.title}</h3>
+                                    <p style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--text-secondary)', marginBottom: '20px' }}>{model.description}</p>
+                                    <div style={{
+                                        display: 'inline-flex', alignItems: 'center',
+                                        padding: '6px 14px', borderRadius: '100px',
+                                        background: 'var(--color-gray-50)', color: 'var(--text-tertiary)',
+                                        fontSize: '13px', fontWeight: 600, border: '1px solid var(--color-gray-200)'
+                                    }}>
+                                        {model.tag}
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </RevealSection>
+                </div>
+            </section>
+
+
+
+            {/* ====== WHAT MAKES BRAINTRUST DIFFERENT ====== */}
+            <section className="section">
+                <div className="container">
+                    <RevealSection>
+                        <div className="section-header">
+                            <div className="badge">Why Braintrust</div>
+                            <h2>Built differently.<br /><span className="text-gradient">Built for enterprise.</span></h2>
+                            <p>Speed, quality, and transparency — without the agency markup that inflates every traditional hiring engagement.</p>
+                        </div>
+                    </RevealSection>
+
+                    {/* Hero stat banner */}
+                    <RevealSection delay={100}>
+                        <div style={{
+                            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
+                            gap: 'var(--space-4)', maxWidth: 860, margin: '0 auto var(--space-12)',
+                        }}>
+                            {[
+                                { value: '< 48hrs', label: 'Time to first matched candidates' },
+                                { value: 'Top 2%', label: 'Only the most qualified make it through' },
+                                { value: '30–70%', label: 'Lower cost vs. traditional agencies' },
+                            ].map(s => (
+                                <div key={s.label} style={{
+                                    textAlign: 'center', padding: '32px 24px',
+                                    background: 'var(--color-white)',
+                                    borderRadius: 'var(--radius-2xl)',
+                                    border: '1px solid var(--color-gray-100)',
+                                    boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
+                                }}>
+                                    <div style={{ fontSize: '32px', fontWeight: 800, color: '#111827', lineHeight: 1, letterSpacing: '-0.03em' }}>{s.value}</div>
+                                    <div style={{ fontSize: '14px', color: '#4b5563', marginTop: '12px', fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </RevealSection>
+
+                    <AlternatingFeatures />
                 </div>
             </section>
 
@@ -356,142 +333,55 @@ export default function TalentMarketplace() {
                     </RevealSection>
                     <RevealSection delay={200}>
                         <div style={{
-                            maxWidth: 800, margin: '0 auto',
-                            borderRadius: 'var(--radius-xl)',
-                            overflow: 'hidden',
-                            border: '1px solid rgba(255,255,255,0.08)',
+                            display: 'grid', gridTemplateColumns: '1fr 1fr',
+                            gap: '2px', maxWidth: 900, margin: '0 auto',
+                            background: 'rgba(255,255,255,0.05)',
+                            borderRadius: 'var(--radius-2xl)',
+                            overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)',
                         }}>
-                            {/* Table header */}
-                            <div style={{
-                                display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',
-                                background: 'rgba(255,255,255,0.04)',
-                                borderBottom: '1px solid rgba(255,255,255,0.08)',
-                            }}>
-                                <div style={{ padding: '16px 24px' }} />
-                                <div style={{ padding: '16px 24px', textAlign: 'center' }}>
-                                    <span style={{ fontSize: '13px', fontWeight: 700, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Traditional Agency</span>
+                            {/* The Old Way */}
+                            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 'var(--space-8)' }}>
+                                <div style={{ fontSize: '13px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255,255,255,0.4)', marginBottom: '32px' }}>
+                                    The Old Way (Agencies)
                                 </div>
-                                <div style={{ padding: '16px 24px', textAlign: 'center' }}>
-                                    <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Braintrust</span>
-                                </div>
+                                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                                    {[
+                                        { label: 'Agency Markup', value: '20–40% hidden fees' },
+                                        { label: 'Time to First Match', value: '2–6 weeks' },
+                                        { label: 'Talent Vetting', value: 'Resume keyword matching' },
+                                        { label: 'Talent Retention', value: 'Low (due to rate arbitrage)' },
+                                    ].map(item => (
+                                        <li key={item.label}>
+                                            <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginBottom: '4px' }}>{item.label}</div>
+                                            <div style={{ fontSize: '16px', fontWeight: 500, color: 'rgba(255,255,255,0.6)' }}>{item.value}</div>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                            {/* Table rows */}
-                            {[
-                                { label: 'Agency Markup', traditional: '20–40%', braintrust: '0%', highlight: true },
-                                { label: 'Time to First Match', traditional: '2–6 weeks', braintrust: '< 48 hours', highlight: false },
-                                { label: 'Cost Savings', traditional: 'Baseline', braintrust: '30–70% less', highlight: true },
-                                { label: 'Talent Vetting', traditional: 'Resume only', braintrust: 'AI + skills + references', highlight: false },
-                                { label: 'Global Compliance', traditional: 'Manual / limited', braintrust: '150+ countries, automated', highlight: false },
-                                { label: 'Talent Retention', traditional: 'Low (rate arbitrage)', braintrust: 'High (talent keeps 100%)', highlight: true },
-                            ].map((row, i) => (
-                                <div key={i} style={{
-                                    display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',
-                                    borderBottom: i < 5 ? '1px solid rgba(255,255,255,0.05)' : 'none',
-                                    background: i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent',
-                                }}>
-                                    <div style={{ padding: '14px 24px' }}>
-                                        <span style={{ fontSize: '14px', fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}>{row.label}</span>
-                                    </div>
-                                    <div style={{ padding: '14px 24px', textAlign: 'center' }}>
-                                        <span style={{ fontSize: '14px', fontWeight: 500, color: 'rgba(255,255,255,0.35)' }}>{row.traditional}</span>
-                                    </div>
-                                    <div style={{ padding: '14px 24px', textAlign: 'center' }}>
-                                        <span style={{
-                                            fontSize: '14px', fontWeight: 700,
-                                            color: row.highlight ? 'var(--color-primary)' : 'rgba(255,255,255,0.9)',
-                                        }}>{row.braintrust}</span>
-                                    </div>
+
+                            {/* The Braintrust Way */}
+                            <div style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%)', padding: 'var(--space-8)' }}>
+                                <div style={{ fontSize: '13px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#10b981', marginBottom: '32px' }}>
+                                    The Braintrust Way
                                 </div>
-                            ))}
+                                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                                    {[
+                                        { label: 'Agency Markup', value: 'Industry low' },
+                                        { label: 'Time to First Match', value: '< 48 hours via AI' },
+                                        { label: 'Talent Vetting', value: 'Identity verification, AI video assessments, fraud prevention' },
+                                        { label: 'Talent Retention', value: 'No fees to talent' },
+                                    ].map(item => (
+                                        <li key={item.label}>
+                                            <div style={{ fontSize: '12px', color: 'rgba(16, 185, 129, 0.6)', marginBottom: '4px' }}>{item.label}</div>
+                                            <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--color-white)' }}>{item.value}</div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                         {/* Bottom CTA */}
                         <div style={{ textAlign: 'center', marginTop: 'var(--space-10)' }}>
                             <Link href="/book-demo" className="btn btn--primary btn--lg">See How Much You&apos;d Save →</Link>
-                        </div>
-                    </RevealSection>
-                </div>
-            </section>
-
-            {/* ====== WHAT MAKES BRAINTRUST DIFFERENT ====== */}
-            <section className="section">
-                <div className="container">
-                    <RevealSection>
-                        <div className="section-header">
-                            <div className="badge">Why Braintrust</div>
-                            <h2>Built differently.<br /><span className="text-gradient">Built for enterprise.</span></h2>
-                            <p>Speed, quality, and transparency — without the agency markup that inflates every traditional hiring engagement.</p>
-                        </div>
-                    </RevealSection>
-
-                    {/* Hero stat banner */}
-                    <RevealSection delay={100}>
-                        <div style={{
-                            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-                            gap: 'var(--space-6)', maxWidth: 780, margin: '0 auto var(--space-12)',
-                        }}>
-                            {[
-                                { value: '< 48hrs', label: 'Time to first matched candidates', icon: '⚡' },
-                                { value: 'Top 2%', label: 'Only the most qualified make it through', icon: '🏆' },
-                                { value: '30–70%', label: 'Lower cost vs. traditional agencies', icon: '💰' },
-                            ].map(s => (
-                                <div key={s.label} style={{
-                                    textAlign: 'center', padding: 'var(--space-6) var(--space-4)',
-                                    background: 'linear-gradient(135deg, #1e1b4b, #312e81)',
-                                    borderRadius: 'var(--radius-xl)',
-                                    border: '1px solid rgba(129,140,248,0.15)',
-                                }}>
-                                    <div style={{ fontSize: '20px', marginBottom: '6px' }}>{s.icon}</div>
-                                    <div style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: 'white', lineHeight: 1 }}>{s.value}</div>
-                                    <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginTop: '6px', fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </RevealSection>
-
-                    <RevealSection delay={200}>
-                        <div className="grid grid--3">
-                            {features.map((feature) => (
-                                <div key={feature.title} style={{
-                                    background: 'var(--color-white)',
-                                    border: '1px solid rgba(50, 50, 93, 0.08)',
-                                    borderRadius: 'var(--radius-xl)',
-                                    padding: '0',
-                                    overflow: 'hidden',
-                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                    position: 'relative',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                }}
-                                    className="card--enterprise"
-                                >
-                                    <div style={{ height: '3px', background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))', opacity: 0.6 }} />
-                                    <div style={{ padding: 'var(--space-8) var(--space-8) var(--space-6)', flex: 1 }}>
-                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
-                                            <div style={{
-                                                width: '44px', height: '44px', borderRadius: '12px',
-                                                background: 'linear-gradient(135deg, rgba(245, 87, 51, 0.08), rgba(245, 87, 51, 0.03))',
-                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                color: 'var(--color-primary)', flexShrink: 0,
-                                            }}>
-                                                {feature.icon}
-                                            </div>
-                                            <div>
-                                                <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '6px', lineHeight: 1.3 }}>{feature.title}</h4>
-                                                <p style={{ fontSize: '13.5px', lineHeight: 1.6, color: 'var(--text-secondary)', margin: 0 }}>{feature.description}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style={{
-                                        borderTop: '1px solid rgba(50, 50, 93, 0.06)',
-                                        padding: '12px var(--space-8)',
-                                        display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
-                                        background: 'rgba(245, 87, 51, 0.015)', marginTop: 'auto',
-                                    }}>
-                                        <span style={{ fontSize: '15px', fontWeight: 800, color: 'var(--color-primary)' }}>{feature.stat}</span>
-                                        <span style={{ fontSize: '12px', color: 'var(--text-tertiary)', fontWeight: 500 }}>{feature.statLabel}</span>
-                                    </div>
-                                </div>
-                            ))}
                         </div>
                     </RevealSection>
                 </div>
@@ -553,100 +443,56 @@ export default function TalentMarketplace() {
                 </div>
             </section>
 
-            {/* ====== TALENT QUOTES ====== */}
-            <section className="section">
+
+            {/* ====== CLIENT LOGO MARQUEE ====== */}
+            <section style={{ background: 'white', padding: 'var(--space-16) 0', '--lm-bg': '#fff' } as React.CSSProperties}>
                 <div className="container">
-                    <RevealSection>
-                        <div className="section-header">
-                            <div className="badge badge--accent">What Top Talent Says</div>
-                            <h2>The platform professionals actually choose</h2>
-                            <p>When talent has a choice, they come to Braintrust — because we pay them what they're worth.</p>
-                        </div>
-                    </RevealSection>
-                    <RevealSection delay={200}>
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                            gap: 'var(--space-6)',
-                        }}>
-                            {talentQuotes.map((q, i) => (
-                                <div key={i} style={{
-                                    padding: 'var(--space-8)', borderRadius: 'var(--radius-xl)',
-                                    background: 'var(--color-white)',
-                                    border: '1px solid rgba(50,50,93,0.08)',
-                                    boxShadow: '0 2px 12px rgba(50,50,93,0.05)',
-                                    display: 'flex', flexDirection: 'column', gap: 'var(--space-5)',
-                                }}>
-                                    {/* Stars */}
-                                    <div style={{ display: 'flex', gap: '2px' }}>
-                                        {[...Array(5)].map((_, s) => (
-                                            <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                                        ))}
-                                    </div>
-                                    <p style={{ fontSize: 'var(--text-sm)', lineHeight: 1.7, color: 'var(--text-secondary)', margin: 0, flex: 1 }}>
-                                        &ldquo;{q.quote}&rdquo;
-                                    </p>
-                                    <div style={{
-                                        display: 'flex', alignItems: 'center', gap: 'var(--space-3)',
-                                        paddingTop: 'var(--space-4)', borderTop: '1px solid var(--color-gray-100)',
-                                    }}>
-                                        <div style={{
-                                            width: '36px', height: '36px', borderRadius: '50%',
-                                            background: `hsl(${260 + (i * 25) % 100}, 55%, 58%)`,
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            color: 'white', fontWeight: 700, fontSize: '13px', flexShrink: 0,
-                                        }}>
-                                            {q.name.split(' ').map(n => n[0]).join('')}
-                                        </div>
-                                        <div style={{ flex: 1 }}>
-                                            <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)' }}>{q.name}</div>
-                                            <div style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>{q.title} · {q.location}</div>
-                                        </div>
-                                        <div style={{
-                                            fontSize: '12px', fontWeight: 700, color: 'var(--color-primary)',
-                                            background: 'var(--color-primary-50)', padding: '3px 8px',
-                                            borderRadius: 'var(--radius-full)',
-                                        }}>{q.rate}</div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </RevealSection>
+                    <LogoMarquee label="Trusted by the world's best companies" />
                 </div>
             </section>
 
             {/* ====== CAPABILITIES — Discipline Grid ====== */}
-            <section className="section section--gray">
-                <div className="container">
+            <section className="section" style={{
+                position: 'relative',
+                backgroundImage: 'url(/images/home_collab.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+            }}>
+                <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(17, 24, 39, 0.4)' }}></div>
+                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                     <RevealSection>
-                        <div className="section-header">
-                            <div className="badge">Capabilities</div>
-                            <h2>World-class talent across every discipline</h2>
-                            <p>Hire across the full spectrum of professional expertise — all rigorously vetted.</p>
+                        <div className="section-header" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
+                            <div className="badge badge--dark" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)' }}>Capabilities</div>
+                            <h2 style={{ color: 'white', letterSpacing: '-0.02em' }}>World-class talent across every discipline</h2>
+                            <p style={{ color: 'rgba(255,255,255,0.9)' }}>Hire across the full spectrum of professional expertise — all rigorously vetted.</p>
                         </div>
                     </RevealSection>
                     <RevealSection delay={200}>
                         <div style={{
-                            display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
-                            gap: '12px', maxWidth: '900px', margin: '0 auto',
+                            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                            gap: 'var(--space-5)', maxWidth: '1200px', margin: '0 auto',
                         }}>
                             {capabilities.map((cap) => (
-                                <div key={cap.title} className="card--enterprise" style={{
-                                    display: 'flex', alignItems: 'flex-start',
-                                    gap: 'var(--space-4)', padding: '18px 22px',
+                                <div key={cap.title} className="card--hover-lift" style={{
+                                    display: 'flex', flexDirection: 'column',
+                                    padding: '40px 32px',
                                     background: 'var(--color-white)',
-                                    border: '1px solid rgba(50, 50, 93, 0.07)',
-                                    borderRadius: 'var(--radius-lg)',
-                                    borderLeft: '3px solid var(--color-primary)',
-                                    transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    borderRadius: '24px',
+                                    boxShadow: '0 10px 40px -10px rgba(0,0,0,0.06)',
+                                    position: 'relative', overflow: 'hidden'
                                 }}>
-                                    <div style={{ color: 'var(--color-primary)', flexShrink: 0, marginTop: '1px', opacity: 0.7 }}>
+                                    <div style={{
+                                        width: '48px', height: '48px', borderRadius: '14px',
+                                        background: 'rgba(245, 87, 51, 0.05)',
+                                        color: 'var(--color-primary)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        marginBottom: '24px'
+                                    }}>
                                         {cap.icon}
                                     </div>
-                                    <div>
-                                        <div style={{ fontWeight: 700, fontSize: '14px', color: 'var(--text-primary)', marginBottom: '3px', lineHeight: 1.3 }}>{cap.title}</div>
-                                        <div style={{ fontSize: '12.5px', color: 'var(--text-tertiary)', lineHeight: 1.4 }}>{cap.examples}</div>
-                                    </div>
+                                    <div style={{ fontWeight: 800, fontSize: '20px', color: '#111827', marginBottom: '8px', lineHeight: 1.3, letterSpacing: '-0.02em' }}>{cap.title}</div>
+                                    <div style={{ fontSize: '15px', color: '#4b5563', lineHeight: 1.6, flex: 1 }}>{cap.examples}</div>
                                 </div>
                             ))}
                         </div>
@@ -654,30 +500,7 @@ export default function TalentMarketplace() {
                 </div>
             </section>
 
-            {/* ====== AI TRAINING & HUMAN DATA ====== */}
-            <section className="section">
-                <div className="container">
-                    <RevealSection>
-                        <div className="section-header">
-                            <div className="badge badge--accent">Data Solutions</div>
-                            <h2>AI Training &amp; Human Data</h2>
-                            <p>Leverage our global talent network for AI model training, RLHF, data labeling, and domain-specific data at scale.</p>
-                        </div>
-                    </RevealSection>
-                    <div className="grid grid--2" style={{ maxWidth: '720px', margin: '0 auto' }}>
-                        <Link href="/products/talent-marketplace/ai-training" className="card card--feature" style={{ textAlign: 'center' }}>
-                            <h4 style={{ marginBottom: 'var(--space-2)' }}>AI Training</h4>
-                            <p style={{ fontSize: 'var(--text-sm)' }}>RLHF, model evaluation, and domain-expert feedback for AI development.</p>
-                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)', marginTop: 'var(--space-4)', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--color-primary)' }}>Learn more →</span>
-                        </Link>
-                        <Link href="/products/talent-marketplace/human-data" className="card card--feature" style={{ textAlign: 'center' }}>
-                            <h4 style={{ marginBottom: 'var(--space-2)' }}>Human Data</h4>
-                            <p style={{ fontSize: 'var(--text-sm)' }}>Data labeling, annotation, and collection from verified domain experts.</p>
-                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)', marginTop: 'var(--space-4)', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--color-primary)' }}>Learn more →</span>
-                        </Link>
-                    </div>
-                </div>
-            </section>
+
 
             {/* ====== FAQ ====== */}
             <section className="section section--gray">
@@ -695,7 +518,7 @@ export default function TalentMarketplace() {
                 primaryLabel="Book a Demo"
                 primaryHref="/book-demo"
                 secondaryLabel="View All Products"
-                secondaryHref="/products"
+                secondaryHref="/"
             />
         </>
     );

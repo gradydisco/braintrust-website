@@ -103,7 +103,7 @@ export default function Nexus() {
                         <p style={{ color: 'rgba(255,255,255,0.55)' }}>Nexus is a workflow automation platform that eliminates mundane, repetitive tasks — moving data between systems, powering complex workflows, and saving thousands of hours across every part of your business.</p>
                         <div className="hero__actions">
                             <Link href="/book-demo" className="btn btn--primary btn--lg">Book a Demo</Link>
-                            <Link href="/products" className="btn btn--secondary btn--lg" style={{ color: 'rgba(255,255,255,0.7)', borderColor: 'rgba(255,255,255,0.15)' }}>All Products →</Link>
+                            <Link href="/" className="btn btn--secondary btn--lg" style={{ color: 'rgba(255,255,255,0.7)', borderColor: 'rgba(255,255,255,0.15)' }}>All Products →</Link>
                         </div>
                     </div>
                 </div>

@@ -144,7 +144,7 @@
   --max-width: 1280px;
   --max-width-narrow: 960px;
   --max-width-wide: 1400px;
-  --header-height: 72px;
+  --header-height: 80px;
 
   /* ---- Z-index ---- */
   --z-base: 1;
@@ -399,24 +399,24 @@ p {
 }
 
 .btn--primary {
-  background-color: var(--color-primary);
+  background-color: #0a0a0a;
   color: var(--color-white);
-  box-shadow: 0 2px 5px rgba(232, 96, 76, 0.35),
-    0 1px 2px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25),
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .btn--primary:hover {
-  background-color: var(--color-primary-dark);
+  background-color: #222;
   transform: translateY(-1px);
-  box-shadow: 0 7px 14px rgba(232, 96, 76, 0.4),
-    0 3px 6px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25),
+    0 3px 6px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .btn--primary:active {
   transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(232, 96, 76, 0.25);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
 }
 
 .btn--secondary {
@@ -856,11 +856,11 @@ p {
    NAVIGATION
    ============================================ */
 .nav-link {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 500;
   color: var(--text-secondary);
   transition: color var(--transition-fast);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-md);
 }
 

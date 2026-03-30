@@ -153,13 +153,14 @@ export default function AIRProductVisual() {
                 }
             `}</style>
 
-            <div style={{
-                background: '#fff',
-                borderRadius: 'var(--radius-2xl)',
-                padding: '18px',
-                border: '1px solid rgba(0,0,0,0.06)',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-            }}>
+            <div style={{ transform: 'scale(1.23) translateX(24px)', transformOrigin: 'center right' }}>
+                <div style={{
+                    background: '#fff',
+                    borderRadius: 'var(--radius-2xl)',
+                    padding: '18px',
+                    border: '1px solid rgba(0,0,0,0.06)',
+                    boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+                }}>
                 {/* Status bar */}
                 <div style={{
                     display: 'flex', alignItems: 'center', gap: '8px',
@@ -337,6 +338,7 @@ export default function AIRProductVisual() {
                     ))}
                 </div>
             </div>
+        </div>
         </>
     );
 }
