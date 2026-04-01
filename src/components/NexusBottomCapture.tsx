@@ -33,12 +33,13 @@ export default function NexusBottomCapture() {
         padding: '12px 16px',
         fontSize: '14px',
         fontWeight: 500,
-        border: '1px solid rgba(255,255,255,0.12)',
+        border: '1px solid #d1d5db',
         borderRadius: '10px',
-        background: 'rgba(255,255,255,0.06)',
-        color: 'white',
+        background: '#ffffff',
+        color: '#1a1a1a',
         outline: 'none',
-        transition: 'border-color 0.2s',
+        transition: 'border-color 0.2s, box-shadow 0.2s',
+        boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
     };
 
     if (submitted) {
@@ -66,16 +67,8 @@ export default function NexusBottomCapture() {
                 }}>
                     {/* Left — Value Prop */}
                     <div style={{ paddingRight: '48px' }}>
-                        <div style={{
-                            display: 'inline-flex', alignItems: 'center', gap: '6px',
-                            fontSize: '11px', fontWeight: 700, textTransform: 'uppercase',
-                            letterSpacing: '0.08em', color: 'var(--color-accent)', marginBottom: '16px',
-                        }}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
-                            Limited — This Week Only
-                        </div>
                         <h2 style={{ fontSize: '28px', fontWeight: 800, lineHeight: 1.2, color: 'white', marginBottom: '16px' }}>
-                            Get a Free Automation Analysis This Week
+                            Get a Free Automation Analysis
                         </h2>
                         <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', marginBottom: '28px' }}>
                             We&apos;ll analyze your workflows and identify where automation can save time and cost — delivered fast, with zero obligation.
@@ -97,49 +90,50 @@ export default function NexusBottomCapture() {
 
                     {/* Right — Form */}
                     <div style={{
-                        background: 'rgba(255,255,255,0.04)',
-                        border: '1px solid rgba(255,255,255,0.08)',
+                        background: '#ffffff',
+                        border: '1px solid rgba(0,0,0,0.08)',
                         borderRadius: '16px',
                         padding: '36px 32px',
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
                     }}>
-                        <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'white', marginBottom: '4px' }}>
+                        <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#1a1a1a', marginBottom: '4px' }}>
                             Request your free analysis
                         </h3>
-                        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>
+                        <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '24px' }}>
                             No credit card. No obligation. Just insight.
                         </p>
-                        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                                 <div>
-                                    <label htmlFor="btm-fn" style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.45)', display: 'block', marginBottom: '4px' }}>First Name *</label>
+                                    <label htmlFor="btm-fn" style={{ fontSize: '13px', fontWeight: 600, color: '#4b5563', display: 'block', marginBottom: '6px' }}>First Name *</label>
                                     <input id="btm-fn" type="text" required value={formData.firstName}
                                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                                         style={inputStyle} />
                                 </div>
                                 <div>
-                                    <label htmlFor="btm-ln" style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.45)', display: 'block', marginBottom: '4px' }}>Last Name *</label>
+                                    <label htmlFor="btm-ln" style={{ fontSize: '13px', fontWeight: 600, color: '#4b5563', display: 'block', marginBottom: '6px' }}>Last Name *</label>
                                     <input id="btm-ln" type="text" required value={formData.lastName}
                                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                                         style={inputStyle} />
                                 </div>
                             </div>
                             <div>
-                                <label htmlFor="btm-email" style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.45)', display: 'block', marginBottom: '4px' }}>Work Email *</label>
+                                <label htmlFor="btm-email" style={{ fontSize: '13px', fontWeight: 600, color: '#4b5563', display: 'block', marginBottom: '6px' }}>Work Email *</label>
                                 <input id="btm-email" type="email" required value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     style={inputStyle} />
                             </div>
                             <div>
-                                <label htmlFor="btm-company" style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.45)', display: 'block', marginBottom: '4px' }}>Company *</label>
+                                <label htmlFor="btm-company" style={{ fontSize: '13px', fontWeight: 600, color: '#4b5563', display: 'block', marginBottom: '6px' }}>Company *</label>
                                 <input id="btm-company" type="text" required value={formData.company}
                                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                                     style={inputStyle} />
                             </div>
                             <button type="submit" className="btn btn--primary btn--lg" disabled={submitting}
-                                style={{ width: '100%', marginTop: '6px' }}>
+                                style={{ width: '100%', marginTop: '8px' }}>
                                 {submitting ? 'Submitting…' : 'Get My Free Analysis'}
                             </button>
-                            <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.25)', textAlign: 'center', margin: 0 }}>
+                            <p style={{ fontSize: '12px', color: '#9ca3af', textAlign: 'center', margin: 0 }}>
                                 We&apos;ll never share your information.
                             </p>
                         </form>
