@@ -10,6 +10,7 @@ interface NavChild {
   href: string;
   desc?: string;
   group?: string;
+  isSecondary?: boolean;
 }
 
 interface NavItem {
@@ -28,11 +29,9 @@ const unifiedNav: NavItem[] = [
   {
     label: 'Screen Talent', href: '/products/air', children: [
       { label: 'AIR | AI Recruiter', href: '/products/air', desc: 'AI-powered screening, interviews, and assessments' },
-      { label: 'Enterprise Hiring', href: '/solutions/enterprise-hiring', desc: 'Enterprise-grade AI hiring at scale' },
-      { label: 'High-Volume Hiring', href: '/solutions/high-volume-hiring', desc: 'Fill hundreds of roles efficiently at scale' },
-      { label: 'Best AI Interview Software 2025', href: '/best-ai-interview-software-2025', desc: 'Top 15 platforms ranked and compared', group: 'Compare' },
-      { label: 'AI Interview Software Guide', href: '/ai-interview-software', desc: 'Comprehensive guide to AI-powered interviewing', group: 'Compare' },
-      { label: 'Compare AIR vs Competitors', href: '/compare', desc: 'Side-by-side comparisons with HireVue, Paradox & more', group: 'Compare' },
+      { label: 'Enterprise Hiring', href: '/solutions/enterprise-hiring', desc: 'Enterprise-grade AI hiring at scale', isSecondary: true },
+      { label: 'High-Volume Hiring', href: '/solutions/high-volume-hiring', desc: 'Fill hundreds of roles efficiently at scale', isSecondary: true },
+      { label: 'Best AI Interview Software 2025', href: '/best-ai-interview-software-2025', desc: 'Top 15 platforms ranked and compared', group: 'Compare', isSecondary: true },
     ]
   },
   {
@@ -158,8 +157,8 @@ export default function Header() {
                             className={styles.dropdownItem}
                             onClick={() => setDropdownOpen(null)}
                           >
-                            <span className={styles.dropdownItemLabel}>{child.label}</span>
-                            {child.desc && <span className={styles.dropdownItemDesc}>{child.desc}</span>}
+                            <span className={child.isSecondary ? styles.dropdownItemLabelSecondary : styles.dropdownItemLabel}>{child.label}</span>
+                            {child.desc && <span className={child.isSecondary ? styles.dropdownItemDescSecondary : styles.dropdownItemDesc}>{child.desc}</span>}
                           </Link>
                         </React.Fragment>
                       );
