@@ -29,7 +29,6 @@ const unifiedNav: NavItem[] = [
   {
     label: 'Screen Talent', href: '/products/air', children: [
       { label: 'AIR | AI Recruiter', href: '/products/air', desc: 'AI-powered screening, interviews, and assessments' },
-      { label: 'Enterprise & High-Volume Hiring', href: '/solutions/enterprise-hiring', desc: 'Enterprise-grade AI hiring at scale', isSecondary: true },
       { label: 'Best AI Interview Software 2025', href: '/best-ai-interview-software-2025', desc: 'Top 15 platforms ranked and compared', group: 'Compare', isSecondary: true },
     ]
   },
