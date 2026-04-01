@@ -73,6 +73,8 @@ const footerLinks = {
         { label: 'AIR | Terms', href: '/air-terms' },
         { label: 'AIR | Privacy Policy', href: '/air-privacy-policy' },
         { label: 'AIR | Referral Terms', href: '/air-referral-terms' },
+        { label: 'Nexus | Terms', href: '/nexus/terms' },
+        { label: 'Nexus | Privacy Policy', href: '/nexus/privacy-policy' },
         { label: 'BTRST Purchaser Terms', href: '/btrst-purchaser-terms' },
         { label: 'Cookie Policy', href: '/cookie-policy' },
     ],

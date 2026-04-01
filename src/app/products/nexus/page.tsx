@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import NexusWorkflow from '@/components/NexusWorkflow';
 import AutomationAnalysisForm from '@/components/AutomationAnalysisForm';
+import NexusPrivacy from '@/components/NexusPrivacy';
+import NexusBottomCapture from '@/components/NexusBottomCapture';
 
 export const metadata: Metadata = {
     title: 'Nexus — Workflow Automation Platform for Modern Enterprise',
@@ -64,7 +66,7 @@ export default function Nexus() {
                             Nexus eliminates the manual, repetitive work that's quietly killing your team's productivity — and shares the savings with you.
                         </p>
                         <div className="hero__actions">
-                            <Link href="/book-demo" className="btn btn--primary btn--lg">Find Your First Workflow</Link>
+                            <Link href="#lead-form" className="btn btn--primary btn--lg">Find Your First Workflow</Link>
                         </div>
                     </div>
                 </div>
@@ -352,10 +354,16 @@ export default function Nexus() {
                         <h3 style={{ fontSize: '28px', marginBottom: '16px' }}>Start with one. See the savings. Add more.</h3>
                         <p style={{ fontSize: '16px', color: '#4a4a4a', marginBottom: '32px' }}>Book a session to identify your first major automation win.</p>
                         
-                        <Link href="/book-demo" className="btn btn--primary btn--lg" style={{ width: '100%', padding: '16px' }}>Find My First Workflow</Link>
+                        <Link href="#lead-form" className="btn btn--primary btn--lg" style={{ width: '100%', padding: '16px' }}>Find My First Workflow</Link>
                     </div>
                 </div>
             </section>
+            
+            <NexusPrivacy />
+            
+            <div id="lead-form" style={{ scrollMarginTop: '64px' }}>
+                <NexusBottomCapture />
+            </div>
             
             <AutomationAnalysisForm />
         </>
