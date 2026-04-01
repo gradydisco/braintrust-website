@@ -23,14 +23,13 @@ const unifiedNav: NavItem[] = [
   {
     label: 'Find Talent', href: '/products/talent-marketplace', children: [
       { label: 'Talent Marketplace', href: '/products/talent-marketplace', desc: 'Access 2M+ vetted professionals with AI-powered matching' },
-      { label: 'Human Data', href: '/solutions/ai-training-data', desc: 'Expert contributors for every AI training need' },
+      { label: 'Human Data', href: '/solutions/ai-training-data', desc: 'Expert contributors for every AI training need', isSecondary: true },
     ]
   },
   {
     label: 'Screen Talent', href: '/products/air', children: [
       { label: 'AIR | AI Recruiter', href: '/products/air', desc: 'AI-powered screening, interviews, and assessments' },
-      { label: 'Enterprise Hiring', href: '/solutions/enterprise-hiring', desc: 'Enterprise-grade AI hiring at scale', isSecondary: true },
-      { label: 'High-Volume Hiring', href: '/solutions/high-volume-hiring', desc: 'Fill hundreds of roles efficiently at scale', isSecondary: true },
+      { label: 'Enterprise & High-Volume Hiring', href: '/solutions/enterprise-hiring', desc: 'Enterprise-grade AI hiring at scale', isSecondary: true },
       { label: 'Best AI Interview Software 2025', href: '/best-ai-interview-software-2025', desc: 'Top 15 platforms ranked and compared', group: 'Compare', isSecondary: true },
     ]
   },

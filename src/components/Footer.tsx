@@ -25,8 +25,7 @@ const footerLinks = {
         { label: 'Hire Contract Engineers', href: '/hire-contract-engineers' },
     ],
     Solutions: [
-        { label: 'Enterprise Hiring', href: '/solutions/enterprise-hiring' },
-        { label: 'High-Volume Hiring', href: '/solutions/high-volume-hiring' },
+        { label: 'Enterprise & High-Volume Hiring', href: '/solutions/enterprise-hiring' },
         { label: 'AI Training Data', href: '/solutions/ai-training-data' },
         { label: 'For Companies', href: '/for-companies' },
     ],
