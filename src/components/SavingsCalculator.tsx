@@ -48,6 +48,7 @@ export default function SavingsCalculator() {
     });
 
     const [showAdvanced, setShowAdvanced] = useState(false);
+    const [showLeadForm, setShowLeadForm] = useState(false);
 
     // Lead capture gate
     const [leadInfo, setLeadInfo] = useState({
@@ -248,6 +249,7 @@ export default function SavingsCalculator() {
             // Fallback
         }
         setResultsUnlocked(true);
+        setShowLeadForm(false);
         setSubmitting(false);
     };
 
@@ -296,6 +298,7 @@ export default function SavingsCalculator() {
                     <div className="badge">ROI Calculator</div>
                     <h2>Estimate your recruiting ROI with AIR</h2>
                     <p>Enter your hiring data and we&apos;ll model your projected savings across resume review, scheduling, interviews, and more.</p>
+                    <h3 style={{ marginTop: 'var(--space-8)', fontSize: '24px', fontWeight: 600, color: '#1a1a1a' }}>Clients save over $300k a year in hiring costs</h3>
                 </div>
 
                 <div style={{
@@ -409,60 +412,89 @@ export default function SavingsCalculator() {
                                 </div>
                             )}
                         </div>
+
+                        {/* CTA when not unlocked */}
+                        {!resultsUnlocked && (
+                            <div style={{ textAlign: 'center', marginTop: '40px', paddingBottom: '20px' }}>
+                                <button type="button" onClick={() => setShowLeadForm(true)} className="btn btn--primary btn--lg" style={{ padding: '16px 48px', fontSize: '16px', borderRadius: '100px', background: '#0a0a0a', color: 'white', border: 'none', cursor: 'pointer' }}>
+                                    Calculate my ROI
+                                </button>
+                            </div>
+                        )}
                     </div>
 
-                    {/* ============ GATED RESULTS ============ */}
-                    {!resultsUnlocked ? (
-                        <div style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)', padding: '48px 40px' }}>
-                            <div style={{ textAlign: 'center', maxWidth: '520px', margin: '0 auto' }}>
-                                <div style={{ marginBottom: '16px' }}>
-                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+                    {/* ============ MODAL LEAD FORM ============ */}
+                    {showLeadForm && !resultsUnlocked && (
+                        <div style={{
+                            position: 'fixed', inset: 0, zIndex: 9999,
+                            background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            padding: '20px', animation: 'calcFadeIn 0.3s ease-out'
+                        }}>
+                            <div style={{
+                                width: '100%', maxWidth: '440px',
+                                background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
+                                borderRadius: '20px', padding: '40px',
+                                position: 'relative', boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+                            }}>
+                                <button 
+                                    onClick={() => setShowLeadForm(false)}
+                                    className="modal-close"
+                                    style={{ position: 'absolute', top: '20px', right: '20px', color: 'rgba(255,255,255,0.5)', transition: 'color 0.2s', background: 'none', border: 'none', cursor: 'pointer' }}
+                                    onMouseOver={(e) => e.currentTarget.style.color = 'white'}
+                                    onMouseOut={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}
+                                >
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                                </button>
+                                
+                                <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+                                    <div style={{ marginBottom: '16px' }}>
+                                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+                                    </div>
+                                    <h3 style={{ fontSize: '22px', fontWeight: 800, color: 'white', marginBottom: '8px' }}>
+                                        Unlock your full ROI analysis
+                                    </h3>
+                                    <p style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.5 }}>
+                                        Enter your details to generate your customized savings projection.
+                                    </p>
                                 </div>
-                                <h3 style={{ fontSize: '22px', fontWeight: 800, color: 'white', marginBottom: '8px' }}>
-                                    Unlock your full ROI analysis
-                                </h3>
-                                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', marginBottom: '32px', lineHeight: 1.6 }}>
-                                    We&apos;ll generate a detailed savings projection across resume review, scheduling, interviews, documentation, and time-to-hire impact.
-                                </p>
-                                <form onSubmit={handleUnlock} style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
+                                <form onSubmit={handleUnlock} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                                         <div>
-                                            <label htmlFor="gate-fn" style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.5)', display: 'block', marginBottom: '4px' }}>First Name *</label>
-                                            <input id="gate-fn" type="text" required value={leadInfo.firstName}
+                                            <input id="gate-fn" type="text" required placeholder="First Name *" value={leadInfo.firstName}
                                                 onChange={(e) => setLeadInfo({ ...leadInfo, firstName: e.target.value })}
-                                                style={gateInputStyle} />
+                                                style={{...gateInputStyle, width: '100%', padding: '12px 16px', borderRadius: '10px'}} />
                                         </div>
                                         <div>
-                                            <label htmlFor="gate-ln" style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.5)', display: 'block', marginBottom: '4px' }}>Last Name *</label>
-                                            <input id="gate-ln" type="text" required value={leadInfo.lastName}
+                                            <input id="gate-ln" type="text" required placeholder="Last Name *" value={leadInfo.lastName}
                                                 onChange={(e) => setLeadInfo({ ...leadInfo, lastName: e.target.value })}
-                                                style={gateInputStyle} />
+                                                style={{...gateInputStyle, width: '100%', padding: '12px 16px', borderRadius: '10px'}} />
                                         </div>
                                     </div>
                                     <div>
-                                        <label htmlFor="gate-email" style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.5)', display: 'block', marginBottom: '4px' }}>Work Email *</label>
-                                        <input id="gate-email" type="email" required value={leadInfo.email}
+                                        <input id="gate-email" type="email" required placeholder="Work Email *" value={leadInfo.email}
                                             onChange={(e) => setLeadInfo({ ...leadInfo, email: e.target.value })}
-                                            style={gateInputStyle} />
+                                            style={{...gateInputStyle, width: '100%', padding: '12px 16px', borderRadius: '10px'}} />
                                     </div>
                                     <div>
-                                        <label htmlFor="gate-company" style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.5)', display: 'block', marginBottom: '4px' }}>Company</label>
-                                        <input id="gate-company" type="text" value={leadInfo.company}
+                                        <input id="gate-company" type="text" placeholder="Company" value={leadInfo.company}
                                             onChange={(e) => setLeadInfo({ ...leadInfo, company: e.target.value })}
-                                            style={gateInputStyle} />
+                                            style={{...gateInputStyle, width: '100%', padding: '12px 16px', borderRadius: '10px'}} />
                                     </div>
-                                    <button type="submit" className="btn btn--primary btn--lg" disabled={submitting}
-                                        style={{ width: '100%', marginTop: '8px' }}>
-                                        {submitting ? 'Generating analysis…' : 'Unlock My ROI Analysis'}
+                                    <button type="submit" disabled={submitting}
+                                        style={{ width: '100%', marginTop: '12px', background: 'var(--color-primary)', border: 'none', color: 'white', padding: '16px', borderRadius: '10px', fontSize: '16px', fontWeight: 600, cursor: 'pointer' }}>
+                                        {submitting ? 'Generating analysis…' : 'See My Results'}
                                     </button>
-                                    <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', textAlign: 'center', margin: 0 }}>
+                                    <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', textAlign: 'center', marginTop: '12px', marginBottom: 0 }}>
                                         No spam. Your data is used only for this analysis.
                                     </p>
                                 </form>
                             </div>
                         </div>
-                    ) : (
-                        /* ============ RESULTS REVEAL ============ */
+                    )}
+
+                    {/* ============ RESULTS REVEAL ============ */}
+                    {resultsUnlocked && (
                         <div style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)', padding: '48px 40px', animation: 'calcFadeIn 0.5s ease-out' }}>
 
                             {/* Hero: Total Estimated Savings */}

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Breadcrumbs from '@/components/Breadcrumbs';
+
 import FAQ from '@/components/FAQ';
 import CTASection from '@/components/CTASection';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
@@ -10,6 +10,8 @@ import G2BadgeStrip from '@/components/G2BadgeStrip';
 import SavingsCalculator from '@/components/SavingsCalculator';
 import AIRWorkflow from '@/components/AIRWorkflow';
 import AIRExitPopup from '@/components/AIRExitPopup';
+import DynamicCapabilities from '@/components/DynamicCapabilities';
+import AnimatedBar from '@/components/AnimatedBar';
 
 export const metadata: Metadata = {
     title: 'AIR | AI Recruiter | Conversational Voice Interviews & AI Assessments',
@@ -41,14 +43,27 @@ export default function AIR() {
         <>
             <section className="hero hero--centered">
                 <div className="container">
-                    <Breadcrumbs items={[
-                        { label: 'Home', href: '/' },
-                        { label: 'Products', href: '/products' },
-                        { label: 'AIR | AI Recruiter' },
-                    ]} />
+
                     <div className="hero__content">
-                        <div className="badge">AIR | AI Recruiter</div>
-                        <h1>Superhuman<br /><span className="text-gradient">recruiting intelligence.</span></h1>
+                        <p style={{
+                            fontSize: '24px',
+                            fontWeight: 400,
+                            color: '#1a1a1a',
+                            letterSpacing: '-0.01em',
+                            marginBottom: '16px',
+                        }}>
+                            AIR | AI Recruiter
+                        </p>
+                        <h1 style={{
+                            fontSize: 'clamp(2.8rem, 5.5vw, 5rem)',
+                            fontWeight: 600,
+                            color: '#1a1a1a',
+                            letterSpacing: '-0.03em',
+                            lineHeight: 1.02,
+                            marginBottom: 'var(--space-6)',
+                        }}>
+                            Superhuman<br /><span className="text-gradient">recruiting intelligence.</span>
+                        </h1>
                         <p>Conversational voice interviews, customizable scoring frameworks, and enterprise-scale assessments in 16+ languages — reducing time-to-hire by 80%.</p>
                         <div className="hero__actions">
                             <Link href="/book-demo" className="btn btn--primary btn--lg">Book a Demo</Link>
@@ -56,69 +71,28 @@ export default function AIR() {
                         </div>
 
                         {/* HERO MEDIA w/ OVERLAY TEXT */}
-                        <div style={{
-                            position: 'relative', maxWidth: 960, margin: 'var(--space-12) auto 0',
-                            borderRadius: 'var(--radius-2xl)', overflow: 'hidden',
-                            boxShadow: 'var(--shadow-xl)', border: '1px solid rgba(0,0,0,0.05)',
-                        }}>
-                            <img
-                                src="/images/air_interview_side.png"
-                                alt="Candidate confidently speaking during an AI interview"
-                                style={{ width: '100%', display: 'block', objectFit: 'cover', height: 'auto', maxHeight: '500px', filter: 'brightness(0.9)' }}
-                            />
-                            {/* Floating Convo Bubbles */}
-
-                            {/* Box 1 - AIR */}
-                            <div style={{
-                                position: 'absolute', top: '15%', left: '8%',
-                                background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
-                                padding: '12px 20px', borderRadius: '20px 20px 20px 4px',
-                                boxShadow: '0 4px 16px rgba(0,0,0,0.1)', maxWidth: '300px',
-                                animation: 'fadeUp 1s ease-out',
-                            }}>
-                                <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /></svg>
-                                    AIR
-                                </div>
-                                <p style={{ fontSize: '13.5px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.45, fontWeight: 500 }}>
-                                    "That's a great example. Could you elaborate on how you scaled the database during that traffic spike?"
-                                </p>
-                            </div>
-
-                            {/* Box 2 - Candidate */}
-                            <div style={{
-                                position: 'absolute', top: '42%', left: '16%',
-                                background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
-                                padding: '12px 20px', borderRadius: '20px 20px 4px 20px',
-                                boxShadow: '0 4px 16px rgba(0,0,0,0.1)', maxWidth: '320px',
-                                animation: 'fadeUp 1s ease-out 0.8s both',
-                            }}>
-                                <p style={{ fontSize: '13.5px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.45, fontWeight: 500 }}>
-                                    "Sure! We clustered the reader instances and added a Redis caching layer for the main leaderboard queries..."
-                                </p>
-                            </div>
-
-                            {/* Box 3 - AIR Follow Up */}
-                            <div style={{
-                                position: 'absolute', bottom: '10%', left: '8%',
-                                background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
-                                padding: '12px 20px', borderRadius: '20px 20px 20px 4px',
-                                boxShadow: '0 4px 16px rgba(0,0,0,0.1)', maxWidth: '300px',
-                                animation: 'fadeUp 1s ease-out 1.6s both',
-                            }}>
-                                <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /></svg>
-                                    AIR
-                                </div>
-                                <p style={{ fontSize: '13.5px', margin: 0, color: 'var(--text-primary)', lineHeight: 1.45, fontWeight: 500 }}>
-                                    "And how did you handle cache invalidation to ensure users saw real-time ranks?"
-                                </p>
-                            </div>
+                        <div style={{ margin: 'var(--space-12) auto 0', maxWidth: 960 }}>
+                            <YouTubeEmbed videoId="clsjRDLglCw" title="AIR | AI Recruiter Demo" />
                         </div>
 
                         {/* G2 badges — FALL 2025 */}
                         <div style={{ marginTop: 'var(--space-10)' }}>
                             <G2BadgeStrip showSoc2 />
+                            
+                            <div style={{ marginTop: 'var(--space-6)', textAlign: 'center' }}>
+                                <a href="https://www.g2.com/products/braintrust-air/reviews" target="_blank" rel="noopener noreferrer" style={{
+                                    display: 'inline-flex', alignItems: 'center', gap: '8px',
+                                    fontSize: '14.5px', fontWeight: 600, color: '#1a1a1a',
+                                    background: 'white', border: '1px solid rgba(50,50,93,0.1)',
+                                    padding: '10px 24px', borderRadius: '100px',
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.04)',
+                                    textDecoration: 'none',
+                                    transition: 'all 0.2s ease'
+                                }}>
+                                    See our G2 reviews
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -131,39 +105,34 @@ export default function AIR() {
                 </div>
             </section>
 
-            {/* ====== PROMO VIDEO ====== */}
-            <section className="section" style={{ paddingTop: 'var(--space-12)' }}>
-                <div className="container" style={{ maxWidth: '900px' }}>
-                    <RevealSection>
-                        <YouTubeEmbed videoId="clsjRDLglCw" title="AIR | AI Recruiter Demo" />
-                    </RevealSection>
-                </div>
-            </section>
+            {/* ====== TIME & COST SAVINGS CALCULATOR ====== */}
+            <SavingsCalculator />
+
+            {/* ====== WORKFLOW ANIMATION ====== */}
+            <AIRWorkflow />
+
+            {/* VIDEO MOVED TO HERO */}
 
             {/* ====== TRY IT YOURSELF CTA ====== */}
-            <section className="section section--gray">
+            <section className="section" style={{ backgroundColor: '#ffffff', paddingBottom: 'var(--space-24)' }}>
                 <div className="container container--narrow">
                     <RevealSection>
-                        <div style={{
-                            textAlign: 'center',
-                            padding: 'var(--space-12) var(--space-8)',
-                            borderRadius: 'var(--radius-2xl)',
-                            background: 'var(--color-white)',
-                            border: '1px solid var(--color-gray-100)',
-                            boxShadow: 'var(--shadow-lg)',
-                        }}>
-                            <div className="badge" style={{ marginBottom: 'var(--space-4)' }}>Interactive</div>
-                            <h2 style={{ marginBottom: 'var(--space-3)' }}>Try AIR for yourself</h2>
-                            <p style={{ maxWidth: '480px', margin: '0 auto var(--space-6)' }}>
+                        <div style={{ textAlign: 'center' }}>
+                            <h2 style={{ marginBottom: 'var(--space-3)', fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', color: '#0a2540' }}>Try AIR for yourself</h2>
+                            <p style={{ maxWidth: '520px', margin: '0 auto var(--space-8)', fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                                 Experience AI-powered interviews firsthand. Access live demo sessions across 10+ roles and industries.
                             </p>
-                            <Link href="/products/air/try" className="btn btn--primary btn--lg">
-                                Access Demo Interviews →
+                            <Link href="/products/air/try" className="btn btn--primary btn--lg" style={{ padding: '16px 48px', fontSize: '16px', borderRadius: '100px', fontWeight: 600 }}>
+                                Access Demo Interviews
                             </Link>
                         </div>
                     </RevealSection>
                 </div>
             </section>
+
+            {/* ====== THE COMPLETE AI ENGINE ====== */}
+            <DynamicCapabilities />
+
             {/* ====== CANDIDATE LOVE ====== */}
             <section className="section section--gray">
                 <div className="container">
@@ -194,32 +163,41 @@ export default function AIR() {
                                     overflow: 'hidden',
                                     display: 'flex',
                                     flexDirection: 'column',
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.02)'
                                 }}>
-                                    {/* Accent bar */}
-                                    <div style={{ height: '3px', background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))', opacity: 0.7 }} />
-                                    <div style={{ padding: '28px 24px 20px', flex: 1 }}>
+                                    <div style={{ padding: '28px 24px 20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                         <div style={{
                                             fontSize: 'clamp(2.4rem, 4vw, 3rem)',
                                             fontWeight: 900,
                                             color: 'var(--color-primary)',
                                             lineHeight: 1,
                                             letterSpacing: '-0.03em',
-                                            marginBottom: '12px',
-                                        }}>{item.pct}</div>
+                                            marginBottom: '16px',
+                                        }}>
+                                            {item.pct}
+                                        </div>
+                                        
+                                        {/* Animated Data Visualization */}
+                                        <div style={{ marginBottom: '24px' }}>
+                                            <AnimatedBar targetPct={item.pct} />
+                                        </div>
+
                                         <div style={{
                                             fontSize: '14px',
                                             fontWeight: 700,
                                             color: 'var(--text-primary)',
                                             lineHeight: 1.45,
-                                            marginBottom: '12px',
+                                            marginBottom: '16px',
                                         }} dangerouslySetInnerHTML={{ __html: item.stat }} />
+                                        
                                         <div style={{
                                             fontSize: '12.5px',
                                             fontStyle: 'italic',
                                             color: 'var(--text-tertiary)',
                                             lineHeight: 1.55,
                                             borderTop: '1px solid rgba(50,50,93,0.05)',
-                                            paddingTop: '12px',
+                                            paddingTop: '16px',
+                                            marginTop: 'auto'
                                         }} dangerouslySetInnerHTML={{ __html: item.quote }} />
                                     </div>
                                 </div>
@@ -232,128 +210,7 @@ export default function AIR() {
                 </div>
             </section>
 
-            {/* ====== WORKFLOW ANIMATION ====== */}
-            <AIRWorkflow />
 
-            {/* ====== CAPABILITIES — How AIR Transforms Recruiting ====== */}
-            <section className="section">
-                <div className="container">
-                    <RevealSection>
-                        <div className="section-header">
-                            <div className="badge">Capabilities</div>
-                            <h2>How AIR transforms recruiting</h2>
-                            <p>AI-powered tools that screen, interview, and assess candidates at enterprise scale.</p>
-                        </div>
-                    </RevealSection>
-                    <RevealSection delay={200}>
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(4, 1fr)',
-                            gap: '16px',
-                        }}>
-                            {[
-                                {
-                                    title: 'Conversational Voice Interviews',
-                                    desc: 'Real-time, adaptive voice interviews evaluating communication, depth, and fit — at any volume, 24/7.',
-                                    stat: '1000s/day',
-                                    statLabel: 'interview capacity',
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" /><path d="M19 10v2a7 7 0 01-14 0v-2" /><line x1="12" y1="19" x2="12" y2="23" /><line x1="8" y1="23" x2="16" y2="23" /></svg>,
-                                },
-                                {
-                                    title: 'Resume Scoring & Matching',
-                                    desc: 'AI-powered scoring ranks every applicant by skills, experience, and role fit — no resume goes unseen.',
-                                    stat: '100%',
-                                    statLabel: 'applicants screened',
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>,
-                                },
-                                {
-                                    title: 'Semantic Candidate Search',
-                                    desc: 'Context-aware matching surfaces candidates traditional keyword searches miss — including skills adjacency and career trajectory.',
-                                    stat: '3×',
-                                    statLabel: 'more qualified matches',
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>,
-                                },
-                                {
-                                    title: 'Customizable Scoring Frameworks',
-                                    desc: 'Weight technical skills, communication, domain expertise, and behavioral signals — tailored rubrics for every role.',
-                                    stat: 'Custom',
-                                    statLabel: 'scoring rubrics',
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" /></svg>,
-                                },
-                                {
-                                    title: '16+ Languages Supported',
-                                    desc: 'Conduct interviews and assessments natively in 16+ languages — built for global teams and international talent pools.',
-                                    stat: '16+',
-                                    statLabel: 'native languages',
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" /></svg>,
-                                },
-                                {
-                                    title: 'Lower Attrition, Better Hires',
-                                    desc: 'Deeper, more consistent evaluation leads to stronger matches — reducing first-year attrition and improving long-term retention.',
-                                    stat: '35%',
-                                    statLabel: 'less first-year attrition',
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
-                                },
-                                {
-                                    title: 'Measurable Cost Savings',
-                                    desc: 'Replace multiple point solutions with one platform. Clients typically see 10–20× return on their AIR investment within the first year.',
-                                    stat: '10–20×',
-                                    statLabel: 'typical ROI',
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" /></svg>,
-                                },
-                                {
-                                    title: 'Enterprise Scale & Integrations',
-                                    desc: 'Native ATS integrations with Greenhouse, Lever, Workday, and 50+ more. Scale hiring without scaling headcount.',
-                                    stat: '50+',
-                                    statLabel: 'ATS integrations',
-                                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2" /><rect x="2" y="14" width="20" height="8" rx="2" ry="2" /><line x1="6" y1="6" x2="6.01" y2="6" /><line x1="6" y1="18" x2="6.01" y2="18" /></svg>,
-                                },
-                            ].map((item) => (
-                                <div key={item.title} className="card--enterprise" style={{
-                                    background: 'var(--color-white)',
-                                    border: '1px solid rgba(50, 50, 93, 0.08)',
-                                    borderRadius: '14px',
-                                    overflow: 'hidden',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                }}>
-                                    {/* Accent bar */}
-                                    <div style={{ height: '3px', background: 'linear-gradient(90deg, var(--color-primary), var(--color-accent))', opacity: 0.4 }} />
-                                    <div style={{ padding: '24px 20px 16px', flex: 1 }}>
-                                        <div style={{
-                                            width: '40px', height: '40px', borderRadius: '10px',
-                                            background: 'linear-gradient(135deg, rgba(245, 87, 51, 0.08), rgba(245, 87, 51, 0.02))',
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            color: 'var(--color-primary)', marginBottom: '14px',
-                                        }}>
-                                            {item.icon}
-                                        </div>
-                                        <h4 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px', lineHeight: 1.35 }}>
-                                            {item.title}
-                                        </h4>
-                                        <p style={{ fontSize: '12.5px', lineHeight: 1.6, color: 'var(--text-secondary)', margin: 0 }}>
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                    <div style={{
-                                        borderTop: '1px solid rgba(50, 50, 93, 0.05)',
-                                        padding: '10px 20px',
-                                        display: 'flex', alignItems: 'center', gap: '6px',
-                                        background: 'rgba(245, 87, 51, 0.012)',
-                                        marginTop: 'auto',
-                                    }}>
-                                        <span style={{ fontSize: '14px', fontWeight: 800, color: 'var(--color-primary)' }}>{item.stat}</span>
-                                        <span style={{ fontSize: '11px', color: 'var(--text-tertiary)', fontWeight: 500 }}>{item.statLabel}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </RevealSection>
-                </div>
-            </section>
-
-            {/* ====== TIME & COST SAVINGS CALCULATOR ====== */}
-            <SavingsCalculator />
 
             {/* ====== STATS ====== */}
             <section className="section section--dark">
@@ -492,13 +349,37 @@ export default function AIR() {
             </section>
 
             {/* ====== INDUSTRIES SERVED ====== */}
-            <section className="section">
-                <div className="container">
+            <section className="section" style={{
+                position: 'relative',
+                background: '#0a2540',
+                padding: 'var(--space-24) 0',
+                overflow: 'hidden',
+                color: 'white',
+            }}>
+                <div style={{
+                    position: 'absolute',
+                    top: 0, left: 0, right: 0, bottom: 0,
+                    backgroundImage: 'url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    opacity: 0.25,
+                    zIndex: 0,
+                    mixBlendMode: 'luminosity'
+                }} />
+                {/* Gradient overlay to ensure text legibility */}
+                <div style={{
+                    position: 'absolute',
+                    top: 0, left: 0, right: 0, bottom: 0,
+                    background: 'linear-gradient(to bottom, rgba(10,37,64,0.5), rgba(10,37,64,0.95))',
+                    zIndex: 1,
+                }} />
+                
+                <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                     <RevealSection>
                         <div className="section-header">
-                            <div className="badge">Industries</div>
-                            <h2>Built for every industry</h2>
-                            <p>AIR powers hiring across sectors — adapting interviews and assessments to your domain.</p>
+                            <div className="badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.2)' }}>Industries</div>
+                            <h2 style={{ color: 'white' }}>Built for every industry</h2>
+                            <p style={{ color: 'rgba(255,255,255,0.8)' }}>AIR powers hiring across sectors — adapting interviews and assessments to your domain.</p>
                         </div>
                     </RevealSection>
                     <RevealSection delay={200}>
@@ -511,16 +392,16 @@ export default function AIR() {
                                 <div
                                     key={industry.name}
                                     className="card card--feature"
-                                    style={{ textAlign: 'center', padding: 'var(--space-6)' }}
+                                    style={{ textAlign: 'center', padding: 'var(--space-6)', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)' }}
                                 >
                                     <div style={{
                                         width: '48px', height: '48px', borderRadius: '50%',
-                                        background: 'var(--color-primary-50)', color: 'var(--color-primary)',
+                                        background: 'rgba(245,87,51,0.15)', color: 'var(--color-primary)',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         margin: '0 auto var(--space-3)',
                                     }}>{industry.icon}</div>
-                                    <h4 style={{ marginBottom: 'var(--space-2)', fontSize: 'var(--text-base)' }}>{industry.name}</h4>
-                                    <p style={{ fontSize: 'var(--text-xs)', margin: 0 }}>{industry.desc}</p>
+                                    <h4 style={{ marginBottom: 'var(--space-2)', fontSize: 'var(--text-base)', color: 'white' }}>{industry.name}</h4>
+                                    <p style={{ fontSize: 'var(--text-xs)', margin: 0, color: 'rgba(255,255,255,0.6)' }}>{industry.desc}</p>
                                 </div>
                             ))}
                         </div>

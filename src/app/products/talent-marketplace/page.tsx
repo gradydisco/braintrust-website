@@ -182,9 +182,18 @@ export default function TalentMarketplace() {
                 </div>
 
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                    <div className="hero__content">
-                        <h1 style={{ color: 'var(--text-primary)' }}>Elite talent. Hired in <span className="text-gradient">days, not months.</span></h1>
-                        <p style={{ color: 'var(--text-secondary)', maxWidth: '720px', margin: '0 auto 32px' }}>
+                    <div className="hero__content" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+                        <h1 style={{
+                            fontSize: 'clamp(2.8rem, 5.5vw, 5rem)',
+                            fontWeight: 600,
+                            color: '#1a1a1a',
+                            letterSpacing: '-0.03em',
+                            lineHeight: 1.02,
+                            marginBottom: 'var(--space-6)',
+                        }}>
+                            Elite talent. Hired in <span className="text-gradient">days,<br />not months.</span>
+                        </h1>
+                        <p style={{ color: 'var(--text-secondary)', maxWidth: '900px', margin: '0 auto 32px' }}>
                             2M+ vetted professionals, zero agency fees, and AI matching that surfaces the right fit before your first interview. Built for teams that can't afford a bad hire.
                         </p>
                         <div className="hero__actions" style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
@@ -205,9 +214,9 @@ export default function TalentMarketplace() {
                 <div className="container">
                     <RevealSection>
                         <div className="section-header">
-                            <div className="badge">How It Works</div>
-                            <h2>Hiring in<br /><span className="text-gradient">three different ways.</span></h2>
-                            <p>From job post to productive team member — in days, not months.</p>
+                            <div className="badge">How You Hire & How It Works</div>
+                            <h2>Choose your hiring model.<br /><span className="text-gradient">We handle the rest.</span></h2>
+                            <p>Whether you need part-time help or a dedicated squad, our process gets you from job post to productive team member in days.</p>
                         </div>
                     </RevealSection>
                     <RevealSection>
@@ -267,6 +276,88 @@ export default function TalentMarketplace() {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </RevealSection>
+
+                    {/* ====== NEW HOW IT WORKS STEPS ====== */}
+                    <RevealSection delay={150}>
+                        <div style={{
+                            marginTop: 'var(--space-16)',
+                            paddingTop: 'var(--space-16)',
+                            borderTop: '1px solid var(--color-gray-100)',
+                            textAlign: 'center',
+                        }}>
+                            <h3 style={{ fontSize: '32px', marginBottom: 'var(--space-12)', color: 'var(--text-primary)', fontWeight: 700, letterSpacing: '-0.02em' }}>A simple process from start to scale</h3>
+                            
+                            <div style={{
+                                position: 'relative',
+                                maxWidth: '900px',
+                                margin: '0 auto',
+                            }}>
+                                {/* Desktop Line Connector */}
+                                <div className="hidden md:block" style={{
+                                    position: 'absolute',
+                                    top: '24px',
+                                    left: '16%',
+                                    right: '16%',
+                                    height: '1px',
+                                    background: 'var(--color-primary)',
+                                    opacity: 0.3,
+                                    zIndex: 0,
+                                }} />
+                                
+                                <div style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                                    gap: 'var(--space-8)',
+                                    position: 'relative',
+                                    zIndex: 1,
+                                }}>
+                                    {[
+                                        {
+                                            step: '1',
+                                            title: 'Meet With Our Team',
+                                            desc: 'Share your goals, technical requirements, and team dynamics with our industry experts.',
+                                        },
+                                        {
+                                            step: '2',
+                                            title: 'AI & White-Glove Curation',
+                                            desc: 'We map your needs using AI matching, comprehensive ID verification, and rigorous screening to surface the right talent in 24 hours or less.',
+                                        },
+                                        {
+                                            step: '3',
+                                            title: 'Interview & Start Building',
+                                            desc: 'Meet your hand-selected matches to confirm the fit, and they get straight to work. No lengthy trials—just immediate impact.',
+                                        }
+                                    ].map((item, i) => (
+                                        <div key={i} style={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
+                                        }}>
+                                            <div style={{
+                                                width: '50px',
+                                                height: '50px',
+                                                borderRadius: '50%',
+                                                background: 'var(--color-white)',
+                                                border: '1px solid var(--color-primary)',
+                                                color: 'var(--color-primary)',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                fontSize: '20px',
+                                                fontWeight: 400,
+                                                marginBottom: '20px',
+                                                boxShadow: '0 0 0 16px var(--color-white)',
+                                            }}>
+                                                {item.step}
+                                            </div>
+                                            <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '12px', color: 'var(--text-primary)' }}>{item.title}</h4>
+                                            <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6, padding: '0 10px' }}>{item.desc}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </RevealSection>
                 </div>

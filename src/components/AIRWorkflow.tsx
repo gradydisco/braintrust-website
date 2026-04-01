@@ -520,8 +520,14 @@ export default function AIRWorkflow() {
                 </div>
             </div>
 
-            {/* ── Output summary panel ──────────────────────────────────── */}
-            <div className="container" style={{ marginTop: 'var(--space-16)' }}>
+        </section>
+    );
+}
+
+export function AIRRecruiterOutput() {
+    return (
+        <section className="section section--gray">
+            <div className="container">
                 <div className="section-header" style={{ marginBottom: 'var(--space-10)' }}>
                     <div className="badge">Recruiter Output</div>
                     <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)' }}>Every signal you need.<br />In one place.</h2>
@@ -571,20 +577,20 @@ export default function AIRWorkflow() {
                         </div>
                     ))}
                 </div>
-            </div>
 
-            {/* Hover styles for output cards */}
-            <style>{`
-                .air-output-card:hover {
-                    box-shadow: 0 6px 24px rgba(50,50,93,0.10);
-                    border-color: rgba(245,87,51,0.18) !important;
-                    transform: translateY(-2px);
-                }
-                .air-output-card:hover .air-output-card__detail {
-                    max-height: 80px !important;
-                    opacity: 1 !important;
-                }
-            `}</style>
+                {/* Hover styles for output cards */}
+                <style>{`
+                    .air-output-card:hover {
+                        box-shadow: 0 6px 24px rgba(50,50,93,0.10);
+                        border-color: rgba(245,87,51,0.18) !important;
+                        transform: translateY(-2px);
+                    }
+                    .air-output-card:hover .air-output-card__detail {
+                        max-height: 80px !important;
+                        opacity: 1 !important;
+                    }
+                `}</style>
+            </div>
         </section>
     );
 }
