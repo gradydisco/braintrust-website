@@ -225,7 +225,7 @@ export default function NexusWorkflow() {
             <section className="section" style={{ paddingTop: 0 }}>
                 <div className="container">
                     <div className="section-header" style={{ marginBottom: 'var(--space-8)' }}>
-                        <h2>Let Nexus automate them and see it working across your business</h2>
+                        <h2>Let us automate them.</h2>
                         <p>Select a department to see how Nexus automates that team's most time-consuming processes.</p>
                     </div>
 
