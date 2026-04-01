@@ -89,14 +89,13 @@
 .loginBtn {
     display: flex;
     align-items: center;
-    gap: 2px;
-    font-size: var(--text-xs) !important;
-    font-weight: 600 !important;
+    gap: 4px;
+    font-weight: 500;
     color: var(--text-secondary);
     background: none;
     border: 1px solid var(--color-gray-200);
     border-radius: var(--radius-md);
-    padding: 6px 12px;
+    padding: 8px 14px;
     cursor: pointer;
     transition: all var(--transition-fast);
 }

@@ -93,7 +93,7 @@ export default function NexusTermsOfService() {
 
                     <div>
                         <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: '#1a1a1a' }}>9. Privacy and Data Protection</h2>
-                        <p>Your use of the Service is also governed by our <a href="https://www.usebraintrust.com/nexus/privacy-policy" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Privacy Policy</a>. Please review it to understand how we collect and process your information.</p>
+                        <p>Your use of the Service is also governed by our <a href="/nexus/privacy-policy" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Privacy Policy</a>. Please review it to understand how we collect and process your information.</p>
                     </div>
 
                     <div>
@@ -124,7 +124,7 @@ export default function NexusTermsOfService() {
                         <p>If you have any questions about these Terms, please contact us at:</p>
                         <p style={{ marginTop: '8px' }}><strong>Freelance Labs Inc. d/b/a Braintrust</strong></p>
                         <p><a href="mailto:legal@usebraintrust.com" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>legal@usebraintrust.com</a></p>
-                        <p style={{ marginTop: '12px' }}>For privacy-related inquiries, please refer to our <a href="https://www.usebraintrust.com/nexus/privacy-policy" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Privacy Policy</a> or contact <a href="mailto:privacy@usebraintrust.com" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>privacy@usebraintrust.com</a>.</p>
+                        <p style={{ marginTop: '12px' }}>For privacy-related inquiries, please refer to our <a href="/nexus/privacy-policy" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>Privacy Policy</a> or contact <a href="mailto:privacy@usebraintrust.com" style={{ color: 'var(--color-primary)', textDecoration: 'none' }}>privacy@usebraintrust.com</a>.</p>
                     </div>
                 </div>
             </div>

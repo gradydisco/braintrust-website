@@ -172,6 +172,10 @@ export default function Header() {
         </nav>
 
         <div className={styles.right}>
+          <Link href="/book-demo" className="btn btn--primary">
+            Book a Demo
+          </Link>
+
           <div
             className={styles.navItem}
             onMouseEnter={() => handleDropdownEnter('login')}
@@ -208,10 +212,6 @@ export default function Header() {
               </div>
             )}
           </div>
-
-          <Link href="/book-demo" className="btn btn--primary btn--sm">
-            Book a Demo
-          </Link>
 
           <button
             className={styles.mobileToggle}
