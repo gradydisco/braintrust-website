@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 // ─── Shared icon set ─────────────────────────────────────────────────────────
 
@@ -243,8 +243,14 @@ export default function NexusWorkflow() {
                         ))}
                     </div>
 
-                    {/* Scenario description */}
-                    <p style={{ textAlign: 'center', fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-8)', fontStyle: 'italic' }}>
+                    {/* Scenario description & Badge */}
+                    <div style={{ textAlign: 'center', marginBottom: 'var(--space-3)' }}>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', background: 'var(--color-primary-50)', color: 'var(--color-primary)', borderRadius: '999px', fontSize: '13px', fontWeight: 700, letterSpacing: '0.02em', border: '1px solid rgba(240, 106, 62, 0.2)' }}>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+                            {currentSteps.length} steps. Zero manual work.
+                        </span>
+                    </div>
+                    <p style={{ textAlign: 'center', fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-8)', letterSpacing: '-0.01em' }}>
                         {scenarios[activeTab].description}
                     </p>
 
@@ -258,7 +264,7 @@ export default function NexusWorkflow() {
                         boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
                     }}>
                         {currentSteps.map((step, i) => (
-                            <>
+                            <React.Fragment key={`${activeTab}-${i}`}>
                                 <div
                                     key={`${activeTab}-${step.label}`}
                                     className="nw2-node"
@@ -279,7 +285,7 @@ export default function NexusWorkflow() {
                                         {activeStep > i && <div className="nw2-dot" />}
                                     </div>
                                 )}
-                            </>
+                            </React.Fragment>
                         ))}
                     </div>
 
@@ -293,7 +299,7 @@ export default function NexusWorkflow() {
                         boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
                     }}>
                         {currentSteps.map((step, i) => (
-                            <>
+                            <React.Fragment key={`${activeTab}-m-${i}`}>
                                 <div key={`${activeTab}-m-${step.label}`} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
                                     <div className={`nw2-icon-wrap ${activeStep === i ? 'nw2-active' : ''}`}>
                                         {activeStep === i && <div className="nw2-pulse" />}
@@ -311,7 +317,7 @@ export default function NexusWorkflow() {
                                         {activeStep > i && <div className="nw2-dot-v" />}
                                     </div>
                                 )}
-                            </>
+                            </React.Fragment>
                         ))}
                     </div>
 

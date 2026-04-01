@@ -1,225 +1,363 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import FAQ from '@/components/FAQ';
-import CTASection from '@/components/CTASection';
-import AutomationAnalysisForm from '@/components/AutomationAnalysisForm';
-import NexusBottomCapture from '@/components/NexusBottomCapture';
 import NexusWorkflow from '@/components/NexusWorkflow';
-import NexusBeforeAfter from '@/components/NexusBeforeAfter';
+import AutomationAnalysisForm from '@/components/AutomationAnalysisForm';
 
 export const metadata: Metadata = {
     title: 'Nexus — Workflow Automation Platform for Modern Enterprise',
-    description: 'Nexus automates mundane, repetitive tasks across your entire business — from HR and finance to operations and recruiting. Connects to every enterprise system via API with pre-built connectors for leading platforms.',
+    description: 'Nexus automates mundane, repetitive tasks across your entire business.',
 };
 
 const capabilities = [
     {
-        title: 'Intelligent Workflow Automation',
-        desc: 'Design end-to-end workflows with a visual builder. Automate repetitive tasks across every department — from approvals and data entry to notifications and reporting.',
+        title: 'Universal API Integration',
+        desc: 'Nexus connects flawlessly to any enterprise application with an API—meaning it works gracefully with the systems you already use, silently moving data without manual exports or transfers.',
     },
     {
-        title: 'Universal System Integration',
-        desc: 'Connects to every enterprise application with an API. Pre-built connectors for leading platforms, with broad compatibility for virtually any system. Nexus moves data seamlessly, eliminating manual transfers.',
+        title: 'Custom-Built for Your Exact Process',
+        desc: 'Unlike rigid off-the-shelf software, Nexus bends to fit your reality. Every workflow is designed around your specific business logic, routing rules, and edge cases.',
     },
     {
-        title: 'Custom Rules Engine',
-        desc: 'Create event-driven automation rules: trigger actions based on events, route approvals, escalate exceptions, and enforce business logic — no code required.',
-    },
-    {
-        title: 'Real-Time Analytics & Insights',
-        desc: 'Track workflow performance, identify bottlenecks, and measure time savings. Live dashboards give you visibility into every automated process.',
-    },
-    {
-        title: 'Cross-Functional Orchestration',
-        desc: 'Nexus works across departments — front office, back office, admin, HR, finance, recruiting, and operations. One platform for your entire business.',
-    },
-    {
-        title: 'Enterprise Security & Access Control',
-        desc: 'Role-based access, audit trails, and compliance automation built in. Your data stays secure at every step with enterprise-grade security controls.',
+        title: 'Runs End-to-End Automatically',
+        desc: 'Unlike legacy tools like Zapier or n8n that leave the complex building to your developers, Nexus acts as your engineering team—designing, building, and deploying dozens of automated workflows simultaneously with zero human intervention.',
     },
 ];
 
-const departments = [
-    { name: 'Recruiting & HR', examples: 'Automate interview scheduling, onboarding workflows, offer approvals, and candidate pipeline management.' },
-    { name: 'Finance & Accounting', examples: 'Streamline invoice processing, expense approvals, vendor management, and financial reporting.' },
-    { name: 'Operations', examples: 'Orchestrate supply chain workflows, inventory management, quality assurance, and logistics coordination.' },
-    { name: 'Sales & Marketing', examples: 'Automate lead routing, campaign triggers, pipeline updates, and CRM synchronization.' },
-    { name: 'Admin & IT', examples: 'Manage access provisioning, ticket routing, asset tracking, and compliance documentation.' },
-    { name: 'Legal & Compliance', examples: 'Automate contract workflows, regulatory filings, audit trails, and policy management.' },
-];
-
-const integrations = [
-    { name: 'Salesforce', category: 'CRM' },
-    { name: 'Slack', category: 'Communication' },
-    { name: 'Workday', category: 'HCM' },
-    { name: 'Greenhouse', category: 'ATS' },
-    { name: 'NetSuite', category: 'ERP' },
-    { name: 'HubSpot', category: 'Marketing' },
-    { name: 'Jira', category: 'Project Mgmt' },
-    { name: 'Microsoft Teams', category: 'Communication' },
-    { name: 'Google Workspace', category: 'Productivity' },
-    { name: 'BambooHR', category: 'HR' },
-    { name: 'Lever', category: 'ATS' },
-    { name: 'ServiceNow', category: 'ITSM' },
-    { name: 'Zendesk', category: 'Support' },
-    { name: 'Stripe', category: 'Payments' },
-    { name: 'QuickBooks', category: 'Accounting' },
-    { name: 'Any API', category: 'Custom' },
-];
-
-const faqItems = [
-    { question: 'What is Nexus?', answer: 'Nexus is Braintrust\'s workflow automation platform. It connects your existing tools, automates repetitive tasks across every department, and provides real-time analytics on your business processes — saving thousands of hours per year.' },
-    { question: 'What systems does Nexus integrate with?', answer: 'Nexus connects to every enterprise application with an API. Pre-built connectors are available for Salesforce, Slack, Workday, Greenhouse, NetSuite, HubSpot, Lever, Jira, Microsoft Teams, Google Workspace, and many more. Custom API integrations are supported for virtually any system.' },
-    { question: 'Can Nexus work beyond recruiting?', answer: 'Absolutely. While Nexus is powerful for recruiting automation, it\'s designed for any department — finance, operations, sales, marketing, admin, legal, and more. Any repetitive, multi-step process can be automated with Nexus.' },
-    { question: 'Do I need technical skills to use Nexus?', answer: 'No. Nexus features a visual workflow builder and pre-built templates that let anyone create automations. For more advanced needs, our team provides implementation support and custom integrations.' },
-    { question: 'How quickly can I see ROI?', answer: 'Most customers see measurable time savings within the first 30 days. On average, Nexus eliminates 20+ hours per week of manual work per team, translating to significant cost savings.' },
+const workflows = [
+    { dept: 'Finance', name: 'Invoice Processing', outcome: 'Email receipt to ERP entry without keystrokes.' },
+    { dept: 'Recruiting', name: 'Candidate Screening', outcome: 'Inbound application to scored and ranked instantly.' },
+    { dept: 'Operations', name: 'Order Management', outcome: 'Purchase to fulfillment handoff fully automated.' },
+    { dept: 'Sales', name: 'Lead Routing', outcome: 'Form fill to CRM record and rep assignment in seconds.' },
+    { dept: 'HR & Admin', name: 'Employee Onboarding', outcome: 'Offer signed to IT provisioning triggered globally.' },
+    { dept: 'Compliance', name: 'Audit Logging', outcome: 'Continuous tracking and reporting without manual checks.' },
 ];
 
 export default function Nexus() {
     return (
         <>
-            <section className="hero hero--centered" style={{
-                background: 'linear-gradient(180deg, #0a0a14 0%, #111827 60%, #0f172a 100%)',
-                position: 'relative', overflow: 'hidden',
-            }}>
-                {/* Ambient background effects */}
-                <div style={{
-                    position: 'absolute', inset: 0, pointerEvents: 'none',
-                    backgroundImage: 'radial-gradient(ellipse 50% 60% at 50% 20%, rgba(99,102,241,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 70% 80%, rgba(245,87,51,0.04) 0%, transparent 70%)',
-                }} />
-                {/* Grid pattern overlay */}
-                <div style={{
-                    position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.03,
-                    backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-                    backgroundSize: '40px 40px',
-                }} />
-
-                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Products', href: '/products' }, { label: 'Nexus' }]} />
-                    <div className="hero__content">
-                        <div className="badge badge--dark">Nexus</div>
-                        <h1 style={{ color: 'white' }}>Automate anything.<br /><span className="text-gradient">across everything.</span></h1>
-                        <p style={{ color: 'rgba(255,255,255,0.55)' }}>Nexus is a workflow automation platform that eliminates mundane, repetitive tasks — moving data between systems, powering complex workflows, and saving thousands of hours across every part of your business.</p>
+            {/* 1. THE HOOK */}
+            <section className="hero hero--centered">
+                <div className="container">
+                    <div className="hero__content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                        <p style={{
+                            fontSize: '24px',
+                            fontWeight: 400,
+                            color: '#1a1a1a',
+                            letterSpacing: '-0.01em',
+                            marginBottom: '16px',
+                            textAlign: 'center'
+                        }}>
+                            Nexus | Enterprise Workflow Automation
+                        </p>
+                        <h1 style={{
+                            fontSize: 'clamp(3rem, 6vw, 5.5rem)',
+                            fontWeight: 600,
+                            color: '#1a1a1a',
+                            letterSpacing: '-0.03em',
+                            lineHeight: 1.02,
+                            marginBottom: 'var(--space-6)',
+                            textAlign: 'center'
+                        }}>
+                            Automate anything.<br /><span className="text-gradient">Across everything.</span>
+                        </h1>
+                        <p style={{ maxWidth: '700px', margin: '0 auto var(--space-8)', textAlign: 'center', fontSize: '19px', color: '#4a4a4a', lineHeight: 1.5 }}>
+                            Nexus eliminates the manual, repetitive work that's quietly killing your team's productivity — and shares the savings with you.
+                        </p>
                         <div className="hero__actions">
-                            <Link href="/book-demo" className="btn btn--primary btn--lg">Book a Demo</Link>
-                            <Link href="/" className="btn btn--secondary btn--lg" style={{ color: 'rgba(255,255,255,0.7)', borderColor: 'rgba(255,255,255,0.15)' }}>All Products →</Link>
+                            <Link href="/book-demo" className="btn btn--primary btn--lg">Find Your First Workflow</Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Core Capabilities */}
-            <section className="section">
+            {/* 2. THE PROBLEM */}
+            <section className="section" style={{ paddingTop: 0, paddingBottom: 'var(--space-16)' }}>
                 <div className="container">
-                    <div className="section-header">
-                        <div className="badge">Platform</div>
-                        <h2>Enterprise workflow automation</h2>
-                        <p>One platform to automate tasks, connect systems, and orchestrate workflows across your entire organization.</p>
-                    </div>
-                    <div className="grid grid--3">
-                        {capabilities.map((item) => (
-                            <div key={item.title} className="card card--feature">
-                                <h4 style={{ marginBottom: 'var(--space-3)' }}>{item.title}</h4>
-                                <p style={{ fontSize: 'var(--text-sm)' }}>{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Animated Workflow */}
-            <NexusWorkflow />
-
-            {/* Before vs After */}
-            <NexusBeforeAfter />
-
-            {/* Department Use Cases */}
-            <section className="section section--gray">
-                <div className="container">
-                    <div className="section-header">
-                        <div className="badge">Use Cases</div>
-                        <h2>Works across every department</h2>
-                        <p>Nexus automates workflows wherever your business needs it — not just recruiting.</p>
-                    </div>
-                    <div className="grid grid--2">
-                        {departments.map((dept) => (
-                            <div key={dept.name} className="card card--feature">
-                                <h4 style={{ marginBottom: 'var(--space-2)', color: 'var(--color-primary)' }}>{dept.name}</h4>
-                                <p style={{ fontSize: 'var(--text-sm)' }}>{dept.examples}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Integrations */}
-            <section className="section">
-                <div className="container">
-                    <div className="section-header">
-                        <div className="badge">Integrations</div>
-                        <h2>Connects to every enterprise system via API</h2>
-                        <p>Pre-built connectors available for leading enterprise platforms. Custom integrations for any system with an API.</p>
-                    </div>
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(4, 1fr)',
-                        gap: '12px',
-                        maxWidth: '900px',
-                        margin: '0 auto',
+                        gridTemplateColumns: '1fr 1fr',
+                        gap: '64px',
+                        alignItems: 'center',
                     }}>
-                        {integrations.map((item) => (
-                            <div key={item.name} className="card--enterprise" style={{
+                        {/* Left: Problem copy */}
+                        <div>
+                            <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-primary)', marginBottom: '20px' }}>The Problem</p>
+                            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a1a', lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: '24px' }}>
+                                You already know which workflows are broken.
+                            </h2>
+                            <p style={{ fontSize: '18px', fontWeight: 400, color: '#4a4a4a', lineHeight: 1.7, marginBottom: '24px' }}>
+                                Every ops leader, every finance director, every recruiting team has a list — the repetitive, manual processes that eat hours every week. Everyone knows they should be automated.
+                            </p>
+                            <p style={{ fontSize: '18px', fontWeight: 600, color: '#1a1a1a', lineHeight: 1.6, marginBottom: '40px', paddingLeft: '16px', borderLeft: '3px solid var(--color-primary)' }}>
+                                The problem is fixing them has always required developers, months of scoping, and budget you can't justify.
+                            </p>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <p style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-primary)', margin: 0 }}>Nexus fixes that. Here's how.</p>
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'bounce 1.8s ease-in-out infinite', flexShrink: 0 }}>
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <polyline points="19 12 12 19 5 12" />
+                                </svg>
+                            </div>
+                            <style>{`@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }`}</style>
+                        </div>
+                        {/* Right: Cost-of-doing-nothing stat panel */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                            {[
+                                { label: 'Avg. hours lost per week to manual tasks', value: '20+ hrs', sub: 'per person, per team' },
+                                { label: 'Typical cost to build a workflow with developers', value: '$50k–$200k', sub: 'per workflow, per year' },
+                                { label: 'Time from idea to live automation', value: '3–6 months', sub: 'with traditional dev teams' },
+                                { label: 'Nexus time to first live workflow', value: '< 30 days', sub: 'no developers needed', highlight: true },
+                            ].map((stat) => (
+                                <div key={stat.label} style={{
+                                    padding: '24px',
+                                    borderRadius: '12px',
+                                    background: stat.highlight ? 'var(--color-primary-50)' : 'var(--color-gray-50, #f8f8f8)',
+                                    border: stat.highlight ? '1px solid rgba(232,113,74,0.25)' : '1px solid rgba(0,0,0,0.05)',
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    gap: '16px',
+                                }}>
+                                    <p style={{ fontSize: '14px', color: stat.highlight ? 'var(--color-primary)' : '#4a4a4a', margin: 0, lineHeight: 1.4, fontWeight: stat.highlight ? 600 : 400 }}>{stat.label}</p>
+                                    <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                                        <div style={{ fontSize: '22px', fontWeight: 800, color: stat.highlight ? 'var(--color-primary)' : '#1a1a1a', letterSpacing: '-0.02em' }}>{stat.value}</div>
+                                        <div style={{ fontSize: '11px', color: '#888', marginTop: '2px' }}>{stat.sub}</div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <style>{`@media (max-width: 768px) { .nexus-problem-grid { grid-template-columns: 1fr !important; } }`}</style>
+            </section>
+
+            {/* 3. THE VISUAL MOMENT */}
+            <NexusWorkflow />
+
+            {/* 4. WHAT NEXUS IS */}
+            <section className="section section--gray">
+                <div className="container">
+                    <div className="section-header" style={{ maxWidth: '850px', margin: '0 auto var(--space-8)' }}>
+                        <h2>Nexus builds the workflow. Then it runs it. Every time.</h2>
+                        <p style={{ marginTop: '16px', fontSize: '19px', lineHeight: 1.6, color: '#4a4a4a' }}>
+                            Other platforms like Zapier or n8n only give you the APIs — you still need expensive developers to actually build and maintain the connections.
+                            <strong> Nexus uses specialized AI agents to do the building for you.</strong> No engineering team required. You can scope, design, and deploy dozens of complex workflows simultaneously in a fraction of the time.
+                        </p>
+                    </div>
+                    <div className="grid grid--3" style={{ marginBottom: 'var(--space-12)' }}>
+                        {capabilities.map((item) => (
+                            <div key={item.title} className="card card--feature" style={{ background: 'var(--color-white)', border: '1px solid rgba(0,0,0,0.05)' }}>
+                                <h4 style={{ marginBottom: 'var(--space-3)' }}>{item.title}</h4>
+                                <p style={{ fontSize: 'var(--text-md)', lineHeight: 1.5, color: '#4a4a4a' }}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Product Screenshots */}
+                    <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                            {/* Main execution trace */}
+                            <div style={{ gridColumn: '1 / -1', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
+                                <div style={{ padding: '12px 16px', background: '#1e293b', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ef4444' }} />
+                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#f59e0b' }} />
+                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#22c55e' }} />
+                                    <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginLeft: '8px' }}>Nexus — Execution Trace Flow</span>
+                                </div>
+                                <img src="/nexus/workflow-trace.png" alt="Nexus workflow execution trace" style={{ width: '100%', display: 'block', imageRendering: '-webkit-optimize-contrast' as any }} />
+                            </div>
+                            {/* Dashboard */}
+                            <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
+                                <div style={{ padding: '12px 16px', background: '#f8fafc', borderBottom: '1px solid rgba(0,0,0,0.06)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ef4444' }} />
+                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#f59e0b' }} />
+                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#22c55e' }} />
+                                    <span style={{ fontSize: '12px', color: '#888', marginLeft: '8px' }}>Nexus — All Workflows</span>
+                                </div>
+                                <img src="/nexus/workflow-dashboard.png" alt="Nexus workflow dashboard" style={{ width: '100%', display: 'block', imageRendering: '-webkit-optimize-contrast' as any }} />
+                            </div>
+                            {/* Cost savings */}
+                            <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
+                                <div style={{ padding: '12px 16px', background: '#f8fafc', borderBottom: '1px solid rgba(0,0,0,0.06)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ef4444' }} />
+                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#f59e0b' }} />
+                                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#22c55e' }} />
+                                    <span style={{ fontSize: '12px', color: '#888', marginLeft: '8px' }}>Nexus — Impact Overview</span>
+                                </div>
+                                <img src="/nexus/cost-savings.png" alt="Nexus cost savings dashboard" style={{ width: '100%', display: 'block', imageRendering: '-webkit-optimize-contrast' as any }} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 5. HOW IT WORKS */}
+            <section className="section" style={{ background: '#ffffff', borderTop: '1px solid rgba(0,0,0,0.04)' }}>
+                <div className="container">
+                    <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+                        <h2 style={{ color: '#1a1a1a', marginBottom: '16px', fontSize: '40px', letterSpacing: '-0.02em', fontWeight: 600 }}>How it works</h2>
+                        <p style={{ fontSize: '20px', color: '#666', maxWidth: '600px', margin: '0 auto' }}>From manual bottleneck to fully autonomous process in under 30 days.</p>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+                        {[
+                            { title: 'We map your workflow', desc: 'Tell us exactly what your team does manually today, step by painful step.' },
+                            { title: 'We build it in Nexus', desc: 'Our team connects directly to your systems through our universal API framework.' },
+                            { title: 'It runs. You save money', desc: 'Your manual process disappears, replaced entirely by an autonomous engine.' }
+                        ].map((step, i) => (
+                            <div key={i} style={{ 
+                                padding: '40px 32px', 
+                                background: '#f8fafc', 
+                                border: '1px solid rgba(0,0,0,0.04)', 
+                                borderRadius: '24px',
+                                position: 'relative',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'center',
-                                justifyContent: 'center',
-                                padding: '20px 16px',
-                                background: 'var(--color-white)',
-                                border: '1px solid rgba(50, 50, 93, 0.08)',
-                                borderRadius: 'var(--radius-lg)',
-                                textAlign: 'center',
-                                gap: '4px',
+                                textAlign: 'center'
                             }}>
-                                <span style={{ fontWeight: 700, fontSize: '14px', color: 'var(--text-primary)' }}>{item.name}</span>
-                                <span style={{ fontSize: '11px', fontWeight: 500, color: 'var(--text-tertiary)', letterSpacing: '0.03em', textTransform: 'uppercase' }}>{item.category}</span>
+                                <div style={{ 
+                                    width: '56px', height: '56px', 
+                                    borderRadius: '50%', 
+                                    background: '#ffffff', 
+                                    border: '1px solid rgba(232, 113, 74, 0.2)',
+                                    color: 'var(--color-primary)', 
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    fontSize: '22px', fontWeight: 'bold',
+                                    marginBottom: '24px',
+                                    boxShadow: '0 8px 16px rgba(232, 113, 74, 0.08)'
+                                }}>
+                                    {i + 1}
+                                </div>
+                                <h3 style={{ fontSize: '22px', color: '#1a1a1a', marginBottom: '12px', fontWeight: 700 }}>{step.title}</h3>
+                                <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.6, textWrap: 'balance', margin: 0 } as any}>{step.desc}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Stats */}
-            <section className="section section--dark">
-                <div className="container">
-                    <div className="stats-grid">
-                        <div><div className="stat__value text-gradient">Any API</div><div className="stat__label">Universal Connectivity</div></div>
-                        <div><div className="stat__value text-gradient">20hrs+</div><div className="stat__label">Saved Per Week, Per Person</div></div>
-                        <div><div className="stat__value text-gradient">99.9%</div><div className="stat__label">Uptime SLA</div></div>
-                        <div><div className="stat__value text-gradient">30 days</div><div className="stat__label">Avg. Time to ROI</div></div>
+            {/* 6. THE BUSINESS MODEL */}
+            <section className="section" style={{ background: '#fafafa', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent)' }} />
+                
+                <div className="container container--narrow" style={{ position: 'relative', zIndex: 1, paddingBottom: '24px' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+                        <h2 style={{ color: '#1a1a1a', marginBottom: '16px', fontSize: '40px', letterSpacing: '-0.02em' }}>We only make money when you save money.</h2>
+                        <p style={{ fontSize: '22px', color: '#666', fontWeight: 400 }}>Shared incentives keep us aligned. You only pay for results.</p>
+                    </div>
+
+                    <div style={{ 
+                        background: '#ffffff', 
+                        borderRadius: '24px', 
+                        border: '1px solid rgba(0,0,0,0.06)', 
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02)',
+                        overflow: 'hidden'
+                    }}>
+                        <div style={{ padding: '40px', textAlign: 'center', borderBottom: '1px solid rgba(0,0,0,0.06)', background: '#f8fafc' }}>
+                            <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#888', marginBottom: '16px' }}>How it breaks down</p>
+                            <h3 style={{ fontSize: '32px', color: '#1a1a1a', margin: 0, lineHeight: 1.3 }}>
+                                You keep <span style={{ color: '#22c55e' }}>75%</span> of the savings.<br/>
+                                We charge <span className="text-gradient">25%</span>.
+                            </h3>
+                        </div>
+                        <div style={{ padding: '48px', background: '#ffffff' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px', alignItems: 'center' }}>
+                                <span style={{ fontSize: '18px', color: '#666' }}>Example: Target Workflow Savings</span>
+                                <span style={{ fontSize: '24px', fontWeight: 'bold', color: '#1a1a1a', letterSpacing: '-0.02em' }}>$100k / month</span>
+                            </div>
+                            
+                            <div style={{ width: '100%', height: '56px', display: 'flex', borderRadius: '12px', overflow: 'hidden', marginBottom: '24px', border: '1px solid rgba(0,0,0,0.08)', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.02)' }}>
+                                <div style={{ width: '75%', background: '#1a1a1a', display: 'flex', alignItems: 'center', paddingLeft: '24px', fontSize: '16px', fontWeight: 800, color: '#fff', letterSpacing: '-0.01em' }}>You keep $75,000</div>
+                                <div style={{ width: '25%', background: 'rgba(232, 113, 74, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '24px', fontSize: '15px', fontWeight: 600, color: 'var(--color-primary)' }}>We make $25,000</div>
+                            </div>
+
+                            <p style={{ fontSize: '16px', color: '#888', textAlign: 'center', margin: 0 }}>
+                                If you don't save time and money, neither do we. It's that simple. 
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ====== FREE AUTOMATION ANALYSIS — EXIT-INTENT MODAL ====== */}
-            <AutomationAnalysisForm />
+            {/* 7. GETTING STARTED (Pick Your First Workflow) */}
+            <section className="section" style={{ background: '#f8fafc', borderTop: '1px solid rgba(0,0,0,0.04)' }}>
+                <style dangerouslySetInnerHTML={{__html: `
+                    .workflow-card-ux {
+                        background: #ffffff;
+                        padding: 36px 32px;
+                        border-radius: 20px;
+                        border: 1px solid rgba(0,0,0,0.05);
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+                        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                        cursor: pointer;
+                        position: relative;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .workflow-card-ux:hover {
+                        transform: translateY(-4px);
+                        border-color: rgba(232, 113, 74, 0.3);
+                        box-shadow: 0 20px 40px rgba(0,0,0,0.04), 0 8px 16px rgba(232, 113, 74, 0.08);
+                    }
+                    .workflow-card-ux::after {
+                        content: '→';
+                        position: absolute;
+                        bottom: 34px;
+                        right: 32px;
+                        color: var(--color-primary);
+                        font-family: system-ui, sans-serif;
+                        font-size: 24px;
+                        font-weight: 300;
+                        opacity: 0;
+                        transform: translateX(-10px);
+                        transition: all 0.3s ease;
+                    }
+                    .workflow-card-ux:hover::after {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                `}} />
+                <div className="container">
+                    <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+                        <h2 style={{ color: '#1a1a1a', marginBottom: '16px', fontSize: '40px', letterSpacing: '-0.02em', fontWeight: 600 }}>Pick Your First Workflow</h2>
+                        <p style={{ fontSize: '20px', color: '#666', maxWidth: '640px', margin: '0 auto' }}>
+                            We don't do vague consulting analysis. We identify real, high-impact workflows to pilot in your environment in under 30 days.
+                        </p>
+                    </div>
 
-            <section className="section section--gray">
-                <div className="container container--narrow">
-                    <div className="section-header"><h2>FAQ</h2></div>
-                    <FAQ items={faqItems} schemaId="nexus" />
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                        gap: '24px',
+                        marginBottom: '64px'
+                    }}>
+                        {workflows.map((wf) => (
+                            <div key={wf.name} className="workflow-card-ux">
+                                <div style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(232,113,74,0.08)', padding: '6px 14px', borderRadius: '100px', marginBottom: '24px', alignSelf: 'flex-start' }}>
+                                    <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-primary)' }}>{wf.dept}</span>
+                                </div>
+                                <h3 style={{ fontSize: '24px', color: '#1a1a1a', marginBottom: '20px', fontWeight: 600, letterSpacing: '-0.01em' }}>{wf.name}</h3>
+                                <div style={{ height: '1px', background: 'rgba(0,0,0,0.05)', width: '100%', marginBottom: '20px' }} />
+                                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', flexGrow: 1 }}>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <p style={{ fontSize: '16px', color: '#555', lineHeight: 1.5, margin: 0, paddingRight: '24px' }}>{wf.outcome}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', padding: '48px', background: 'white', border: '1px solid rgba(0,0,0,0.1)', borderRadius: '16px', boxShadow: '0 12px 30px rgba(0,0,0,0.03)' }}>
+                        <h3 style={{ fontSize: '28px', marginBottom: '16px' }}>Start with one. See the savings. Add more.</h3>
+                        <p style={{ fontSize: '16px', color: '#4a4a4a', marginBottom: '32px' }}>Book a session to identify your first major automation win.</p>
+                        
+                        <Link href="/book-demo" className="btn btn--primary btn--lg" style={{ width: '100%', padding: '16px' }}>Find My First Workflow</Link>
+                    </div>
                 </div>
             </section>
-
-            {/* ====== BOTTOM-OF-PAGE AUTOMATION ANALYSIS CAPTURE ====== */}
-            <NexusBottomCapture />
-
-            <CTASection
-                title="Automate your business workflows"
-                description="See how Nexus can eliminate repetitive tasks, connect your systems, and save your team thousands of hours."
-                primaryLabel="Book a Demo"
-                primaryHref="/book-demo"
-            />
+            
+            <AutomationAnalysisForm />
         </>
     );
 }
